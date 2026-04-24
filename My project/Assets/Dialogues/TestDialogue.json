@@ -1,0 +1,44 @@
+{
+  "settings": {
+    "game_title": "Alien Wordle Dating Sim",
+    "thresholds": {
+      "paragon_ending": 50,
+      "renegade_ending": 50
+    }
+  },
+  "nodes": [
+    {
+      "node_id": "node_001",
+      "speaker": "Xylax",
+      "text_original": "Greetings, human. Do you come with peace or greed?",
+      "wordle_solution": "PEACE",
+      "next_node": "node_002",
+      "choices": [
+        {
+          "text": "I seek friendship.",
+          "plus_paragon": 10,
+          "plus_renegade": 0
+        },
+        {
+          "text": "I seek resources.",
+          "plus_paragon": 0,
+          "plus_renegade": 10
+        }
+      ]
+    },
+    {
+      "node_id": "node_002",
+      "speaker": "Xylax",
+      "text_original": "Interesting. My sensors show your heart rate is rising.",
+      "wordle_solution": "HEART",
+      "next_node": "node_003",
+      "choices": [
+        {
+          "text": "It is because of your beauty.",
+          "plus_paragon": 5,
+          "plus_renegade": 0
+        }
+      ]
+    }
+  ]
+} 
