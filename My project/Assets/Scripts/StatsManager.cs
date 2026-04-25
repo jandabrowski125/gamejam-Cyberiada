@@ -24,8 +24,6 @@ public class StatsManager : MonoBehaviour
             UpdateRenegade(characterName, r);
             return;
         }
-
-        Debug.Log($"[Stats] {characterName} ma teraz {playerStats[characterName]} punktów Paragon.");
     }
 
     private void UpdateParagon(string characterName, int p)
