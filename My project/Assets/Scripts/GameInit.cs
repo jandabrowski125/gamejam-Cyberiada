@@ -13,12 +13,7 @@ public class GameInit : MonoBehaviour
 
     void LaunchTest()
     {
-        // Wywołujemy pisanie przez Managera
         dialogueManager.Write(testNodeID);
-
-        // Wordle odpali się automatycznie przez system eventów
-        // (W prawdziwej grze pewnie triggered przez przycisk albo koniec tekstu)
-        Invoke("TriggerManualWordle", delayBeforeWordle);
     }
 
     void TriggerManualWordle()

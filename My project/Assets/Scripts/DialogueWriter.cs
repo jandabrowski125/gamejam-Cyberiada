@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class DialogueWriter : MonoBehaviour
 {
@@ -71,22 +72,17 @@ public class DialogueWriter : MonoBehaviour
         dialogueUI.SetActive(false);
     }
 
-    public void Write(string nodeId, string keyword = null)
+    public void Write(string nodeId, string keyword = null, bool instant = false)
     {
         DialogueNode node = loader.GetNode(nodeId);
         if (node == null) return;
 
-        // 1. Aktywujemy obiekt - od tej pory skrypt widzi UI
         dialogueUI.SetActive(true);
 
-        // 2. Resetujemy stare procesy
         if (mainCoroutine != null) StopCoroutine(mainCoroutine);
         ClearGrid();
 
-        bool skipTypewriter = !string.IsNullOrEmpty(keyword);
-
-        // 3. Odpalamy jedną wspólną Coroutine dla animacji i pisania
-        mainCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, skipTypewriter));
+        mainCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, instant));
     }
 
     private IEnumerator DialogueSequence(string text, string keyword, bool skipTypewriter)

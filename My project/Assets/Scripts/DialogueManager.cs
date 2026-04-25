@@ -5,6 +5,7 @@ public class DialogueManager : MonoBehaviour
     [Header("References")]
     public DialogueWriter dialogueWriter;
     public DialogueLoader loader;
+    public ButtonCreator buttonCreator;
 
     private string lastNodeId; // Zapamiętujemy, o czym rozmawiamy
 
@@ -25,34 +26,48 @@ public class DialogueManager : MonoBehaviour
     public void Write(string nodeId)
     {
         lastNodeId = nodeId;
+        
+        // 1. Piszemy tekst (Typewriter)
         dialogueWriter.Write(nodeId);
+
+        // 2. Pokazujemy przycisk Continue
+        buttonCreator.ShowContinue(() => {
+            // KROK 2: Po kliknięciu Continue odpalamy Wordle
+            StartWordleChallenge();
+        });
     }
 
-    // 1. Gdy Wordle jest requestowane - wyłączamy okno dialogowe
+    private void StartWordleChallenge()
+    {
+        DialogueNode node = loader.GetNode(lastNodeId);
+        if (node != null && !string.IsNullOrEmpty(node.wordle_solution))
+        {
+            GameEvents.TriggerWordleRequired(node.wordle_solution);
+        }
+    }
+
     private void HandleWordleRequested(string solution)
     {
-        Debug.Log("[DialogueManager] Wordle w toku - chowam dialog.");
         dialogueWriter.Hide();
+        buttonCreator.ClearButtons(); // Chowamy przycisk na czas gry
     }
 
     // 2. Gdy Wordle się kończy (OnWordleSuccess)
     private void HandleWordleResult(string foundKeyword)
     {
         if (string.IsNullOrEmpty(lastNodeId)) return;
+        DialogueNode node = loader.GetNode(lastNodeId);
 
+        // 1. Wypisujemy tekst ponownie (Natychmiast)
         if (!string.IsNullOrEmpty(foundKeyword))
-        {
-            // SUKCES: Wyświetlamy natychmiast z niebieskim słowem
-            Debug.Log($"[DialogueManager] Sukces! Odświeżam dialog z keywordem: {foundKeyword}");
-            dialogueWriter.Write(lastNodeId, foundKeyword);
-        }
+            dialogueWriter.Write(lastNodeId, foundKeyword, true);
         else
-        {
-            // PORAŻKA: Wyświetlamy natychmiast, ale bez zmian (alien font)
-            Debug.Log("[DialogueManager] Porażka. Odświeżam dialog w wersji oryginalnej.");
-            // Przekazujemy null jako keyword, ale dzięki temu, że 
-            // WordleManager wywołał ten event, wiemy że chcemy to wyświetlić od razu
-            dialogueWriter.Write(lastNodeId);
-        }
+            dialogueWriter.Write(lastNodeId, null, true);
+
+        // 2. KROK 4: Pokazujemy finalne przyciski wyborów
+        buttonCreator.ShowChoices(node, (choice) => {
+            Debug.Log($"Wybrano: {choice.text}. Paragon: +{choice.plus_paragon}, Renegade: +{choice.plus_renegade}");
+            // Tutaj możesz wywołać kolejny Node: Write(choice.next_node_id);
+        });
     }
 }

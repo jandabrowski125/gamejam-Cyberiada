@@ -1,48 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class ButtonCreator : MonoBehaviour
 {
     public GameObject buttonPrefab;
     public Transform parentPanel;
-    public DialogueLoader loader;
-    private int plusParagon=0;
-    private int plusRenegade=0;
 
-    void Start()
+    // Czyści wszystkie przyciski
+    public void ClearButtons()
     {
-        DialogueNode node = loader.GetFirstNode();
-        foreach(var choice in node.choices)
+        foreach (Transform child in parentPanel)
         {
-            plusParagon=choice.plus_paragon;
-            plusRenegade=choice.plus_renegade;
-            
-            CreateButton(choice.text, plusParagon, plusRenegade);
+            Destroy(child.gameObject);
         }
     }
 
-    void CreateButton(string buttonText, int plusPar, int plusRen)
+    // Tworzy pojedynczy przycisk (Helper)
+    private void CreateButton(string text, Action onClickAction)
     {
-        // Instantiate button
         GameObject newButton = Instantiate(buttonPrefab, parentPanel);
-
-        // Set button text
+        
         TextMeshProUGUI textComponent = newButton.GetComponentInChildren<TextMeshProUGUI>();
-        if (textComponent != null)
-        {
-            textComponent.text = buttonText;
-        }
+        if (textComponent != null) textComponent.text = text;
 
-        // Add click listener
         Button btn = newButton.GetComponent<Button>();
-        btn.onClick.AddListener(() =>OnButtonClicked(plusPar, plusRen));
+        btn.onClick.AddListener(() => onClickAction.Invoke());
     }
 
-    // Functions for buttons
-    void OnButtonClicked(int plusPar, int plusRen)
+    // Specjalny przycisk "Kontynuuj"
+    public void ShowContinue(Action onContinueClick)
     {
-        Debug.Log(plusPar.ToString());
+        ClearButtons();
+        CreateButton("Continue...", onContinueClick);
     }
 
+    // Przyciski wyborów z logiką Paragon/Renegade
+    public void ShowChoices(DialogueNode node, Action<DialogueChoice> onChoiceSelected)
+    {
+        ClearButtons();
+        foreach (var choice in node.choices)
+        {
+            CreateButton(choice.text, () => onChoiceSelected.Invoke(choice));
+        }
+    }
 }
