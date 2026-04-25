@@ -24,4 +24,7 @@ MonoBehaviour:
     background: {fileID: -7377295934022830490, guid: c62ff207df337a34488e0c9474648b04, type: 3}
   - name: Presenter
     portrait: {fileID: -5251537206809758910, guid: 1e858eb0c06ead444be798edb9409fdf, type: 3}
-    background: {fileID: -7377295934022830490, guid: c62ff207df337a34488e0c9474648b04, type: 3}
+    background: {fileID: -8558759507286567988, guid: e858e6ae8c431e3488a13edc2038d26e, type: 3}
+  - name: Arneth Maalg
+    portrait: {fileID: -435397851939694273, guid: 2c33a829303479940a8714098316b871, type: 3}
+    background: {fileID: 1336809692955082325, guid: 9854d56169bc427448942b96d9aefc17, type: 3}

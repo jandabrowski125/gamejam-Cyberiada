@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 2ef149a1808a49840b1ef1782333148b
+guid: 2c33a829303479940a8714098316b871
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -548361080881072038
-    second: background_4_0
+      213: -435397851939694273
+    second: character4_0
+  - first:
+      213: -6182497205627508299
+    second: character4_1
+  - first:
+      213: 733022817247638465
+    second: character4_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_4_0
+      name: character4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2360
-        height: 1640
+        x: 398
+        y: 140
+        width: 1464
+        height: 3709
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a583f659084d368f0800000000000000
-      internalID: -548361080881072038
+      spriteID: f399a23e5f725f9f0800000000000000
+      internalID: -435397851939694273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character4_1
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 282
+        width: 28
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b92ab93c8b533aa0800000000000000
+      internalID: -6182497205627508299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character4_2
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 337
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c33d4a5e583c2a00800000000000000
+      internalID: 733022817247638465
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      background_4_0: -548361080881072038
+      character4_0: -435397851939694273
+      character4_1: -6182497205627508299
+      character4_2: 733022817247638465
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

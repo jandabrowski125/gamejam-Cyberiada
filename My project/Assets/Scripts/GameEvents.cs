@@ -9,7 +9,7 @@ public static class GameEvents
 
     // --- WYDARZENIA STATYSTYK ---
 
-    public static Action<int, int> OnStatsChanged; // Paragon change, Renegade change
+    public static Action<string, int, int> OnStatsChanged; // Paragon change, Renegade change
 
     // Wywoływane, gdy poziom zrozumienia (Understanding) rośnie
     public static Action<int> OnUnderstandingUpdated;
@@ -21,5 +21,5 @@ public static class GameEvents
     
     public static void TriggerWordleSuccess(string word) => OnWordleSuccess?.Invoke(word);
 
-    public static void TriggerStatsChanged(int p, int r) => OnStatsChanged?.Invoke(p, r);
+    public static void TriggerStatsChanged(string characterName, int p, int r) => OnStatsChanged?.Invoke(characterName, p, r);
 }
