@@ -6,6 +6,7 @@ public class DialogueManager : MonoBehaviour
     public DialogueWriter dialogueWriter;
     public DialogueLoader loader;
     public ButtonCreator buttonCreator;
+    public AudioSource taliaAudio;
 
     private string lastNodeId; // Zapamiętujemy, o czym rozmawiamy
 
@@ -29,6 +30,7 @@ public class DialogueManager : MonoBehaviour
         
         // 1. Piszemy tekst (Typewriter)
         dialogueWriter.Write(nodeId);
+        taliaAudio.Play();
 
         // 2. Pokazujemy przycisk Continue
         buttonCreator.ShowContinue(() => {

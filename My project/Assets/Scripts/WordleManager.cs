@@ -47,6 +47,9 @@ public class WordleManager : MonoBehaviour
 
     [SerializeField] private int _availableAttempts = 5;
 
+    public AudioSource audienceAudio;
+    public AudioSource audienceClapAudio;
+
     // --- SUBSKRYPCJE ---
     private void OnEnable()
     {
@@ -146,6 +149,8 @@ public class WordleManager : MonoBehaviour
         
         InitWordle(word);
         StartCoroutine(SlideInRoutine());
+
+        audienceClapAudio.Play();
     }
 
     private IEnumerator SlideInRoutine()
@@ -244,7 +249,9 @@ public class WordleManager : MonoBehaviour
                 currentInput = "";
                 UpdateUI();
                 isProcessing = false;
+                audienceAudio.Play();
                 yield break;
+                
             }
         }
 
@@ -269,6 +276,8 @@ public class WordleManager : MonoBehaviour
                 
                 GameEvents.TriggerWordleSuccess(string.Empty);
                 targetWord = "";
+
+                audienceAudio.Play();
             }
         }
         isProcessing = false;
