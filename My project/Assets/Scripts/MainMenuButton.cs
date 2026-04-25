@@ -1,21 +1,31 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
-
 
 public class MainMenuButton : MonoBehaviour
 {
-    public int test;
-    public GameObject button_target;
+    public GameObject popup;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void LoadScene()
+    public void LoadimgScene()
     {
-        Debug.Log(test);
-        SceneManager.LoadScene(button_target.name);
+        Debug.Log("loadload");
+        SceneManager.LoadScene("Assets/Scenes/SampleScene.unity");
     }
 
-    void LoadPopUp()
+    public void LoadingPopUp()
     {
-        //chuj
+        Debug.Log("KURWAMAĆ");
+        Debug.Log("Credits");
+
+    }
+
+    public void doExitGame() 
+    {
+        Application.Quit();
+        Debug.Log("Game is exiting");
     }
 }
+
+
+
