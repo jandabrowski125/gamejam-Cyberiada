@@ -10,7 +10,7 @@
     {
       "node_id": "28ec963c-3b86-4b90-9b42-c79f4572aea7",
       "speaker": "Presenter",
-      "text_original": "Welcome to today\u2019s episode of Match Made in Heaven! Today we present you three different contestants out of this world!",
+      "text_original": "Welcome to today\u2019s episode of Match Made in Heaven! Today we present you four different contestants out of this world!",
       "wordle_solution": null,
       "next_node": "",
       "choices": []
@@ -26,7 +26,7 @@
     {
       "node_id": "b1a8fa0d-4778-4933-9663-2fe279e1a81e",
       "speaker": "Presenter",
-      "text_original": "The second one,\u00a0 CyberJohn used to be the assistant to the CEO of the logistics corporation KOSMEX, who recently died. His goal is to start the best logistics company in the galaxy, and he needs a\u00a0new SLP - strategic life partner to make it happen.",
+      "text_original": "The second one,\u00a0CyberJohn used to be the assistant to the CEO of the logistics corporation KOSMEX, who recently died. His goal is to start the best logistics company in the galaxy, and he needs a\u00a0new SLP - strategic life partner to make it happen.",
       "wordle_solution": null,
       "next_node": "f5925590-89f3-4dfb-83a2-daa9de3ad491",
       "choices": []
@@ -34,7 +34,7 @@
     {
       "node_id": "f5925590-89f3-4dfb-83a2-daa9de3ad491",
       "speaker": "Presenter",
-      "text_original": "Next is Juhei Ikeet. The brave knight of planet Vexlia is as lethal as they are pretty. They chase after love and enemies of Vaelia clan.",
+      "text_original": "Next is Juhei Ikeet. The brave knight of planet Vexalia is as lethal as they are pretty. They chase after love and enemies of Vaelia clan.",
       "wordle_solution": null,
       "next_node": "a73accf6-c239-458d-bc0e-214d752b229f",
       "choices": []
@@ -42,7 +42,7 @@
     {
       "node_id": "a73accf6-c239-458d-bc0e-214d752b229f",
       "speaker": "Presenter",
-      "text_original": "(This is a placeholder for hot baba)",
+      "text_original": "She\u2019s like the moon on a dark night\u2026 Shining bright on the dancefloor, being admired from afar. Welcome Arneth Maalg!",
       "wordle_solution": null,
       "next_node": "812ed5be-8ecb-472f-8f6e-a84b9a28292e",
       "choices": []
@@ -51,30 +51,6 @@
       "node_id": "812ed5be-8ecb-472f-8f6e-a84b9a28292e",
       "speaker": "Presenter",
       "text_original": "Today, all four of them will fight for the heart of the Human, from Earth!",
-      "wordle_solution": null,
-      "next_node": "89b19e21-7d37-493e-95f8-114ef42ba6b3",
-      "choices": []
-    },
-    {
-      "node_id": "89b19e21-7d37-493e-95f8-114ef42ba6b3",
-      "speaker": "Presenter",
-      "text_original": "Tell us a few words about yourself!",
-      "wordle_solution": null,
-      "next_node": "7759d8fc-3967-4c18-8132-1c784174e29a",
-      "choices": []
-    },
-    {
-      "node_id": "7759d8fc-3967-4c18-8132-1c784174e29a",
-      "speaker": "Human; 0; 0",
-      "text_original": "What is happening?!",
-      "wordle_solution": null,
-      "next_node": "c7357523-2cde-4f18-84ec-accf03a53e60",
-      "choices": []
-    },
-    {
-      "node_id": "c7357523-2cde-4f18-84ec-accf03a53e60",
-      "speaker": "Presenter",
-      "text_original": "Haha! Amazing! Time to start a show!",
       "wordle_solution": null,
       "next_node": "7263d6df-2002-4ef0-bade-56f1d9e6b77d",
       "choices": []
@@ -90,14 +66,14 @@
     {
       "node_id": "1d6098fc-57b4-4208-ad11-6fbf03975ebe",
       "speaker": "Presenter",
-      "text_original": "Start with you, Declan'Argegh.",
+      "text_original": "Start with you, Decln'Argegh.",
       "wordle_solution": null,
       "next_node": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
       "choices": []
     },
     {
       "node_id": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
-      "speaker": "Decln'Argeg",
+      "speaker": "Decln'Argegh",
       "text_original": "Well, in my free time I like to shoot stuff and\u2026 Water my plants.",
       "wordle_solution": "plants",
       "next_node": "68649621-523f-4f97-971d-edc4faaa3a44",
@@ -110,191 +86,739 @@
         },
         {
           "text": "Okay, seems like a boring way to spend your free time.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Finally a human who appreciates the delicate nature of plants! Plants! More like weeds! SHOOT YOUR SHOT, IDIOT!"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "BORING?! At least I\u2019m doing something interesting. Not like you. Humans only sit on their asses and\u2026 Yes, it is boring. But it relaxes me\u2026"
         },
         {
           "text": "I don\u2019t know\u2026 Shooting stuff seems like a red flag to me.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Shooting stuff is how we are raised. From the moment I received my first weapon when I was mere three days old, I never let it go\u2026 I have it on me now! WANNA SEE?"
+        }
+      ]
+    },
+    {
+      "node_id": "68649621-523f-4f97-971d-edc4faaa3a44",
+      "speaker": "Presenter",
+      "text_original": "Haha! Fantastic! What about you, Juhei?",
+      "wordle_solution": null,
+      "next_node": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
+      "choices": []
+    },
+    {
+      "node_id": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
+      "speaker": "Juhei Ikeet",
+      "text_original": "I don\u2019t do hobbies. But when I am not on duty, I like to master my dagger throwing.",
+      "wordle_solution": "dagger",
+      "next_node": "e6c5498b-3ffa-488f-bc24-59653829451e",
+      "choices": [
+        {
+          "text": "Seems like you\u2019re a busy girl.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+        },
+        {
+          "text": "I respect people who put their job first in their life.",
           "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "Finally a human who appreciates the delicate nature of plants! Plants! More like weeds! SHOOT YOUR SHOT, IDIOT!"
-        }
-      ]
-    },
-    {
-      "node_id": "68649621-523f-4f97-971d-edc4faaa3a44",
-      "speaker": "Presenter",
-      "text_original": "Haha! Fantastic! What about you Juhei?",
-      "wordle_solution": null,
-      "next_node": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
-      "choices": []
-    },
-    {
-      "node_id": "68649621-523f-4f97-971d-edc4faaa3a44",
-      "speaker": "Presenter",
-      "text_original": "Haha! Fantastic! What about you Juhei?",
-      "wordle_solution": null,
-      "next_node": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
-      "choices": []
-    },
-    {
-      "node_id": "68649621-523f-4f97-971d-edc4faaa3a44",
-      "speaker": "Presenter",
-      "text_original": "Haha! Fantastic! What about you Juhei?",
-      "wordle_solution": null,
-      "next_node": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
-      "choices": []
-    },
-    {
-      "node_id": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
-      "speaker": "Juhei Ikeet",
-      "text_original": "I don\u2019t do hobbies. But when I am not on duty, I like to master my dagger throwing.",
-      "wordle_solution": "dagger",
-      "next_node": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "choices": [
-        {
-          "text": "Seems like you\u2019re a busy girl.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
-        },
-        {
-          "text": "I respect people who put their job first in their life.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "follow_up": "Oh, you do? Not many people outside my planet think like that."
         },
         {
           "text": "I also like sports, but I prefer jogging.",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "plus_renegade": 0,
+          "follow_up": "A jogging? Is that a human word for \u201cmating\u201d?"
         }
       ]
     },
     {
-      "node_id": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
-      "speaker": "Juhei Ikeet",
-      "text_original": "I don\u2019t do hobbies. But when I am not on duty, I like to master my dagger throwing.",
-      "wordle_solution": "dagger",
-      "next_node": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
+      "node_id": "e6c5498b-3ffa-488f-bc24-59653829451e",
+      "speaker": "Presenter",
+      "text_original": "Wonderful! Arneth now is your turn.",
+      "wordle_solution": null,
+      "next_node": "4629d68c-85eb-4551-adb7-6796c80b86de",
+      "choices": []
+    },
+    {
+      "node_id": "4629d68c-85eb-4551-adb7-6796c80b86de",
+      "speaker": "Arneth Maalg",
+      "text_original": "I like going to the clubs on various planets. Music on mine doesn\u2019t work well with my ethereal hearing. I\u2019ve heard some earthian songs. They\u2019re pretty good. It depends on a party, though.",
+      "wordle_solution": "party",
+      "next_node": "da1cd7ac-a4bb-4c42-b1bd-3450bbbbe004",
       "choices": [
         {
-          "text": "Seems like you\u2019re a busy girl.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "text": "I have some tracks on my phone you might like. Should I bluetooth them for you?",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Don\u2019t know what bluetooth is but sure, whatever. <em>I know what\u2019s really on your mind, blue eyes.</em>"
         },
         {
-          "text": "I respect people who put their job first in their life.",
+          "text": "Oh so that\u2019s why your ears are so humungous!",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "follow_up": "My ears are magnificent. <em>Advanced for hearing sounds not hearable for creatures underdeveloped like you.</em>"
         },
         {
-          "text": "I also like sports, but I prefer jogging.",
+          "text": "A party girl? Been there, done that. Don\u2019t wanna go back.",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "plus_renegade": 0,
+          "follow_up": "Bet I could change your mind. <em>But that would be wasting my time.</em>"
         }
       ]
     },
     {
-      "node_id": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
-      "speaker": "Juhei Ikeet",
-      "text_original": "I don\u2019t do hobbies. But when I am not on duty, I like to master my dagger throwing.",
-      "wordle_solution": "dagger",
-      "next_node": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
+      "node_id": "da1cd7ac-a4bb-4c42-b1bd-3450bbbbe004",
+      "speaker": "Presenter",
+      "text_original": "CyberJohn! Tell us about your interests. Surely it looks different from all of us mere aliens!",
+      "wordle_solution": null,
+      "next_node": "eccb433f-eb2a-4d30-afab-7210ed4a0be0",
+      "choices": []
+    },
+    {
+      "node_id": "eccb433f-eb2a-4d30-afab-7210ed4a0be0",
+      "speaker": "CyberJohn",
+      "text_original": "I have goals. My hobby is monetizing every minute of my existence.",
+      "wordle_solution": "goals",
+      "next_node": "377f4192-b32e-4eee-afef-91410b016858",
       "choices": [
         {
-          "text": "Seems like you\u2019re a busy girl.",
+          "text": "Huh, you never leave your work?",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "follow_up": "Error. What\u2019s the point of existing, if you don\u2019t accumulate your capital!"
         },
         {
-          "text": "I respect people who put their job first in their life.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "text": "It\u2019s satisfying when your hobby is meaningful.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Potential Strategic Life Partner detected."
         },
         {
-          "text": "I also like sports, but I prefer jogging.",
+          "text": "Yhm, are you trying to be a sugar daddy or something?",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "plus_renegade": 0,
+          "follow_up": "Disagreed. I\u2019m only interested in finding a new Strategic Life Partner."
         }
       ]
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "377f4192-b32e-4eee-afef-91410b016858",
+      "speaker": "Presenter",
+      "text_original": "What have your past relationships taught you? I would say - don\u2019t get married! *laughs*",
       "wordle_solution": null,
-      "next_node": "",
+      "next_node": "14b07ea8-349f-4c98-8bca-14981a787c02",
       "choices": []
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "14b07ea8-349f-4c98-8bca-14981a787c02",
+      "speaker": "Decln'Argegh",
+      "text_original": "Never take your date for a swim. I learnt my lesson a few eons back. She didn\u2019t have fins and well\u2026 Need I say more? WE WERE FINALLY FREE\u2026",
+      "wordle_solution": "eons",
+      "next_node": "3e767c28-e7c6-40a9-8283-584dca70cd53",
+      "choices": [
+        {
+          "text": "No, it\u2019s completely understandable. I experienced that too\u2026",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Someone who understands me\u2026 I always hoped for a being that\u2026 SWIMS! Or doesn\u2019t shed its skin out of the sudden\u2026"
+        },
+        {
+          "text": "Yes! You do",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "OKAY! Maybe beings underdeveloped like you don\u2019t have that knowledge. But no fins mean no breathing. And no breathing means\u2026 Well, losing your skin basically. Don\u2019t worry though - she regained her strength. And broke up with me...\u00a0"
+        },
+        {
+          "text": "She died?!",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "NO! Well\u2026 Maybe for a moment. But then she resurrected. Kind of. Shed her skin and we went our separate ways. She broke up with us!"
+        }
+      ]
+    },
+    {
+      "node_id": "3e767c28-e7c6-40a9-8283-584dca70cd53",
+      "speaker": "Juhei Ikeet",
+      "text_original": "To never let anyone get too close to me again! The last person I mated with was fine at first. Then, when we were alone, they told me they were sent here to spy on my people! So, I have to stab that enemy with my dagger.",
+      "wordle_solution": "enemy",
+      "next_node": "b60e4a4c-9db0-48e9-95c0-ff53ba201956",
+      "choices": [
+        {
+          "text": "That\u2019s horrible!",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "I know! Anyone can be an enemy these days."
+        },
+        {
+          "text": "I could change your ways of thinking.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "No, you can't. My planet is my duty, there is no place for any enemy of ours."
+        },
+        {
+          "text": "Maybe you were overreacting?",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "I am not! My planet is my duty, there is no place for any enemy of ours."
+        }
+      ]
+    },
+    {
+      "node_id": "b60e4a4c-9db0-48e9-95c0-ff53ba201956",
+      "speaker": "Arneth Maalg",
+      "text_original": "I don\u2019t do relationships. I party and I dance. It\u2019s that simple yet so complex. <em>It\u2019s the way of the </em>swarm. These are our songs. You can\u2019t hold me down for long. <em>But you can always try.</em>",
+      "wordle_solution": "swarm",
+      "next_node": "aa9b1695-d382-45f2-b1d5-2644f35ba2d2",
+      "choices": [
+        {
+          "text": "I hold down, pretty girl- pretty good! I-I am willing to\u2026 try. Yeah\u2026 *blushes*",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Are you sure?<em> I see you blushing, babes.</em>"
+        },
+        {
+          "text": "Yeah, don\u2019t bother, girl. My boat doesn\u2019t float that way, sorry.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Not everyone is ready to ship my dock. <em>Your loss.</em>"
+        },
+        {
+          "text": "Oh no, I don\u2019t do one-night stands. Two-night stands and up will do.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "You\u2019d have to prove your flexibility.<em> I don\u2019t know if you\u2019ll last even one.</em>"
+        }
+      ]
+    },
+    {
+      "node_id": "aa9b1695-d382-45f2-b1d5-2644f35ba2d2",
+      "speaker": "CyberJohn",
+      "text_original": "Most partnerships fail because the parties don\u2019t think about achieving milestones.",
+      "wordle_solution": "fail",
+      "next_node": "ab7d8303-a62a-48ae-9b42-e1889889badd",
+      "choices": [
+        {
+          "text": "Yes, I totally agree that it\u2019s important to discuss your values.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "I don\u2019t have space for discussion. I know the best solution."
+        },
+        {
+          "text": "You had an interesting social life.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Yes, that\u2019s a fact."
+        },
+        {
+          "text": "I don\u2019t think you can make a roadmap for a relationship\u2026",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Failing to plan is planning to failure."
+        }
+      ]
+    },
+    {
+      "node_id": "ab7d8303-a62a-48ae-9b42-e1889889badd",
+      "speaker": "Presenter",
+      "text_original": "If you had a superpower, would you use it for good\u2026 or for fun? My ex-wife surely used it for fun!",
       "wordle_solution": null,
-      "next_node": "",
+      "next_node": "57ba604b-a14a-4360-a52a-9335bee58778",
       "choices": []
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "57ba604b-a14a-4360-a52a-9335bee58778",
+      "speaker": "Decln'Argeg",
+      "text_original": "FUN! I mean\u2026 For good for sure\u2026 Yes, I would probably bring some ancient civilization from eons ago to life or something like that. Rising like the phoenix from the ashes. BURN AND PERSEVERE!",
+      "wordle_solution": "life",
+      "next_node": "0d34a639-78e9-4c11-acf6-beb030252e55",
+      "choices": [
+        {
+          "text": "Oh cool! Like dinosaurs?",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "What is a dinosaur? I meant some primeval being that rules the whole world. I would have to think about it but that seems cool! ALL HAIL THE KHAL\u2019GUL!\u00a0"
+        },
+        {
+          "text": "As long as this old civilization doesn\u2019t want to kill the human race\u2026",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Don\u2019t need any help with that. You\u2019re doing it by yourself. Look at your planet already dying because you don\u2019t care! LIKE YOU DIDN\u2019T KILL ANY OF YOUR PLANTS! HYPOCRITE!"
+        },
+        {
+          "text": "That\u2019s stupid. If they die they die. There\u2019s no coming back!",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "We came back. You\u2019re looking at a remnant of history. History that outdates even your beloved Earth. My race died and was reborn from the ashes before yours was even created."
+        }
+      ]
+    },
+    {
+      "node_id": "0d34a639-78e9-4c11-acf6-beb030252e55",
+      "speaker": "Juhei Ikeet",
+      "text_original": "If I was blessed with a superpower, I would use it to protect people on my planet. Duty makes knight. I would become the great protector of my planet, and I would slay every enemy on my path.",
+      "wordle_solution": "knight",
+      "next_node": "7fe3be79-e341-4493-a58a-aff7583e2e9f",
+      "choices": [
+        {
+          "text": "Your ambition is so hot.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "\u2026Thank you."
+        },
+        {
+          "text": "That thing again? Aren\u2019t you getting bored by talking about it over and over again?",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Maybe this is a thing that your little human brain can\u2019t handle, but it is the most important for my people!"
+        },
+        {
+          "text": "What do you mean by that?",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "I would like to be harder, better, faster, strong. The great knight."
+        }
+      ]
+    },
+    {
+      "node_id": "7fe3be79-e341-4493-a58a-aff7583e2e9f",
+      "speaker": "Arneth Maalg",
+      "text_original": "*Laughs* Fun for sure. What\u2019s life without a little fun? That\u2019s why I party.<em> I can still make you feel good though. </em>Well I guess I could also make people dance more. The simple act of dance can change the world. The clubs would finally be filled with bliss.",
+      "wordle_solution": "bliss",
+      "next_node": "c2e39516-f84a-4ed1-a804-4fbef837f94d",
+      "choices": [
+        {
+          "text": "I like fun! And I do like to dance.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Oh really? We have to test it out then. <em>I like your confidence.</em>"
+        },
+        {
+          "text": "I\u2019m more of a couch potato. I go to sleep before nine\u2026 So you know. Not a party person.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "I can\u2019t stand staying in one place. <em>But you do you, boring human.</em>"
+        },
+        {
+          "text": "You treat dancing as a good deed? How about solving world hunger? Stopping wars?",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "You brought those things on yourself. <em>I pity your fragile race.</em>"
+        }
+      ]
+    },
+    {
+      "node_id": "c2e39516-f84a-4ed1-a804-4fbef837f94d",
+      "speaker": "CyberJohn",
+      "text_original": "For me, it would be <em>fun</em> to create a supply chain that never ever underperforms.",
+      "wordle_solution": "supply",
+      "next_node": "b5bcdf91-39a8-4036-a4c4-92ef8bcfe4e1",
+      "choices": [
+        {
+          "text": "I see, you really like your work.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Yes, I\u2019m dedicated to my work by all means,"
+        },
+        {
+          "text": "Cool, you\u2019re so creative!",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Potential Strategic Life Partner detected."
+        },
+        {
+          "text": "That sounds kinda\u2026 boring",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Disagreed. Candidate doesn\u2019t value business ethics."
+        }
+      ]
+    },
+    {
+      "node_id": "b5bcdf91-39a8-4036-a4c4-92ef8bcfe4e1",
+      "speaker": "Presenter",
+      "text_original": "What kind of future are you building for yourself?",
       "wordle_solution": null,
-      "next_node": "",
+      "next_node": "3ee1084a-2c94-4379-ac04-903855a10083",
       "choices": []
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "3ee1084a-2c94-4379-ac04-903855a10083",
+      "speaker": "Decln'Argeg",
+      "text_original": "Worlds engulfed in fire so they could burn and be remade again from scratch. And me as the creator and master of those worlds! Spreading my wings above the whole universe! A new life! Just kidding, of course! *laughs* I want to have a big greenhouse with all kinds of different plants.",
+      "wordle_solution": "master",
+      "next_node": "bddbe954-2a2f-4810-a004-52159026f816",
+      "choices": [
+        {
+          "text": "\u00a0I have some magnificent species in my homeland\u2026 Homespace to be precise. I think? Anyway I could share these with you if you\u2019d like. I also have a green thumb like you!",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Um\u2026 That\u2019s a generous offer, human being. My thumb isn\u2019t green though\u2026 I have green wings, does that count? I CAN BE YOUR MASTER."
+        },
+        {
+          "text": "Um\u2026 I\u2019m not sure if you\u2019re joking around but if you are - it\u2019s not funny. Like at all.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "My joke was only partial. I would like to BURN the world."
+        },
+        {
+          "text": "You remind me of my ex. He also liked to set things on fire\u2026 And then immediately quench it.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Can he come here? I would like to meet this ex. FUN FUN!"
+        }
+      ]
+    },
+    {
+      "node_id": "bddbe954-2a2f-4810-a004-52159026f816",
+      "speaker": "Juhei Ikeet",
+      "text_original": "I want to build a legacy, that will last after me. To make people of my planet proud. This is why it is vital for me to find a mate with whom I could breed ideal little babies.",
+      "wordle_solution": "babies",
+      "next_node": "08af7099-0e5e-48a6-aea3-5477b452e89c",
+      "choices": [
+        {
+          "text": "What is wrong with you?!",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "I don\u2019t know what you mean. What is more important than making babies?"
+        },
+        {
+          "text": "That\u2019s\u2026 uhm\u2026 something.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "See? I knew you are smart, human."
+        },
+        {
+          "text": "I could offer my services in that aspect. I am an expert.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Oh\u2026 you would? I would really enjoy that."
+        }
+      ]
+    },
+    {
+      "node_id": "08af7099-0e5e-48a6-aea3-5477b452e89c",
+      "speaker": "Arneth Maalg",
+      "text_original": "Future with lots of bliss on the world. I\u2019d like to dance and sing to music. I have a vision where the whole world will move in the same rhythm. In a state of absolute bliss. I dream of it constantly.",
+      "wordle_solution": "vision",
+      "next_node": "b02bf718-e7a4-4ae0-b73c-83a4a8d265db",
+      "choices": [
+        {
+          "text": "Neverending party? Sign me up!",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "You\u2019re welcome to join us. <em>The swarm is open to those that open their hearts to music.</em>"
+        },
+        {
+          "text": "No thanks, I\u2019m more of a homebody.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "You\u2019re hedonistic in a way. <em>But too stale for our swarm.</em>"
+        },
+        {
+          "text": "Don\u2019t get me wrong - I like music but full bliss? Like drugs? We say no to drugs.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "This is better than drugs. <em>It's a community.</em>"
+        }
+      ]
+    },
+    {
+      "node_id": "b02bf718-e7a4-4ae0-b73c-83a4a8d265db",
+      "speaker": "CyberJohn",
+      "text_original": "I am building a future that brings efficiency to my company. I want profit.",
+      "wordle_solution": "profit",
+      "next_node": "31d73771-7117-44fa-8012-08a415579be0",
+      "choices": [
+        {
+          "text": "Mmm, I admire your ambition.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Ambition is the fuel in our warp drives."
+        },
+        {
+          "text": "You sound like another wannabe self-made billionaire.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Correct."
+        },
+        {
+          "text": "I guess, that\u2019s a plan, for sure. Not necessarily my cup of tea.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Not every lifeform is ready to be part of my most complex supply chain in the quadrant."
+        }
+      ]
+    },
+    {
+      "node_id": "31d73771-7117-44fa-8012-08a415579be0",
+      "speaker": "Presenter",
+      "text_original": "What\u2019s your perfect cozy night like \u2014 and is there room for two? Or for three? My ex sure liked a good crowd. Oh the good ol\u2019 days!",
       "wordle_solution": null,
-      "next_node": "",
+      "next_node": "527e03f0-852a-44e8-9e16-253207f6d657",
       "choices": []
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "527e03f0-852a-44e8-9e16-253207f6d657",
+      "speaker": "Decln'Argeg",
+      "text_original": "I usually fly around the planet to see some stars. I like to watch the constellations far away. Makes me think about the passage of time. I\u2019m pretty young but time\u2019s gonna come for all of us. I guess\u2026 I would like someone to observe the night sky with me. A companion, you could say.",
+      "wordle_solution": "young",
+      "next_node": "f8465b99-e927-4fe2-b347-7e0fd6fbb7d2",
+      "choices": [
+        {
+          "text": "How old are you actually? Cause you don\u2019t look past thirty\u2026ish?",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Only two thousand eons young\u2026 Well I\u2019m almost reaching three thousand so you weren\u2019t far off. Time is a cruel master."
+        },
+        {
+          "text": "In my home I used to watch stars through my telescope during the starry night\u2026 Used to cause the sky got so polluted it became impossible to see them\u2026 I miss it very much...",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "I have room for one more. You are welcome to join me anytime. JOIN!"
+        },
+        {
+          "text": "Planet like in space? I can\u2019t fly! And breathe there... So that\u2019s a pass for me.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Can\u2019t do much about that. Seems like a <em>you</em> problem. IDIOT!"
+        }
+      ]
+    },
+    {
+      "node_id": "f8465b99-e927-4fe2-b347-7e0fd6fbb7d2",
+      "speaker": "Juhei Ikeet",
+      "text_original": "Cozy night? Most of my nights I spent on my knight duties. But some days my tent is so cold. I could enjoy a company of some other person, to make heat.",
+      "wordle_solution": "heat",
+      "next_node": "603622a4-5a5b-446a-8702-57c10590b156",
+      "choices": [
+        {
+          "text": "We could make heat, together.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "It would be great."
+        },
+        {
+          "text": "Makes sense.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "I know."
+        },
+        {
+          "text": "Then make fire?",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "With what? A dagger?"
+        }
+      ]
+    },
+    {
+      "node_id": "603622a4-5a5b-446a-8702-57c10590b156",
+      "speaker": "Arneth Maalg",
+      "text_original": "Cozy is not a part of my vocabulary. I move. I glide. I devour.<em> And I\u2019m never alone. </em>Even in our dream. It\u2019s a constant trance.",
+      "wordle_solution": "dream",
+      "next_node": "fecbfae0-53df-45e2-8fc2-461b2992844b",
+      "choices": [
+        {
+          "text": "Yeah, I also hate the word cozy. Switch it up with cramped, am I right?",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "You get it. <em>You\u2019re perfect for our swarm.</em>"
+        },
+        {
+          "text": "I don\u2019t get it. You eat on parties with your friends? That\u2019s like\u2026 Not really extraordinary.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "You would be surprised. <em>Or worse.</em>"
+        },
+        {
+          "text": "I recommend ordering pizza if you like devouring food\u2026 or something.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "I don\u2019t know what pizza is. My kind doesn\u2019t consume in that sense. <em>It devours.</em>"
+        }
+      ]
+    },
+    {
+      "node_id": "fecbfae0-53df-45e2-8fc2-461b2992844b",
+      "speaker": "CyberJohn",
+      "text_original": "I like to relax with spreadsheets in the company of data.<br>",
+      "wordle_solution": "data",
+      "next_node": "40813c77-30de-47c7-a525-6dbe464f669e",
+      "choices": [
+        {
+          "text": "I'm an Excel gamer too!",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Maybe you\u2019re a valid candidate for my Strategic Life Partner"
+        },
+        {
+          "text": "I hate fucking Excel.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "\u2026"
+        },
+        {
+          "text": "But Excel is an office tool\u2026",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Excel is a greatest achievement of your primitive civilization."
+        }
+      ]
+    },
+    {
+      "node_id": "40813c77-30de-47c7-a525-6dbe464f669e",
+      "speaker": "Presenter",
+      "text_original": "Be honest\u2026 have you ever broken someone\u2019s heart?",
       "wordle_solution": null,
-      "next_node": "",
+      "next_node": "7e3c38e1-a316-42c4-a523-d5a1b09af992",
       "choices": []
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "7e3c38e1-a316-42c4-a523-d5a1b09af992",
+      "speaker": "Decln'Argeg",
+      "text_original": "Well it happened twice or thrice\u2026 Wait - did you mean metaphorically? Then no. Never. I\u2019m not that bad. THE BADDEST! Either way - I don\u2019t have time for playing with fire. At least not now. I desire something different.",
+      "wordle_solution": "desire",
+      "next_node": "35718a25-8b43-4f47-a6f6-ab25953bb6f0",
+      "choices": [
+        {
+          "text": "What the hell? That\u2019s awful!",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "It wasn\u2019t that bad actually\u2026 She had a spare one. And that was rotten anyway. Did her a favour, really. We could just fly our own ways. Her desire was different from mine."
+        },
+        {
+          "text": "I had my heart broken numerous times. It\u2019s great to hear there is someone with great values like you.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "I would never break your heart like that. Especially because you only have one. Wouldn\u2019t want to risk losing you. Now my desire has changed."
+        },
+        {
+          "text": "You sound like a real heartbreaker. Like literally. I don\u2019t date bad boys.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Your loss. My desire is different either way."
+        }
+      ]
+    },
+    {
+      "node_id": "35718a25-8b43-4f47-a6f6-ab25953bb6f0",
+      "speaker": "Juhei Ikeet",
+      "text_original": "I have not. I don\u2019t have time for such trivial things like love games. All I care about is my knight duties and finding a perfect person to mate with.",
+      "wordle_solution": "games",
+      "next_node": "111c9f4d-9493-4d1f-b80a-135e6fe5dd1b",
+      "choices": [
+        {
+          "text": "To be honest, I\u2019d be fine with friends with benefits.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "What is the meaning of this? I don\u2019t know what you mean, human."
+        },
+        {
+          "text": "It seems like a perfect combination for me.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Then you could be a perfect mate for me."
+        },
+        {
+          "text": "I don\u2019t think I look for this kind of commitment.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Then I don\u2019t look for you, human."
+        }
+      ]
+    },
+    {
+      "node_id": "111c9f4d-9493-4d1f-b80a-135e6fe5dd1b",
+      "speaker": "Arneth Maalg",
+      "text_original": "Heartbreak is like a poison for your soul. Poison is not a part of the swarm. It\u2019s peaceful. <em>An eternal bliss. That\u2019s our vision for the future. The dream we crave. </em>I don\u2019t wish to offer it to just anyone. I expect the same thing in exchange.",
+      "wordle_solution": "poison",
+      "next_node": "b4dc23af-b1e5-4328-bd92-5c22c31f686c",
+      "choices": [
+        {
+          "text": "I\u2019ve had my heart broken into pieces. It would be nice to have it patched up by someone who really cares.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "In the swarm your heart would be safe. You would be whole. Soul and body merge in one. I<em>n one you\u2019d find pure happiness.</em>"
+        },
+        {
+          "text": "Yeah, no\u2026 I\u2019m a heartbreaker. And I\u2019m not ready to settle down yet.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Harm is not allowed in the swarm. <em>We love and please each other.</em>"
+        },
+        {
+          "text": "After some thought\u2026 Your offer sounds tempting but I\u2019m not convinced about that whole swarm thing so\u2026 Pass.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Maybe I could persuade you. <em>Let me in.</em>"
+        }
+      ]
+    },
+    {
+      "node_id": "b4dc23af-b1e5-4328-bd92-5c22c31f686c",
+      "speaker": "CyberJohn",
+      "text_original": "There\u2019s no doubt that my effectiveness has broken the hearts of many competitors. It's the risk I am ready to take.",
+      "wordle_solution": "risk",
+      "next_node": "635cf0db-85bd-40f3-9dd0-a4f7981339e4",
+      "choices": [
+        {
+          "text": "What a beast, I hope you won\u2019t break mine\u2026",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "I will take advantage of every opportunity for fruitful cooperation."
+        },
+        {
+          "text": "Do you even have any feelings?",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Entrepreneurs don't care about feelings; they care about efficiency."
+        },
+        {
+          "text": "Yyyyh, Why would your business competitors be interested in you?",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "They\u2019re obsessed with me\u2026"
+        }
+      ]
+    },
+    {
+      "node_id": "635cf0db-85bd-40f3-9dd0-a4f7981339e4",
+      "speaker": "Presenter",
+      "text_original": "Alright, that\u2019s all questions for now. It\u2019s time to neiusnfkjdngsjodng!",
       "wordle_solution": null,
-      "next_node": "",
+      "next_node": "2da05774-7c55-47e0-99cb-ddc8db4714de",
       "choices": []
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "2da05774-7c55-47e0-99cb-ddc8db4714de",
+      "speaker": "Presenter",
+      "text_original": "You don\u2019t have that word in your vocabulary, do you?",
       "wordle_solution": null,
-      "next_node": "",
+      "next_node": "a18f4945-e279-4571-be19-2e492bfee148",
       "choices": []
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "a18f4945-e279-4571-be19-2e492bfee148",
+      "speaker": "Presenter",
+      "text_original": "\u00a0That\u2019s a pity.",
       "wordle_solution": null,
-      "next_node": "",
+      "next_node": "4ff26785-a3c4-4ce0-ae69-feb6bba6172e",
       "choices": []
     },
     {
-      "node_id": "08c2a8d7-40ba-45cf-acf2-4d42d6d52dde",
-      "speaker": "End demo",
-      "text_original": "",
+      "node_id": "4ff26785-a3c4-4ce0-ae69-feb6bba6172e",
+      "speaker": "Presenter",
+      "text_original": "Humans are fragile creatures, not able to comprehend the full essence of space and time\u2026",
+      "wordle_solution": null,
+      "next_node": "6113bdbe-719a-4477-bd0c-188727e9650b",
+      "choices": []
+    },
+    {
+      "node_id": "6113bdbe-719a-4477-bd0c-188727e9650b",
+      "speaker": "Presenter",
+      "text_original": "Anyway! Now\u2019s the time to choose! Who will you pick as your companion for life?",
       "wordle_solution": null,
       "next_node": "",
       "choices": []
