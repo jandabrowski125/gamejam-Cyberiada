@@ -6,6 +6,7 @@ public class DialogueManager : MonoBehaviour
     public DialogueWriter dialogueWriter;
     public DialogueLoader loader;
     public ButtonCreator buttonCreator;
+    public AudioSource taliaAudio;
 
     [Header("Character System (Sprite2D)")]
     public CharacterDatabase characterDB;
@@ -41,6 +42,7 @@ public class DialogueManager : MonoBehaviour
 
             // 2. Wypisujemy tekst (jeśli Prezenter, to forceUnderstandable = true)
             dialogueWriter.Write(nodeId, null, false, isPresenter);
+            taliaAudio.Play();
 
             // 3. Zarządzanie przyciskami po tekście
             if (isPresenter)
