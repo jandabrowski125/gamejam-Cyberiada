@@ -29,6 +29,9 @@ public class DialogueWriter : MonoBehaviour
     public AnimationCurve slideCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     private string[] dictionaryWords;
+
+    private HashSet<string> knownWords = new HashSet<string>();
+
     private int currentColumn = 0;
     private Coroutine mainCoroutine;
     
@@ -65,6 +68,12 @@ public class DialogueWriter : MonoBehaviour
         HideInstantly();
     }
 
+    public void AddKnownWord(string word)
+    {
+        if (!string.IsNullOrEmpty(word))
+            knownWords.Add(word.ToLower().Trim());
+    }
+
     private void HideInstantly()
     {
         canvasGroup.alpha = 0;
@@ -72,22 +81,31 @@ public class DialogueWriter : MonoBehaviour
         dialogueUI.SetActive(false);
     }
 
-    public void Write(string nodeId, string keyword = null, bool instant = false)
+    public void Write(string nodeId, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false)
     {
         DialogueNode node = loader.GetNode(nodeId);
         if (node == null) return;
 
         dialogueUI.SetActive(true);
-
         if (mainCoroutine != null) StopCoroutine(mainCoroutine);
         ClearGrid();
 
-        mainCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, instant));
+        bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
+        mainCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, skipTypewriter, forceUnderstandable));
     }
 
-    private IEnumerator DialogueSequence(string text, string keyword, bool skipTypewriter)
+    public void WriteRaw(string text, string speaker, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false)
     {
-        // --- FAZA 1: ANIMACJA W JAZDU I FADE IN ---
+        dialogueUI.SetActive(true);
+        if (mainCoroutine != null) StopCoroutine(mainCoroutine);
+        ClearGrid();
+
+        bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
+        mainCoroutine = StartCoroutine(DialogueSequence(text, keyword, skipTypewriter, forceUnderstandable));
+    }
+
+    private IEnumerator DialogueSequence(string text, string keyword, bool skipTypewriter, bool forceUnderstandable)
+    {
         float elapsedTime = 0;
         Vector2 startPos = new Vector2(offScreenX, targetAnchoredPosition.y);
 
@@ -109,10 +127,10 @@ public class DialogueWriter : MonoBehaviour
         canvasGroup.alpha = 1;
 
         // --- FAZA 2: PISANIE TEKSTU ---
-        yield return StartCoroutine(TypeTextRoutine(text, keyword, skipTypewriter));
+        yield return StartCoroutine(TypeTextRoutine(text, keyword, skipTypewriter, forceUnderstandable));
     }
 
-    private IEnumerator TypeTextRoutine(string fullText, string keyword, bool skipTypewriter)
+    private IEnumerator TypeTextRoutine(string fullText, string keyword, bool skipTypewriter, bool forceUnderstandable)
     {
         string[] words = fullText.Split(' ');
         currentColumn = 0;
@@ -123,10 +141,14 @@ public class DialogueWriter : MonoBehaviour
 
             string clean = CleanWord(word);
             string cleanLower = clean.ToLower();
+            
             bool isKeyword = (keyword != null && cleanLower == keyword.ToLower());
-            bool exists = dictionaryWords.Contains(cleanLower) || isKeyword;
+            
+            // Logika czytelności: 
+            // Czytelne jeśli: wymuszamy, jest keywordem, lub jest w znanym słowniku
+            bool isUnderstandable = forceUnderstandable || isKeyword || knownWords.Contains(cleanLower);
 
-            TMP_FontAsset fontToUse = exists ? fontAsset : alienFontAsset;
+            TMP_FontAsset fontToUse = isUnderstandable ? fontAsset : alienFontAsset;
             Color textColor = isKeyword ? keywordHighlightColor : Color.white;
 
             // Zawijanie
@@ -175,11 +197,11 @@ public class DialogueWriter : MonoBehaviour
     {
         if (wordFile != null)
         {
-            dictionaryWords = wordFile.text
+            var words = wordFile.text
                 .Replace(",", " ")
-                .Split(new char[] { ' ', '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries)
-                .Select(w => w.Trim().ToLower())
-                .ToArray();
+                .Split(new char[] { ' ', '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
+            
+            foreach(var w in words) knownWords.Add(w.Trim().ToLower());
         }
     }
 

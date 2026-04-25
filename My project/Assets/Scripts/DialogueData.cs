@@ -7,12 +7,13 @@ public class DialogueChoice
     public string text;
     public int plus_paragon;
     public int plus_renegade;
+    public string follow_up;
 }
 
 [Serializable]
 public class DialogueNode
 {
-    public string node_id; // Dodajemy ID, żeby łatwo było szukać
+    public string node_id;
     public string speaker;
     public string text_original;
     public string wordle_solution;

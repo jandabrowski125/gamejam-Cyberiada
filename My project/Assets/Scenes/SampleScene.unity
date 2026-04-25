@@ -152,6 +152,8 @@ MonoBehaviour:
   loader: {fileID: 2025339898}
   buttonCreator: {fileID: 1841846421}
   taliaAudio: {fileID: 1252069065}
+  characterDB: {fileID: 11400000, guid: 3679d5711fc32f645b51fb391fe98b07, type: 2}
+  characterPortraitRenderer: {fileID: 721026722}
 --- !u!4 &258362608
 Transform:
   m_ObjectHideFlags: 0
@@ -392,6 +394,14 @@ PrefabInstance:
       propertyPath: loader
       value: 
       objectReference: {fileID: 2025339898}
+    - target: {fileID: 1103622660136028941, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 812.8115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103622660136028941, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 395.3308
+      objectReference: {fileID: 0}
     - target: {fileID: 1910563005551835314, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -472,14 +482,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1936878720100013118, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1592.5016
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936878720100013118, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 113.74414
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070903792425490196, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_CellSize.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070903792425490196, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_CellSize.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070903792425490196, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: loader
       value: 
       objectReference: {fileID: 2025339898}
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: edbea7f9180c38a4dad4832bcd6e99b1, type: 2}
+    - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: dialogueUI
       value: 
       objectReference: {fileID: 2143386922}
+    - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: charsPerLine
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: speechPanelRect
       value: 
@@ -491,6 +529,18 @@ PrefabInstance:
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: keywordHighlightColor.r
       value: 0.620698
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928557823613004520, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_Spacing.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928557823613004520, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_CellSize.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928557823613004520, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7843053451388210134, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: m_Name

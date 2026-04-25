@@ -3,17 +3,12 @@ using System;
 public static class GameEvents
 {
     public static Action<string> OnWordleRequired;
-    public static Action<string> OnWordleSuccess; // Zmieniamy int na string
-    // --- WYDARZENIA DIALOGÓW ---
-
-    // Wywoływane, gdy zmienia się węzeł dialogu
-    // Możesz tu przekazać cały obiekt Twojego Node'a
+    public static Action<string> OnWordleSuccess;
     public static Action<string, string> OnDialogueNodeChanged; // Speaker, Text
 
 
     // --- WYDARZENIA STATYSTYK ---
 
-    // Wywoływane po kliknięciu odpowiedzi Paragon/Renegade
     public static Action<int, int> OnStatsChanged; // Paragon change, Renegade change
 
     // Wywoływane, gdy poziom zrozumienia (Understanding) rośnie

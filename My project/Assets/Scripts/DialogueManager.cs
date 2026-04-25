@@ -8,7 +8,11 @@ public class DialogueManager : MonoBehaviour
     public ButtonCreator buttonCreator;
     public AudioSource taliaAudio;
 
-    private string lastNodeId; // Zapamiętujemy, o czym rozmawiamy
+    [Header("Character System (Sprite2D)")]
+    public CharacterDatabase characterDB;
+    public SpriteRenderer characterPortraitRenderer;
+
+    private string lastNodeId;
 
     private void OnEnable()
     {
@@ -27,16 +31,51 @@ public class DialogueManager : MonoBehaviour
     public void Write(string nodeId)
     {
         lastNodeId = nodeId;
-        
-        // 1. Piszemy tekst (Typewriter)
-        dialogueWriter.Write(nodeId);
-        taliaAudio.Play();
+        DialogueNode node = loader.GetNode(nodeId);
 
-        // 2. Pokazujemy przycisk Continue
-        buttonCreator.ShowContinue(() => {
-            // KROK 2: Po kliknięciu Continue odpalamy Wordle
-            StartWordleChallenge();
-        });
+        if (node != null)
+        {
+            UpdatePortrait(node.speaker);
+
+            // 1. Sprawdzamy czy mówi Prezenter
+            bool isPresenter = node.speaker.Equals("Presenter", System.StringComparison.OrdinalIgnoreCase);
+
+            // 2. Wypisujemy tekst (jeśli Prezenter, to forceUnderstandable = true)
+            dialogueWriter.Write(nodeId, null, false, isPresenter);
+            taliaAudio.Play();
+
+            // 3. Zarządzanie przyciskami po tekście
+            if (isPresenter)
+            {
+                // Jeśli mówi Prezenter, nie ma Wordle! Od razu pokazujemy wybory (Choices)
+                buttonCreator.ShowChoices(node, (choice) => HandleChoice(choice, node));
+            }
+            else
+            {
+                // Jeśli mówi ktokolwiek inny, standardowe Flow z Wordle
+                buttonCreator.ShowContinue(() => StartWordleChallenge());
+            }
+        }
+    }
+
+    private void UpdatePortrait(string speakerName)
+    {
+        if (characterDB == null || characterPortraitRenderer == null) return;
+
+        Sprite speakerSprite = characterDB.GetSprite(speakerName);
+
+        if (speakerSprite != null)
+        {
+            characterPortraitRenderer.sprite = speakerSprite;
+            
+            characterPortraitRenderer.gameObject.SetActive(true);
+            
+            characterPortraitRenderer.color = Color.white;
+        }
+        else
+        {
+            characterPortraitRenderer.gameObject.SetActive(false);
+        }
     }
 
     private void StartWordleChallenge()
@@ -51,25 +90,48 @@ public class DialogueManager : MonoBehaviour
     private void HandleWordleRequested(string solution)
     {
         dialogueWriter.Hide();
-        buttonCreator.ClearButtons(); // Chowamy przycisk na czas gry
+        buttonCreator.ClearButtons();
     }
 
-    // 2. Gdy Wordle się kończy (OnWordleSuccess)
     private void HandleWordleResult(string foundKeyword)
     {
         if (string.IsNullOrEmpty(lastNodeId)) return;
         DialogueNode node = loader.GetNode(lastNodeId);
 
-        // 1. Wypisujemy tekst ponownie (Natychmiast)
         if (!string.IsNullOrEmpty(foundKeyword))
-            dialogueWriter.Write(lastNodeId, foundKeyword, true);
+        {
+            // --- NOWOŚĆ: Dodajemy słowo do znanego słownika na stałe! ---
+            dialogueWriter.AddKnownWord(foundKeyword);
+            
+            dialogueWriter.Write(lastNodeId, foundKeyword);
+        }
         else
+        {
             dialogueWriter.Write(lastNodeId, null, true);
+        }
 
-        // 2. KROK 4: Pokazujemy finalne przyciski wyborów
-        buttonCreator.ShowChoices(node, (choice) => {
-            Debug.Log($"Wybrano: {choice.text}. Paragon: +{choice.plus_paragon}, Renegade: +{choice.plus_renegade}");
-            // Tutaj możesz wywołać kolejny Node: Write(choice.next_node_id);
-        });
+        // Po Wordle zawsze pokazujemy wybory
+        buttonCreator.ShowChoices(node, (choice) => HandleChoice(choice, node));
+    }
+
+    private void HandleChoice(DialogueChoice choice, DialogueNode currentNode)
+    {
+        GameEvents.TriggerStatsChanged(choice.plus_paragon, choice.plus_renegade);
+
+        bool isPresenter = currentNode.speaker.Equals("Prezenter", System.StringComparison.OrdinalIgnoreCase);
+
+        if (!string.IsNullOrEmpty(choice.follow_up))
+        {
+            // Follow-up prezentera też musi być zrozumiały
+            dialogueWriter.WriteRaw(choice.follow_up, currentNode.speaker, null, false, isPresenter);
+            
+            buttonCreator.ShowContinue(() => {
+                if (!string.IsNullOrEmpty(currentNode.next_node)) Write(currentNode.next_node);
+            });
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currentNode.next_node)) Write(currentNode.next_node);
+        }
     }
 }

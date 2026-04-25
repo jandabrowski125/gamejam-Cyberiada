@@ -9,7 +9,7 @@
   "nodes": [
     {
       "node_id": "node_001",
-      "speaker": "Xylax",
+      "speaker": "CyberJohn",
       "text_original": "Greetings, human. Do you come with peace or greeed?",
       "wordle_solution": "PEACE",
       "next_node": "node_002",
@@ -17,23 +17,26 @@
         {
           "text": "I seek friendship.",
           "plus_paragon": 10,
-          "plus_renegade": 0
+          "plus_renegade": 0,
+          "follow_up": "OOOH! Me too hihi"
         },
         {
           "text": "I seek resources.",
           "plus_paragon": 0,
-          "plus_renegade": 10
+          "plus_renegade": 10,
+          "follow_up": "You fucking capitalist fuck."
         },
         {
           "text": "I seek war. I need terror. Your planet looks promising and I need to take some lives.",
           "plus_paragon": 0,
-          "plus_renegade": 10000
+          "plus_renegade": 10000,
+          "follow_up": "Go to hell!!!"
         }
       ]
     },
     {
       "node_id": "node_002",
-      "speaker": "Xylax",
+      "speaker": "Juhei Ikeet",
       "text_original": "Interesting. My sensors show your heart rate is rising.",
       "wordle_solution": "HEART",
       "next_node": "node_003",
@@ -41,7 +44,29 @@
         {
           "text": "It is because of your beauty.",
           "plus_paragon": 5,
-          "plus_renegade": 0
+          "plus_renegade": 0,
+          "follow_up": "Hey, stop being so flirty hihi"
+        }
+      ]
+    },
+    {
+      "node_id": "node_003",
+      "speaker": "Presenter",
+      "text_original": "Let's now move to the next set of questions!!",
+      "wordle_solution": "HEART",
+      "next_node": "node_003",
+      "choices": [
+        {
+          "text": "Fuck this, I'm so tired",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": ""
+        },
+        {
+          "text": "I'm loving this",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": ""
         }
       ]
     }
