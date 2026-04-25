@@ -4,7 +4,7 @@ using System.Linq;
 
 public class DialogueLoader : MonoBehaviour
 {
-    public TextAsset jsonFile; // Przeciągnij plik JSON w inspektorze
+    public TextAsset jsonFile;
     private DialogueContainer dialogueData;
 
     void Awake()

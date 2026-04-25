@@ -1,0 +1,175 @@
+{
+    "startingElement": "28ec963c-3b86-4b90-9b42-c79f4572aea7",
+    "boards": {
+        "2ad15ff6-f2ba-4f1d-9d9d-68938c683d7e": {
+            "name": "Root",
+            "root": true,
+            "children": [
+                "630fdb8a-48d6-473e-9974-2460f7eb2b41"
+            ]
+        },
+        "630fdb8a-48d6-473e-9974-2460f7eb2b41": {
+            "name": "Main Board",
+            "notes": [],
+            "jumpers": [],
+            "branches": [],
+            "elements": [
+                "28ec963c-3b86-4b90-9b42-c79f4572aea7",
+                "765f1adc-2411-4707-ab99-d656fb3269db",
+                "92142968-8dd7-44fb-a234-767028595017",
+                "ca8c36a4-24f5-4398-b25f-3aa1797c0eab",
+                "8722665f-2a37-4df1-8002-2bab94cbfabd",
+                "70d3497b-730e-4614-bd23-b1f764df8b1b"
+            ],
+            "connections": [
+                "ba4b269c-e45f-4296-91f4-467f7c824eb7",
+                "79eaeee1-75b6-4f71-99b2-7527837ee8bf",
+                "dd51b888-3bd1-4781-83bf-c1cc23c73eda",
+                "3cda87f2-8820-47eb-8885-aed4f4a6f631",
+                "6622b0f5-6c9d-4115-a919-697fb72a3f84",
+                "de3b1650-0f13-45f9-b472-2eab1c56f46b"
+            ]
+        }
+    },
+    "notes": {},
+    "elements": {
+        "28ec963c-3b86-4b90-9b42-c79f4572aea7": {
+            "theme": "default",
+            "components": [],
+            "outputs": [
+                "de3b1650-0f13-45f9-b472-2eab1c56f46b"
+            ],
+            "content": "<p>Welcome to the show <\/p>",
+            "title": "<p>Osoba A<\/p>"
+        },
+        "765f1adc-2411-4707-ab99-d656fb3269db": {
+            "theme": "default",
+            "components": [],
+            "outputs": [
+                "ba4b269c-e45f-4296-91f4-467f7c824eb7"
+            ],
+            "content": "<p>This is our test<\/p>",
+            "title": "<p>Osoba A<\/p>"
+        },
+        "92142968-8dd7-44fb-a234-767028595017": {
+            "theme": "default",
+            "components": [],
+            "outputs": [
+                "79eaeee1-75b6-4f71-99b2-7527837ee8bf",
+                "dd51b888-3bd1-4781-83bf-c1cc23c73eda"
+            ],
+            "content": "<p>This is our choice<\/p>",
+            "title": "<p>Osoba A<\/p>"
+        },
+        "ca8c36a4-24f5-4398-b25f-3aa1797c0eab": {
+            "theme": "default",
+            "components": [],
+            "outputs": [
+                "6622b0f5-6c9d-4115-a919-697fb72a3f84"
+            ],
+            "content": "<p>A<\/p>",
+            "title": "<p>Osoba B; 0; 0<\/p>"
+        },
+        "8722665f-2a37-4df1-8002-2bab94cbfabd": {
+            "theme": "default",
+            "components": [],
+            "outputs": [
+                "3cda87f2-8820-47eb-8885-aed4f4a6f631"
+            ],
+            "content": "<p>B<\/p>",
+            "title": "<p>Osoba B; 0; 0<\/p>"
+        },
+        "70d3497b-730e-4614-bd23-b1f764df8b1b": {
+            "theme": "default",
+            "components": [],
+            "outputs": [],
+            "content": null,
+            "title": "<p>Osoba A<\/p>"
+        }
+    },
+    "jumpers": {},
+    "connections": {
+        "6622b0f5-6c9d-4115-a919-697fb72a3f84": {
+            "sourceType": "elements",
+            "sourceid": "ca8c36a4-24f5-4398-b25f-3aa1797c0eab",
+            "targetid": "70d3497b-730e-4614-bd23-b1f764df8b1b",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "default",
+            "label": null
+        },
+        "ba4b269c-e45f-4296-91f4-467f7c824eb7": {
+            "targetType": "elements",
+            "type": "Bezier",
+            "targetid": "92142968-8dd7-44fb-a234-767028595017",
+            "sourceType": "elements",
+            "sourceid": "765f1adc-2411-4707-ab99-d656fb3269db",
+            "theme": "default",
+            "label": null
+        },
+        "79eaeee1-75b6-4f71-99b2-7527837ee8bf": {
+            "sourceType": "elements",
+            "sourceid": "92142968-8dd7-44fb-a234-767028595017",
+            "targetid": "ca8c36a4-24f5-4398-b25f-3aa1797c0eab",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "default",
+            "label": null
+        },
+        "dd51b888-3bd1-4781-83bf-c1cc23c73eda": {
+            "targetType": "elements",
+            "type": "Bezier",
+            "targetid": "8722665f-2a37-4df1-8002-2bab94cbfabd",
+            "sourceType": "elements",
+            "sourceid": "92142968-8dd7-44fb-a234-767028595017",
+            "theme": "default",
+            "label": null
+        },
+        "3cda87f2-8820-47eb-8885-aed4f4a6f631": {
+            "targetType": "elements",
+            "type": "Bezier",
+            "targetid": "70d3497b-730e-4614-bd23-b1f764df8b1b",
+            "sourceType": "elements",
+            "sourceid": "8722665f-2a37-4df1-8002-2bab94cbfabd",
+            "theme": "default",
+            "label": null
+        },
+        "de3b1650-0f13-45f9-b472-2eab1c56f46b": {
+            "sourceType": "elements",
+            "labelLocation": 0.5,
+            "sourceid": "28ec963c-3b86-4b90-9b42-c79f4572aea7",
+            "targetid": "765f1adc-2411-4707-ab99-d656fb3269db",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "default",
+            "label": null
+        }
+    },
+    "branches": {},
+    "components": {
+        "65005bda-15d0-41c5-867f-68c118829f08": {
+            "root": true,
+            "children": [],
+            "name": "Root"
+        }
+    },
+    "attributes": {},
+    "assets": {
+        "647d0495-341f-42b2-8788-b47dace22bf8": {
+            "root": true,
+            "children": []
+        }
+    },
+    "variables": {
+        "747d0495-341f-42b2-8788-b47dace22bf8": {
+            "root": true,
+            "children": []
+        }
+    },
+    "conditions": {},
+    "name": "LemJam",
+    "cover": null
+}
