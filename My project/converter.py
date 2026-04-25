@@ -91,9 +91,9 @@ while True: # broken only explicitly
                         next    = msg_next, # msg_next based on first connection, even with multiple
                         choices = msg_choices))
     queue.pop(0) # removes analysed item
-    for outp in elem["outputs"]:
-        queue.append(msg_next) # refill of queue
-    if len(queue) == 0: break # breaks out of loop
+    if msg_next != "":
+        queue.append(msg_next)
+    if len(queue) == 0 or len(elem["outputs"]) == 0: break # breaks out of loop
 
 msg_dictified = [] # : list[dict]
 for msg in msgs:
