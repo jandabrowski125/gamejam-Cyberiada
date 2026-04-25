@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource declanVoice;
     [SerializeField] private AudioSource johnVoice;
     [SerializeField] private AudioSource presenterVoice;
+    [SerializeField] private AudioSource garrusVoice;
 
 
 
@@ -25,6 +26,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "Presenter":
                 presenterVoice.Play();
+                break;
+            case "Arneth Maalg":
+                garrusVoice.Play();
                 break;
         }
     }

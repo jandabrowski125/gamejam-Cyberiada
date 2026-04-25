@@ -45,4 +45,14 @@ public class ButtonCreator : MonoBehaviour
             CreateButton(choice.text, () => onChoiceSelected.Invoke(choice));
         }
     }
+
+    public void ShowContinueCustom(string label, System.Action onClickAction)
+    {
+        GameObject newButton = Instantiate(buttonPrefab, parentPanel);
+        newButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = label;
+        
+        Button btn = newButton.GetComponent<Button>();
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(() => onClickAction.Invoke());
+    }
 }

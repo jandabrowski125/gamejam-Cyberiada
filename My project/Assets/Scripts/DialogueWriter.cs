@@ -27,9 +27,6 @@ public class DialogueWriter : MonoBehaviour
     public float animationDuration = 0.5f;
     public float offScreenX = -10; 
     public AnimationCurve slideCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
-
-    private string[] dictionaryWords;
-
     private HashSet<string> knownWords = new HashSet<string>();
 
     private int currentColumn = 0;
@@ -92,6 +89,18 @@ public class DialogueWriter : MonoBehaviour
 
         bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
         mainCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, skipTypewriter, forceUnderstandable));
+    }
+
+    public void WriteEnding(string text)
+    {
+        bool forceUnderstandable = true;
+        bool skipTypewriter = true;
+
+        dialogueUI.SetActive(true);
+        if (mainCoroutine != null) StopCoroutine(mainCoroutine);
+        ClearGrid();
+
+        mainCoroutine = StartCoroutine(DialogueSequence(text, null, skipTypewriter, forceUnderstandable));
     }
 
     public void WriteRaw(string text, string speaker, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false)

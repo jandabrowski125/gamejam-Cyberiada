@@ -74,13 +74,13 @@ while True: # broken only explicitly
     elif len(elem["outputs"]) > 1: # choice message type (-> indicates what msg it points towards)
         msg_next = conns[elem["outputs"][0]]["targetid"] # nested next message ID (-> choice)
         msg_next = conns[elems[msg_next]["outputs"][0]]["targetid"] # ...goes one msg deeper, leaping over choice (-> followup)
-        msg_fup  = msg_next # followup ID, to be used later
         msg_next = conns[elems[msg_next]["outputs"][0]]["targetid"] # ...and once more, leaping over followup (-> actual nxt msg)
         for choice in elem["outputs"]:
-            tit = purgeHTML(elems[msg_fup]["title"]) # title is split to get paragon/renegade stuff
+            msg_fup = elems[conns[elems[conns[choice]["targetid"]]["outputs"][0]]["targetid"]] # followup dict
+            tit = purgeHTML(msg_fup["title"]) # title is split to get paragon/renegade stuff
             tits = tit.split(";")
             msg_choices.append(Choice(msg      = purgeHTML(elems[conns[choice]["targetid"]]["content"]),
-                                      followup = purgeHTML(elems[msg_fup]["content"]),
+                                      followup = purgeHTML(msg_fup["content"]),
                                       paragon  = int(tits[1]),
                                       renegade = int(tits[2])))
 
@@ -91,9 +91,9 @@ while True: # broken only explicitly
                         next    = msg_next, # msg_next based on first connection, even with multiple
                         choices = msg_choices))
     queue.pop(0) # removes analysed item
-    for outp in elem["outputs"]:
-        queue.append(msg_next) # refill of queue
-    if len(queue) == 0: break # breaks out of loop
+    if msg_next != "":
+        queue.append(msg_next)
+    if len(queue) == 0 or len(elem["outputs"]) == 0: break # breaks out of loop
 
 msg_dictified = [] # : list[dict]
 for msg in msgs:

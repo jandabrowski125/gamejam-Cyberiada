@@ -7,12 +7,15 @@ public class DialogueManager : MonoBehaviour
     public DialogueWriter dialogueWriter;
     public DialogueLoader loader;
     public ButtonCreator buttonCreator;
-    [SerializeField] private AudioManager _audioManager;    
+    [SerializeField] private AudioManager _audioManager;
+    public EndingManager endingManager;
+    public StatsManager statsManager;
 
     [Header("Character System (Sprite2D)")]
     public CharacterDatabase characterDB;
     public SpriteRenderer characterPortraitRenderer;
     public SpriteRenderer backgroundImageRenderer;
+    public AudioSource backgroundAudioSource;
     private string lastNodeId;
 
     private void OnEnable()
@@ -38,6 +41,11 @@ public class DialogueManager : MonoBehaviour
         {
             UpdatePortrait(node.speaker);
 
+            if (backgroundAudioSource != null && !backgroundAudioSource.isPlaying)
+            {
+                backgroundAudioSource.Play();
+            }
+
             // 1. Sprawdzamy czy mówi Prezenter
             bool isPresenter = node.speaker.Equals("Presenter", System.StringComparison.OrdinalIgnoreCase);
 
@@ -52,6 +60,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     buttonCreator.ShowContinue(() => {
                         if (!string.IsNullOrEmpty(node.next_node)) Write(node.next_node);
+                        else StartEnding();
                     });
                     return;
                 }
@@ -61,6 +70,26 @@ public class DialogueManager : MonoBehaviour
             {
                 buttonCreator.ShowContinue(() => StartWordleChallenge());
             }
+        }
+    }
+
+    private void StartEnding()
+    {
+        Debug.Log("[DialogueManager] Brak kolejnego węzła. Uruchamiam zakończenie gry.");
+
+        if (backgroundAudioSource != null) backgroundAudioSource.Stop();
+        
+        // Czyścimy obecny stan
+        dialogueWriter.Hide();
+        buttonCreator.ClearButtons();
+        
+        if (endingManager != null && statsManager != null)
+        {
+            endingManager.StartEndingPhase(statsManager.GetFinalStats());
+        }
+        else
+        {
+            Debug.LogError("DialogueManager: Brakuje referencji do EndingManager lub StatsManager!");
         }
     }
 
@@ -100,6 +129,10 @@ public class DialogueManager : MonoBehaviour
 
     private void HandleWordleRequested(string solution)
     {
+        if (backgroundAudioSource != null && backgroundAudioSource.isPlaying)
+        {
+            backgroundAudioSource.Pause();
+        }
         dialogueWriter.Hide();
         buttonCreator.ClearButtons();
     }
@@ -108,6 +141,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (string.IsNullOrEmpty(lastNodeId)) return;
         DialogueNode node = loader.GetNode(lastNodeId);
+
+        if (backgroundAudioSource != null)
+        {
+            backgroundAudioSource.UnPause();
+        }
 
         if (!string.IsNullOrEmpty(foundKeyword))
         {
@@ -127,7 +165,7 @@ public class DialogueManager : MonoBehaviour
 
     private void HandleChoice(DialogueChoice choice, DialogueNode currentNode)
     {
-        GameEvents.TriggerStatsChanged(choice.plus_paragon, choice.plus_renegade);
+        GameEvents.TriggerStatsChanged(currentNode.speaker, choice.plus_paragon, choice.plus_renegade);
 
         bool isPresenter = currentNode.speaker.Equals("Prezenter", System.StringComparison.OrdinalIgnoreCase);
 
@@ -139,11 +177,24 @@ public class DialogueManager : MonoBehaviour
 
             buttonCreator.ShowContinue(() => {
                 if (!string.IsNullOrEmpty(currentNode.next_node)) Write(currentNode.next_node);
+                else StartEnding();
             });
         }
         else
         {
             if (!string.IsNullOrEmpty(currentNode.next_node)) Write(currentNode.next_node);
+            else StartEnding();
         }
+    }
+    public void WriteEnding(string text, string speakerName)
+    {
+        // 1. Najpierw ustawiamy wizualia (Postać + Tło)
+        UpdatePortrait(speakerName);
+
+        // 2. Potem każemy Writerowi wypisać tekst finałowy
+        dialogueWriter.WriteEnding(text);
+        
+        // 3. Opcjonalnie: odpal głos (jeśli masz przygotowane klipy pod finał)
+        if (_audioManager != null) _audioManager.PlayVoice(speakerName);
     }
 }

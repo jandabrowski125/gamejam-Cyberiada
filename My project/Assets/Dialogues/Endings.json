@@ -1,0 +1,122 @@
+{
+    "endings": [
+        {
+            "name": "Decln'Argegh",
+            "rejection_dialogue": {
+                "text": "Your vision of the future collides with mine. I couldn’t spend a day with someone of your sorts. HERETIC! Your species disgust me with your ignorance for everything and everyone around you. DISGRACE!",
+                "choices": [
+                    {
+                        "text": "Well, that was a waste of time…",
+                        "end": false
+                    }
+                ]
+            },
+            "acceptance_dialogue": {
+                "text": "I will gladly build a new future with you by my side.",
+                "choices": [
+                    {
+                        "text": "Actually! I’d rather just stay at home. Thanks",
+                        "end": false
+                    },
+                    {
+                        "text": "That’s all I ever dreamt of! [END GAME]",
+                        "end": true
+                    }
+                ]
+            },
+            "ending": "Decln’Argegh offers you a forever lasting life in a brave new world. This world is very much different from the one you knew for your whole small existence. Having a companion like Decln by your side makes you see the universe in a completely new light.\nSuddenly, Earth looks expandable and humans not worthy of prolonging their pathetic little lives anymore. The Solar System basks in the flames of renewal; reborn like a phoenix from ashes.\nQuenched fire replaced by purified water. Liquid element bringing life to flora and fauna where organisms can evolve in harmony, finally released of external, destructive influence. The new age arrives - The Age of Argegh. And you as his loyal companion for eternity.",
+            "paragon_requirements": 3,
+            "overall_paragon_requirement": 8
+        },
+        {
+            "name": "Arneth Maalg",
+            "rejection_dialogue": {
+                "text": "I don’t think you’re ready to join the swarm. Only a person of true intentions and pure soul can enter our sacred body. You are not worthy of that honor. And you never will be.",
+                "choices": [
+                    {
+                        "text": "What?! I wanted to join the cult…",
+                        "end": false
+                    }
+                ]
+            },
+            "acceptance_dialogue": {
+                "text": "The swarm approves of your presence. Welcome, dear.",
+                "choices": [
+                    {
+                        "text": "I thought it would be only you and me. I don’t want company.",
+                        "end": false
+                    },
+                    {
+                        "text": "Can’t wait to dance with you, love! [END GAME]",
+                        "end": true
+                    }
+                ]
+            },
+            "ending": "Arneth welcomes you as a new member of the sacred swarm. It’s a real pleasure to have someone like you by her side. She cherishes your company deeply and holds you inside of her warmly.\nThe swarm welcomes you in their body with open arms… And all different kinds of limbs. It’s an endless orgy of physical pleasure and mental ecstasy. An otherworldly experience surpassing your mundane notion of life.\nInfinite dance of form and soul; corporeal and intangible. This lucid dream might be neverending for Arneth’s species but for a mere human like you it’s an incomprehensible exhaustion. And soon your life force will vanish.",
+            "paragon_requirements": 3,
+            "overall_paragon_requirement": 8
+        },
+        {
+            "name": "Juhei Ikeet",
+            "rejection_dialogue": {
+                "text": "You are not a suitable mate for me. You will bring weak genes to my people and I can’t allow it.",
+                "choices": [
+                    {
+                        "text": "Oh, well…",
+                        "end": false
+                    }
+                ]
+            },
+            "acceptance_dialogue": {
+                "text": "I’m glad you chose me for your mate. We will fight for my planet and for my people, together.",
+                "choices": [
+                    {
+                        "text": "I don’t think I’m ready for this kind of commitment.",
+                        "end": false
+                    },
+                    {
+                        "text": "There is a beautiful future for us.",
+                        "end": true
+                    }
+                ]
+            },
+            "ending": "Juhei takes you to their home planet, Vexlia in Mercer Galaxy. Shortly, both of you share a holy fruit, which is their version of marriage ceremony, at least to your understanding. Since then, you are a full member of Vaelia clan. You spent most of your days training swordsmanship and fighting the enemies of your new family. Nonetheless, there are also other duties you have to perform too. You and Juhei expect a child now. They planted little eggs, that slowly grows inside your belly.",
+            "paragon_requirements": 3,
+            "overall_paragon_requirement": 8
+        },
+        {
+            "name": "Cyber John",
+            "rejection_dialogue": {
+                "text": "Analyzing… Thank you for your application and sharing your qualifications with me. After the interview, I’ve decided to choose a candidate with more relevant experience.",
+                "choices": [
+                    {
+                        "text": "Really…? I thought I was doing great!",
+                        "end": false
+                    }
+                ]
+            },
+            "acceptance_dialogue": {
+                "text": "You could be an efficient part of our company. Greetings, new business partner!",
+                "choices": [
+                    {
+                        "text": "It’s just a job offer?! I thought there was a spark between us. I resign",
+                        "end": false
+                    },
+                    {
+                        "text": "I’m so glad I finally have a job![END GAME]",
+                        "end": true
+                    }
+                ]
+            },
+            "ending": "Congratulations! After a long and exciting interview process, your application was successful. Thanks to your extraordinary dedication, you will start working tomorrow as a strategic life partner at Kosmex, the galactic leader in waste management.\nWhile it may not be the most romantic culmination of your journey, your decisions suggest that you value fruit Thursdays and coffee in the staff room most in life.",
+            "paragon_requirements": 3,
+            "overall_paragon_requirement": 8
+        }
+    ],
+    "unhappyending":
+        {
+            "text": "Unfortunately, nobody wanted to date you. Remember, it’s not them - it’s you. And, because of you, now the end of the world is coming.\nOther species joined forces to defeat the one who didn’t even go away - just wasn’t even there in the first place. Cause you didn’t even try to go out there. And you’re gonna end up completely alone.\nYou being high maintenance and taking the ‘pretending to be unavailable” approach didn’t work - again! Who would have thought? But this time it will have dire consequences.\nEarth will become extinct. And it’s your fault because you are undatable. That sucks for you. And the whole human race. But anyway… See you on another episode of our show in another eon! Buh-bye!"
+
+        },
+    "credits": "NAZWA_GRY, 2026, nasze imiona"
+}
