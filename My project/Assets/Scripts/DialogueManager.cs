@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     public CharacterDatabase characterDB;
     public SpriteRenderer characterPortraitRenderer;
     public SpriteRenderer backgroundImageRenderer;
+    public AudioSource backgroundAudioSource;
     private string lastNodeId;
 
     private void OnEnable()
@@ -39,6 +40,11 @@ public class DialogueManager : MonoBehaviour
         if (node != null)
         {
             UpdatePortrait(node.speaker);
+
+            if (backgroundAudioSource != null && !backgroundAudioSource.isPlaying)
+            {
+                backgroundAudioSource.Play();
+            }
 
             // 1. Sprawdzamy czy mówi Prezenter
             bool isPresenter = node.speaker.Equals("Presenter", System.StringComparison.OrdinalIgnoreCase);
@@ -70,6 +76,8 @@ public class DialogueManager : MonoBehaviour
     private void StartEnding()
     {
         Debug.Log("[DialogueManager] Brak kolejnego węzła. Uruchamiam zakończenie gry.");
+
+        if (backgroundAudioSource != null) backgroundAudioSource.Stop();
         
         // Czyścimy obecny stan
         dialogueWriter.Hide();
@@ -121,6 +129,10 @@ public class DialogueManager : MonoBehaviour
 
     private void HandleWordleRequested(string solution)
     {
+        if (backgroundAudioSource != null && backgroundAudioSource.isPlaying)
+        {
+            backgroundAudioSource.Pause();
+        }
         dialogueWriter.Hide();
         buttonCreator.ClearButtons();
     }
@@ -129,6 +141,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (string.IsNullOrEmpty(lastNodeId)) return;
         DialogueNode node = loader.GetNode(lastNodeId);
+
+        if (backgroundAudioSource != null)
+        {
+            backgroundAudioSource.UnPause();
+        }
 
         if (!string.IsNullOrEmpty(foundKeyword))
         {
