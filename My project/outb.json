@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "game_title": "Alien Wordle Dating Sim",
+    "thresholds": {
+      "paragon_ending": 50,
+      "renegade_ending": 50
+    }
+  },
+  "nodes": [
+    {
+      "node_id": "28ec963c-3b86-4b90-9b42-c79f4572aea7",
+      "speaker": "Osoba A",
+      "text_original": "Welcome to the show ",
+      "wordle_solution": "",
+      "next_node": "765f1adc-2411-4707-ab99-d656fb3269db",
+      "choices": []
+    },
+    {
+      "node_id": "765f1adc-2411-4707-ab99-d656fb3269db",
+      "speaker": "Osoba A",
+      "text_original": "This is our test",
+      "wordle_solution": "",
+      "next_node": "92142968-8dd7-44fb-a234-767028595017",
+      "choices": []
+    },
+    {
+      "node_id": "92142968-8dd7-44fb-a234-767028595017",
+      "speaker": "Osoba A",
+      "text_original": "This is our choice",
+      "wordle_solution": "",
+      "next_node": "70d3497b-730e-4614-bd23-b1f764df8b1b",
+      "choices": [
+        {
+          "text": "A",
+          "plus_paragon": 0,
+          "plus_renegade": 0
+        },
+        {
+          "text": "B",
+          "plus_paragon": 0,
+          "plus_renegade": 0
+        }
+      ]
+    },
+    {
+      "node_id": "ca8c36a4-24f5-4398-b25f-3aa1797c0eab",
+      "speaker": "Osoba B; 0; 0",
+      "text_original": "A",
+      "wordle_solution": "",
+      "next_node": "70d3497b-730e-4614-bd23-b1f764df8b1b",
+      "choices": []
+    },
+    {
+      "node_id": "8722665f-2a37-4df1-8002-2bab94cbfabd",
+      "speaker": "Osoba B; 0; 0",
+      "text_original": "B",
+      "wordle_solution": "",
+      "next_node": "70d3497b-730e-4614-bd23-b1f764df8b1b",
+      "choices": []
+    }
+  ]
+}
