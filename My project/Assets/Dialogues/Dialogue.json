@@ -86,15 +86,15 @@
         },
         {
           "text": "Okay, seems like a boring way to spend your free time.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Finally a human who appreciates the delicate nature of plants! Plants! More like weeds! SHOOT YOUR SHOT, IDIOT!"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "BORING?! At least I\u2019m doing something interesting. Not like you. Humans only sit on their asses and\u2026 Yes, it is boring. But it relaxes me\u2026"
         },
         {
           "text": "I don\u2019t know\u2026 Shooting stuff seems like a red flag to me.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Finally a human who appreciates the delicate nature of plants! Plants! More like weeds! SHOOT YOUR SHOT, IDIOT!"
+          "follow_up": "Shooting stuff is how we are raised. From the moment I received my first weapon when I was mere three days old, I never let it go\u2026 I have it on me now! WANNA SEE?"
         }
       ]
     },
@@ -121,15 +121,15 @@
         },
         {
           "text": "I respect people who put their job first in their life.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Oh, you do? Not many people outside my planet think like that."
         },
         {
           "text": "I also like sports, but I prefer jogging.",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Not a girl. On my planet, we don\u2019t believe in such archaic ideas like gender."
+          "plus_renegade": 0,
+          "follow_up": "A jogging? Is that a human word for \u201cmating\u201d?"
         }
       ]
     },
@@ -156,15 +156,15 @@
         },
         {
           "text": "Oh so that\u2019s why your ears are so humungous!",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Don\u2019t know what bluetooth is but sure, whatever. <em>I know what\u2019s really on your mind, blue eyes.</em>"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "My ears are magnificent. <em>Advanced for hearing sounds not hearable for creatures underdeveloped like you.</em>"
         },
         {
           "text": "A party girl? Been there, done that. Don\u2019t wanna go back.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Don\u2019t know what bluetooth is but sure, whatever. <em>I know what\u2019s really on your mind, blue eyes.</em>"
+          "follow_up": "Bet I could change your mind. <em>But that would be wasting my time.</em>"
         }
       ]
     },
@@ -191,15 +191,15 @@
         },
         {
           "text": "It\u2019s satisfying when your hobby is meaningful.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Error. What\u2019s the point of existing, if you don\u2019t accumulate your capital!"
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Potential Strategic Life Partner detected."
         },
         {
           "text": "Yhm, are you trying to be a sugar daddy or something?",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "Error. What\u2019s the point of existing, if you don\u2019t accumulate your capital!"
+          "plus_renegade": 0,
+          "follow_up": "Disagreed. I\u2019m only interested in finding a new Strategic Life Partner."
         }
       ]
     },
@@ -226,15 +226,15 @@
         },
         {
           "text": "Yes! You do",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Someone who understands me\u2026 I always hoped for a being that\u2026 SWIMS! Or doesn\u2019t shed its skin out of the sudden\u2026"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "OKAY! Maybe beings underdeveloped like you don\u2019t have that knowledge. But no fins mean no breathing. And no breathing means\u2026 Well, losing your skin basically. Don\u2019t worry though - she regained her strength. And broke up with me...\u00a0"
         },
         {
           "text": "She died?!",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Someone who understands me\u2026 I always hoped for a being that\u2026 SWIMS! Or doesn\u2019t shed its skin out of the sudden\u2026"
+          "follow_up": "NO! Well\u2026 Maybe for a moment. But then she resurrected. Kind of. Shed her skin and we went our separate ways. She broke up with us!"
         }
       ]
     },
@@ -254,14 +254,14 @@
         {
           "text": "I could change your ways of thinking.",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "I know! Anyone can be an enemy these days."
+          "plus_renegade": 0,
+          "follow_up": "No, you can't. My planet is my duty, there is no place for any enemy of ours."
         },
         {
           "text": "Maybe you were overreacting?",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "I know! Anyone can be an enemy these days."
+          "follow_up": "I am not! My planet is my duty, there is no place for any enemy of ours."
         }
       ]
     },
@@ -280,15 +280,15 @@
         },
         {
           "text": "Yeah, don\u2019t bother, girl. My boat doesn\u2019t float that way, sorry.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Are you sure?<em> I see you blushing, babes.</em>"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Not everyone is ready to ship my dock. <em>Your loss.</em>"
         },
         {
           "text": "Oh no, I don\u2019t do one-night stands. Two-night stands and up will do.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Are you sure?<em> I see you blushing, babes.</em>"
+          "follow_up": "You\u2019d have to prove your flexibility.<em> I don\u2019t know if you\u2019ll last even one.</em>"
         }
       ]
     },
@@ -307,15 +307,15 @@
         },
         {
           "text": "You had an interesting social life.",
-          "plus_paragon": 0,
+          "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "I don\u2019t have space for discussion. I know the best solution."
+          "follow_up": "Yes, that\u2019s a fact."
         },
         {
           "text": "I don\u2019t think you can make a roadmap for a relationship\u2026",
           "plus_paragon": 0,
-          "plus_renegade": 0,
-          "follow_up": "I don\u2019t have space for discussion. I know the best solution."
+          "plus_renegade": 1,
+          "follow_up": "Failing to plan is planning to failure."
         }
       ]
     },
@@ -342,15 +342,15 @@
         },
         {
           "text": "As long as this old civilization doesn\u2019t want to kill the human race\u2026",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "What is a dinosaur? I meant some primeval being that rules the whole world. I would have to think about it but that seems cool! ALL HAIL THE KHAL\u2019GUL!\u00a0"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Don\u2019t need any help with that. You\u2019re doing it by yourself. Look at your planet already dying because you don\u2019t care! LIKE YOU DIDN\u2019T KILL ANY OF YOUR PLANTS! HYPOCRITE!"
         },
         {
           "text": "That\u2019s stupid. If they die they die. There\u2019s no coming back!",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "What is a dinosaur? I meant some primeval being that rules the whole world. I would have to think about it but that seems cool! ALL HAIL THE KHAL\u2019GUL!\u00a0"
+          "follow_up": "We came back. You\u2019re looking at a remnant of history. History that outdates even your beloved Earth. My race died and was reborn from the ashes before yours was even created."
         }
       ]
     },
@@ -369,15 +369,15 @@
         },
         {
           "text": "That thing again? Aren\u2019t you getting bored by talking about it over and over again?",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "\u2026Thank you."
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Maybe this is a thing that your little human brain can\u2019t handle, but it is the most important for my people!"
         },
         {
           "text": "What do you mean by that?",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "\u2026Thank you."
+          "follow_up": "I would like to be harder, better, faster, strong. The great knight."
         }
       ]
     },
@@ -396,15 +396,15 @@
         },
         {
           "text": "I\u2019m more of a couch potato. I go to sleep before nine\u2026 So you know. Not a party person.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Oh really? We have to test it out then. <em>I like your confidence.</em>"
+          "follow_up": "I can\u2019t stand staying in one place. <em>But you do you, boring human.</em>"
         },
         {
           "text": "You treat dancing as a good deed? How about solving world hunger? Stopping wars?",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Oh really? We have to test it out then. <em>I like your confidence.</em>"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "You brought those things on yourself. <em>I pity your fragile race.</em>"
         }
       ]
     },
@@ -423,15 +423,15 @@
         },
         {
           "text": "Cool, you\u2019re so creative!",
-          "plus_paragon": 0,
+          "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "Yes, I\u2019m dedicated to my work by all means,"
+          "follow_up": "Potential Strategic Life Partner detected."
         },
         {
           "text": "That sounds kinda\u2026 boring",
           "plus_paragon": 0,
-          "plus_renegade": 0,
-          "follow_up": "Yes, I\u2019m dedicated to my work by all means,"
+          "plus_renegade": 1,
+          "follow_up": "Disagreed. Candidate doesn\u2019t value business ethics."
         }
       ]
     },
@@ -458,15 +458,15 @@
         },
         {
           "text": "Um\u2026 I\u2019m not sure if you\u2019re joking around but if you are - it\u2019s not funny. Like at all.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Um\u2026 That\u2019s a generous offer, human being. My thumb isn\u2019t green though\u2026 I have green wings, does that count? I CAN BE YOUR MASTER."
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "My joke was only partial. I would like to BURN the world."
         },
         {
           "text": "You remind me of my ex. He also liked to set things on fire\u2026 And then immediately quench it.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Um\u2026 That\u2019s a generous offer, human being. My thumb isn\u2019t green though\u2026 I have green wings, does that count? I CAN BE YOUR MASTER."
+          "follow_up": "Can he come here? I would like to meet this ex. FUN FUN!"
         }
       ]
     },
@@ -486,14 +486,14 @@
         {
           "text": "That\u2019s\u2026 uhm\u2026 something.",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "I don\u2019t know what you mean. What is more important than making babies?"
+          "plus_renegade": 0,
+          "follow_up": "See? I knew you are smart, human."
         },
         {
           "text": "I could offer my services in that aspect. I am an expert.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "I don\u2019t know what you mean. What is more important than making babies?"
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Oh\u2026 you would? I would really enjoy that."
         }
       ]
     },
@@ -512,15 +512,15 @@
         },
         {
           "text": "No thanks, I\u2019m more of a homebody.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "You\u2019re welcome to join us. <em>The swarm is open to those that open their hearts to music.</em>"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "You\u2019re hedonistic in a way. <em>But too stale for our swarm.</em>"
         },
         {
           "text": "Don\u2019t get me wrong - I like music but full bliss? Like drugs? We say no to drugs.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "You\u2019re welcome to join us. <em>The swarm is open to those that open their hearts to music.</em>"
+          "follow_up": "This is better than drugs. <em>It's a community.</em>"
         }
       ]
     },
@@ -539,15 +539,15 @@
         },
         {
           "text": "You sound like another wannabe self-made billionaire.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Ambition is the fuel in our warp drives."
+          "follow_up": "Correct."
         },
         {
           "text": "I guess, that\u2019s a plan, for sure. Not necessarily my cup of tea.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Ambition is the fuel in our warp drives."
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Not every lifeform is ready to be part of my most complex supply chain in the quadrant."
         }
       ]
     },
@@ -574,15 +574,15 @@
         },
         {
           "text": "In my home I used to watch stars through my telescope during the starry night\u2026 Used to cause the sky got so polluted it became impossible to see them\u2026 I miss it very much...",
-          "plus_paragon": 0,
+          "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "Only two thousand eons young\u2026 Well I\u2019m almost reaching three thousand so you weren\u2019t far off. Time is a cruel master."
+          "follow_up": "I have room for one more. You are welcome to join me anytime. JOIN!"
         },
         {
           "text": "Planet like in space? I can\u2019t fly! And breathe there... So that\u2019s a pass for me.",
           "plus_paragon": 0,
-          "plus_renegade": 0,
-          "follow_up": "Only two thousand eons young\u2026 Well I\u2019m almost reaching three thousand so you weren\u2019t far off. Time is a cruel master."
+          "plus_renegade": 1,
+          "follow_up": "Can\u2019t do much about that. Seems like a <em>you</em> problem. IDIOT!"
         }
       ]
     },
@@ -601,15 +601,15 @@
         },
         {
           "text": "Makes sense.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "It would be great."
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "I know."
         },
         {
           "text": "Then make fire?",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "It would be great."
+          "plus_renegade": 0,
+          "follow_up": "With what? A dagger?"
         }
       ]
     },
@@ -628,15 +628,15 @@
         },
         {
           "text": "I don\u2019t get it. You eat on parties with your friends? That\u2019s like\u2026 Not really extraordinary.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "You get it. <em>You\u2019re perfect for our swarm.</em>"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "You would be surprised. <em>Or worse.</em>"
         },
         {
           "text": "I recommend ordering pizza if you like devouring food\u2026 or something.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "You get it. <em>You\u2019re perfect for our swarm.</em>"
+          "follow_up": "I don\u2019t know what pizza is. My kind doesn\u2019t consume in that sense. <em>It devours.</em>"
         }
       ]
     },
@@ -655,15 +655,15 @@
         },
         {
           "text": "I hate fucking Excel.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "Maybe you\u2019re a valid candidate for my Strategic Life Partner"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "\u2026"
         },
         {
           "text": "But Excel is an office tool\u2026",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Maybe you\u2019re a valid candidate for my Strategic Life Partner"
+          "follow_up": "Excel is a greatest achievement of your primitive civilization."
         }
       ]
     },
@@ -690,15 +690,15 @@
         },
         {
           "text": "I had my heart broken numerous times. It\u2019s great to hear there is someone with great values like you.",
-          "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "It wasn\u2019t that bad actually\u2026 She had a spare one. And that was rotten anyway. Did her a favour, really. We could just fly our own ways. Her desire was different from mine."
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "I would never break your heart like that. Especially because you only have one. Wouldn\u2019t want to risk losing you. Now my desire has changed."
         },
         {
           "text": "You sound like a real heartbreaker. Like literally. I don\u2019t date bad boys.",
           "plus_paragon": 0,
-          "plus_renegade": 1,
-          "follow_up": "It wasn\u2019t that bad actually\u2026 She had a spare one. And that was rotten anyway. Did her a favour, really. We could just fly our own ways. Her desire was different from mine."
+          "plus_renegade": 0,
+          "follow_up": "Your loss. My desire is different either way."
         }
       ]
     },
@@ -717,15 +717,15 @@
         },
         {
           "text": "It seems like a perfect combination for me.",
-          "plus_paragon": 0,
+          "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "What is the meaning of this? I don\u2019t know what you mean, human."
+          "follow_up": "Then you could be a perfect mate for me."
         },
         {
           "text": "I don\u2019t think I look for this kind of commitment.",
           "plus_paragon": 0,
-          "plus_renegade": 0,
-          "follow_up": "What is the meaning of this? I don\u2019t know what you mean, human."
+          "plus_renegade": 1,
+          "follow_up": "Then I don\u2019t look for you, human."
         }
       ]
     },
@@ -744,15 +744,15 @@
         },
         {
           "text": "Yeah, no\u2026 I\u2019m a heartbreaker. And I\u2019m not ready to settle down yet.",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "In the swarm your heart would be safe. You would be whole. Soul and body merge in one. I<em>n one you\u2019d find pure happiness.</em>"
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Harm is not allowed in the swarm. <em>We love and please each other.</em>"
         },
         {
           "text": "After some thought\u2026 Your offer sounds tempting but I\u2019m not convinced about that whole swarm thing so\u2026 Pass.",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "In the swarm your heart would be safe. You would be whole. Soul and body merge in one. I<em>n one you\u2019d find pure happiness.</em>"
+          "follow_up": "Maybe I could persuade you. <em>Let me in.</em>"
         }
       ]
     },
@@ -771,15 +771,15 @@
         },
         {
           "text": "Do you even have any feelings?",
-          "plus_paragon": 1,
+          "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "I will take advantage of every opportunity for fruitful cooperation."
+          "follow_up": "Entrepreneurs don't care about feelings; they care about efficiency."
         },
         {
           "text": "Yyyyh, Why would your business competitors be interested in you?",
-          "plus_paragon": 1,
-          "plus_renegade": 0,
-          "follow_up": "I will take advantage of every opportunity for fruitful cooperation."
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "They\u2019re obsessed with me\u2026"
         }
       ]
     },
