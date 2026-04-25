@@ -30,17 +30,29 @@ public class DialogueManager : MonoBehaviour
     public void Write(string nodeId)
     {
         lastNodeId = nodeId;
-        
         DialogueNode node = loader.GetNode(nodeId);
 
         if (node != null)
         {
             UpdatePortrait(node.speaker);
 
-            dialogueWriter.Write(nodeId);
-            buttonCreator.ShowContinue(() => {
-                StartWordleChallenge();
-            });
+            // 1. Sprawdzamy czy mówi Prezenter
+            bool isPresenter = node.speaker.Equals("Presenter", System.StringComparison.OrdinalIgnoreCase);
+
+            // 2. Wypisujemy tekst (jeśli Prezenter, to forceUnderstandable = true)
+            dialogueWriter.Write(nodeId, null, false, isPresenter);
+
+            // 3. Zarządzanie przyciskami po tekście
+            if (isPresenter)
+            {
+                // Jeśli mówi Prezenter, nie ma Wordle! Od razu pokazujemy wybory (Choices)
+                buttonCreator.ShowChoices(node, (choice) => HandleChoice(choice, node));
+            }
+            else
+            {
+                // Jeśli mówi ktokolwiek inny, standardowe Flow z Wordle
+                buttonCreator.ShowContinue(() => StartWordleChallenge());
+            }
         }
     }
 
@@ -85,28 +97,39 @@ public class DialogueManager : MonoBehaviour
         DialogueNode node = loader.GetNode(lastNodeId);
 
         if (!string.IsNullOrEmpty(foundKeyword))
-            dialogueWriter.Write(lastNodeId, foundKeyword, true);
+        {
+            // --- NOWOŚĆ: Dodajemy słowo do znanego słownika na stałe! ---
+            dialogueWriter.AddKnownWord(foundKeyword);
+            
+            dialogueWriter.Write(lastNodeId, foundKeyword);
+        }
         else
+        {
             dialogueWriter.Write(lastNodeId, null, true);
+        }
 
-        buttonCreator.ShowChoices(node, (choice) => {
+        // Po Wordle zawsze pokazujemy wybory
+        buttonCreator.ShowChoices(node, (choice) => HandleChoice(choice, node));
+    }
+
+    private void HandleChoice(DialogueChoice choice, DialogueNode currentNode)
+    {
         GameEvents.TriggerStatsChanged(choice.plus_paragon, choice.plus_renegade);
 
-        dialogueWriter.WriteRaw(choice.follow_up, node.speaker);
+        bool isPresenter = currentNode.speaker.Equals("Prezenter", System.StringComparison.OrdinalIgnoreCase);
 
-        buttonCreator.ShowContinue(() => {
-            if (!string.IsNullOrEmpty(node.next_node))
-            {
-                // Przejście do właściwego następnego węzła
-                Write(node.next_node);
-            }
-            else
-            {
-                // Koniec dialogu
-                dialogueWriter.Hide();
-                buttonCreator.ClearButtons();
-            }
-        });
-    });
+        if (!string.IsNullOrEmpty(choice.follow_up))
+        {
+            // Follow-up prezentera też musi być zrozumiały
+            dialogueWriter.WriteRaw(choice.follow_up, currentNode.speaker, null, false, isPresenter);
+            
+            buttonCreator.ShowContinue(() => {
+                if (!string.IsNullOrEmpty(currentNode.next_node)) Write(currentNode.next_node);
+            });
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currentNode.next_node)) Write(currentNode.next_node);
+        }
     }
 }

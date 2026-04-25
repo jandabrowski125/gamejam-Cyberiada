@@ -48,6 +48,27 @@
           "follow_up": "Hey, stop being so flirty hihi"
         }
       ]
+    },
+    {
+      "node_id": "node_003",
+      "speaker": "Presenter",
+      "text_original": "Let's now move to the next set of questions!!",
+      "wordle_solution": "HEART",
+      "next_node": "node_003",
+      "choices": [
+        {
+          "text": "Fuck this, I'm so tired",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": ""
+        },
+        {
+          "text": "I'm loving this",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": ""
+        }
+      ]
     }
   ]
 } 
