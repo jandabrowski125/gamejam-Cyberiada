@@ -2,10 +2,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.InputSystem; 
-using System;
-using Unity.UI;
-using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.InputSystem;
 
 public class WordleManager : MonoBehaviour
 {
@@ -38,6 +35,8 @@ public class WordleManager : MonoBehaviour
     public AudioClip wordleMusic;
     public float maxVolume = 0.5f;
     public float audioFadeDuration = 0.8f;
+    public AudioSource wordleSuccess;
+    public AudioSource wordleFailed;
 
     private AudioSource audioSource;
     private Coroutine audioFadeCoroutine;
@@ -262,6 +261,7 @@ public class WordleManager : MonoBehaviour
 
         if (currentInput == targetWord)
         {
+            wordleSuccess.Play();
             yield return new WaitForSeconds(1f);
             yield return StartCoroutine(SlideOutRoutine());
             
@@ -274,6 +274,7 @@ public class WordleManager : MonoBehaviour
             currentInput = "";
             if (currentAttempt >= _availableAttempts)
             {
+                wordleFailed.Play();
                 yield return new WaitForSeconds(1f);
                 yield return StartCoroutine(SlideOutRoutine());
                 
