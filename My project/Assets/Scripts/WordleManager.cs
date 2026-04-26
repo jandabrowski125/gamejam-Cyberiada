@@ -22,6 +22,9 @@ public class WordleManager : MonoBehaviour
     public Color targetWordTileColor;
     public Color emptyTileColor = new Color(1f, 1f, 1f, 0.2f);
 
+    [Header("Effects")]
+    public GameObject successParticlesPrefab;
+
     private string targetWord;
     private int currentAttempt = 0;
     private string currentInput = "";
@@ -252,13 +255,21 @@ public class WordleManager : MonoBehaviour
             
         }
     }
+    public void SkipWordle()
+    {
+        GameEvents.TriggerWordleSuccess(string.Empty);
+        targetWord = "";
+        audienceAudio.Play();
+        isProcessing = false;
+        wordleFailed.Play();
+        StartCoroutine(SlideOutRoutine());
+    }
 
     private IEnumerator CheckWordRoutine()
     {
         isProcessing = true;
         string wordToCheck = currentInput.ToLower();
 
-        // 1. Sprawdzenie w API
         using (UnityWebRequest www = UnityWebRequest.Get($"https://api.dictionaryapi.dev/api/v2/entries/en/{wordToCheck}"))
         {
             yield return www.SendWebRequest();
