@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(VideoPlayer))]
 public class VideoSceneChanger : MonoBehaviour
 {
-    [Header("Ustawienia")]
-    [Tooltip("Wpisz dokładną nazwę sceny, do której chcesz przejść")]
     public string nextSceneName;
 
     private VideoPlayer videoPlayer;
+
+    [SerializeField] private FadeToBlack fadeToBlack;
 
     void Awake()
     {
@@ -32,13 +32,15 @@ public class VideoSceneChanger : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(nextSceneName))
         {
+            fadeToBlack.StartFadeOut();
             Debug.Log("Wideo zakończone. Ładowanie sceny: " + nextSceneName);
-            SceneManager.LoadScene(nextSceneName);
+            Invoke("NextScene", 2f);   
         }
         else
         {
             Debug.LogWarning("Nazwa następnej sceny jest pusta! Wpisz ją w Inspektorze.");
         }
+
     }
 
     void OnDestroy()
@@ -48,5 +50,10 @@ public class VideoSceneChanger : MonoBehaviour
         {
             videoPlayer.loopPointReached -= OnVideoEnd;
         }
+    }
+
+    private void NextScene()
+    {
+        SceneManager.LoadScene(nextSceneName);
     }
 }
