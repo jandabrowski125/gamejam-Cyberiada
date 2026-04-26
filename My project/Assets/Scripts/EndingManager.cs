@@ -51,18 +51,15 @@ public class EndingManager : MonoBehaviour
             if (btn != null)
             {
                 string charName = data.name;
-                GameObject buttonToDestroy = btnObj; // Kopia referencji dla lambdy
+                GameObject buttonToDestroy = btnObj;
 
                 btn.onClick.RemoveAllListeners();
                 btn.onClick.AddListener(() => {
-                    // Przekazujemy referencję do przycisku, ale jeszcze go NIE NISZCZYMY
                     OnCharacterSelected(charName, buttonToDestroy); 
                 });
             }
         }
     }
-
-    // ZMIANA: Metoda przyjmuje teraz również przycisk, w który kliknęliśmy
     private void OnCharacterSelected(string characterName, GameObject buttonClicked)
     {
         EndingData data = endingList.endings.First(e => e.name == characterName);
@@ -73,8 +70,6 @@ public class EndingManager : MonoBehaviour
 
         bool success = score >= data.paragon_requirements && totalParagon >= data.overall_paragon_requirement;
 
-        // --- KLUCZOWA ZMIANA ---
-        // Niszczymy przycisk TYLKO wtedy, gdy postać nas odrzuca (!success)
         if (!success)
         {
             remainingCharacters--; 
@@ -89,12 +84,10 @@ public class EndingManager : MonoBehaviour
     {
         if (remainingCharacters <= 0)
         {
-            // Odrzucili nas wszyscy - włączamy globalny smutny koniec
             endingDialogueManager.StartUnhappyEnding(endingList.unhappy_ending, endingList.credits);
         }
         else
         {
-            // Wciąż ktoś został (albo ktoś nas zaakceptował, ale wróciliśmy z okna dialogowego), pokazujemy menu
             selectionCanvas.SetActive(true);
         }
     }
