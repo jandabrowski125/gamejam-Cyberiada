@@ -43,9 +43,6 @@ public class EndingManager : MonoBehaviour
         foreach (var data in endingList.endings)
         {
             GameObject btnObj = Instantiate(charButtonPrefab, buttonsParent);
-            
-            var textComp = btnObj.GetComponentInChildren<TextMeshProUGUI>();
-            if (textComp != null) textComp.text = data.name;
 
             Image portrait = btnObj.GetComponent<Image>(); 
             if (portrait != null && characterDB != null) portrait.sprite = characterDB.GetSprite(data.name);
@@ -54,24 +51,19 @@ public class EndingManager : MonoBehaviour
             if (btn != null)
             {
                 string charName = data.name;
-                GameObject buttonToDestroy = btnObj; // WAŻNE: Kopiujemy referencję dla lambdy!
+                GameObject buttonToDestroy = btnObj; // Kopia referencji dla lambdy
 
                 btn.onClick.RemoveAllListeners();
                 btn.onClick.AddListener(() => {
-                    // 1. Zmniejszamy licznik
-                    remainingCharacters--; 
-                    
-                    // 2. Niszczymy przycisk od razu!
-                    Destroy(buttonToDestroy); 
-                    
-                    // 3. Odpalamy logikę wyboru
-                    OnCharacterSelected(charName); 
+                    // Przekazujemy referencję do przycisku, ale jeszcze go NIE NISZCZYMY
+                    OnCharacterSelected(charName, buttonToDestroy); 
                 });
             }
         }
     }
 
-    private void OnCharacterSelected(string characterName)
+    // ZMIANA: Metoda przyjmuje teraz również przycisk, w który kliknęliśmy
+    private void OnCharacterSelected(string characterName, GameObject buttonClicked)
     {
         EndingData data = endingList.endings.First(e => e.name == characterName);
         
@@ -81,21 +73,28 @@ public class EndingManager : MonoBehaviour
 
         bool success = score >= data.paragon_requirements && totalParagon >= data.overall_paragon_requirement;
 
+        // --- KLUCZOWA ZMIANA ---
+        // Niszczymy przycisk TYLKO wtedy, gdy postać nas odrzuca (!success)
+        if (!success)
+        {
+            remainingCharacters--; 
+            Destroy(buttonClicked); 
+        }
+
         selectionCanvas.SetActive(false);
         endingDialogueManager.StartEndingDialogue(data, success, endingList.credits);
     }
 
-    // Mega uproszczona metoda powrotu
     public void ReturnToSelection()
     {
         if (remainingCharacters <= 0)
         {
-            // Nie ma już żadnych przycisków! Odpalamy smutny koniec.
+            // Odrzucili nas wszyscy - włączamy globalny smutny koniec
             endingDialogueManager.StartUnhappyEnding(endingList.unhappy_ending, endingList.credits);
         }
         else
         {
-            // Wciąż ktoś został, pokazujemy menu
+            // Wciąż ktoś został (albo ktoś nas zaakceptował, ale wróciliśmy z okna dialogowego), pokazujemy menu
             selectionCanvas.SetActive(true);
         }
     }
