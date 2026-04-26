@@ -45,14 +45,12 @@ public class DialogueManager : MonoBehaviour
                 backgroundAudioSource.Play();
             }
 
-            // 1. Sprawdzamy czy mówi Prezenter
             bool isPresenter = node.speaker.Equals("Presenter", System.StringComparison.OrdinalIgnoreCase);
 
             // 2. Wypisujemy tekst (jeśli Prezenter, to forceUnderstandable = true)
             dialogueWriter.Write(nodeId, null, false, isPresenter, node.wordle_solution);
             _audioManager.PlayVoice(node.speaker);
 
-            // 3. Zarządzanie przyciskami po tekście
             if (isPresenter)
             {
                 if (node.choices.Count == 0)
@@ -69,6 +67,14 @@ public class DialogueManager : MonoBehaviour
             {
                 buttonCreator.ShowContinue(() => StartWordleChallenge());
             }
+        }
+    }
+
+    public void CompleteDialogueInstantly()
+    {
+        if (dialogueWriter != null)
+        {
+            dialogueWriter.CompleteInstantly();
         }
     }
 

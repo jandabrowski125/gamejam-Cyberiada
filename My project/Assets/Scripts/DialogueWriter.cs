@@ -30,6 +30,7 @@ public class DialogueWriter : MonoBehaviour
     [Header("UI Rect")]
     public RectTransform speechPanelRect;
 
+    private bool forceSkipTyping = false;
     private HashSet<string> knownWords = new HashSet<string>();
     private int currentColumn = 0;
     
@@ -89,6 +90,11 @@ public class DialogueWriter : MonoBehaviour
         dialogueUI.SetActive(false);
     }
 
+    public void CompleteInstantly()
+    {
+        forceSkipTyping = true;
+    }
+
     public void Hide()
     {
         StopAllDialogue();
@@ -99,9 +105,10 @@ public class DialogueWriter : MonoBehaviour
     {
         DialogueNode node = loader.GetNode(nodeId);
         if (node == null) return;
+        forceSkipTyping = false;
 
         dialogueUI.SetActive(true);
-        StopAllDialogue(); // Zatrzymujemy stare dialogi
+        StopAllDialogue();
         ClearGrid();
 
         bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
@@ -111,20 +118,20 @@ public class DialogueWriter : MonoBehaviour
     public void WriteEnding(string text)
     {
         bool forceUnderstandable = true;
-        bool skipTypewriter = true;
 
         dialogueUI.SetActive(true);
-        StopAllDialogue(); // Zatrzymujemy stare dialogi
+        StopAllDialogue();
         ClearGrid();
 
-        sequenceCoroutine = StartCoroutine(DialogueSequence(text, null, skipTypewriter, forceUnderstandable));
+        sequenceCoroutine = StartCoroutine(DialogueSequence(text, null, false, forceUnderstandable));
     }
 
     public void WriteRaw(string text, string speaker, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false, string toLearn = null)
     {
         dialogueUI.SetActive(true);
-        StopAllDialogue(); // Zatrzymujemy stare dialogi
+        StopAllDialogue();
         ClearGrid();
+        forceSkipTyping = false;
 
         bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
         sequenceCoroutine = StartCoroutine(DialogueSequence(text, keyword, skipTypewriter, forceUnderstandable, toLearn));
@@ -194,7 +201,17 @@ public class DialogueWriter : MonoBehaviour
                 currentColumn++;
                 if (currentColumn >= charsPerLine) currentColumn = 0;
                 
-                if (!skipTypewriter) yield return new WaitForSeconds(typingSpeed);
+                if (!skipTypewriter && !forceSkipTyping)
+                {
+                    float timer = 0f;
+                    while (timer < typingSpeed)
+                    {
+                        if (forceSkipTyping) break; 
+                        
+                        timer += Time.deltaTime;
+                        yield return null;
+                    }
+                }
             }
 
             if (currentColumn > 0 && currentColumn < charsPerLine)
@@ -204,8 +221,19 @@ public class DialogueWriter : MonoBehaviour
                 if (currentColumn >= charsPerLine) currentColumn = 0;
             }
 
-            if (!skipTypewriter) yield return new WaitForSeconds(typingSpeed);
+            if (!skipTypewriter && !forceSkipTyping)
+            {
+                float timer = 0f;
+                while (timer < typingSpeed)
+                {
+                    if (forceSkipTyping) break; 
+                    timer += Time.deltaTime;
+                    yield return null;
+                }
+            }
         }
+        
+        forceSkipTyping = false;
     }
 
     void CreateText(char letter, TMP_FontAsset font, Color color)
