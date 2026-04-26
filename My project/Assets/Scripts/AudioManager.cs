@@ -8,11 +8,22 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource presenterVoice;
     [SerializeField] private AudioSource garrusVoice;
 
+    private AudioSource[] sources;
 
+    void Start()
+    {
+        sources = new AudioSource[] {taliVoice, declanVoice, johnVoice, presenterVoice, garrusVoice};
+    }
+
+    private void StopOtherVoices()
+    {
+        foreach (AudioSource voice in sources) voice.Stop();
+    }
 
 
     public void PlayVoice(string characterName)
-    {
+    {   
+        StopOtherVoices();
         switch (characterName)
         {
             case "Juhei Ikeet":

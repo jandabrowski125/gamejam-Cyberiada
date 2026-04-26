@@ -101,7 +101,7 @@ public class DialogueWriter : MonoBehaviour
         HideInstantly(); 
     }
 
-    public void Write(string nodeId, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false)
+    public void Write(string nodeId, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false, string toLearn = null)
     {
         DialogueNode node = loader.GetNode(nodeId);
         if (node == null) return;
@@ -112,7 +112,7 @@ public class DialogueWriter : MonoBehaviour
         ClearGrid();
 
         bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
-        sequenceCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, skipTypewriter, forceUnderstandable));
+        sequenceCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, skipTypewriter, forceUnderstandable, toLearn));
     }
 
     public void WriteEnding(string text)
@@ -126,7 +126,7 @@ public class DialogueWriter : MonoBehaviour
         sequenceCoroutine = StartCoroutine(DialogueSequence(text, null, false, forceUnderstandable));
     }
 
-    public void WriteRaw(string text, string speaker, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false)
+    public void WriteRaw(string text, string speaker, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false, string toLearn = null)
     {
         dialogueUI.SetActive(true);
         StopAllDialogue();
@@ -134,10 +134,10 @@ public class DialogueWriter : MonoBehaviour
         forceSkipTyping = false;
 
         bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
-        sequenceCoroutine = StartCoroutine(DialogueSequence(text, keyword, skipTypewriter, forceUnderstandable));
+        sequenceCoroutine = StartCoroutine(DialogueSequence(text, keyword, skipTypewriter, forceUnderstandable, toLearn));
     }
 
-    private IEnumerator DialogueSequence(string text, string keyword, bool skipTypewriter, bool forceUnderstandable)
+    private IEnumerator DialogueSequence(string text, string keyword, bool skipTypewriter, bool forceUnderstandable, string toLearn = null)
     {
         float elapsedTime = 0;
         Vector2 startPos = new Vector2(offScreenX, targetAnchoredPosition.y);
@@ -157,27 +157,33 @@ public class DialogueWriter : MonoBehaviour
         panelRect.anchoredPosition = targetAnchoredPosition;
         canvasGroup.alpha = 1;
 
-        typingCoroutine = StartCoroutine(TypeTextRoutine(text, keyword, skipTypewriter, forceUnderstandable));
+
+        // ZMIANA: Zapisujemy zagnieżdżoną korutynę do zmiennej, żeby móc ją zabić!
+        typingCoroutine = StartCoroutine(TypeTextRoutine(text, keyword, skipTypewriter, forceUnderstandable, toLearn));
         yield return typingCoroutine;
     }
 
-    private IEnumerator TypeTextRoutine(string fullText, string keyword, bool skipTypewriter, bool forceUnderstandable)
+    private IEnumerator TypeTextRoutine(string fullText, string keyword, bool skipTypewriter, bool forceUnderstandable, string toLearn = null)
     {
         string[] words = fullText.Split(' ');
         currentColumn = 0;
-
+        
         foreach (string word in words)
-        {
+        {   
             if (string.IsNullOrEmpty(word)) continue;
 
             string clean = CleanWord(word);
             string cleanLower = clean.ToLower();
-            
+
             bool isKeyword = (keyword != null && cleanLower == keyword.ToLower());
+            bool isToLearn = (toLearn != null && cleanLower == toLearn.ToLower());
             bool isUnderstandable = forceUnderstandable || isKeyword || knownWords.Contains(cleanLower);
 
             TMP_FontAsset fontToUse = isUnderstandable ? fontAsset : alienFontAsset;
-            Color textColor = isKeyword ? keywordHighlightColor : Color.white;
+
+            // Color textColor = isKeyword ? keywordHighlightColor : Color.white;
+            Color textColor = isToLearn ? keywordHighlightColor : Color.white;
+            
 
             if (word.Length > (charsPerLine - currentColumn))
             {
