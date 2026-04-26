@@ -2,10 +2,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.InputSystem; 
-using System;
-using Unity.UI;
-using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.InputSystem;
 
 public class WordleManager : MonoBehaviour
 {
@@ -14,6 +11,7 @@ public class WordleManager : MonoBehaviour
     public GameObject tilePrefab;
     public Transform container;
     public GameObject backgroundImagePrefab;
+    public AudioSource wordleInputSound;
     
     [Header("Colors")]
     public Color correctColor = Color.green;
@@ -37,6 +35,8 @@ public class WordleManager : MonoBehaviour
     public AudioClip wordleMusic;
     public float maxVolume = 0.5f;
     public float audioFadeDuration = 0.8f;
+    public AudioSource wordleSuccess;
+    public AudioSource wordleFailed;
 
     private AudioSource audioSource;
     private Coroutine audioFadeCoroutine;
@@ -120,6 +120,7 @@ public class WordleManager : MonoBehaviour
         if (char.IsLetter(character))
         {
             currentInput += char.ToUpper(character);
+            wordleInputSound.Play();
             UpdateUI();
         }
     }
@@ -224,10 +225,12 @@ public class WordleManager : MonoBehaviour
     {
         if (currentAttempt >= rows.Count) return;
 
+
         var currentTiles = rows[currentAttempt];
         for (int i = 0; i < currentTiles.Length; i++)
         {
             currentTiles[i].SetLetter(i < currentInput.Length ? currentInput[i] : ' ');
+            
         }
     }
 
@@ -259,6 +262,7 @@ public class WordleManager : MonoBehaviour
 
         if (currentInput == targetWord)
         {
+            wordleSuccess.Play();
             yield return new WaitForSeconds(1f);
             yield return StartCoroutine(SlideOutRoutine());
             
@@ -271,6 +275,7 @@ public class WordleManager : MonoBehaviour
             currentInput = "";
             if (currentAttempt >= _availableAttempts)
             {
+                wordleFailed.Play();
                 yield return new WaitForSeconds(1f);
                 yield return StartCoroutine(SlideOutRoutine());
                 
@@ -288,6 +293,10 @@ public class WordleManager : MonoBehaviour
         WordleTile[] currentTiles = rows[currentAttempt];
         char[] targetChars = targetWord.ToCharArray();
         char[] inputChars = currentInput.ToCharArray();
+        // Debug.Log("target: \n");
+        // foreach (char c in targetChars) Debug.Log(c);
+        // Debug.Log("attempt: \n");
+        // foreach (char c in inputChars) Debug.Log(c);
         bool[] matched = new bool[targetChars.Length];
 
         for (int i = 0; i < inputChars.Length; i++)
@@ -299,7 +308,6 @@ public class WordleManager : MonoBehaviour
             }
         }
 
-        // Pass 2: Żółte / Szare
         for (int i = 0; i < inputChars.Length; i++)
         {
             if (matched[i]) continue;
@@ -310,7 +318,6 @@ public class WordleManager : MonoBehaviour
                 if (!matched[j] && inputChars[i] == targetChars[j])
                 {
                     currentTiles[i].SetColor(presentColor);
-                    matched[j] = true;
                     foundYellow = true;
                     break;
                 }

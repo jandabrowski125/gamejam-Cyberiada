@@ -3,7 +3,6 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
 public class DialogueWriter : MonoBehaviour
 {
@@ -27,23 +26,25 @@ public class DialogueWriter : MonoBehaviour
     public float animationDuration = 0.5f;
     public float offScreenX = -10; 
     public AnimationCurve slideCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
-    private HashSet<string> knownWords = new HashSet<string>();
+    
+    [Header("UI Rect")]
+    public RectTransform speechPanelRect;
 
+    private HashSet<string> knownWords = new HashSet<string>();
     private int currentColumn = 0;
-    private Coroutine mainCoroutine;
+    
+    // ZMIANA: Śledzimy OBA procesy oddzielnie
+    private Coroutine sequenceCoroutine;
+    private Coroutine typingCoroutine;
     
     private RectTransform panelRect;
     private CanvasGroup canvasGroup;
     private Vector2 targetAnchoredPosition;
 
-    [Header("References")]
-    public RectTransform speechPanelRect;
-
     void Awake()
     {
         PrepareDictionary();
 
-        // 1. Sprawdzamy, czy w ogóle mamy obiekt UI
         if (dialogueUI == null)
         {
             Debug.LogError("<color=red>DialogueWriter: Przypisz 'Dialogue UI' w Inspektorze!</color>");
@@ -71,11 +72,27 @@ public class DialogueWriter : MonoBehaviour
             knownWords.Add(word.ToLower().Trim());
     }
 
+    // --- NOWA METODA: Bezpieczne ubijanie wszystkich procesów pisania ---
+    private void StopAllDialogue()
+    {
+        if (sequenceCoroutine != null) StopCoroutine(sequenceCoroutine);
+        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+        
+        sequenceCoroutine = null;
+        typingCoroutine = null;
+    }
+
     private void HideInstantly()
     {
         canvasGroup.alpha = 0;
         panelRect.anchoredPosition = new Vector2(offScreenX, targetAnchoredPosition.y);
         dialogueUI.SetActive(false);
+    }
+
+    public void Hide()
+    {
+        StopAllDialogue();
+        HideInstantly(); 
     }
 
     public void Write(string nodeId, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false)
@@ -84,11 +101,11 @@ public class DialogueWriter : MonoBehaviour
         if (node == null) return;
 
         dialogueUI.SetActive(true);
-        if (mainCoroutine != null) StopCoroutine(mainCoroutine);
+        StopAllDialogue(); // Zatrzymujemy stare dialogi
         ClearGrid();
 
         bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
-        mainCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, skipTypewriter, forceUnderstandable));
+        sequenceCoroutine = StartCoroutine(DialogueSequence(node.text_original, keyword, skipTypewriter, forceUnderstandable));
     }
 
     public void WriteEnding(string text)
@@ -97,20 +114,20 @@ public class DialogueWriter : MonoBehaviour
         bool skipTypewriter = true;
 
         dialogueUI.SetActive(true);
-        if (mainCoroutine != null) StopCoroutine(mainCoroutine);
+        StopAllDialogue(); // Zatrzymujemy stare dialogi
         ClearGrid();
 
-        mainCoroutine = StartCoroutine(DialogueSequence(text, null, skipTypewriter, forceUnderstandable));
+        sequenceCoroutine = StartCoroutine(DialogueSequence(text, null, skipTypewriter, forceUnderstandable));
     }
 
     public void WriteRaw(string text, string speaker, string keyword = null, bool forceSkip = false, bool forceUnderstandable = false)
     {
         dialogueUI.SetActive(true);
-        if (mainCoroutine != null) StopCoroutine(mainCoroutine);
+        StopAllDialogue(); // Zatrzymujemy stare dialogi
         ClearGrid();
 
         bool skipTypewriter = !string.IsNullOrEmpty(keyword) || forceSkip;
-        mainCoroutine = StartCoroutine(DialogueSequence(text, keyword, skipTypewriter, forceUnderstandable));
+        sequenceCoroutine = StartCoroutine(DialogueSequence(text, keyword, skipTypewriter, forceUnderstandable));
     }
 
     private IEnumerator DialogueSequence(string text, string keyword, bool skipTypewriter, bool forceUnderstandable)
@@ -124,10 +141,8 @@ public class DialogueWriter : MonoBehaviour
             float t = elapsedTime / animationDuration;
             float curveT = slideCurve.Evaluate(t);
 
-            // Ruch
             panelRect.anchoredPosition = Vector2.LerpUnclamped(startPos, targetAnchoredPosition, curveT);
-            // Fade In (przezroczystość)
-            canvasGroup.alpha = Mathf.Lerp(0, 1, t); // Alfa idzie liniowo 0 -> 1
+            canvasGroup.alpha = Mathf.Lerp(0, 1, t);
 
             yield return null;
         }
@@ -135,8 +150,9 @@ public class DialogueWriter : MonoBehaviour
         panelRect.anchoredPosition = targetAnchoredPosition;
         canvasGroup.alpha = 1;
 
-        // --- FAZA 2: PISANIE TEKSTU ---
-        yield return StartCoroutine(TypeTextRoutine(text, keyword, skipTypewriter, forceUnderstandable));
+        // ZMIANA: Zapisujemy zagnieżdżoną korutynę do zmiennej, żeby móc ją zabić!
+        typingCoroutine = StartCoroutine(TypeTextRoutine(text, keyword, skipTypewriter, forceUnderstandable));
+        yield return typingCoroutine;
     }
 
     private IEnumerator TypeTextRoutine(string fullText, string keyword, bool skipTypewriter, bool forceUnderstandable)
@@ -152,15 +168,11 @@ public class DialogueWriter : MonoBehaviour
             string cleanLower = clean.ToLower();
             
             bool isKeyword = (keyword != null && cleanLower == keyword.ToLower());
-            
-            // Logika czytelności: 
-            // Czytelne jeśli: wymuszamy, jest keywordem, lub jest w znanym słowniku
             bool isUnderstandable = forceUnderstandable || isKeyword || knownWords.Contains(cleanLower);
 
             TMP_FontAsset fontToUse = isUnderstandable ? fontAsset : alienFontAsset;
             Color textColor = isKeyword ? keywordHighlightColor : Color.white;
 
-            // Zawijanie
             if (word.Length > (charsPerLine - currentColumn))
             {
                 if (currentColumn != 0)
@@ -176,6 +188,7 @@ public class DialogueWriter : MonoBehaviour
                 CreateText(word[i], fontToUse, textColor);
                 currentColumn++;
                 if (currentColumn >= charsPerLine) currentColumn = 0;
+                
                 if (!skipTypewriter) yield return new WaitForSeconds(typingSpeed);
             }
 
@@ -190,7 +203,6 @@ public class DialogueWriter : MonoBehaviour
         }
     }
 
-    // Pomocnicze metody
     void CreateText(char letter, TMP_FontAsset font, Color color)
     {
         GameObject obj = Instantiate(textPrefab, parent);
@@ -200,7 +212,10 @@ public class DialogueWriter : MonoBehaviour
         textComp.color = color;
     }
 
-    private void ClearGrid() { foreach (Transform child in parent) Destroy(child.gameObject); }
+    private void ClearGrid() 
+    { 
+        foreach (Transform child in parent) Destroy(child.gameObject); 
+    }
 
     private void PrepareDictionary()
     {
@@ -221,11 +236,5 @@ public class DialogueWriter : MonoBehaviour
         if (clean.Length > 0 && punctuations.Contains(clean[clean.Length - 1]))
             clean = clean.Substring(0, clean.Length - 1);
         return clean;
-    }
-
-    public void Hide()
-    {
-        if (mainCoroutine != null) StopCoroutine(mainCoroutine);
-        HideInstantly(); // Wykorzystujemy Twoją bezpieczną metodę
     }
 }

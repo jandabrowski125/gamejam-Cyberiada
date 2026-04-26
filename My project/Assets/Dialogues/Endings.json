@@ -85,7 +85,7 @@
             "overall_paragon_requirement": 8
         },
         {
-            "name": "Cyber John",
+            "name": "CyberJohn",
             "rejection_dialogue": {
                 "text": "Analyzing… Thank you for your application and sharing your qualifications with me. After the interview, I’ve decided to choose a candidate with more relevant experience.",
                 "choices": [
@@ -113,10 +113,20 @@
             "overall_paragon_requirement": 8
         }
     ],
-    "unhappyending":
+    "unhappy_ending":
         {
-            "text": "Unfortunately, nobody wanted to date you. Remember, it’s not them - it’s you. And, because of you, now the end of the world is coming.\nOther species joined forces to defeat the one who didn’t even go away - just wasn’t even there in the first place. Cause you didn’t even try to go out there. And you’re gonna end up completely alone.\nYou being high maintenance and taking the ‘pretending to be unavailable” approach didn’t work - again! Who would have thought? But this time it will have dire consequences.\nEarth will become extinct. And it’s your fault because you are undatable. That sucks for you. And the whole human race. But anyway… See you on another episode of our show in another eon! Buh-bye!"
-
+            "text": "Unfortunately, nobody wanted to date you. Remember, it’s not them - it’s you. And, because of you, now the end of the world is coming.\nOther species joined forces to defeat the one who didn’t even go away - just wasn’t even there in the first place. Cause you didn’t even try to go out there. And you’re gonna end up completely alone.\nYou being high maintenance and taking the ‘pretending to be unavailable” approach didn’t work - again! Who would have thought? But this time it will have dire consequences.\nEarth will become extinct. And it’s your fault because you are undatable. That sucks for you. And the whole human race. But anyway… See you on another episode of our show in another eon! Buh-bye!",
+            "name": "Presenter",
+            "choices": [
+                {
+                    "text": "I'm dating your mother anyway.",
+                    "end": true
+                },
+                {
+                    "text": "Welp. I guess I'll die alone",
+                    "end": true
+                }
+            ]
         },
     "credits": "NAZWA_GRY, 2026, nasze imiona"
 }
