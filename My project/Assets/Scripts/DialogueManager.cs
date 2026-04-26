@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
             bool isPresenter = node.speaker.Equals("Presenter", System.StringComparison.OrdinalIgnoreCase);
 
             // 2. Wypisujemy tekst (jeśli Prezenter, to forceUnderstandable = true)
-            dialogueWriter.Write(nodeId, null, false, isPresenter);
+            dialogueWriter.Write(nodeId, null, false, isPresenter, node.wordle_solution);
             _audioManager.PlayVoice(node.speaker);
 
             // 3. Zarządzanie przyciskami po tekście
@@ -151,7 +151,7 @@ public class DialogueManager : MonoBehaviour
             // --- NOWOŚĆ: Dodajemy słowo do znanego słownika na stałe! ---
             dialogueWriter.AddKnownWord(foundKeyword);
             
-            dialogueWriter.Write(lastNodeId, foundKeyword);
+            dialogueWriter.Write(lastNodeId, foundKeyword, false, false, node.wordle_solution);
         }
         else
         {
