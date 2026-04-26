@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class WordleManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class WordleManager : MonoBehaviour
     public GameObject rowPrefab;
     public GameObject tilePrefab;
     public Transform container;
+    public Transform wordContainer;
     public GameObject backgroundImagePrefab;
     public AudioSource wordleInputSound;
     
@@ -17,7 +19,11 @@ public class WordleManager : MonoBehaviour
     public Color correctColor = Color.green;
     public Color presentColor = Color.yellow;
     public Color absentColor = Color.gray;
+    public Color targetWordTileColor;
     public Color emptyTileColor = new Color(1f, 1f, 1f, 0.2f);
+
+    [Header("Effects")]
+    public GameObject successParticlesPrefab;
 
     private string targetWord;
     private int currentAttempt = 0;
@@ -37,6 +43,9 @@ public class WordleManager : MonoBehaviour
     public float audioFadeDuration = 0.8f;
     public AudioSource wordleSuccess;
     public AudioSource wordleFailed;
+
+    [Header("Alien font")]
+    public TMP_FontAsset alienFont;
 
     private AudioSource audioSource;
     private Coroutine audioFadeCoroutine;
@@ -201,11 +210,24 @@ public class WordleManager : MonoBehaviour
 
         // Czyszczenie poprzedniej gry
         foreach (Transform child in container) Destroy(child.gameObject);
+        foreach (Transform child in wordContainer) Destroy(child.gameObject);
         rows.Clear();
         currentAttempt = 0;
         currentInput = "";
         
         targetWord = word.ToUpper();
+
+        var wordObj = Instantiate(rowPrefab, wordContainer);
+        WordleTile[] wordRow = new WordleTile[targetWord.Length];
+        for (int i = 0; i < targetWord.Length; i++)
+        {
+            GameObject tileObj = Instantiate(tilePrefab, wordObj.transform);
+            wordRow[i] = tileObj.GetComponent<WordleTile>();
+            wordRow[i].textElement.font = alienFont;
+            wordRow[i].textElement.fontSize = 70;
+            wordRow[i].SetLetter(targetWord[i]);
+            wordRow[i].SetColor(targetWordTileColor);
+        }
 
         for (int i = 0; i < _availableAttempts; i++) {
             var rowObj = Instantiate(rowPrefab, container);
@@ -233,13 +255,21 @@ public class WordleManager : MonoBehaviour
             
         }
     }
+    public void SkipWordle()
+    {
+        GameEvents.TriggerWordleSuccess(string.Empty);
+        targetWord = "";
+        audienceAudio.Play();
+        isProcessing = false;
+        wordleFailed.Play();
+        StartCoroutine(SlideOutRoutine());
+    }
 
     private IEnumerator CheckWordRoutine()
     {
         isProcessing = true;
         string wordToCheck = currentInput.ToLower();
 
-        // 1. Sprawdzenie w API
         using (UnityWebRequest www = UnityWebRequest.Get($"https://api.dictionaryapi.dev/api/v2/entries/en/{wordToCheck}"))
         {
             yield return www.SendWebRequest();

@@ -25,6 +25,9 @@ public class EndingDialogueManager : MonoBehaviour
     public Image finalPictureDisplay; // Canvasowy obiekt Image, który przykryje ekran
     public List<EndingPicture> endingPictures; // Twoja lista obrazków końcowych
 
+    private string[] slideshowSequence;
+    private int currentSlideIndex = 0;
+
     private string creditsText;
 
     public void StartEndingDialogue(EndingData data, bool success, string credits)
@@ -99,46 +102,38 @@ public class EndingDialogueManager : MonoBehaviour
         
     }
 
-private void FinalizeGame(EndingData data)
+    private void FinalizeGame(EndingData data)
     {
         buttonCreator.ClearButtons();
-        dialogueWriter.Hide(); // Ukrywamy okno dialogowe
+        dialogueWriter.Hide();
 
         string endingKey = (data != null) ? data.name : "Unhappy";
         
-        // Zamiast pokazywać od razu, uruchamiamy sekwencję "pokazu slajdów"
-        StartCoroutine(EndingSlideshowSequence(endingKey));
-    }
-
-    private System.Collections.IEnumerator EndingSlideshowSequence(string characterKey)
-    {
-        // 1. Pokaż obrazek zakończenia postaci (lub Unhappy)
-        ShowEndingPicture(characterKey);
-        yield return new WaitForSeconds(5f);
-
-        // 2. Pokaż pierwszą planszę z napisami
-        ShowEndingPicture("Credits1");
-        yield return new WaitForSeconds(5f);
-
-        // 3. Pokaż drugą planszę
-        ShowEndingPicture("Credits2");
-        yield return new WaitForSeconds(5f);
-
-        // 4. Pokaż trzecią planszę
-        ShowEndingPicture("Credits3");
-        yield return new WaitForSeconds(5f);
-
-        // KONIEC GRY
-        Debug.Log("<color=gold>GRA CAŁKOWICIE ZAKOŃCZONA!</color>");
+        slideshowSequence = new string[] { endingKey, "Credits1", "Credits2", "Credits3" };
         
-        // (Opcjonalnie: Tutaj możesz dodać kod wracający do Main Menu, 
-        // np. UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu"); )
+        currentSlideIndex = 0;
+
+        ShowEndingPicture(slideshowSequence[currentSlideIndex]);
     }
 
-    // Nowa metoda pomocnicza, żeby nie powtarzać kodu w korutynie
+    public void OnBackgroundClicked()
+    {
+        currentSlideIndex++;
+
+        if (currentSlideIndex < slideshowSequence.Length)
+        {
+            ShowEndingPicture(slideshowSequence[currentSlideIndex]);
+        }
+        else
+        {
+            Debug.Log("<color=gold>GRA CAŁKOWICIE ZAKOŃCZONA!</color>");
+            
+            Application.Quit(); 
+        }
+    }
+
     private void ShowEndingPicture(string key)
     {
-        // Szukamy obrazka z przypisaną nazwą
         Sprite spriteToShow = endingPictures.FirstOrDefault(p => p.characterName == key).picture;
 
         if (spriteToShow != null && finalPictureDisplay != null)

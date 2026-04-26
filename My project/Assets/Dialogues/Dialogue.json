@@ -152,19 +152,19 @@
           "text": "I have some tracks on my phone you might like. Should I bluetooth them for you?",
           "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "Don\u2019t know what bluetooth is but sure, whatever. <em>I know what\u2019s really on your mind, blue eyes.</em>"
+          "follow_up": "Don\u2019t know what bluetooth is but sure, whatever. I know what\u2019s really on your mind, blue eyes."
         },
         {
           "text": "Oh so that\u2019s why your ears are so humungous!",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "My ears are magnificent. <em>Advanced for hearing sounds not hearable for creatures underdeveloped like you.</em>"
+          "follow_up": "My ears are magnificent. Advanced for hearing sounds not hearable for creatures underdeveloped like you."
         },
         {
           "text": "A party girl? Been there, done that. Don\u2019t wanna go back.",
           "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Bet I could change your mind. <em>But that would be wasting my time.</em>"
+          "follow_up": "Bet I could change your mind. But that would be wasting my time."
         }
       ]
     },
@@ -268,7 +268,7 @@
     {
       "node_id": "b60e4a4c-9db0-48e9-95c0-ff53ba201956",
       "speaker": "Arneth Maalg",
-      "text_original": "I don\u2019t do relationships. I party and I dance. It\u2019s that simple yet so complex. <em>It\u2019s the way of the </em>swarm. These are our songs. You can\u2019t hold me down for long. <em>But you can always try.</em>",
+      "text_original": "I don\u2019t do relationships. I party and I dance. It\u2019s that simple yet so complex. It\u2019s the way of the swarm. These are our songs. You can\u2019t hold me down for long. But you can always try.",
       "wordle_solution": "swarm",
       "next_node": "aa9b1695-d382-45f2-b1d5-2644f35ba2d2",
       "choices": [
@@ -276,19 +276,19 @@
           "text": "I hold down, pretty girl- pretty good! I-I am willing to\u2026 try. Yeah\u2026 *blushes*",
           "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "Are you sure?<em> I see you blushing, babes.</em>"
+          "follow_up": "Are you sure? I see you blushing, babes."
         },
         {
           "text": "Yeah, don\u2019t bother, girl. My boat doesn\u2019t float that way, sorry.",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "Not everyone is ready to ship my dock. <em>Your loss.</em>"
+          "follow_up": "Not everyone is ready to ship my dock. Your loss."
         },
         {
           "text": "Oh no, I don\u2019t do one-night stands. Two-night stands and up will do.",
           "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "You\u2019d have to prove your flexibility.<em> I don\u2019t know if you\u2019ll last even one.</em>"
+          "follow_up": "You\u2019d have to prove your flexibility. I don\u2019t know if you\u2019ll last even one."
         }
       ]
     },
@@ -384,7 +384,7 @@
     {
       "node_id": "7fe3be79-e341-4493-a58a-aff7583e2e9f",
       "speaker": "Arneth Maalg",
-      "text_original": "*Laughs* Fun for sure. What\u2019s life without a little fun? That\u2019s why I party.<em> I can still make you feel good though. </em>Well I guess I could also make people dance more. The simple act of dance can change the world. The clubs would finally be filled with bliss.",
+      "text_original": "*Laughs* Fun for sure. What\u2019s life without a little fun? That\u2019s why I party. I can still make you feel good though. Well I guess I could also make people dance more. The simple act of dance can change the world. The clubs would finally be filled with bliss.",
       "wordle_solution": "bliss",
       "next_node": "c2e39516-f84a-4ed1-a804-4fbef837f94d",
       "choices": [
@@ -392,26 +392,26 @@
           "text": "I like fun! And I do like to dance.",
           "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "Oh really? We have to test it out then. <em>I like your confidence.</em>"
+          "follow_up": "Oh really? We have to test it out then. I like your confidence."
         },
         {
           "text": "I\u2019m more of a couch potato. I go to sleep before nine\u2026 So you know. Not a party person.",
           "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "I can\u2019t stand staying in one place. <em>But you do you, boring human.</em>"
+          "follow_up": "I can\u2019t stand staying in one place. But you do you, boring human."
         },
         {
           "text": "You treat dancing as a good deed? How about solving world hunger? Stopping wars?",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "You brought those things on yourself. <em>I pity your fragile race.</em>"
+          "follow_up": "You brought those things on yourself. I pity your fragile race."
         }
       ]
     },
     {
       "node_id": "c2e39516-f84a-4ed1-a804-4fbef837f94d",
       "speaker": "CyberJohn",
-      "text_original": "For me, it would be <em>fun</em> to create a supply chain that never ever underperforms.",
+      "text_original": "For me, it would be fun to create a supply chain that never ever underperforms.",
       "wordle_solution": "supply",
       "next_node": "b5bcdf91-39a8-4036-a4c4-92ef8bcfe4e1",
       "choices": [
@@ -508,19 +508,19 @@
           "text": "Neverending party? Sign me up!",
           "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "You\u2019re welcome to join us. <em>The swarm is open to those that open their hearts to music.</em>"
+          "follow_up": "You\u2019re welcome to join us. The swarm is open to those that open their hearts to music."
         },
         {
           "text": "No thanks, I\u2019m more of a homebody.",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "You\u2019re hedonistic in a way. <em>But too stale for our swarm.</em>"
+          "follow_up": "You\u2019re hedonistic in a way. But too stale for our swarm."
         },
         {
           "text": "Don\u2019t get me wrong - I like music but full bliss? Like drugs? We say no to drugs.",
           "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "This is better than drugs. <em>It's a community.</em>"
+          "follow_up": "This is better than drugs. It's a community."
         }
       ]
     },
@@ -582,7 +582,7 @@
           "text": "Planet like in space? I can\u2019t fly! And breathe there... So that\u2019s a pass for me.",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "Can\u2019t do much about that. Seems like a <em>you</em> problem. IDIOT!"
+          "follow_up": "Can\u2019t do much about that. Seems like a you problem. IDIOT!"
         }
       ]
     },
@@ -616,7 +616,7 @@
     {
       "node_id": "603622a4-5a5b-446a-8702-57c10590b156",
       "speaker": "Arneth Maalg",
-      "text_original": "Cozy is not a part of my vocabulary. I move. I glide. I devour.<em> And I\u2019m never alone. </em>Even in our dream. It\u2019s a constant trance.",
+      "text_original": "Cozy is not a part of my vocabulary. I move. I glide. I devour. And I\u2019m never alone. Even in our dream. It\u2019s a constant trance.",
       "wordle_solution": "dream",
       "next_node": "fecbfae0-53df-45e2-8fc2-461b2992844b",
       "choices": [
@@ -624,26 +624,26 @@
           "text": "Yeah, I also hate the word cozy. Switch it up with cramped, am I right?",
           "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "You get it. <em>You\u2019re perfect for our swarm.</em>"
+          "follow_up": "You get it. You\u2019re perfect for our swarm."
         },
         {
           "text": "I don\u2019t get it. You eat on parties with your friends? That\u2019s like\u2026 Not really extraordinary.",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "You would be surprised. <em>Or worse.</em>"
+          "follow_up": "You would be surprised. Or worse."
         },
         {
           "text": "I recommend ordering pizza if you like devouring food\u2026 or something.",
           "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "I don\u2019t know what pizza is. My kind doesn\u2019t consume in that sense. <em>It devours.</em>"
+          "follow_up": "I don\u2019t know what pizza is. My kind doesn\u2019t consume in that sense. It devours."
         }
       ]
     },
     {
       "node_id": "fecbfae0-53df-45e2-8fc2-461b2992844b",
       "speaker": "CyberJohn",
-      "text_original": "I like to relax with spreadsheets in the company of data.<br>",
+      "text_original": "I like to relax with spreadsheets in the company of data.",
       "wordle_solution": "data",
       "next_node": "40813c77-30de-47c7-a525-6dbe464f669e",
       "choices": [
@@ -732,7 +732,7 @@
     {
       "node_id": "111c9f4d-9493-4d1f-b80a-135e6fe5dd1b",
       "speaker": "Arneth Maalg",
-      "text_original": "Heartbreak is like a poison for your soul. Poison is not a part of the swarm. It\u2019s peaceful. <em>An eternal bliss. That\u2019s our vision for the future. The dream we crave. </em>I don\u2019t wish to offer it to just anyone. I expect the same thing in exchange.",
+      "text_original": "Heartbreak is like a poison for your soul. Poison is not a part of the swarm. It\u2019s peaceful. An eternal bliss. That\u2019s our vision for the future. The dream we crave. I don\u2019t wish to offer it to just anyone. I expect the same thing in exchange.",
       "wordle_solution": "poison",
       "next_node": "b4dc23af-b1e5-4328-bd92-5c22c31f686c",
       "choices": [
@@ -740,19 +740,19 @@
           "text": "I\u2019ve had my heart broken into pieces. It would be nice to have it patched up by someone who really cares.",
           "plus_paragon": 1,
           "plus_renegade": 0,
-          "follow_up": "In the swarm your heart would be safe. You would be whole. Soul and body merge in one. I<em>n one you\u2019d find pure happiness.</em>"
+          "follow_up": "In the swarm your heart would be safe. You would be whole. Soul and body merge in one. In one you\u2019d find pure happiness."
         },
         {
           "text": "Yeah, no\u2026 I\u2019m a heartbreaker. And I\u2019m not ready to settle down yet.",
           "plus_paragon": 0,
           "plus_renegade": 1,
-          "follow_up": "Harm is not allowed in the swarm. <em>We love and please each other.</em>"
+          "follow_up": "Harm is not allowed in the swarm. We love and please each other."
         },
         {
           "text": "After some thought\u2026 Your offer sounds tempting but I\u2019m not convinced about that whole swarm thing so\u2026 Pass.",
           "plus_paragon": 0,
           "plus_renegade": 0,
-          "follow_up": "Maybe I could persuade you. <em>Let me in.</em>"
+          "follow_up": "Maybe I could persuade you. Let me in."
         }
       ]
     },
