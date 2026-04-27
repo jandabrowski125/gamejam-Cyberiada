@@ -24,8 +24,6 @@ public class DialogueNode
 [Serializable]
 public class DialogueContainer
 {
-    // JsonUtility nie radzi sobie z Dictionary, 
-    // więc używamy listy, którą łatwo przeszukać.
     public List<DialogueNode> nodes;
 }
 
