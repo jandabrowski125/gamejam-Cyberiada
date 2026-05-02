@@ -3,12 +3,13 @@ import std/strformat
 import std/strutils
 import std/sequtils
 import std/tables
+import std/json
 
 type
   Dictionary = object
     words : seq[string]
 
-const DICT_PATH = "Assets/KnownWords.txt"
+const DICT_PATH = "Assets/KnownWords.json"
 
 proc dictionaryAdd (d: var Dictionary, s: string) =
     if s notin d.words:
@@ -24,7 +25,6 @@ proc dictionaryValidator (d: var Dictionary) =
     const REPLACEMENTS = {
         "’": "'"
     }.toTable
-    dictionaryRemove(d, "") # importer reads single empty string on each import
     for ix, w in d.words.pairs():
       for RE in REPLACEMENTS.keys():
         if RE in w:
@@ -33,12 +33,14 @@ proc dictionaryValidator (d: var Dictionary) =
 
 proc dictionaryImport (): Dictionary =
     let df = open(DICT_PATH)
-    result.words = split(df.readAll(), ",\n")
+    let dj = parseJson(df.readAll())
+    for word_node in dj.items():
+      add(result.words, word_node.getStr())
     dictionaryValidator(result)
     close(df)
 
 proc dictionaryExport (d: Dictionary) =
-    let df = open("Assets/KnownWords.json", fmWrite)
+    let df = open(DICT_PATH, fmWrite)
     df.write("[\n")
     for ix, w in d.words.pairs():
       if ix != len(d.words) - 1:
