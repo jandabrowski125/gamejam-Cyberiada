@@ -6,6 +6,12 @@ keyword_search = r'\[\w*\]'
 IN  = "in.json"
 OUT = "Assets/Dialogues/Dialogue.json"
 
+def formatMainMessage (txt: str or None) -> str or None:
+    if txt is None: return None
+    txt = txt.replace("{", "{ ")
+    txt = txt.replace("}", " }")
+    return purgeHTML(txt)
+
 def purgeHTML (txt: str or None) -> str or None:
     # purges HTML & Wordle brackets
     REPLACEABLE_WORDS = [
@@ -93,7 +99,7 @@ while True: # broken only explicitly
 
     msgs.append(Message(mid     = queue[0],
                         person  = purgeHTML(elem["title"]),
-                        msg     = purgeHTML(elem["content"]),
+                        msg     = formatMainMessage(elem["content"]),
                         wordle  = purgeHTMLRegEx(re.search(keyword_search, elem["content"])),
                         next    = msg_next, # msg_next based on first connection, even with multiple
                         choices = msg_choices))
