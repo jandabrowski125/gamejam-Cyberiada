@@ -75,7 +75,6 @@ public class WordleManager : MonoBehaviour
             Keyboard.current.onTextInput -= HandleTextInput;
     }
 
-    // --- LOGIKA WEJŚCIA ---
 
     private void Awake()
     {
@@ -198,8 +197,10 @@ public class WordleManager : MonoBehaviour
         canvasGroup.alpha = 1;
     }
 
-    // --- MECHANIKA GRY ---
-
+    /// <summary>
+    /// Initializes the Wordle minigame <see langword="with"/> the word keyword. 
+    /// </summary>
+    /// <param name="word">Solution of the minigame</param>
     public void InitWordle(string word)
     {
         if (container == null || rowPrefab == null || tilePrefab == null)
@@ -223,9 +224,11 @@ public class WordleManager : MonoBehaviour
         {
             GameObject tileObj = Instantiate(tilePrefab, wordObj.transform);
             wordRow[i] = tileObj.GetComponent<WordleTile>();
-            wordRow[i].textElement.font = alienFont;
-            wordRow[i].textElement.fontSize = 70;
-            wordRow[i].SetLetter(targetWord[i]);
+            wordRow[i].SetLetter(
+                targetWord[i],
+                font: alienFont,
+                fontSize: 70
+                );
             wordRow[i].SetColor(targetWordTileColor);
         }
 

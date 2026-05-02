@@ -5,22 +5,25 @@ using System;
 
 public class ButtonCreator : MonoBehaviour
 {
-    public GameObject buttonPrefab;
-    public Transform parentPanel;
+    [SerializeField] private GameObject _buttonPrefab;
+    [SerializeField] private Transform _parentPanel;
 
-    // Czyści wszystkie przyciski
+    /// <summary>
+    /// Deletes all buttons <see langword="from"/> the scene. 
+    /// </summary>
     public void ClearButtons()
     {
-        foreach (Transform child in parentPanel)
-        {
-            Destroy(child.gameObject);
-        }
+        foreach (Transform child in _parentPanel) Destroy(child.gameObject);
     }
 
-    // Tworzy pojedynczy przycisk (Helper)
+    /// <summary>
+    /// Creates one button <see langword="with"/> specific <paramref name="text"/> <see langword="and"/> <paramref name="onClickAction"/>.  
+    /// </summary>
+    /// <param name="text">Text displayed <see langword="on"/> the button. </param>
+    /// <param name="onClickAction">Action performed <see langword="if"/> the button <see langword="is"/> clicked.</param>
     private void CreateButton(string text, Action onClickAction)
     {
-        GameObject newButton = Instantiate(buttonPrefab, parentPanel);
+        GameObject newButton = Instantiate(_buttonPrefab, _parentPanel);
         
         TextMeshProUGUI textComponent = newButton.GetComponentInChildren<TextMeshProUGUI>();
         if (textComponent != null) textComponent.text = text;
@@ -48,7 +51,7 @@ public class ButtonCreator : MonoBehaviour
 
     public void ShowContinueCustom(string label, System.Action onClickAction)
     {
-        GameObject newButton = Instantiate(buttonPrefab, parentPanel);
+        GameObject newButton = Instantiate(_buttonPrefab, _parentPanel);
         newButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = label;
         
         Button btn = newButton.GetComponent<Button>();

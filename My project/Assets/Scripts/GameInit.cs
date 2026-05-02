@@ -15,14 +15,4 @@ public class GameInit : MonoBehaviour
     {
         dialogueManager.Write(testNodeID);
     }
-
-    void TriggerManualWordle()
-    {
-        // Pobieramy rozwiązanie z loadera (tak jak wcześniej)
-        var node = dialogueManager.loader.GetNode(testNodeID);
-        if (node != null)
-        {
-            GameEvents.TriggerWordleRequired(node.wordle_solution);
-        }
-    }
 }
