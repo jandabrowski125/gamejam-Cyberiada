@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using System;
+using UnityEngine.Audio;
 
-[CreateAssetMenu(fileName = "CharacterDatabase", menuName = "Dialogue/Character Database")]
+[CreateAssetMenu(fileName = "CharacterDatabase", menuName = "ScriptableObjects/Character Database")]
 public class CharacterDatabase : ScriptableObject
 {
     [Serializable]
     public struct CharacterEntry
     {
-        public readonly string Name {get;}
-        public readonly Sprite Portrait {get;}
-        public readonly Sprite Background {get;}
-        public readonly TMP_FontAsset Font {get;}
-        public readonly Sprite EndingPicture {get;}
-        public readonly AudioSource Voice {get;}
-        public readonly AudioSource EndingMusic {get;}
+        public string Name;
+        public Sprite Portrait;
+        public Sprite Background;
+        public TMP_FontAsset Font;
+        public Sprite EndingPicture;
+        public AudioResource Voice;
+        public AudioResource EndingMusic;
     }
 
     [SerializeField] private List<CharacterEntry> characters;
@@ -65,33 +66,29 @@ public class CharacterDatabase : ScriptableObject
         return entry.EndingPicture;
     }
 
-    /// <summary>
-    /// Plays the voice of the character.  
-    /// </summary>
-    /// <remarks>
-    /// Stops other characters' voices so they don't overlap.
-    /// </remarks>
+    /// Retrieves the characters' voices from the CharacterDB.
     /// <param name="characterName"></param>
-    public void PlayVoice(string characterName)
+    /// <summary>
+    /// Returns a name - audioGenerator dictionary.
+    /// </summary>
+    /// <returns>
+    /// Dictionary: key- characterName, value- AudioRandomGroup of the character's voices
+    /// </returnes>
+    public Dictionary<string, AudioResource> GetVoices()
     {
-        foreach(var character in characters)
-        {
-            if (character.Name.Equals(characterName, StringComparison.OrdinalIgnoreCase))
-            {
-                character.Voice.Play();
-                continue;
-            }
-            character.Voice.Stop();
-        }
+        return characters.ToDictionary(
+            character => character.Name, 
+            character => character.Voice
+        );
     }
 
     /// <summary>
     /// Plays the ending music of the character.
     /// </summary>
     /// <param name="characterName"></param>
-    public void PlayEndingMusic(string characterName)
+    public AudioResource GetEndingMusic(string characterName)
     {
         var entry = characters.FirstOrDefault(c => c.Name.Equals(characterName, StringComparison.OrdinalIgnoreCase));
-        entry.EndingMusic.Play();
+        return entry.EndingMusic;
     } 
 }

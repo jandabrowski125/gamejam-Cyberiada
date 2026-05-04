@@ -33,8 +33,10 @@ public class DialogueWriter : MonoBehaviour
     private bool forceSkipTyping = false;
     private HashSet<string> knownWords = new HashSet<string>();
     private int currentColumn = 0;
+    private bool _isTypingKeyword = false;
+    private bool _wroteFullText = false;
+    private List<GameObject> _keywordSentence = new List<GameObject>();
     
-    // ZMIANA: Śledzimy OBA procesy oddzielnie
     private Coroutine sequenceCoroutine;
     private Coroutine typingCoroutine;
     
@@ -165,13 +167,27 @@ public class DialogueWriter : MonoBehaviour
 
     private IEnumerator TypeTextRoutine(string fullText, string keyword, bool skipTypewriter, bool forceUnderstandable, string toLearn = null)
     {
+        _wroteFullText = false;
+        _isTypingKeyword = false;
         string[] words = fullText.Split(' ');
+        _keywordSentence.Clear();
         currentColumn = 0;
         
         foreach (string word in words)
         {   
             if (string.IsNullOrEmpty(word)) continue;
 
+            if (word == "[") {
+                _isTypingKeyword = true;
+                Debug.Log("We're now typing the keyword sentence!");
+                continue;
+            }
+            else if (word == "]") {
+                _isTypingKeyword = false;
+                Debug.Log("not the keyword sentence anymore");
+                continue;
+            }
+            
             string clean = CleanWord(word);
             string cleanLower = clean.ToLower();
 
@@ -190,14 +206,19 @@ public class DialogueWriter : MonoBehaviour
                 if (currentColumn != 0)
                 {
                     int spacesToFill = charsPerLine - currentColumn;
-                    for (int i = 0; i < spacesToFill; i++) CreateText(' ', fontAsset, Color.white);
+                    for (int i = 0; i < spacesToFill; i++) {
+                        GameObject obj = CreateText(' ', fontAsset, Color.white);
+                        // //Add only one space
+                        // if (i == 0 && _isTypingKeyword) _keywordSentence.Add(obj);
+                    }
                     currentColumn = 0;
                 }
             }
 
             for (int i = 0; i < word.Length; i++)
             {
-                CreateText(word[i], fontToUse, textColor);
+                GameObject obj = CreateText(word[i], fontToUse, textColor);
+                if (_isTypingKeyword) _keywordSentence.Add(obj);
                 currentColumn++;
                 if (currentColumn >= charsPerLine) currentColumn = 0;
                 
@@ -216,7 +237,8 @@ public class DialogueWriter : MonoBehaviour
 
             if (currentColumn > 0 && currentColumn < charsPerLine)
             {
-                CreateText(' ', fontAsset, Color.white);
+                GameObject obj = CreateText(' ', fontAsset, Color.white);
+                if (_isTypingKeyword) _keywordSentence.Add(obj);
                 currentColumn++;
                 if (currentColumn >= charsPerLine) currentColumn = 0;
             }
@@ -233,16 +255,18 @@ public class DialogueWriter : MonoBehaviour
             }
         }
         
+        _wroteFullText = true;
         forceSkipTyping = false;
     }
 
-    void CreateText(char letter, TMP_FontAsset font, Color color)
+    private GameObject CreateText(char letter, TMP_FontAsset font, Color color)
     {
         GameObject obj = Instantiate(textPrefab, parent);
         TextMeshProUGUI textComp = obj.GetComponent<TextMeshProUGUI>();
         textComp.text = letter.ToString();
         textComp.font = font;
         textComp.color = color;
+        return obj;
     }
 
     private void ClearGrid() 
@@ -269,5 +293,15 @@ public class DialogueWriter : MonoBehaviour
         if (clean.Length > 0 && punctuations.Contains(clean[clean.Length - 1]))
             clean = clean.Substring(0, clean.Length - 1);
         return clean;
+    }
+
+    public List<GameObject> GetKeywordSentence()
+    {
+        return _keywordSentence;
+    }
+
+    public bool WroteFullText()
+    {
+        return _wroteFullText;
     }
 }

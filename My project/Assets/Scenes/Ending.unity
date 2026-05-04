@@ -549,16 +549,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd8e27ffc527b84cbe587cb73965c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  dialogueWriter: {fileID: 1740200795}
-  loader: {fileID: 2025339898}
-  buttonCreator: {fileID: 1841846421}
-  _audioManager: {fileID: 1136342206}
-  endingManager: {fileID: 854967660}
-  statsManager: {fileID: 854967659}
-  characterDB: {fileID: 11400000, guid: 3679d5711fc32f645b51fb391fe98b07, type: 2}
-  characterPortraitRenderer: {fileID: 721026722}
-  backgroundImageRenderer: {fileID: 1147577531}
-  backgroundAudioSource: {fileID: 258362610}
+  _dialogueWriter: {fileID: 1740200795}
+  _loader: {fileID: 2025339898}
+  _buttonCreator: {fileID: 1841846421}
+  _endingManager: {fileID: 854967660}
+  _statsManager: {fileID: 854967659}
+  _characterManager: {fileID: 1684343940}
+  _characterPortraitRenderer: {fileID: 721026722}
+  _backgroundImageRenderer: {fileID: 1147577531}
+  _backgroundAudioSource: {fileID: 258362610}
 --- !u!4 &258362608
 Transform:
   m_ObjectHideFlags: 0
@@ -586,30 +585,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 232b73ff5e928a94ca8ad17365690a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndingDialogueManager
-  dialogueWriter: {fileID: 1740200795}
-  dialogueManager: {fileID: 258362607}
-  buttonCreator: {fileID: 1841846421}
-  endingMenuManager: {fileID: 854967660}
-  audioManager: {fileID: 1136342206}
-  UIcanvas: {fileID: 1750445371}
-  finalPictureDisplay: {fileID: 1263082578}
-  endingPictures:
-  - characterName: CyberJohn
-    picture: {fileID: -5051673314976185292, guid: 40b8067ab1fcef4419a86595c18ecff5, type: 3}
-  - characterName: Unhappy
-    picture: {fileID: -440007573708660520, guid: 8e3016a8b6723b8478c38e84277f00dc, type: 3}
-  - characterName: Decln'Argegh
-    picture: {fileID: -1082016544093709938, guid: ecdea14dd4cde9a40853f41bca44c9c3, type: 3}
-  - characterName: Juhei Ikeet
-    picture: {fileID: -5318843070631793986, guid: cde43edac8d4f2e4a99d2bde79e3934f, type: 3}
-  - characterName: Arneth Maalg
-    picture: {fileID: -4672324909826973759, guid: ef906d5f10ee0794690537f21de14ef7, type: 3}
-  - characterName: Credits1
-    picture: {fileID: 1454738883225299967, guid: 07d69bd09367c32438671e60a8cb6bd1, type: 3}
-  - characterName: Credits2
-    picture: {fileID: 2131363154476964720, guid: 508f7510c54eb77409fca4ea7466bb48, type: 3}
-  - characterName: Credits3
-    picture: {fileID: 4347047130177171658, guid: 7abd907ce96b1be44a1d615cce1cc2dc, type: 3}
+  _dialogueWriter: {fileID: 1740200795}
+  _dialogueManager: {fileID: 258362607}
+  _buttonCreator: {fileID: 1841846421}
+  _endingMenuManager: {fileID: 854967660}
+  _characterDB: {fileID: 11400000, guid: 3679d5711fc32f645b51fb391fe98b07, type: 2}
+  _finalPictureDisplay: {fileID: 1263082578}
+  _UIcanvas: {fileID: 1750445371}
 --- !u!82 &258362610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -791,6 +773,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &474814696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474814697}
+  - component: {fileID: 474814699}
+  - component: {fileID: 474814698}
+  m_Layer: 5
+  m_Name: WordleBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &474814697
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474814696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1068031642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 65, y: -764}
+  m_SizeDelta: {x: 61.6134, y: 19.7372}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &474814698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474814696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5310503060268302553, guid: ae734138494236a4397d5d4e47952f8b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &474814699
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474814696}
+  m_CullTransparentMesh: 1
 --- !u!1 &486576025
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,7 +995,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2025339898}
     - target: {fileID: 420872801486551511, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: _parentPanel
+      value: 
+      objectReference: {fileID: 1841846422}
+    - target: {fileID: 420872801486551511, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: buttonPrefab
+      value: 
+      objectReference: {fileID: 3032454203403335847, guid: f84a51d54c91b6841b52d08a9e7fdb66, type: 3}
+    - target: {fileID: 420872801486551511, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: _buttonPrefab
       value: 
       objectReference: {fileID: 3032454203403335847, guid: f84a51d54c91b6841b52d08a9e7fdb66, type: 3}
     - target: {fileID: 1103622660136028941, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
@@ -1824,6 +1889,7 @@ GameObject:
   - component: {fileID: 671597107}
   - component: {fileID: 671597106}
   - component: {fileID: 671597105}
+  - component: {fileID: 671597108}
   m_Layer: 5
   m_Name: WordleUI
   m_TagString: Untagged
@@ -1844,6 +1910,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 753208499}
+  - {fileID: 1068031642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1914,6 +1981,56 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &671597108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671597103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151b124730e0518479a9fa00897aad7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WordleTransitionEffects
+  _wordleManager: {fileID: 753208504}
+  _dialogueWriter: {fileID: 1740200795}
+  _wordleRect: {fileID: 939904915}
+  _wordleCanvasGroup: {fileID: 753208503}
+  _sideBoxRect: {fileID: 1764747176}
+  _sideBoxCanvasGroup: {fileID: 1068031639}
+  _animationDuration: 0.5
+  _delayBeforeSideBox: 4
+  _startXPosition: -10
+  _endXPosition: 20
+  _slideCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _maxVolume: 0.5
+  _audioFadeDuration: 0.8
+  _wordleMusicClip: {fileID: 8300000, guid: 957ee0c1826675f428907d3a1d056fee, type: 3}
+  _audienceClapAudio: {fileID: 486576027}
 --- !u!1 &721026721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,7 +2234,6 @@ MonoBehaviour:
   tilePrefab: {fileID: 4505176520430108689, guid: 53a4ba1a438bb2c4b8347e03bfe80709, type: 3}
   container: {fileID: 939904915}
   wordContainer: {fileID: 1832361670}
-  backgroundImagePrefab: {fileID: 0}
   wordleInputSound: {fileID: 1136342207}
   correctColor: {r: 0, g: 1, b: 0, a: 1}
   presentColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -2125,42 +2241,11 @@ MonoBehaviour:
   targetWordTileColor: {r: 0.6515405, g: 0, b: 0.9716981, a: 0.53333336}
   emptyTileColor: {r: 1, g: 1, b: 1, a: 0.2}
   successParticlesPrefab: {fileID: 5427798730013937539, guid: 3fa6e9edbbd787642ae79c81253db9d7, type: 3}
-  animationDuration: 0.5
-  startXPosition: -20
-  endXPosition: 20
-  slideCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  wordleMusic: {fileID: 8300000, guid: 957ee0c1826675f428907d3a1d056fee, type: 3}
-  maxVolume: 0.5
-  audioFadeDuration: 0.8
   wordleSuccess: {fileID: 1084893327}
   wordleFailed: {fileID: 26819453}
   alienFont: {fileID: 11400000, guid: 2af55cd223613504aaf0966ee1e22fc2, type: 2}
   _availableAttempts: 5
   audienceAudio: {fileID: 1863682603}
-  audienceClapAudio: {fileID: 486576027}
 --- !u!82 &753208505
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2559,6 +2644,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997706694}
   m_CullTransparentMesh: 1
+--- !u!1 &1068031638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1068031642}
+  - component: {fileID: 1068031641}
+  - component: {fileID: 1068031640}
+  - component: {fileID: 1068031639}
+  m_Layer: 5
+  m_Name: ContextPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!225 &1068031639
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068031638}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1068031640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068031638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1068031641
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068031638}
+  m_CullTransparentMesh: 1
+--- !u!224 &1068031642
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068031638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 474814697}
+  - {fileID: 1764747176}
+  m_Father: {fileID: 671597104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1084893325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,7 +2980,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1136342205}
-  - component: {fileID: 1136342206}
   - component: {fileID: 1136342207}
   m_Layer: 0
   m_Name: Sounds
@@ -2836,23 +3010,6 @@ Transform:
   - {fileID: 1967264108}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1136342206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136342204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af0c1084a71b9e429641a5f33de219f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  taliVoice: {fileID: 1252069065}
-  declanVoice: {fileID: 634279706}
-  johnVoice: {fileID: 1967264109}
-  presenterVoice: {fileID: 12680050}
-  garrusVoice: {fileID: 572649768}
 --- !u!82 &1136342207
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3121,11 +3278,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6691924388424849924, guid: f56f26c3161849740a105c21adb6478b, type: 3}
   m_PrefabInstance: {fileID: 200549671401003858}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1252069065 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5494648948683697444, guid: f56f26c3161849740a105c21adb6478b, type: 3}
-  m_PrefabInstance: {fileID: 200549671401003858}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1263082576
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,6 +3472,7 @@ GameObject:
   - component: {fileID: 1684343938}
   - component: {fileID: 1684343937}
   - component: {fileID: 1684343939}
+  - component: {fileID: 1684343940}
   m_Layer: 0
   m_Name: GameInit
   m_TagString: Untagged
@@ -3454,6 +3607,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1684343940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684343936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800e75ee50db3f848987b81b0bce29c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterManager
+  _characterDB: {fileID: 11400000, guid: 3679d5711fc32f645b51fb391fe98b07, type: 2}
 --- !u!224 &1736164049 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1910563005551835314, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
@@ -3654,6 +3820,66 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1764747175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1764747176}
+  - component: {fileID: 1764747177}
+  m_Layer: 5
+  m_Name: Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1764747176
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764747175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068031642}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 126.61, y: -822}
+  m_SizeDelta: {x: 488.1457, y: 100}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1764747177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764747175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 24, y: 40}
+  m_Spacing: {x: 0, y: 12}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1832361669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,6 +3953,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b3e4f7e381c394692b1d8f428f767e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonCreator
+--- !u!224 &1841846422 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1936878720100013118, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+  m_PrefabInstance: {fileID: 506284276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1863682601
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,7 +4472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f7cb9522150f84a94862927cb5abdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueLoader
-  jsonFile: {fileID: 4900000, guid: 6c674647bc6437a34876f245d7937228, type: 3}
+  _jsonFile: {fileID: 4900000, guid: 6c674647bc6437a34876f245d7937228, type: 3}
 --- !u!1 &2048198143
 GameObject:
   m_ObjectHideFlags: 0

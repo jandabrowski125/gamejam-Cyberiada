@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private StatsManager _statsManager;
 
     [Header("Character System (Sprite2D)")]
-    [SerializeField] private CharacterDatabase _characterDB;
+    [SerializeField] private CharacterManager _characterManager;
     [SerializeField] private SpriteRenderer _characterPortraitRenderer;
     [SerializeField] private SpriteRenderer _backgroundImageRenderer;
 
@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour
 
         HelperFunctions.IsAnyNull(
             "DialogueManager - Sprites",
-            _characterDB,
+            _characterManager,
             _characterPortraitRenderer,
             _backgroundImageRenderer
         );
@@ -79,7 +79,7 @@ public class DialogueManager : MonoBehaviour
                 forceUnderstandable: isPresenter, 
                 toLearn: node.wordle_solution
                 );
-            _characterDB.PlayVoice(node.speaker);
+            _characterManager.PlayVoice(node.speaker);
 
             if (isPresenter)
             {
@@ -125,8 +125,8 @@ public class DialogueManager : MonoBehaviour
     /// <param name="speakerName">Name of the speaker</param>
     private void UpdatePortrait(string speakerName)
     {
-        Sprite speakerSprite = _characterDB.GetSprite(speakerName);
-        Sprite backgroundSprite = _characterDB.GetBackground(speakerName);
+        Sprite speakerSprite = _characterManager.GetSprite(speakerName);
+        Sprite backgroundSprite = _characterManager.GetBackground(speakerName);
 
         if (speakerSprite != null && backgroundSprite != null)
         {
@@ -215,7 +215,7 @@ public class DialogueManager : MonoBehaviour
                 currentNode.speaker, 
                 forceUnderstandable: isPresenter
                 );
-            _characterDB.PlayVoice(currentNode.speaker);
+            _characterManager.PlayVoice(currentNode.speaker);
 
             _buttonCreator.ShowContinue(() => {
                 if (!string.IsNullOrEmpty(currentNode.next_node)) Write(currentNode.next_node);
@@ -239,13 +239,14 @@ public class DialogueManager : MonoBehaviour
         _dialogueWriter.WriteEnding(text);
         
         // 3. Opcjonalnie: odpal głos (jeśli masz przygotowane klipy pod finał)
-        _characterDB.PlayVoice(speakerName);
+        _characterManager.PlayVoice(speakerName);
     }
 
     /// <summary>
     /// Handler of the GameEvents.OnWordleRequired <see langword="event"/>. Opens the Wordle minigame.
     /// </summary>
     /// <param name="solution">Keyword <see langword="for"/> Wordle.</param>
+    /// <param name="keyword_sentence"> Sentence that uses <see langword="this"/> keyword </param>
     private void HandleWordleRequested(string solution)
     {
         if (_backgroundAudioSource.isPlaying) _backgroundAudioSource.Pause();

@@ -1,12 +1,11 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.InputSystem.Controls;
 
 public class WordleTile : MonoBehaviour
 {
-    private TextMeshProUGUI textElement;
-    private Image backgroundImage;
+    [SerializeField] private TextMeshProUGUI textElement;
+    [SerializeField] private Image backgroundImage;
 
     public void SetLetter(
         char letter,
