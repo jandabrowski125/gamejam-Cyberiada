@@ -656,6 +656,7 @@ MonoBehaviour:
   _buttonCreator: {fileID: 1841846421}
   _endingManager: {fileID: 854967660}
   _statsManager: {fileID: 854967659}
+  _contextSentenceText: {fileID: 1369900133}
   _characterManager: {fileID: 1684343940}
   _characterPortraitRenderer: {fileID: 721026722}
   _backgroundImageRenderer: {fileID: 1147577531}
@@ -1296,6 +1297,10 @@ PrefabInstance:
       propertyPath: charsPerLine
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
+      propertyPath: _jsonWordFile
+      value: 
+      objectReference: {fileID: 4900000, guid: e42ad99d19ca84445a99fb1e55d024b7, type: 3}
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: alienFontAsset
       value: 
@@ -3795,7 +3800,7 @@ GameObject:
   - component: {fileID: 1369900134}
   - component: {fileID: 1369900133}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ContextSentence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
