@@ -1,17 +1,30 @@
 import json
 import re
 
-reg_search = r'\[\w*\]'
+keyword_search = r'\[\w*\]'
 
 IN  = "in.json"
 OUT = "Assets/Dialogues/Dialogue.json"
 
-def purgeHTML (txt: str | None) -> str | None:
-    # purges HTML & Wordle brackets
-    if txt is None: return None # prevents conversion of None
-    return txt.replace("<p>", "").replace("</p>", "").replace("[", "").replace("]", "")
+def formatMainMessage (txt: str or None) -> str or None:
+    if txt is None: return None
+    txt = txt.replace("{", "{ ")
+    txt = txt.replace("}", " }")
+    return purgeHTML(txt)
 
-def purgeHTMLRegEx (txt: re.Match | None) -> str | None:
+def purgeHTML (txt: str or None) -> str or None:
+    # purges HTML & Wordle brackets
+    REPLACEABLE_WORDS = [
+        "<p>", "</p>",
+        "<i>", "</i>",
+        "[", "]"
+    ]
+    if txt is None: return None # prevents conversion of None
+    for WORD in REPLACEABLE_WORDS:
+        txt = txt.replace(WORD, "")
+    return txt
+
+def purgeHTMLRegEx (txt: re.Match or None) -> str or None:
     if txt is None: return None
     else:
         return purgeHTML(txt.group(0))
@@ -86,8 +99,8 @@ while True: # broken only explicitly
 
     msgs.append(Message(mid     = queue[0],
                         person  = purgeHTML(elem["title"]),
-                        msg     = purgeHTML(elem["content"]),
-                        wordle  = purgeHTMLRegEx(re.search(reg_search, elem["content"])),
+                        msg     = formatMainMessage(elem["content"]),
+                        wordle  = purgeHTMLRegEx(re.search(keyword_search, elem["content"])),
                         next    = msg_next, # msg_next based on first connection, even with multiple
                         choices = msg_choices))
     queue.pop(0) # removes analysed item
