@@ -656,7 +656,7 @@ MonoBehaviour:
   popup: {fileID: 0}
   musicSource: {fileID: 1603215718}
   fadeImage: {fileID: 330226448}
-  fadeDuration: 1
+  fadeDuration: 3
 --- !u!114 &1224198579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1803269811
 RectTransform:
   m_ObjectHideFlags: 0

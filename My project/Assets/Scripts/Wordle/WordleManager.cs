@@ -56,15 +56,14 @@ public class WordleManager : MonoBehaviour
         if (Keyboard.current != null)
             Keyboard.current.onTextInput -= HandleTextInput;
     }
-    
-
+     
     private void HandleTextInput(char character)
     {
         // Blokujemy wpisywanie, jeśli procesujemy słowo, nie ma gry lub rząd jest pełny
         if (isProcessing || string.IsNullOrEmpty(targetWord) || currentInput.Length >= targetWord.Length) 
             return;
         
-        if (char.IsLetter(character))
+        if (char.IsLetter(character)&&!PauseMenu.isPaused)
         {
             currentInput += char.ToUpper(character);
             wordleInputSound.Play();
