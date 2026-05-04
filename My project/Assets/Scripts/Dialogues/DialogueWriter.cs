@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class DialogueWriter : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class DialogueWriter : MonoBehaviour
     public int charsPerLine = 24;
     public float typingSpeed = 0.025f;
     public Color keywordHighlightColor = Color.cyan;
+    [SerializeField] private Color _normalTextColor;
 
     [Header("Animation Settings")]
     public float animationDuration = 0.5f;
@@ -33,7 +35,8 @@ public class DialogueWriter : MonoBehaviour
     private bool forceSkipTyping = false;
     private HashSet<string> knownWords = new HashSet<string>();
     private int currentColumn = 0;
-    private bool _isTypingKeyword = false;
+    private bool _isTypingKeywordContext = false;
+    private bool _isTypingContext = false;
     private bool _wroteFullText = false;
     private List<GameObject> _keywordSentence = new List<GameObject>();
     
@@ -50,7 +53,6 @@ public class DialogueWriter : MonoBehaviour
 
         if (dialogueUI == null)
         {
-            Debug.LogError("<color=red>DialogueWriter: Przypisz 'Dialogue UI' w Inspektorze!</color>");
             return;
         }
 
@@ -61,7 +63,6 @@ public class DialogueWriter : MonoBehaviour
 
         if (canvasGroup == null || panelRect == null)
         {
-            Debug.LogError($"<color=yellow>DialogueWriter: Brakuje komponentów na {dialogueUI.name}. Sprawdź CanvasGroup i RectTransform!</color>");
             return;
         }
 
@@ -168,25 +169,19 @@ public class DialogueWriter : MonoBehaviour
     private IEnumerator TypeTextRoutine(string fullText, string keyword, bool skipTypewriter, bool forceUnderstandable, string toLearn = null)
     {
         _wroteFullText = false;
-        _isTypingKeyword = false;
+        _isTypingContext = false;
+        _isTypingKeywordContext = false;
         string[] words = fullText.Split(' ');
         _keywordSentence.Clear();
         currentColumn = 0;
+        string presenterContext = "";
         
         foreach (string word in words)
         {   
             if (string.IsNullOrEmpty(word)) continue;
-
-            if (word == "{") {
-                _isTypingKeyword = true;
-                Debug.Log("We're now typing the keyword sentence!");
-                continue;
-            }
-            else if (word == "}") {
-                _isTypingKeyword = false;
-                Debug.Log("not the keyword sentence anymore");
-                continue;
-            }
+            if (IsSpecialChar(word)) continue;
+            
+            if (_isTypingContext) presenterContext += " " + word;
             
             string clean = CleanWord(word);
             string cleanLower = clean.ToLower();
@@ -197,8 +192,7 @@ public class DialogueWriter : MonoBehaviour
 
             TMP_FontAsset fontToUse = isUnderstandable ? fontAsset : alienFontAsset;
 
-            // Color textColor = isKeyword ? keywordHighlightColor : Color.white;
-            Color textColor = isToLearn ? keywordHighlightColor : Color.white;
+            Color textColor = isToLearn ? keywordHighlightColor : _normalTextColor;
             
 
             if (word.Length > (charsPerLine - currentColumn))
@@ -207,7 +201,7 @@ public class DialogueWriter : MonoBehaviour
                 {
                     int spacesToFill = charsPerLine - currentColumn;
                     for (int i = 0; i < spacesToFill; i++) {
-                        GameObject obj = CreateText(' ', fontAsset, Color.white);
+                        GameObject obj = CreateText(' ', fontAsset, _normalTextColor);
                         // //Add only one space
                         // if (i == 0 && _isTypingKeyword) _keywordSentence.Add(obj);
                     }
@@ -218,7 +212,7 @@ public class DialogueWriter : MonoBehaviour
             for (int i = 0; i < word.Length; i++)
             {
                 GameObject obj = CreateText(word[i], fontToUse, textColor);
-                if (_isTypingKeyword) _keywordSentence.Add(obj);
+                if (_isTypingKeywordContext) _keywordSentence.Add(obj);
                 currentColumn++;
                 if (currentColumn >= charsPerLine) currentColumn = 0;
                 
@@ -237,8 +231,8 @@ public class DialogueWriter : MonoBehaviour
 
             if (currentColumn > 0 && currentColumn < charsPerLine)
             {
-                GameObject obj = CreateText(' ', fontAsset, Color.white);
-                if (_isTypingKeyword) _keywordSentence.Add(obj);
+                GameObject obj = CreateText(' ', fontAsset, _normalTextColor);
+                if (_isTypingKeywordContext) _keywordSentence.Add(obj);
                 currentColumn++;
                 if (currentColumn >= charsPerLine) currentColumn = 0;
             }
@@ -257,6 +251,23 @@ public class DialogueWriter : MonoBehaviour
         
         _wroteFullText = true;
         forceSkipTyping = false;
+    }
+
+    private bool IsSpecialChar(string c)
+    {
+        if (c == "{") {
+            _isTypingKeywordContext = true;
+            return true;
+        }
+        else if (c == "}") {
+            _isTypingKeywordContext = false;
+            return true;
+        }
+        else if (c == "&") {
+            _isTypingContext = !_isTypingContext;
+            return true;
+        }
+        return false;
     }
 
     private GameObject CreateText(char letter, TMP_FontAsset font, Color color)

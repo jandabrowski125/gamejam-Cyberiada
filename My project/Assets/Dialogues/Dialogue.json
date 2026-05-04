@@ -58,7 +58,7 @@
     {
       "node_id": "7263d6df-2002-4ef0-bade-56f1d9e6b77d",
       "speaker": "Presenter",
-      "text_original": "Let\u2019s begin with something simple. { Do you have any unusual hobbies our guest should know about? }",
+      "text_original": "Let\u2019s begin with something simple. & Do you have any unusual hobbies our guest should know about? &",
       "wordle_solution": null,
       "next_node": "1d6098fc-57b4-4208-ad11-6fbf03975ebe",
       "choices": []

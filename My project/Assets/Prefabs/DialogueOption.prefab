@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9018965949949066821, guid: 5b31291af394ac84ab908f31d667e646, type: 3}
+  m_Sprite: {fileID: -945426676055470849, guid: 3ee4b323016082e47a6c5785a957a9e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -107,9 +107,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 5716613638576983640, guid: 33061e3d1baff584fb7c309c54be9d49, type: 3}
-    m_PressedSprite: {fileID: 5716613638576983640, guid: 33061e3d1baff584fb7c309c54be9d49, type: 3}
-    m_SelectedSprite: {fileID: 5716613638576983640, guid: 33061e3d1baff584fb7c309c54be9d49, type: 3}
+    m_HighlightedSprite: {fileID: 2530564911472380330, guid: e0fb9cdcb5f8779458ee182c1d06a63e, type: 3}
+    m_PressedSprite: {fileID: 2530564911472380330, guid: e0fb9cdcb5f8779458ee182c1d06a63e, type: 3}
+    m_SelectedSprite: {fileID: 2530564911472380330, guid: e0fb9cdcb5f8779458ee182c1d06a63e, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -265,7 +265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11, y: 0}
+  m_AnchoredPosition: {x: 20.4, y: 10}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2584644069364981047
@@ -299,14 +299,14 @@ MonoBehaviour:
   m_text: Button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
-  m_sharedMaterial: {fileID: 5132142384460955023, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
+  m_sharedMaterial: {fileID: 8254022509334133815, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 41.17694, y: 31.27362, z: 61.50525, w: 33.35858}
+  m_margin: {x: 17.016846, y: 10.778992, z: 51.838013, w: 14.410736}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -16,7 +16,8 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource _backgroundAudioSource;
-    private string lastNodeId;
+    private string _lastNodeId;
+    private string _presenterContext;
 
     //Event subscriptions
     private void OnEnable()
@@ -62,7 +63,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="nodeId"></param>
     public void Write(string nodeId)
     {
-        lastNodeId = nodeId;
+        _lastNodeId = nodeId;
         DialogueNode node = _loader.GetNode(nodeId);
 
         if (node != null)
@@ -153,11 +154,20 @@ public class DialogueManager : MonoBehaviour
     /// </remarks>
     private void StartWordleChallenge()
     {
-        DialogueNode node = _loader.GetNode(lastNodeId);
+        DialogueNode node = _loader.GetNode(_lastNodeId);
         if (node != null && !string.IsNullOrEmpty(node.wordle_solution))
         {
             GameEvents.TriggerWordleRequired(node.wordle_solution);
         }
+    }
+
+    /// <summary>
+    /// Sets the context of the current dialogue.
+    /// </summary>
+    /// <param name="context">What the current character <see langword="is"/> referring to. </param>
+    public void SetPresenterContext(string context)
+    {
+        _presenterContext = context;
     }
 
     /// <summary>
@@ -169,8 +179,8 @@ public class DialogueManager : MonoBehaviour
     /// <param name="foundKeyword">Found word</param>
     private void HandleMinigameResult(string foundKeyword)
     {
-        if (string.IsNullOrEmpty(lastNodeId)) return;
-        DialogueNode node = _loader.GetNode(lastNodeId);
+        if (string.IsNullOrEmpty(_lastNodeId)) return;
+        DialogueNode node = _loader.GetNode(_lastNodeId);
 
         _backgroundAudioSource.UnPause();
 
@@ -178,7 +188,7 @@ public class DialogueManager : MonoBehaviour
         {
             _dialogueWriter.AddKnownWord(foundKeyword);
             _dialogueWriter.Write(
-                lastNodeId,
+                _lastNodeId,
                 keyword: foundKeyword,
                 forceUnderstandable: true,
                 toLearn: node.wordle_solution
@@ -187,7 +197,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             _dialogueWriter.Write(
-                lastNodeId,
+                _lastNodeId,
                 keyword: null,
                 forceSkip: true
                 );
