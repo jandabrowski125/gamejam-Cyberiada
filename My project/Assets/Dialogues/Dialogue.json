@@ -138,7 +138,15 @@
     {
       "node_id": "5d876c48-5988-4efc-a029-959a478f51d7",
       "speaker": "Presenter",
-      "text_original": "Okay, now that we've got the formalities out of the way, let's get started. Start with you, Decln'Argegh.  &Do you have any unusual hobbies our guest should know about?&",
+      "text_original": "Okay, now that we've got the formalities out of the way, let's get started. Start with you, Decln'Argegh. & Do you have any unusual hobbies our guest should know about? &",
+      "wordle_solution": null,
+      "next_node": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+      "choices": []
+    },
+    {
+      "node_id": "66b873ac-9833-4d59-b80f-d94a6771c93e",
+      "speaker": "Presenter",
+      "text_original": "Now it's your time to guess, Human! Look at the screen and guess the right word from playing our little language game. This time, the word contains six letters. Try any six-lettered word and just write it with your silly Earthian keyboard. See how the magic happens! Green means it's the right spot, yellow means you should put it elsewhere. Easy-peasy!",
       "wordle_solution": null,
       "next_node": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
       "choices": []
@@ -148,23 +156,7 @@
       "speaker": "Decln'Argegh",
       "text_original": "Well, in my free time I like to shoot stuff and\u2026 { Water my plants. }",
       "wordle_solution": "plants",
-      "next_node": "66b873ac-9833-4d59-b80f-d94a6771c93e",
-      "choices": []
-    },
-    {
-      "node_id": "66b873ac-9833-4d59-b80f-d94a6771c93e",
-      "speaker": "Presenter",
-      "text_original": "Now it's your time to guess, Human! Look at the screen and guess the right word from playing our little language game. This time, the word contains six letters. Try any six-lettered word and just write it with your silly Earthian keyboard. See how the magic happens! Green means it's the right spot, yellow means you should put it elsewhere. Easy-peasy!",
-      "wordle_solution": null,
       "next_node": "708d2520-f90f-4ed6-8e0a-14250a95e375",
-      "choices": []
-    },
-    {
-      "node_id": "708d2520-f90f-4ed6-8e0a-14250a95e375",
-      "speaker": "Presenter",
-      "text_original": "After a while, you might even recognize the letters of our alphabet and understand the whole context of our guest's statements faster and better! Isn't that awesome? We sure know it is, right audience?! Now chop, chop! It's your time to shine!",
-      "wordle_solution": null,
-      "next_node": "68649621-523f-4f97-971d-edc4faaa3a44",
       "choices": [
         {
           "text": "Watering plants? I love watering plants!",
@@ -185,6 +177,14 @@
           "follow_up": "Shooting stuff is how we are raised. From the moment I received my first weapon when I was mere three days old, I never let it go\u2026 I have it on me now! WANNA SEE?"
         }
       ]
+    },
+    {
+      "node_id": "708d2520-f90f-4ed6-8e0a-14250a95e375",
+      "speaker": "Presenter",
+      "text_original": "After a while, you might even recognize the letters of our alphabet and understand the whole context of our guest's statements faster and better! Isn't that awesome? We sure know it is, right audience?! Now chop, chop! It's your time to shine!",
+      "wordle_solution": null,
+      "next_node": "68649621-523f-4f97-971d-edc4faaa3a44",
+      "choices": []
     },
     {
       "node_id": "68649621-523f-4f97-971d-edc4faaa3a44",
@@ -294,7 +294,7 @@
     {
       "node_id": "377f4192-b32e-4eee-afef-91410b016858",
       "speaker": "Presenter",
-      "text_original": "&What have your past relationships taught you?& I would say - don\u2019t get married! *laughs*",
+      "text_original": "& What have your past relationships taught you? & I would say - don\u2019t get married! *laughs*",
       "wordle_solution": null,
       "next_node": "14b07ea8-349f-4c98-8bca-14981a787c02",
       "choices": []
@@ -410,7 +410,7 @@
     {
       "node_id": "ab7d8303-a62a-48ae-9b42-e1889889badd",
       "speaker": "Presenter",
-      "text_original": "&If you had a superpower, would you use it for good\u2026 or for fun?& My ex-wife surely used it for fun!",
+      "text_original": "& If you had a superpower, would you use it for good\u2026 or for fun? & My ex-wife surely used it for fun!",
       "wordle_solution": null,
       "next_node": "57ba604b-a14a-4360-a52a-9335bee58778",
       "choices": []
@@ -526,7 +526,7 @@
     {
       "node_id": "b5bcdf91-39a8-4036-a4c4-92ef8bcfe4e1",
       "speaker": "Presenter",
-      "text_original": "&What kind of future are you building for yourself?&",
+      "text_original": "& What kind of future are you building for yourself? &",
       "wordle_solution": null,
       "next_node": "3ee1084a-2c94-4379-ac04-903855a10083",
       "choices": []
@@ -642,7 +642,7 @@
     {
       "node_id": "31d73771-7117-44fa-8012-08a415579be0",
       "speaker": "Presenter",
-      "text_original": "&What\u2019s your perfect cozy night like \u2014 and is there room for two? Or for three?& My ex sure liked a good crowd. Oh, the good ol\u2019 days!",
+      "text_original": "& What\u2019s your perfect cozy night like \u2014 and is there room for two? Or for three? & My ex sure liked a good crowd. Oh, the good ol\u2019 days!",
       "wordle_solution": null,
       "next_node": "527e03f0-852a-44e8-9e16-253207f6d657",
       "choices": []
@@ -758,7 +758,7 @@
     {
       "node_id": "40813c77-30de-47c7-a525-6dbe464f669e",
       "speaker": "Presenter",
-      "text_original": "&Be honest\u2026 have you ever broken someone\u2019s heart?&",
+      "text_original": "& Be honest\u2026 have you ever broken someone\u2019s heart? &",
       "wordle_solution": null,
       "next_node": "7e3c38e1-a316-42c4-a523-d5a1b09af992",
       "choices": []

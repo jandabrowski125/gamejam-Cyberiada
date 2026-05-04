@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private ButtonCreator _buttonCreator;
     [SerializeField] private EndingManager _endingManager;
     [SerializeField] private StatsManager _statsManager;
+    [SerializeField] private TextMeshProUGUI _contextSentenceText;
 
     [Header("Character System (Sprite2D)")]
     [SerializeField] private CharacterManager _characterManager;
@@ -16,7 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource _backgroundAudioSource;
-    private string lastNodeId;
+    private string _lastNodeId;
 
     //Event subscriptions
     private void OnEnable()
@@ -62,7 +64,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="nodeId"></param>
     public void Write(string nodeId)
     {
-        lastNodeId = nodeId;
+        _lastNodeId = nodeId;
         DialogueNode node = _loader.GetNode(nodeId);
 
         if (node != null)
@@ -70,9 +72,17 @@ public class DialogueManager : MonoBehaviour
             UpdatePortrait(node.speaker);
 
             if (!_backgroundAudioSource.isPlaying) _backgroundAudioSource.Play();
+            
 
             bool isPresenter = node.speaker.Equals("Presenter", System.StringComparison.OrdinalIgnoreCase);
-
+            if (isPresenter)
+            {
+                _contextSentenceText.text = "Presenter is speaking!";
+            }
+            else
+            {
+                _contextSentenceText.text = _dialogueWriter.GetContextSentence();
+            }
             //if presenter speaks, forceUnderstandable = true
             _dialogueWriter.Write(
                 nodeId,
@@ -153,7 +163,7 @@ public class DialogueManager : MonoBehaviour
     /// </remarks>
     private void StartWordleChallenge()
     {
-        DialogueNode node = _loader.GetNode(lastNodeId);
+        DialogueNode node = _loader.GetNode(_lastNodeId);
         if (node != null && !string.IsNullOrEmpty(node.wordle_solution))
         {
             GameEvents.TriggerWordleRequired(node.wordle_solution);
@@ -169,8 +179,8 @@ public class DialogueManager : MonoBehaviour
     /// <param name="foundKeyword">Found word</param>
     private void HandleMinigameResult(string foundKeyword)
     {
-        if (string.IsNullOrEmpty(lastNodeId)) return;
-        DialogueNode node = _loader.GetNode(lastNodeId);
+        if (string.IsNullOrEmpty(_lastNodeId)) return;
+        DialogueNode node = _loader.GetNode(_lastNodeId);
 
         _backgroundAudioSource.UnPause();
 
@@ -178,7 +188,7 @@ public class DialogueManager : MonoBehaviour
         {
             _dialogueWriter.AddKnownWord(foundKeyword);
             _dialogueWriter.Write(
-                lastNodeId,
+                _lastNodeId,
                 keyword: foundKeyword,
                 forceUnderstandable: true,
                 toLearn: node.wordle_solution
@@ -187,7 +197,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             _dialogueWriter.Write(
-                lastNodeId,
+                _lastNodeId,
                 keyword: null,
                 forceSkip: true
                 );

@@ -14,12 +14,15 @@ public class WordleManager : MonoBehaviour
     public Transform wordContainer;
     public AudioSource wordleInputSound;
     
-    [Header("Colors")]
-    public Color correctColor = Color.green;
-    public Color presentColor = Color.yellow;
-    public Color absentColor = Color.gray;
+    [Header("Colors - Tiles")]
+    public Color correctColor;
+    public Color presentColor;
+    public Color absentColor;
     public Color targetWordTileColor;
-    public Color emptyTileColor = new Color(1f, 1f, 1f, 0.2f);
+    public Color emptyTileColor;
+
+    [Header("Colors - Letters")]
+    [SerializeField] private Color _targetWordLetterColor;
 
     [Header("Effects")]
     public GameObject successParticlesPrefab;
@@ -114,10 +117,11 @@ public class WordleManager : MonoBehaviour
             wordRow[i] = tileObj.GetComponent<WordleTile>();
             wordRow[i].SetLetter(
                 targetWord[i],
+                _targetWordLetterColor,
                 font: alienFont,
                 fontSize: 70
                 );
-            wordRow[i].SetColor(targetWordTileColor);
+            wordRow[i].SetBackgroundColor(targetWordTileColor);
         }
 
         for (int i = 0; i < _availableAttempts; i++) {
@@ -127,8 +131,8 @@ public class WordleManager : MonoBehaviour
                 GameObject tileObj = Instantiate(tilePrefab, rowObj.transform);
                 tileRow[j] = tileObj.GetComponent<WordleTile>();
                 
-                tileRow[j].SetLetter(' ');
-                tileRow[j].SetColor(emptyTileColor);
+                tileRow[j].SetLetter(' ', Color.white);
+                tileRow[j].SetBackgroundColor(emptyTileColor);
             }
             rows.Add(tileRow);
         }
@@ -142,7 +146,7 @@ public class WordleManager : MonoBehaviour
         var currentTiles = rows[currentAttempt];
         for (int i = 0; i < currentTiles.Length; i++)
         {
-            currentTiles[i].SetLetter(i < currentInput.Length ? currentInput[i] : ' ');
+            currentTiles[i].SetLetter(i < currentInput.Length ? currentInput[i] : ' ', Color.white);
             
         }
     }
@@ -220,7 +224,7 @@ public class WordleManager : MonoBehaviour
         {
             if (inputChars[i] == targetChars[i])
             {
-                currentTiles[i].SetColor(correctColor);
+                currentTiles[i].SetBackgroundColor(correctColor);
                 matched[i] = true;
             }
         }
@@ -234,14 +238,14 @@ public class WordleManager : MonoBehaviour
             {
                 if (!matched[j] && inputChars[i] == targetChars[j])
                 {
-                    currentTiles[i].SetColor(presentColor);
+                    currentTiles[i].SetBackgroundColor(presentColor);
                     foundYellow = true;
                     break;
                 }
             }
 
             if (!foundYellow)
-                currentTiles[i].SetColor(absentColor);
+                currentTiles[i].SetBackgroundColor(absentColor);
         }
     }
 }
