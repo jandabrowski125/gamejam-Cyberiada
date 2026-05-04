@@ -36,8 +36,6 @@ proc main =
     let window   = newWindow("Match Made In Heaven: Narrative Editor", 500, 500, hasMenubar=true)
     window.child       = speakerGroup
     speakerGroup.child = speakerSelect
-
-    echo app.dlist["28ec963c-3b86-4b90-9b42-c79f4572aea7"]
   
     show window
     mainLoop()

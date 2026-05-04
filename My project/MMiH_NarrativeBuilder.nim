@@ -12,7 +12,7 @@ type
     name* : string
   Choice = object
     msg      : string
-    speaker  : Speaker
+    # speaker  : Speaker
     followup : string
     paragon  : int
     reneg    : int
