@@ -38,7 +38,7 @@ public class WordleManager : MonoBehaviour
     public AnimationCurve slideCurve = AnimationCurve.EaseInOut(0, 0, 1, 1); // Krzywa dla płynności
 
     [Header("Audio Settings")]
-    public AudioClip wordleMusic;
+    public AudioSource wordleMusic;
     public float maxVolume = 0.5f;
     public float audioFadeDuration = 0.8f;
     public AudioSource wordleSuccess;
@@ -84,34 +84,34 @@ public class WordleManager : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
+        // if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
         
-        audioSource.clip = wordleMusic;
-        audioSource.loop = true;
-        audioSource.playOnAwake = false;
-        audioSource.volume = 0;
+        // audioSource.clip = wordleMusic.clip;
+        // audioSource.loop = true;
+        // audioSource.playOnAwake = false;
+        // audioSource.volume = 0;
         targetAnchoredPosition = rectTransform.anchoredPosition; // Zapisujemy gdzie ma docelowo być
     }
 
     private IEnumerator FadeAudio(float targetVolume, float duration)
     {
-        float startVolume = audioSource.volume;
+        float startVolume = wordleMusic.volume;
         float time = 0;
 
         // Jeśli włączamy muzykę, musimy ją najpierw odpalić
-        if (targetVolume > 0 && !audioSource.isPlaying) audioSource.Play();
+        if (targetVolume > 0 && !wordleMusic.isPlaying) wordleMusic.Play();
 
         while (time < duration)
         {
             time += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(startVolume, targetVolume, time / duration);
+            wordleMusic.volume = Mathf.Lerp(startVolume, targetVolume, time / duration);
             yield return null;
         }
 
-        audioSource.volume = targetVolume;
+        wordleMusic.volume = targetVolume;
 
-        if (targetVolume <= 0) audioSource.Stop();
+        if (targetVolume <= 0) wordleMusic.Stop();
     }
 
     private void StartFade(float target)
@@ -126,7 +126,7 @@ public class WordleManager : MonoBehaviour
         if (isProcessing || string.IsNullOrEmpty(targetWord) || currentInput.Length >= targetWord.Length) 
             return;
         
-        if (char.IsLetter(character))
+        if (char.IsLetter(character)&&!PauseMenu.isPaused)
         {
             currentInput += char.ToUpper(character);
             wordleInputSound.Play();
