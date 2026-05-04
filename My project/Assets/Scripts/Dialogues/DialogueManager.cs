@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private ButtonCreator _buttonCreator;
     [SerializeField] private EndingManager _endingManager;
     [SerializeField] private StatsManager _statsManager;
+    [SerializeField] private TextMeshProUGUI _contextSentenceText;
 
     [Header("Character System (Sprite2D)")]
     [SerializeField] private CharacterManager _characterManager;
@@ -17,7 +19,6 @@ public class DialogueManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource _backgroundAudioSource;
     private string _lastNodeId;
-    private string _presenterContext;
 
     //Event subscriptions
     private void OnEnable()
@@ -71,9 +72,17 @@ public class DialogueManager : MonoBehaviour
             UpdatePortrait(node.speaker);
 
             if (!_backgroundAudioSource.isPlaying) _backgroundAudioSource.Play();
+            
 
             bool isPresenter = node.speaker.Equals("Presenter", System.StringComparison.OrdinalIgnoreCase);
-
+            if (isPresenter)
+            {
+                _contextSentenceText.text = "Presenter is speaking!";
+            }
+            else
+            {
+                _contextSentenceText.text = _dialogueWriter.GetContextSentence();
+            }
             //if presenter speaks, forceUnderstandable = true
             _dialogueWriter.Write(
                 nodeId,
@@ -159,15 +168,6 @@ public class DialogueManager : MonoBehaviour
         {
             GameEvents.TriggerWordleRequired(node.wordle_solution);
         }
-    }
-
-    /// <summary>
-    /// Sets the context of the current dialogue.
-    /// </summary>
-    /// <param name="context">What the current character <see langword="is"/> referring to. </param>
-    public void SetPresenterContext(string context)
-    {
-        _presenterContext = context;
     }
 
     /// <summary>

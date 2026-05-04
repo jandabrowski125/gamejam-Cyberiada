@@ -12,7 +12,7 @@ public class DialogueWriter : MonoBehaviour
     public GameObject textPrefab;
     public Transform parent; 
     public GameObject dialogueUI;
-    public TextAsset wordFile;
+    public TextAsset _jsonWordFile;
 
     [Header("Fonts")]
     public TMP_FontAsset fontAsset;
@@ -39,6 +39,7 @@ public class DialogueWriter : MonoBehaviour
     private bool _isTypingContext = false;
     private bool _wroteFullText = false;
     private List<GameObject> _keywordSentence = new List<GameObject>();
+    private string _contextSentece = "The presenter said something. I have no idea what it is though...";
     
     private Coroutine sequenceCoroutine;
     private Coroutine typingCoroutine;
@@ -171,17 +172,17 @@ public class DialogueWriter : MonoBehaviour
         _wroteFullText = false;
         _isTypingContext = false;
         _isTypingKeywordContext = false;
+        string contextSequence = "";
         string[] words = fullText.Split(' ');
         _keywordSentence.Clear();
         currentColumn = 0;
-        string presenterContext = "";
         
         foreach (string word in words)
         {   
             if (string.IsNullOrEmpty(word)) continue;
             if (IsSpecialChar(word)) continue;
             
-            if (_isTypingContext) presenterContext += " " + word;
+            if (_isTypingContext) contextSequence += " " + word;
             
             string clean = CleanWord(word);
             string cleanLower = clean.ToLower();
@@ -251,6 +252,7 @@ public class DialogueWriter : MonoBehaviour
         
         _wroteFullText = true;
         forceSkipTyping = false;
+        if (!String.IsNullOrEmpty(contextSequence)) _contextSentece = contextSequence;
     }
 
     private bool IsSpecialChar(string c)
@@ -265,6 +267,8 @@ public class DialogueWriter : MonoBehaviour
         }
         else if (c == "&") {
             _isTypingContext = !_isTypingContext;
+            if (_isTypingContext) Debug.Log("Typing!");
+            else Debug.Log("Not typing!");
             return true;
         }
         return false;
@@ -287,13 +291,17 @@ public class DialogueWriter : MonoBehaviour
 
     private void PrepareDictionary()
     {
-        if (wordFile != null)
+        if (_jsonWordFile != null)
         {
-            var words = wordFile.text
-                .Replace(",", " ")
-                .Split(new char[] { ' ', '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
-            
-            foreach(var w in words) knownWords.Add(w.Trim().ToLower());
+            WordDataWrapper data = JsonUtility.FromJson<WordDataWrapper>(_jsonWordFile.text);
+
+            if (data != null && data.words != null)
+            {
+                foreach (var w in data.words)
+                {
+                    knownWords.Add(w.Trim().ToLower());
+                }
+            }
         }
     }
 
@@ -311,6 +319,14 @@ public class DialogueWriter : MonoBehaviour
         return _keywordSentence;
     }
 
+    public string GetContextSentence()
+    {
+        if (_wroteFullText)
+        {
+            return _contextSentece;
+        }
+        return "The presenter said something. I should've listened to him...";
+    }
     public bool WroteFullText()
     {
         return _wroteFullText;

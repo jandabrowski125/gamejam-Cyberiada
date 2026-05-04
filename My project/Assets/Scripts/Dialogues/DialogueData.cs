@@ -2,6 +2,12 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
+public class WordDataWrapper
+{
+    public string[] words;
+}
+
+[Serializable]
 public class DialogueChoice
 {
     public string text;
