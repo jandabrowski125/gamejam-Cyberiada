@@ -19,7 +19,7 @@ public class DialogueWriter : MonoBehaviour
 
     [Header("Typing Settings")]
     public int charsPerLine = 24;
-    public float typingSpeed = 0.05f;
+    public float typingSpeed = 0.025f;
     public Color keywordHighlightColor = Color.cyan;
 
     [Header("Animation Settings")]
@@ -177,12 +177,12 @@ public class DialogueWriter : MonoBehaviour
         {   
             if (string.IsNullOrEmpty(word)) continue;
 
-            if (word == "[") {
+            if (word == "{") {
                 _isTypingKeyword = true;
                 Debug.Log("We're now typing the keyword sentence!");
                 continue;
             }
-            else if (word == "]") {
+            else if (word == "}") {
                 _isTypingKeyword = false;
                 Debug.Log("not the keyword sentence anymore");
                 continue;

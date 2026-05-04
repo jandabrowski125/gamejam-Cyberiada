@@ -440,8 +440,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press anywhere to continue...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: edbea7f9180c38a4dad4832bcd6e99b1, type: 2}
+  m_sharedMaterial: {fileID: -9193276105369577310, guid: edbea7f9180c38a4dad4832bcd6e99b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -566,12 +566,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1251,23 +1251,15 @@ PrefabInstance:
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
+      objectReference: {fileID: 11400000, guid: edbea7f9180c38a4dad4832bcd6e99b1, type: 2}
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: dialogueUI
       value: 
       objectReference: {fileID: 2143386922}
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
-      propertyPath: typingSpeed
-      value: 0.025
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: charsPerLine
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
-      propertyPath: alienFontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2af55cd223613504aaf0966ee1e22fc2, type: 2}
     - target: {fileID: 4228066098479765450, guid: 28bb49c5dffde344ea46f168336111e6, type: 3}
       propertyPath: speechPanelRect
       value: 
@@ -1696,8 +1688,8 @@ MonoBehaviour:
   m_text: Failed to connect to the internet. Some functions in the game won't function
     properly.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b1e83573545ce074dbb091ff1de4338f, type: 2}
+  m_sharedMaterial: {fileID: 7689361393675676930, guid: b1e83573545ce074dbb091ff1de4338f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4514,7 +4506,7 @@ MonoBehaviour:
   m_text: Skip minigame (fail the attempt)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: edbea7f9180c38a4dad4832bcd6e99b1, type: 2}
-  m_sharedMaterial: {fileID: -1266965021085388170, guid: edbea7f9180c38a4dad4832bcd6e99b1, type: 2}
+  m_sharedMaterial: {fileID: -9193276105369577310, guid: edbea7f9180c38a4dad4832bcd6e99b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
