@@ -15,6 +15,7 @@ def formatMainMessage (txt: str or None) -> str or None:
 def purgeHTML (txt: str or None) -> str or None:
     # purges HTML & Wordle brackets
     REPLACEABLE_WORDS = [
+        "<em>", "</em>",
         "<p>", "</p>",
         "<i>", "</i>",
         "[", "]"
