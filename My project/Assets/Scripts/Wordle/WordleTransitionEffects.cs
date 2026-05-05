@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.UI; // Wymagane dla LayoutRebuilder
 
@@ -28,6 +28,8 @@ public class WordleTransitionEffects : MonoBehaviour
     [SerializeField] private float _audioFadeDuration = 0.8f;
     [SerializeField] private AudioClip _wordleMusicClip;
     [SerializeField] private AudioSource _audienceClapAudio;
+    [SerializeField] private AudioMixerGroup _mixerGroup;
+
     
     private AudioSource _wordleMusic;
     private Coroutine _audioFadeCoroutine;
@@ -74,6 +76,7 @@ public class WordleTransitionEffects : MonoBehaviour
     {
         _wordleMusic = GetComponent<AudioSource>();
         if (_wordleMusic == null) _wordleMusic = gameObject.AddComponent<AudioSource>();
+        _wordleMusic.outputAudioMixerGroup = _mixerGroup;
         
         _wordleMusic.clip = _wordleMusicClip;
         _wordleMusic.loop = true;

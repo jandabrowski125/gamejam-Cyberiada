@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 public class CharacterManager : MonoBehaviour
 {
     [SerializeField] private CharacterDatabase _characterDB;
+    [SerializeField] private AudioMixerGroup _mixerGroup;
     private Dictionary<string, AudioSource> _playerVoices = new Dictionary<string, AudioSource>{};
     void Start()
     {
@@ -21,6 +22,7 @@ public class CharacterManager : MonoBehaviour
         AudioSource audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.resource = resource;
+        audioSource.outputAudioMixerGroup = _mixerGroup;
         return audioSource;
     }
 
