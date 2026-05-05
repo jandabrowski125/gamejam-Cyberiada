@@ -199,7 +199,6 @@
                 "269afefd-974b-4db3-999c-147ca25641a5",
                 "635cf0db-85bd-40f3-9dd0-a4f7981339e4",
                 "2da05774-7c55-47e0-99cb-ddc8db4714de",
-                "a18f4945-e279-4571-be19-2e492bfee148",
                 "4ff26785-a3c4-4ce0-ae69-feb6bba6172e",
                 "6113bdbe-719a-4477-bd0c-188727e9650b",
                 "191f1cf4-8a92-4047-8439-b07ccc4146c6",
@@ -213,7 +212,8 @@
                 "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
                 "5d876c48-5988-4efc-a029-959a478f51d7",
                 "66b873ac-9833-4d59-b80f-d94a6771c93e",
-                "708d2520-f90f-4ed6-8e0a-14250a95e375"
+                "708d2520-f90f-4ed6-8e0a-14250a95e375",
+                "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252"
             ],
             "connections": [
                 "cd884ab4-74c7-45a2-8f0a-28f518806867",
@@ -436,13 +436,10 @@
                 "797985a6-7860-49fb-b65d-9db30f44b268",
                 "2375a203-fcfe-4a92-85d2-243519057972",
                 "1d95401d-e0e7-44e6-a7ed-b11d99fd2f9d",
-                "479a3061-3310-472d-bda0-9b016d72a2c3",
                 "d40d86cc-ae4d-4c11-9d05-c465909f7d6e",
                 "5942a41b-ce02-4840-8046-444953ef2754",
                 "10339f9f-9a5a-45ef-b96c-ad23083a8287",
                 "6e7291df-642c-483e-acfe-6051d209d431",
-                "d6a406ad-f33a-4ce7-9e1b-1da40a200d40",
-                "f5b951ed-0298-4c45-a04e-731f7cb364b2",
                 "b389b173-daf9-477d-b66b-0dd9abb287b0",
                 "03384de4-71f9-4543-8c35-e956f5f50b3c",
                 "2f71cc27-7ec9-41ff-a22f-5931931388a1",
@@ -455,14 +452,16 @@
                 "70f6289e-94aa-4ec1-be0d-d60a28391ff8",
                 "a3045be1-13c6-44a4-bf1a-2dbbf9393f41",
                 "b1946e82-49ea-47cc-a63e-780fa87a59d2",
-                "0918a984-1a3a-4d8c-834e-0a0ca17c2bf1",
-                "5b9f1a71-4ea1-4bbd-a741-ab282dbddf55",
-                "c06168d9-f947-4bd5-a274-b0b134042956",
                 "5ab1cef7-bfac-41c3-adb1-e8cda1f4d0f7",
-                "5c22e877-33c9-4c3e-943b-4bbd8d878219",
-                "28ccb44e-de67-4f77-97c6-1604008a503a",
-                "6213fe77-949d-43d8-911f-d217b03cc73e",
-                "75dc984e-8760-410a-a27e-4e02e1821277"
+                "2150e9e7-e363-460f-895e-1f9c40b8fff8",
+                "62acb915-fb1c-401c-9882-f70eb1df23f6",
+                "0ac6490c-ddff-49f6-9cb7-bcd8a62f4e57",
+                "3b23cd79-7592-441e-b2fb-9377b11b63a9",
+                "61b2dd82-8155-429a-8184-432d43c5e0b6",
+                "a89a2ac6-52a9-45db-8c0b-537877f08cbb",
+                "0b110bb5-ade3-4a45-a0af-60b8f904c1a1",
+                "014a269d-b4cd-4699-b3f5-d2a076c83d43",
+                "fae3e10b-a16d-4f47-b08b-386fcdbe092d"
             ]
         }
     },
@@ -548,7 +547,7 @@
                 "5cad65dc-1417-4a39-9825-a8d541e08f2b"
             ],
             "components": [],
-            "content": "<p>Future with lots of bliss on the world. I\u2019d like to dance and sing to music. {I have a [vision] where the whole world will move in the same rhythm.} In a state of absolute bliss. I dream of it constantly.<\/p>",
+            "content": "<p>Future with lots of bliss on the world. I\u2019d like to dance and sing to music. {I have a [vision]} where the whole world will move in the same rhythm. In a state of absolute bliss. I dream of it constantly.<\/p>",
             "title": "<p>Arneth Maalg<\/p>"
         },
         "08cebca5-a90d-4899-b4d9-247a3965c9da": {
@@ -626,7 +625,7 @@
                 "3500ee26-9263-4e1c-a23a-1fc63d3c0599"
             ],
             "components": [],
-            "content": "<p>Never take your date for a swim. I learnt my lesson a few [eons] back. She didn\u2019t have fins and well\u2026 Need I say more? WE WERE FINALLY FREE\u2026<\/p>",
+            "content": "<p>Never take your date for a swim. I learnt my lesson {a few [eons] back.} She didn\u2019t have fins and well\u2026 Need I say more? WE WERE FINALLY FREE\u2026<\/p>",
             "title": "<p>Decln'Argegh<\/p>"
         },
         "14ed8144-1061-4af0-98b5-001e74eb9e7c": {
@@ -797,7 +796,7 @@
                 "2f71cc27-7ec9-41ff-a22f-5931931388a1"
             ],
             "components": [],
-            "content": "<p>Welcome to today\u2019s episode of Match Made in Heaven! A show in which you can fall in love sight unseen!<\/p>",
+            "content": "<p>Welcome to today\u2019s episode of Match Made in Heaven! A show in which you can fall in love sight seen but word misunderstood!<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "2a3d5f53-6918-41d1-a1c2-8e5f9468beb4": {
@@ -830,10 +829,10 @@
         "2da05774-7c55-47e0-99cb-ddc8db4714de": {
             "theme": "lightBlue",
             "outputs": [
-                "d6a406ad-f33a-4ce7-9e1b-1da40a200d40"
+                "2150e9e7-e363-460f-895e-1f9c40b8fff8"
             ],
             "components": [],
-            "content": "<p>You don\u2019t have that word in your vocabulary, do you?<\/p>",
+            "content": "<p>You don\u2019t have that word in your vocabulary, do you? That\u2019s a pity.<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "3132d740-d417-4fd3-be01-d13f82fa6a84": {
@@ -851,7 +850,7 @@
                 "92ce71f5-ef43-4672-9eea-637dccf30df2"
             ],
             "components": [],
-            "content": "<p>&What\u2019s your perfect cozy night like \u2014 and is there room for two? Or for three?& My ex sure liked a good crowd. Oh, the good ol\u2019 days!<\/p>",
+            "content": "<p>& What\u2019s your perfect cozy night like \u2014 and is there room for two? Or for three? & My ex sure liked a good crowd. Oh, the good ol\u2019 days!<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "32c88041-92ad-4129-8261-85587446f910": {
@@ -880,7 +879,7 @@
                 "a1112b0a-bc71-4649-b76d-1a40c168fbdc"
             ],
             "components": [],
-            "content": "<p>I have not. {I don\u2019t have time for such trivial things like love [games].} All I care about is my knight duties and finding a perfect person to mate with.<\/p>",
+            "content": "<p>I have not. I don\u2019t have time for such trivial {things like love [games].} All I care about is my knight duties and finding a perfect person to mate with.<\/p>",
             "title": "<p>Juhei Ikeet<\/p>"
         },
         "365ace5c-b856-42d4-9f30-8f66e29b24a6": {
@@ -907,7 +906,7 @@
                 "1c8203af-d663-4e13-a79e-1ec224f66a7b"
             ],
             "components": [],
-            "content": "<p>&What have your past relationships taught you?& I would say - don\u2019t get married! *laughs*<\/p>",
+            "content": "<p>& What have your past relationships taught you? & I would say - don\u2019t get married! *laughs*<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "380c5cd8-a557-4560-b8ef-07a163278068": {
@@ -963,7 +962,7 @@
                 "16af5146-757b-4a1e-9cd6-55b29abb80b3"
             ],
             "components": [],
-            "content": "<p>To never let anyone get too close to me again! The last person I mated with was fine at first. Then, when we were alone, they told me they were sent here to spy on my people! {So, I have to stab that [enemy] with my dagger.}<\/p>",
+            "content": "<p>To never let anyone get too close to me again! The last person I mated with was fine at first. Then, when we were alone, they told me they were sent here to spy on my people! So, I have {to stab that [enemy] with my dagger.}<\/p>",
             "title": "<p>Juhei Ikeet<\/p>"
         },
         "3ebcbfc8-0396-4414-9e4a-c7e53aacb090": {
@@ -983,7 +982,7 @@
                 "b86206b3-069a-404a-ac14-ccb986f12d06"
             ],
             "components": [],
-            "content": "<p>Worlds engulfed in fire so they could burn and be remade again from scratch. {And me as the creator and [master] of those worlds!} Spreading my wings above the whole universe! A new life! Just kidding, of course! *laughs* I want to have a big greenhouse with all kinds of different plants.<\/p>",
+            "content": "<p>Worlds engulfed in fire so they could burn and be remade again from scratch. {And me as the creator and the [master] of those worlds!} Spreading my wings above the whole universe! A new life! Just kidding, of course! *laughs* I want to have a big greenhouse with all kinds of different plants.<\/p>",
             "title": "<p>Decln'Argegh<\/p>"
         },
         "3fc70892-cb1c-4fb4-8c6f-abc54a5fad6c": {
@@ -1001,7 +1000,7 @@
                 "1d95401d-e0e7-44e6-a7ed-b11d99fd2f9d"
             ],
             "components": [],
-            "content": "<p>&Be honest\u2026 have you ever broken someone\u2019s heart?&<\/p>",
+            "content": "<p>& Be honest\u2026 have you ever broken someone\u2019s heart? &<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "426b4be6-c65f-4f0c-a9d3-c31e8e9d383d": {
@@ -1030,7 +1029,7 @@
                 "1a13b32f-d811-4f44-85c8-9cd68f61310c"
             ],
             "components": [],
-            "content": "<p>I like going to the clubs on various planets. Music on mine doesn\u2019t work well with my ethereal hearing. I\u2019ve heard some earthian songs. {They\u2019re pretty good. It depends on the [party], though.}<\/p>",
+            "content": "<p>I like going to the clubs on various planets. Music on mine doesn\u2019t work well with my ethereal hearing. I\u2019ve heard some Earthian songs. They\u2019re pretty good. {It depends on the [party], though.}<\/p>",
             "title": "<p>Arneth Maalg<\/p>"
         },
         "479036ea-0fa7-45b4-b04a-690cb336aa96": {
@@ -1142,7 +1141,7 @@
                 "ba80aa58-53ad-43af-8334-3344e1088a59"
             ],
             "components": [],
-            "content": "<p>FUN! I mean\u2026 For good for sure\u2026 {Yes, I would probably bring some ancient civilization from eons ago to [life] or something like that.} Rising like the phoenix from the ashes. BURN AND PERSEVERE!<\/p>",
+            "content": "<p>FUN! I mean\u2026 For good for sure\u2026 Yes, I would probably bring {some ancient civilization from eons ago to [life]} or something like that. Rising like the phoenix from the ashes. BURN AND PERSEVERE!<\/p>",
             "title": "<p>Decln'Argegh<\/p>"
         },
         "587bbb73-2ca7-4610-bbbc-ed1ec26d1f77": {
@@ -1184,10 +1183,10 @@
         "5d876c48-5988-4efc-a029-959a478f51d7": {
             "theme": "lightBlue",
             "outputs": [
-                "5b9f1a71-4ea1-4bbd-a741-ab282dbddf55"
+                "fae3e10b-a16d-4f47-b08b-386fcdbe092d"
             ],
             "components": [],
-            "content": "<p>Okay, now that we've got the formalities out of the way, let's get started. Start with you, Decln'Argegh.  &Do you have any unusual hobbies our guest should know about?&<\/p>",
+            "content": "<p>Okay, now that we've got the formalities out of the way, let's get started! Our first contestant is  Decln'Argegh. & Do you have any unusual hobbies our guest should know about? &<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "5f5e47b3-acf0-422d-b79f-9e95e46e7cb2": {
@@ -1225,7 +1224,7 @@
                 "9f05d7a4-e207-47e8-9a4d-dc9afb0e1d56"
             ],
             "components": [],
-            "content": "<p>Cozy is not a part of my vocabulary. I move. I glide. I devour.<em> And I\u2019m never alone. {<\/em>Even in our [dream]. It\u2019s a constant trance.}<\/p>",
+            "content": "<p>Cozy is not a part of my vocabulary. I move. I glide. I devour.<em> And I\u2019m never alone. {<\/em>Even in our [dream].} It\u2019s a constant trance.<\/p>",
             "title": "<p>Arneth Maalg<\/p>"
         },
         "605989d2-19d3-4729-a097-1a2d9fbbf15a": {
@@ -1283,10 +1282,10 @@
         "66b873ac-9833-4d59-b80f-d94a6771c93e": {
             "theme": "lightBlue",
             "outputs": [
-                "5c22e877-33c9-4c3e-943b-4bbd8d878219"
+                "62acb915-fb1c-401c-9882-f70eb1df23f6"
             ],
             "components": [],
-            "content": "<p>Now it's your time to guess, Human! Look at the screen and guess the right word from playing our little language game. This time, the word contains six letters. Try any six-lettered word and just write it with your silly Earthian keyboard. See how the magic happens! Green means it's the right spot, yellow means you should put it elsewhere. Easy-peasy!<\/p>",
+            "content": "<p>Now it's your time to play, Human! I'll ask questions to our lovely contestants. After you hear their answers, you'll see a big screen. Look at it and guess the right word, that they wanted you to hear!<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "68649621-523f-4f97-971d-edc4faaa3a44": {
@@ -1331,15 +1330,13 @@
                 "839b98c2-2297-49c6-b835-0c2828e053b6"
             ],
             "components": [],
-            "content": "<p>Yes! You do<\/p>",
+            "content": "<p>Yes! You do.<\/p>",
             "title": "<p>Human<\/p>"
         },
         "708d2520-f90f-4ed6-8e0a-14250a95e375": {
             "theme": "lightBlue",
             "outputs": [
-                "28ccb44e-de67-4f77-97c6-1604008a503a",
-                "6213fe77-949d-43d8-911f-d217b03cc73e",
-                "75dc984e-8760-410a-a27e-4e02e1821277"
+                "0b110bb5-ade3-4a45-a0af-60b8f904c1a1"
             ],
             "components": [],
             "content": "<p>After a while, you might even recognize the letters of our alphabet and understand the whole context of our guest's statements faster and better! Isn't that awesome? We sure know it is, right audience?! Now chop, chop! It's your time to shine!<\/p>",
@@ -1407,7 +1404,7 @@
                 "d5f5a0d7-49fc-4830-8674-91652919eb14"
             ],
             "components": [],
-            "content": "<p>Well it happened twice or thrice\u2026 Wait - did you mean metaphorically? Then no. Never. I\u2019m not that bad. THE BADDEST! Either way - I don\u2019t have time for playing with fire. {At least not now. I [desire] something different.}<\/p>",
+            "content": "<p>Well it happened twice or thrice\u2026 Wait - did you mean metaphorically? Then no. Never. I\u2019m not that bad. THE BADDEST! Either way - I don\u2019t have time for playing with fire. At least not now. {I [desire] something different.}<\/p>",
             "title": "<p>Decln'Argegh<\/p>"
         },
         "7f92ed51-a080-429f-a260-b9d4fd8d1d95": {
@@ -1675,14 +1672,14 @@
             "content": "<p>Do you even have any feelings?<\/p>",
             "title": "<p>Human<\/p>"
         },
-        "a18f4945-e279-4571-be19-2e492bfee148": {
-            "theme": "lightBlue",
+        "ff361840-8d3b-4d96-b785-13a8718a21e2": {
+            "theme": "red",
             "outputs": [
-                "f5b951ed-0298-4c45-a04e-731f7cb364b2"
+                "d2e2be6f-cfc1-4f6a-a6ca-e1f0adf8813f"
             ],
             "components": [],
-            "content": "<p>\u00a0That\u2019s a pity.<\/p>",
-            "title": "<p>Presenter<\/p>"
+            "content": "<p>Maybe you were overreacting?<\/p>",
+            "title": "<p>Human<\/p>"
         },
         "a368f5dd-131d-4a39-945a-0148883ca32d": {
             "theme": "green",
@@ -1773,16 +1770,14 @@
                 "3faa2b8f-e326-4b40-8ba7-1499fff30055"
             ],
             "components": [],
-            "content": "<p>{Most partnerships [fail] because the parties don\u2019t think about achieving milestones.}<\/p>",
+            "content": "<p>{Most partnerships [fail]} because the parties don\u2019t think about achieving milestones.<\/p>",
             "title": "<p>CyberJohn<\/p>"
         },
         "ab7d8303-a62a-48ae-9b42-e1889889badd": {
             "theme": "lightBlue",
-            "outputs": [
-                "479a3061-3310-472d-bda0-9b016d72a2c3"
-            ],
+            "outputs": [],
             "components": [],
-            "content": "<p>&If you had a superpower, would you use it for good\u2026 or for fun?& My ex-wife surely used it for fun!<\/p>",
+            "content": "<p>& If you had a superpower, would you use it for good\u2026 or for fun? & My ex-wife surely used it for fun!<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "abd22f8c-5a8c-49bf-ab31-2f59d46448d0": {
@@ -1847,7 +1842,7 @@
                 "b4f7c53f-6aea-4a42-9f80-ad639b2b12a1"
             ],
             "components": [],
-            "content": "<p>{I am building a future that brings efficiency to my company. I want [profit].}<\/p>",
+            "content": "<p>I am building a future that brings efficiency to my company. {I want [profit].}<\/p>",
             "title": "<p>CyberJohn<\/p>"
         },
         "b138bd37-d919-4288-abbf-e30134b28f90": {
@@ -1885,7 +1880,7 @@
                 "c7b63537-0476-46cf-9839-77a32fa1162b"
             ],
             "components": [],
-            "content": "<p>&What kind of future are you building for yourself?&<\/p>",
+            "content": "<p>& What kind of future are you building for yourself? &<\/p>",
             "title": "<p>Presenter<\/p>"
         },
         "b60e4a4c-9db0-48e9-95c0-ff53ba201956": {
@@ -1961,7 +1956,7 @@
                 "83764c51-dd19-4694-abdb-53d5220f4837"
             ],
             "components": [],
-            "content": "<p>I want to build a legacy, that will last after me. To make people of my planet proud. {This is why it is vital for me to find a mate with whom I could breed ideal little [babies].}<\/p>",
+            "content": "<p>I want to build a legacy, that will last after me. To make people of my planet proud. This is why it is vital for me to find a mate with whom {I could breed ideal little [babies].}<\/p>",
             "title": "<p>Juhei Ikeet<\/p>"
         },
         "c16dc726-5324-4c0b-bb00-fffbb26d7d14": {
@@ -1981,7 +1976,7 @@
                 "e5976556-2959-4da1-9bde-ea41abaf64ca"
             ],
             "components": [],
-            "content": "<p>{For me, it would be <em>fun<\/em> to create a [supply] chain that never ever underperforms.}<\/p>",
+            "content": "<p>For me, {it would be <em>fun<\/em> to create a [supply] chain} that never ever underperforms.<\/p>",
             "title": "<p>CyberJohn<\/p>"
         },
         "c3a23184-9e01-4762-81df-2ed88247ddd9": {
@@ -2185,7 +2180,7 @@
         "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc": {
             "theme": "lightBlue",
             "outputs": [
-                "0918a984-1a3a-4d8c-834e-0a0ca17c2bf1"
+                "014a269d-b4cd-4699-b3f5-d2a076c83d43"
             ],
             "components": [],
             "content": "<p>And don't be scared of making mistakes. Sometimes all you can do is skip the guessing part. You just risk the whole existence of the humankind! But no biggies! You got this! Mind you - there is also no coming back.<\/p>",
@@ -2214,7 +2209,9 @@
         "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1": {
             "theme": "green",
             "outputs": [
-                "c06168d9-f947-4bd5-a274-b0b134042956"
+                "3b23cd79-7592-441e-b2fb-9377b11b63a9",
+                "61b2dd82-8155-429a-8184-432d43c5e0b6",
+                "a89a2ac6-52a9-45db-8c0b-537877f08cbb"
             ],
             "components": [],
             "content": "<p>Well, in my free time I like to shoot stuff and\u2026 {Water my [plants].}<\/p>",
@@ -2264,7 +2261,7 @@
                 "fd1c0f66-5be3-4ab4-aa09-c478c261d7c0"
             ],
             "components": [],
-            "content": "<p>Cozy night? Most of my nights I spent on my knight duties. But some days my tent is so cold. {I could enjoy a company of some other person, to make [heat].}<\/p>",
+            "content": "<p>Cozy night? Most of my nights I spent on my knight duties. But some days my tent is so cold. I could enjoy a company of some other person, {to make [heat].}<\/p>",
             "title": "<p>Juhei Ikeet<\/p>"
         },
         "fa331ed6-b0ae-4b8d-98e2-541259a5f118": {
@@ -2293,7 +2290,7 @@
                 "728026e5-e683-4a2c-894d-a73a1ba3aac5"
             ],
             "components": [],
-            "content": "<p>{I like to relax with spreadsheets in the company of [data].}<br><\/p>",
+            "content": "<p>I like to relax with spreadsheets {in the company of [data].}<br><\/p>",
             "title": "<p>CyberJohn<\/p>"
         },
         "ff1bc2c0-a766-47dd-bbdb-f4ed9970ad15": {
@@ -2305,14 +2302,14 @@
             "content": "<p>Harm is not allowed in the swarm. <em>We love and please each other.<\/em><\/p>",
             "title": "<p>Arneth Maalg; 0; 1<\/p>"
         },
-        "ff361840-8d3b-4d96-b785-13a8718a21e2": {
-            "theme": "red",
-            "outputs": [
-                "d2e2be6f-cfc1-4f6a-a6ca-e1f0adf8813f"
-            ],
+        "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252": {
+            "theme": "lightBlue",
             "components": [],
-            "content": "<p>Maybe you were overreacting?<\/p>",
-            "title": "<p>Human<\/p>"
+            "outputs": [
+                "0ac6490c-ddff-49f6-9cb7-bcd8a62f4e57"
+            ],
+            "content": "<p>Try any word and just write it with your silly Earthian keyboard. See how the magic happens! Green means it's the right spot, yellow means you should put it elsewhere. Easy-peasy!<\/p>",
+            "title": "<p>Presenter<\/p>"
         }
     },
     "jumpers": {},
@@ -2358,14 +2355,14 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "0918a984-1a3a-4d8c-834e-0a0ca17c2bf1": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
-            "targetid": "5d876c48-5988-4efc-a029-959a478f51d7",
+        "a89a2ac6-52a9-45db-8c0b-537877f08cbb": {
             "sourceType": "elements",
-            "targetFace": "left",
+            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+            "targetid": "db0d6bd8-842e-44d5-88fc-b95d5c7abbda",
             "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "purple",
             "label": null
         },
         "0a47cdf4-b94f-438a-81e5-27f031b3b0f7": {
@@ -2680,14 +2677,15 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "28ccb44e-de67-4f77-97c6-1604008a503a": {
+        "fcab6ce8-3962-4c6c-b5db-71ad0d7c74c6": {
             "type": "Bezier",
-            "theme": "default",
-            "sourceid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
-            "targetid": "03279d6c-94f0-46be-b91f-e62cf7e11eab",
+            "theme": "green",
+            "sourceid": "7e3c38e1-a316-42c4-a523-d5a1b09af992",
+            "targetid": "ac9660b7-2c89-4883-8404-e1d7aa714226",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
+            "labelLocation": 0.5,
             "label": null
         },
         "29d8c22b-2ffb-4dc3-bb80-d192790e684e": {
@@ -2878,13 +2876,13 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "479a3061-3310-472d-bda0-9b016d72a2c3": {
-            "type": "Bezier",
-            "theme": "purple",
-            "sourceid": "ab7d8303-a62a-48ae-9b42-e1889889badd",
-            "targetid": "57ba604b-a14a-4360-a52a-9335bee58778",
-            "sourceType": "elements",
+        "62acb915-fb1c-401c-9882-f70eb1df23f6": {
             "targetType": "elements",
+            "type": "Bezier",
+            "targetid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
+            "sourceType": "elements",
+            "sourceid": "66b873ac-9833-4d59-b80f-d94a6771c93e",
+            "theme": "purple",
             "label": null
         },
         "4834b53f-4983-47f5-992f-72bb1945474d": {
@@ -3094,24 +3092,24 @@
             "targetType": "elements",
             "label": null
         },
-        "5b9f1a71-4ea1-4bbd-a741-ab282dbddf55": {
+        "fb78d161-0b0a-4fbb-87a9-bda21d014fd7": {
             "type": "Bezier",
-            "theme": "default",
-            "sourceid": "5d876c48-5988-4efc-a029-959a478f51d7",
-            "targetid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+            "theme": "green",
+            "sourceid": "03279d6c-94f0-46be-b91f-e62cf7e11eab",
+            "targetid": "4c43b11d-da8a-4809-a7dd-08e8610388f0",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
             "label": null
         },
-        "5c22e877-33c9-4c3e-943b-4bbd8d878219": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "66b873ac-9833-4d59-b80f-d94a6771c93e",
-            "targetid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
+        "2150e9e7-e363-460f-895e-1f9c40b8fff8": {
             "sourceType": "elements",
-            "targetFace": "left",
+            "sourceid": "2da05774-7c55-47e0-99cb-ddc8db4714de",
+            "targetid": "4ff26785-a3c4-4ce0-ae69-feb6bba6172e",
             "targetType": "elements",
+            "targetFace": "top",
+            "type": "Bezier",
+            "theme": "purple",
             "label": null
         },
         "5cad65dc-1417-4a39-9825-a8d541e08f2b": {
@@ -3198,14 +3196,15 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "6213fe77-949d-43d8-911f-d217b03cc73e": {
+        "fc5745da-5891-4740-9590-f493ef89fe03": {
             "type": "Bezier",
             "theme": "default",
-            "sourceid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
-            "targetid": "36f77d2f-e86b-4cf3-93c1-d1215262a31c",
+            "sourceid": "a647a3a3-1c83-4538-86d0-cbd34fcc9aab",
+            "targetid": "4f149693-0dae-4758-8fbd-21f26edb6aef",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
+            "labelLocation": 0.5,
             "label": null
         },
         "621b8b92-9f2f-4563-a5fb-a8e4da95fbef": {
@@ -3444,14 +3443,15 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "75dc984e-8760-410a-a27e-4e02e1821277": {
+        "fc1f4e95-1811-4759-94be-a1faa7595206": {
             "type": "Bezier",
-            "theme": "default",
-            "sourceid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
-            "targetid": "db0d6bd8-842e-44d5-88fc-b95d5c7abbda",
+            "theme": "purple",
+            "sourceid": "7161feba-95ab-4f47-99c2-fff4e0903326",
+            "targetid": "c2e39516-f84a-4ed1-a804-4fbef837f94d",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
+            "labelLocation": 0.5,
             "label": null
         },
         "75fb2aec-2f4e-4fcc-9c60-5a7399f3ebed": {
@@ -4197,14 +4197,14 @@
             "targetType": "elements",
             "label": null
         },
-        "c06168d9-f947-4bd5-a274-b0b134042956": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
-            "targetid": "66b873ac-9833-4d59-b80f-d94a6771c93e",
+        "0ac6490c-ddff-49f6-9cb7-bcd8a62f4e57": {
             "sourceType": "elements",
-            "targetFace": "left",
+            "sourceid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
+            "targetid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
             "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "purple",
             "label": null
         },
         "c1688346-fc87-4917-8cf7-87d872cd0809": {
@@ -4528,13 +4528,15 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "d6a406ad-f33a-4ce7-9e1b-1da40a200d40": {
+        "fd930d16-aebe-40c8-bad9-c2584f230e2f": {
             "type": "Bezier",
-            "theme": "purple",
-            "sourceid": "2da05774-7c55-47e0-99cb-ddc8db4714de",
-            "targetid": "a18f4945-e279-4571-be19-2e492bfee148",
+            "theme": "default",
+            "sourceid": "f2bc75ff-1f04-442e-a9aa-a332f72e3b0c",
+            "targetid": "603622a4-5a5b-446a-8702-57c10590b156",
             "sourceType": "elements",
+            "targetFace": "left",
             "targetType": "elements",
+            "labelLocation": 0.5,
             "label": null
         },
         "d7cfaeae-9ec6-41a4-8b22-01b17e99b8b1": {
@@ -4766,13 +4768,13 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "f5b951ed-0298-4c45-a04e-731f7cb364b2": {
+        "fd1c0f66-5be3-4ab4-aa09-c478c261d7c0": {
             "type": "Bezier",
-            "theme": "purple",
-            "sourceid": "a18f4945-e279-4571-be19-2e492bfee148",
-            "targetid": "4ff26785-a3c4-4ce0-ae69-feb6bba6172e",
+            "theme": "red",
+            "sourceid": "f8465b99-e927-4fe2-b347-7e0fd6fbb7d2",
+            "targetid": "16f2ca98-1a07-44cd-ac97-9602ba7e82cf",
             "sourceType": "elements",
-            "targetFace": "top",
+            "targetFace": "left",
             "targetType": "elements",
             "labelLocation": 0.5,
             "label": null
@@ -4817,69 +4819,53 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "fb78d161-0b0a-4fbb-87a9-bda21d014fd7": {
-            "type": "Bezier",
-            "theme": "green",
-            "sourceid": "03279d6c-94f0-46be-b91f-e62cf7e11eab",
-            "targetid": "4c43b11d-da8a-4809-a7dd-08e8610388f0",
+        "3b23cd79-7592-441e-b2fb-9377b11b63a9": {
             "sourceType": "elements",
-            "targetFace": "left",
+            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+            "targetid": "03279d6c-94f0-46be-b91f-e62cf7e11eab",
             "targetType": "elements",
-            "label": null
-        },
-        "fc1f4e95-1811-4759-94be-a1faa7595206": {
+            "targetFace": "left",
             "type": "Bezier",
             "theme": "purple",
-            "sourceid": "7161feba-95ab-4f47-99c2-fff4e0903326",
-            "targetid": "c2e39516-f84a-4ed1-a804-4fbef837f94d",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "labelLocation": 0.5,
             "label": null
         },
-        "fc5745da-5891-4740-9590-f493ef89fe03": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "a647a3a3-1c83-4538-86d0-cbd34fcc9aab",
-            "targetid": "4f149693-0dae-4758-8fbd-21f26edb6aef",
+        "61b2dd82-8155-429a-8184-432d43c5e0b6": {
             "sourceType": "elements",
-            "targetFace": "left",
+            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+            "targetid": "36f77d2f-e86b-4cf3-93c1-d1215262a31c",
             "targetType": "elements",
-            "labelLocation": 0.5,
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "purple",
             "label": null
         },
-        "fcab6ce8-3962-4c6c-b5db-71ad0d7c74c6": {
-            "type": "Bezier",
-            "theme": "green",
-            "sourceid": "7e3c38e1-a316-42c4-a523-d5a1b09af992",
-            "targetid": "ac9660b7-2c89-4883-8404-e1d7aa714226",
+        "0b110bb5-ade3-4a45-a0af-60b8f904c1a1": {
             "sourceType": "elements",
-            "targetFace": "left",
+            "sourceid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
+            "targetid": "5d876c48-5988-4efc-a029-959a478f51d7",
             "targetType": "elements",
-            "labelLocation": 0.5,
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "purple",
             "label": null
         },
-        "fd1c0f66-5be3-4ab4-aa09-c478c261d7c0": {
-            "type": "Bezier",
-            "theme": "red",
-            "sourceid": "f8465b99-e927-4fe2-b347-7e0fd6fbb7d2",
-            "targetid": "16f2ca98-1a07-44cd-ac97-9602ba7e82cf",
+        "014a269d-b4cd-4699-b3f5-d2a076c83d43": {
             "sourceType": "elements",
-            "targetFace": "left",
+            "sourceid": "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
+            "targetid": "66b873ac-9833-4d59-b80f-d94a6771c93e",
             "targetType": "elements",
-            "labelLocation": 0.5,
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "purple",
             "label": null
         },
-        "fd930d16-aebe-40c8-bad9-c2584f230e2f": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "f2bc75ff-1f04-442e-a9aa-a332f72e3b0c",
-            "targetid": "603622a4-5a5b-446a-8702-57c10590b156",
-            "sourceType": "elements",
-            "targetFace": "left",
+        "fae3e10b-a16d-4f47-b08b-386fcdbe092d": {
             "targetType": "elements",
-            "labelLocation": 0.5,
+            "type": "Bezier",
+            "targetid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+            "sourceType": "elements",
+            "sourceid": "5d876c48-5988-4efc-a029-959a478f51d7",
+            "theme": "purple",
             "label": null
         }
     },
