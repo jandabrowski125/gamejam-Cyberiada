@@ -25,14 +25,14 @@ MonoBehaviour:
     Background: {fileID: 1336809692955082325, guid: 9854d56169bc427448942b96d9aefc17, type: 3}
     Font: {fileID: 11400000, guid: 2af55cd223613504aaf0966ee1e22fc2, type: 2}
     EndingPicture: {fileID: -4672324909826973759, guid: ef906d5f10ee0794690537f21de14ef7, type: 3}
-    Voice: {fileID: 6418180475301049370, guid: 3583376b3e258434c9ee529a5982d050, type: 2}
+    Voice: {fileID: 6418180475301049370, guid: 244172b60363b2c4092b7b9b69a893e1, type: 2}
     EndingMusic: {fileID: 0}
   - Name: Decln'Argegh
     Portrait: {fileID: -8951383523087240050, guid: cdb2a54be8390c94a9ae174c03ac3151, type: 3}
     Background: {fileID: -548361080881072038, guid: 2ef149a1808a49840b1ef1782333148b, type: 3}
     Font: {fileID: 11400000, guid: 2af55cd223613504aaf0966ee1e22fc2, type: 2}
     EndingPicture: {fileID: -1082016544093709938, guid: ecdea14dd4cde9a40853f41bca44c9c3, type: 3}
-    Voice: {fileID: 6418180475301049370, guid: 244172b60363b2c4092b7b9b69a893e1, type: 2}
+    Voice: {fileID: 6418180475301049370, guid: 3583376b3e258434c9ee529a5982d050, type: 2}
     EndingMusic: {fileID: 0}
   - Name: Juhei Ikeet
     Portrait: {fileID: 6083806894379148034, guid: d7d579a5050fd0146a5faa432cc6a7c9, type: 3}

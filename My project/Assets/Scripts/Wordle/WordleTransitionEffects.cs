@@ -26,12 +26,11 @@ public class WordleTransitionEffects : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private float _maxVolume = 0.5f;
     [SerializeField] private float _audioFadeDuration = 0.8f;
-    [SerializeField] private AudioClip _wordleMusicClip;
+    [SerializeField] private AudioSource _wordleMusic;
     [SerializeField] private AudioSource _audienceClapAudio;
     [SerializeField] private AudioMixerGroup _mixerGroup;
 
-    
-    private AudioSource _wordleMusic;
+
     private Coroutine _audioFadeCoroutine;
 
     private Vector2 _wordleTargetPos;
@@ -51,7 +50,6 @@ public class WordleTransitionEffects : MonoBehaviour
 
     private void Awake()
     {
-        InitializeAudio();
         InitializePanels();
     }
 
@@ -72,17 +70,6 @@ public class WordleTransitionEffects : MonoBehaviour
         );
     }
 
-    private void InitializeAudio()
-    {
-        _wordleMusic = GetComponent<AudioSource>();
-        if (_wordleMusic == null) _wordleMusic = gameObject.AddComponent<AudioSource>();
-        _wordleMusic.outputAudioMixerGroup = _mixerGroup;
-        
-        _wordleMusic.clip = _wordleMusicClip;
-        _wordleMusic.loop = true;
-        _wordleMusic.playOnAwake = false;
-        _wordleMusic.volume = 0;
-    }
 
     private void InitializePanels()
     {

@@ -57,7 +57,7 @@ AudioRandomContainer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ArnethVoices
-  m_Volume: 0
+  m_Volume: -0.8
   m_Pitch: 0
   m_AutomaticTriggerTime: 0
   m_LoopCount: 1
