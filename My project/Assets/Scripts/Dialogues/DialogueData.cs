@@ -2,6 +2,12 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
+public class WordDataWrapper
+{
+    public string[] words;
+}
+
+[Serializable]
 public class DialogueChoice
 {
     public string text;
@@ -16,6 +22,7 @@ public class DialogueNode
     public string node_id;
     public string speaker;
     public string text_original;
+    public string keyword_sentence;
     public string wordle_solution;
     public string next_node;
     public List<DialogueChoice> choices;
@@ -24,8 +31,6 @@ public class DialogueNode
 [Serializable]
 public class DialogueContainer
 {
-    // JsonUtility nie radzi sobie z Dictionary, 
-    // więc używamy listy, którą łatwo przeszukać.
     public List<DialogueNode> nodes;
 }
 

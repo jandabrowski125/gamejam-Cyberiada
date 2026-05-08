@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.Audio;
 
 public class WordleManager : MonoBehaviour
 {
@@ -12,15 +13,17 @@ public class WordleManager : MonoBehaviour
     public GameObject tilePrefab;
     public Transform container;
     public Transform wordContainer;
-    public GameObject backgroundImagePrefab;
     public AudioSource wordleInputSound;
     
-    [Header("Colors")]
-    public Color correctColor = Color.green;
-    public Color presentColor = Color.yellow;
-    public Color absentColor = Color.gray;
+    [Header("Colors - Tiles")]
+    public Color correctColor;
+    public Color presentColor;
+    public Color absentColor;
     public Color targetWordTileColor;
-    public Color emptyTileColor = new Color(1f, 1f, 1f, 0.2f);
+    public Color emptyTileColor;
+
+    [Header("Colors - Letters")]
+    [SerializeField] private Color _targetWordLetterColor;
 
     [Header("Effects")]
     public GameObject successParticlesPrefab;
@@ -31,102 +34,37 @@ public class WordleManager : MonoBehaviour
     private List<WordleTile[]> rows = new List<WordleTile[]>();
     private bool isProcessing = false;
 
-    [Header("Animation Settings")]
-    public float animationDuration = 0.5f;
-    public float startXPosition = -10; // Pozycja startowa (poza ekranem z lewej)
-    public float endXPosition = 20;    // Ucieczka w prawo
-    public AnimationCurve slideCurve = AnimationCurve.EaseInOut(0, 0, 1, 1); // Krzywa dla płynności
-
     [Header("Audio Settings")]
-    public AudioClip wordleMusic;
-    public float maxVolume = 0.5f;
-    public float audioFadeDuration = 0.8f;
     public AudioSource wordleSuccess;
     public AudioSource wordleFailed;
 
     [Header("Alien font")]
     public TMP_FontAsset alienFont;
 
-    private AudioSource audioSource;
-    private Coroutine audioFadeCoroutine;
-
-    private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
-    private Vector2 targetAnchoredPosition;
-
     [SerializeField] private int _availableAttempts = 5;
 
     public AudioSource audienceAudio;
-    public AudioSource audienceClapAudio;
 
     // --- SUBSKRYPCJE ---
     private void OnEnable()
     {
-        GameEvents.OnWordleRequired += StartWordleWithAnimation;
         if (Keyboard.current != null)
             Keyboard.current.onTextInput += HandleTextInput;
     }
 
     private void OnDisable()
-    {
-        GameEvents.OnWordleRequired -= StartWordleWithAnimation;
-        
+    {        
         if (Keyboard.current != null)
             Keyboard.current.onTextInput -= HandleTextInput;
     }
-
-    // --- LOGIKA WEJŚCIA ---
-
-    private void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
-        canvasGroup.alpha = 0;
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
-        
-        audioSource.clip = wordleMusic;
-        audioSource.loop = true;
-        audioSource.playOnAwake = false;
-        audioSource.volume = 0;
-        targetAnchoredPosition = rectTransform.anchoredPosition; // Zapisujemy gdzie ma docelowo być
-    }
-
-    private IEnumerator FadeAudio(float targetVolume, float duration)
-    {
-        float startVolume = audioSource.volume;
-        float time = 0;
-
-        // Jeśli włączamy muzykę, musimy ją najpierw odpalić
-        if (targetVolume > 0 && !audioSource.isPlaying) audioSource.Play();
-
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(startVolume, targetVolume, time / duration);
-            yield return null;
-        }
-
-        audioSource.volume = targetVolume;
-
-        if (targetVolume <= 0) audioSource.Stop();
-    }
-
-    private void StartFade(float target)
-    {
-        if (audioFadeCoroutine != null) StopCoroutine(audioFadeCoroutine);
-        audioFadeCoroutine = StartCoroutine(FadeAudio(target, audioFadeDuration));
-    }
-
+     
     private void HandleTextInput(char character)
     {
         // Blokujemy wpisywanie, jeśli procesujemy słowo, nie ma gry lub rząd jest pełny
         if (isProcessing || string.IsNullOrEmpty(targetWord) || currentInput.Length >= targetWord.Length) 
             return;
         
-        if (char.IsLetter(character))
+        if (char.IsLetter(character)&&!PauseMenu.isPaused)
         {
             currentInput += char.ToUpper(character);
             wordleInputSound.Play();
@@ -151,55 +89,10 @@ public class WordleManager : MonoBehaviour
         }
     }
 
-    private void StartWordleWithAnimation(string word)
-    {
-        StopAllCoroutines();
-        
-        StartFade(maxVolume);
-        
-        InitWordle(word);
-        StartCoroutine(SlideInRoutine());
-
-        audienceClapAudio.Play();
-    }
-
-    private IEnumerator SlideInRoutine()
-    {
-        float elapsedTime = 0;
-
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
-        
-        // Ustawienia startowe: poza ekranem i niewidoczne
-        rectTransform.anchoredPosition = new Vector2(startXPosition, targetAnchoredPosition.y);
-        canvasGroup.alpha = 0;
-
-        while (elapsedTime < animationDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / animationDuration;
-            float curveT = slideCurve.Evaluate(t); // Używamy krzywej dla efektu "smooth"
-
-            // Przesunięcie
-            rectTransform.anchoredPosition = Vector2.Lerp(
-                new Vector2(startXPosition, targetAnchoredPosition.y), 
-                targetAnchoredPosition, 
-                curveT
-            );
-
-            // Fade in
-            canvasGroup.alpha = Mathf.Lerp(0, 1, curveT);
-
-            yield return null;
-        }
-
-        // Upewniamy się, że skończyło w idealnym miejscu
-        rectTransform.anchoredPosition = targetAnchoredPosition;
-        canvasGroup.alpha = 1;
-    }
-
-    // --- MECHANIKA GRY ---
-
+    /// <summary>
+    /// Initializes the Wordle minigame <see langword="with"/> the word keyword. 
+    /// </summary>
+    /// <param name="word">Solution of the minigame</param>
     public void InitWordle(string word)
     {
         if (container == null || rowPrefab == null || tilePrefab == null)
@@ -208,7 +101,6 @@ public class WordleManager : MonoBehaviour
             return;
         }
 
-        // Czyszczenie poprzedniej gry
         foreach (Transform child in container) Destroy(child.gameObject);
         foreach (Transform child in wordContainer) Destroy(child.gameObject);
         rows.Clear();
@@ -223,10 +115,13 @@ public class WordleManager : MonoBehaviour
         {
             GameObject tileObj = Instantiate(tilePrefab, wordObj.transform);
             wordRow[i] = tileObj.GetComponent<WordleTile>();
-            wordRow[i].textElement.font = alienFont;
-            wordRow[i].textElement.fontSize = 70;
-            wordRow[i].SetLetter(targetWord[i]);
-            wordRow[i].SetColor(targetWordTileColor);
+            wordRow[i].SetLetter(
+                targetWord[i],
+                _targetWordLetterColor,
+                font: alienFont,
+                fontSize: 70
+                );
+            wordRow[i].SetBackgroundColor(targetWordTileColor);
         }
 
         for (int i = 0; i < _availableAttempts; i++) {
@@ -236,8 +131,8 @@ public class WordleManager : MonoBehaviour
                 GameObject tileObj = Instantiate(tilePrefab, rowObj.transform);
                 tileRow[j] = tileObj.GetComponent<WordleTile>();
                 
-                tileRow[j].SetLetter(' ');
-                tileRow[j].SetColor(emptyTileColor);
+                tileRow[j].SetLetter(' ', Color.white);
+                tileRow[j].SetBackgroundColor(emptyTileColor);
             }
             rows.Add(tileRow);
         }
@@ -251,18 +146,17 @@ public class WordleManager : MonoBehaviour
         var currentTiles = rows[currentAttempt];
         for (int i = 0; i < currentTiles.Length; i++)
         {
-            currentTiles[i].SetLetter(i < currentInput.Length ? currentInput[i] : ' ');
+            currentTiles[i].SetLetter(i < currentInput.Length ? currentInput[i] : ' ', Color.white);
             
         }
     }
     public void SkipWordle()
     {
-        GameEvents.TriggerWordleSuccess(string.Empty);
         targetWord = "";
         audienceAudio.Play();
         isProcessing = false;
         wordleFailed.Play();
-        StartCoroutine(SlideOutRoutine());
+        GameEvents.TriggerWordleSuccess(string.Empty);
     }
 
     private IEnumerator CheckWordRoutine()
@@ -294,7 +188,6 @@ public class WordleManager : MonoBehaviour
         {
             wordleSuccess.Play();
             yield return new WaitForSeconds(1f);
-            yield return StartCoroutine(SlideOutRoutine());
             
             GameEvents.TriggerWordleSuccess(targetWord);
             targetWord = ""; 
@@ -306,9 +199,7 @@ public class WordleManager : MonoBehaviour
             if (currentAttempt >= _availableAttempts)
             {
                 wordleFailed.Play();
-                yield return new WaitForSeconds(1f);
-                yield return StartCoroutine(SlideOutRoutine());
-                
+                yield return new WaitForSeconds(1f);                
                 GameEvents.TriggerWordleSuccess(string.Empty);
                 targetWord = "";
 
@@ -333,7 +224,7 @@ public class WordleManager : MonoBehaviour
         {
             if (inputChars[i] == targetChars[i])
             {
-                currentTiles[i].SetColor(correctColor);
+                currentTiles[i].SetBackgroundColor(correctColor);
                 matched[i] = true;
             }
         }
@@ -347,52 +238,14 @@ public class WordleManager : MonoBehaviour
             {
                 if (!matched[j] && inputChars[i] == targetChars[j])
                 {
-                    currentTiles[i].SetColor(presentColor);
+                    currentTiles[i].SetBackgroundColor(presentColor);
                     foundYellow = true;
                     break;
                 }
             }
 
             if (!foundYellow)
-                currentTiles[i].SetColor(absentColor);
+                currentTiles[i].SetBackgroundColor(absentColor);
         }
-    }
-
-    private IEnumerator SlideOutRoutine()
-    {
-        StartFade(0f);
-        
-        float elapsedTime = 0;
-
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
-
-        Vector2 currentPos = rectTransform.anchoredPosition;
-        
-        // Wyłączamy interakcję na początku animacji wyjazdu
-        canvasGroup.interactable = false;
-        canvasGroup.blocksRaycasts = false;
-
-        while (elapsedTime < animationDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / animationDuration;
-            float curveT = slideCurve.Evaluate(t);
-
-            // Interpolacja do endXPosition (ucieczka w prawo)
-            rectTransform.anchoredPosition = Vector2.Lerp(
-                currentPos, 
-                new Vector2(endXPosition, targetAnchoredPosition.y), 
-                curveT
-            );
-
-            // Fade out
-            canvasGroup.alpha = Mathf.Lerp(1, 0, curveT);
-
-            yield return null;
-        }
-
-        canvasGroup.alpha = 0;
-        rectTransform.anchoredPosition = new Vector2(startXPosition, targetAnchoredPosition.y);
     }
 }

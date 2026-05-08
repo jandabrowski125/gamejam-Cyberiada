@@ -28,8 +28,9 @@ public class VideoSceneChanger : MonoBehaviour
     }
 
     // Metoda wywoływana automatycznie przez event
-    private void OnVideoEnd(VideoPlayer vp)
+    public void OnVideoEnd(VideoPlayer vp)
     {
+        Debug.Log("skidibi");
         if (!string.IsNullOrEmpty(nextSceneName))
         {
             fadeToBlack.StartFadeOut();
