@@ -295,7 +295,6 @@
                 "ba80aa58-53ad-43af-8334-3344e1088a59",
                 "c416117b-8262-4869-9a64-96bb6d9ad636",
                 "a9164b16-8fdc-43b2-872b-fb9a2f00254d",
-                "22c92296-0b20-4549-8cb6-68969e87f49d",
                 "611cd935-35d0-404f-9adc-6160bc60bb99",
                 "4bf0faa5-05dd-4bbe-8af3-ea90a168f499",
                 "12f92d55-1188-42ad-9de1-c4783b121a86",
@@ -328,7 +327,6 @@
                 "fa503cb2-ff27-4869-a769-c23cd35b3364",
                 "9be33e29-8ec8-4abc-8cca-1105bf4297f1",
                 "b86206b3-069a-404a-ac14-ccb986f12d06",
-                "b8663098-a2ff-40cf-9db7-bff84e25311a",
                 "f0972e2b-3cc2-414d-9593-2a6c17b2e940",
                 "ce59e58f-8537-4004-b904-22c5d39a9e6a",
                 "c7590011-f8b9-4ece-9fa1-6f4af7a24aaa",
@@ -461,7 +459,10 @@
                 "a89a2ac6-52a9-45db-8c0b-537877f08cbb",
                 "0b110bb5-ade3-4a45-a0af-60b8f904c1a1",
                 "014a269d-b4cd-4699-b3f5-d2a076c83d43",
-                "fae3e10b-a16d-4f47-b08b-386fcdbe092d"
+                "fae3e10b-a16d-4f47-b08b-386fcdbe092d",
+                "98119698-25d8-4499-b530-09461efc1310",
+                "7c48bf2c-1adc-489f-bbe1-31b29a5df4a0",
+                "ba49b13c-bc8e-4e47-98d4-6f0b9fc783a0"
             ]
         }
     },
@@ -1137,11 +1138,11 @@
             "theme": "green",
             "outputs": [
                 "29d8c22b-2ffb-4dc3-bb80-d192790e684e",
-                "22c92296-0b20-4549-8cb6-68969e87f49d",
-                "ba80aa58-53ad-43af-8334-3344e1088a59"
+                "ba80aa58-53ad-43af-8334-3344e1088a59",
+                "7c48bf2c-1adc-489f-bbe1-31b29a5df4a0"
             ],
             "components": [],
-            "content": "<p>FUN! I mean\u2026 For good for sure\u2026 Yes, I would probably bring {some ancient civilization from eons ago to [life]} or something like that. Rising like the phoenix from the ashes. BURN AND PERSEVERE!<\/p>",
+            "content": "<p>FUN! I mean\u2026 For good for sure\u2026 Yes, I would probably bring some ancient civilization from eons ago to life or something like that. Rising like {the phoenix from the [ashes]}. BURN AND PERSEVERE!<\/p>",
             "title": "<p>Decln'Argegh<\/p>"
         },
         "587bbb73-2ca7-4610-bbbc-ed1ec26d1f77": {
@@ -1404,7 +1405,7 @@
                 "d5f5a0d7-49fc-4830-8674-91652919eb14"
             ],
             "components": [],
-            "content": "<p>Well it happened twice or thrice\u2026 Wait - did you mean metaphorically? Then no. Never. I\u2019m not that bad. THE BADDEST! Either way - I don\u2019t have time for playing with fire. At least not now. {I [desire] something different.}<\/p>",
+            "content": "<p>Well, it happened twice or thrice\u2026 Wait - did you mean metaphorically? Then no. Never. I\u2019m not that bad. THE BADDEST! Either way - I don\u2019t have time for playing with fire. At least not now. {I [desire] something different.}<\/p>",
             "title": "<p>Decln'Argegh<\/p>"
         },
         "7f92ed51-a080-429f-a260-b9d4fd8d1d95": {
@@ -1672,15 +1673,6 @@
             "content": "<p>Do you even have any feelings?<\/p>",
             "title": "<p>Human<\/p>"
         },
-        "ff361840-8d3b-4d96-b785-13a8718a21e2": {
-            "theme": "red",
-            "outputs": [
-                "d2e2be6f-cfc1-4f6a-a6ca-e1f0adf8813f"
-            ],
-            "components": [],
-            "content": "<p>Maybe you were overreacting?<\/p>",
-            "title": "<p>Human<\/p>"
-        },
         "a368f5dd-131d-4a39-945a-0148883ca32d": {
             "theme": "green",
             "outputs": [
@@ -1775,7 +1767,9 @@
         },
         "ab7d8303-a62a-48ae-9b42-e1889889badd": {
             "theme": "lightBlue",
-            "outputs": [],
+            "outputs": [
+                "98119698-25d8-4499-b530-09461efc1310"
+            ],
             "components": [],
             "content": "<p>& If you had a superpower, would you use it for good\u2026 or for fun? & My ex-wife surely used it for fun!<\/p>",
             "title": "<p>Presenter<\/p>"
@@ -1938,6 +1932,15 @@
             "components": [],
             "content": "<p>Potential Strategic Life Partner detected.<\/p>",
             "title": "<p>CyberJohn; 1; 0<\/p>"
+        },
+        "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252": {
+            "theme": "lightBlue",
+            "outputs": [
+                "0ac6490c-ddff-49f6-9cb7-bcd8a62f4e57"
+            ],
+            "components": [],
+            "content": "<p>Try any word and just write it with your silly Earthian keyboard. See how the magic happens! Green means it's the right spot, yellow means you should put it elsewhere. Easy-peasy!<\/p>",
+            "title": "<p>Presenter<\/p>"
         },
         "bc72ae6f-a910-48a7-b87e-876004cc4fb5": {
             "theme": "purple",
@@ -2117,7 +2120,7 @@
         "e1437bdb-adf0-4b86-ada2-9e739180ef57": {
             "theme": "green",
             "outputs": [
-                "b8663098-a2ff-40cf-9db7-bff84e25311a"
+                "ba49b13c-bc8e-4e47-98d4-6f0b9fc783a0"
             ],
             "components": [],
             "content": "<p>You remind me of my ex. He also liked to set things on fire\u2026 And then immediately quench it.<\/p>",
@@ -2302,14 +2305,14 @@
             "content": "<p>Harm is not allowed in the swarm. <em>We love and please each other.<\/em><\/p>",
             "title": "<p>Arneth Maalg; 0; 1<\/p>"
         },
-        "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252": {
-            "theme": "lightBlue",
-            "components": [],
+        "ff361840-8d3b-4d96-b785-13a8718a21e2": {
+            "theme": "red",
             "outputs": [
-                "0ac6490c-ddff-49f6-9cb7-bcd8a62f4e57"
+                "d2e2be6f-cfc1-4f6a-a6ca-e1f0adf8813f"
             ],
-            "content": "<p>Try any word and just write it with your silly Earthian keyboard. See how the magic happens! Green means it's the right spot, yellow means you should put it elsewhere. Easy-peasy!<\/p>",
-            "title": "<p>Presenter<\/p>"
+            "components": [],
+            "content": "<p>Maybe you were overreacting?<\/p>",
+            "title": "<p>Human<\/p>"
         }
     },
     "jumpers": {},
@@ -2319,6 +2322,16 @@
             "theme": "purple",
             "sourceid": "d59254f4-de4e-47d3-8bee-ac24774a603c",
             "targetid": "3e767c28-e7c6-40a9-8283-584dca70cd53",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "label": null
+        },
+        "014a269d-b4cd-4699-b3f5-d2a076c83d43": {
+            "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
+            "targetid": "66b873ac-9833-4d59-b80f-d94a6771c93e",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
@@ -2355,16 +2368,6 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "a89a2ac6-52a9-45db-8c0b-537877f08cbb": {
-            "sourceType": "elements",
-            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
-            "targetid": "db0d6bd8-842e-44d5-88fc-b95d5c7abbda",
-            "targetType": "elements",
-            "targetFace": "left",
-            "type": "Bezier",
-            "theme": "purple",
-            "label": null
-        },
         "0a47cdf4-b94f-438a-81e5-27f031b3b0f7": {
             "type": "Bezier",
             "theme": "default",
@@ -2385,6 +2388,26 @@
             "targetFace": "left",
             "targetType": "elements",
             "labelLocation": 0.5,
+            "label": null
+        },
+        "0ac6490c-ddff-49f6-9cb7-bcd8a62f4e57": {
+            "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
+            "targetid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "label": null
+        },
+        "0b110bb5-ade3-4a45-a0af-60b8f904c1a1": {
+            "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
+            "targetid": "5d876c48-5988-4efc-a029-959a478f51d7",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
             "label": null
         },
         "0c11b7d5-82a7-471d-9d51-d9ffb348577e": {
@@ -2644,6 +2667,16 @@
             "labelLocation": 0.5,
             "label": null
         },
+        "2150e9e7-e363-460f-895e-1f9c40b8fff8": {
+            "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "2da05774-7c55-47e0-99cb-ddc8db4714de",
+            "targetid": "4ff26785-a3c4-4ce0-ae69-feb6bba6172e",
+            "sourceType": "elements",
+            "targetFace": "top",
+            "targetType": "elements",
+            "label": null
+        },
         "224c5cd1-b0a7-4550-8bd8-55cb3e940b55": {
             "type": "Bezier",
             "theme": "purple",
@@ -2655,11 +2688,11 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "22c92296-0b20-4549-8cb6-68969e87f49d": {
+        "fd930d16-aebe-40c8-bad9-c2584f230e2f": {
             "type": "Bezier",
-            "theme": "green",
-            "sourceid": "57ba604b-a14a-4360-a52a-9335bee58778",
-            "targetid": "b6eb5fd3-6e83-44e0-87e8-76c5ddc004f4",
+            "theme": "default",
+            "sourceid": "f2bc75ff-1f04-442e-a9aa-a332f72e3b0c",
+            "targetid": "603622a4-5a5b-446a-8702-57c10590b156",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
@@ -2671,17 +2704,6 @@
             "theme": "default",
             "sourceid": "ff1bc2c0-a766-47dd-bbdb-f4ed9970ad15",
             "targetid": "b4dc23af-b1e5-4328-bd92-5c22c31f686c",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "labelLocation": 0.5,
-            "label": null
-        },
-        "fcab6ce8-3962-4c6c-b5db-71ad0d7c74c6": {
-            "type": "Bezier",
-            "theme": "green",
-            "sourceid": "7e3c38e1-a316-42c4-a523-d5a1b09af992",
-            "targetid": "ac9660b7-2c89-4883-8404-e1d7aa714226",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
@@ -2802,6 +2824,16 @@
             "labelLocation": 0.5,
             "label": null
         },
+        "3b23cd79-7592-441e-b2fb-9377b11b63a9": {
+            "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+            "targetid": "03279d6c-94f0-46be-b91f-e62cf7e11eab",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "label": null
+        },
         "3b54efed-85d8-40e7-a731-5e0665cacc28": {
             "type": "Bezier",
             "theme": "purple",
@@ -2874,15 +2906,6 @@
             "targetFace": "left",
             "targetType": "elements",
             "labelLocation": 0.5,
-            "label": null
-        },
-        "62acb915-fb1c-401c-9882-f70eb1df23f6": {
-            "targetType": "elements",
-            "type": "Bezier",
-            "targetid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
-            "sourceType": "elements",
-            "sourceid": "66b873ac-9833-4d59-b80f-d94a6771c93e",
-            "theme": "purple",
             "label": null
         },
         "4834b53f-4983-47f5-992f-72bb1945474d": {
@@ -3092,26 +3115,6 @@
             "targetType": "elements",
             "label": null
         },
-        "fb78d161-0b0a-4fbb-87a9-bda21d014fd7": {
-            "type": "Bezier",
-            "theme": "green",
-            "sourceid": "03279d6c-94f0-46be-b91f-e62cf7e11eab",
-            "targetid": "4c43b11d-da8a-4809-a7dd-08e8610388f0",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "label": null
-        },
-        "2150e9e7-e363-460f-895e-1f9c40b8fff8": {
-            "sourceType": "elements",
-            "sourceid": "2da05774-7c55-47e0-99cb-ddc8db4714de",
-            "targetid": "4ff26785-a3c4-4ce0-ae69-feb6bba6172e",
-            "targetType": "elements",
-            "targetFace": "top",
-            "type": "Bezier",
-            "theme": "purple",
-            "label": null
-        },
         "5cad65dc-1417-4a39-9825-a8d541e08f2b": {
             "type": "Bezier",
             "theme": "purple",
@@ -3196,15 +3199,14 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "fc5745da-5891-4740-9590-f493ef89fe03": {
+        "61b2dd82-8155-429a-8184-432d43c5e0b6": {
             "type": "Bezier",
-            "theme": "default",
-            "sourceid": "a647a3a3-1c83-4538-86d0-cbd34fcc9aab",
-            "targetid": "4f149693-0dae-4758-8fbd-21f26edb6aef",
+            "theme": "purple",
+            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+            "targetid": "36f77d2f-e86b-4cf3-93c1-d1215262a31c",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
-            "labelLocation": 0.5,
             "label": null
         },
         "621b8b92-9f2f-4563-a5fb-a8e4da95fbef": {
@@ -3216,6 +3218,15 @@
             "targetFace": "left",
             "targetType": "elements",
             "labelLocation": 0.5,
+            "label": null
+        },
+        "62acb915-fb1c-401c-9882-f70eb1df23f6": {
+            "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "66b873ac-9833-4d59-b80f-d94a6771c93e",
+            "targetid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
+            "sourceType": "elements",
+            "targetType": "elements",
             "label": null
         },
         "62e765fa-b40c-41ef-a37e-d79b972c60bb": {
@@ -3437,17 +3448,6 @@
             "theme": "purple",
             "sourceid": "111c9f4d-9493-4d1f-b80a-135e6fe5dd1b",
             "targetid": "6dbe3d62-41fe-4ba8-986c-e1758aa9707d",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "labelLocation": 0.5,
-            "label": null
-        },
-        "fc1f4e95-1811-4759-94be-a1faa7595206": {
-            "type": "Bezier",
-            "theme": "purple",
-            "sourceid": "7161feba-95ab-4f47-99c2-fff4e0903326",
-            "targetid": "c2e39516-f84a-4ed1-a804-4fbef837f94d",
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
@@ -3967,6 +3967,16 @@
             "labelLocation": 0.5,
             "label": null
         },
+        "a89a2ac6-52a9-45db-8c0b-537877f08cbb": {
+            "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+            "targetid": "db0d6bd8-842e-44d5-88fc-b95d5c7abbda",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "label": null
+        },
         "a9164b16-8fdc-43b2-872b-fb9a2f00254d": {
             "type": "Bezier",
             "theme": "green",
@@ -4155,16 +4165,6 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "b8663098-a2ff-40cf-9db7-bff84e25311a": {
-            "type": "Bezier",
-            "theme": "green",
-            "sourceid": "e1437bdb-adf0-4b86-ada2-9e739180ef57",
-            "targetid": "3a784349-cf02-41b1-a56a-5c19f3fd1a06",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "labelLocation": 0.5,
-            "label": null
-        },
         "ba80aa58-53ad-43af-8334-3344e1088a59": {
             "type": "Bezier",
             "theme": "green",
@@ -4195,16 +4195,6 @@
             "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
-            "label": null
-        },
-        "0ac6490c-ddff-49f6-9cb7-bcd8a62f4e57": {
-            "sourceType": "elements",
-            "sourceid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
-            "targetid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
-            "targetType": "elements",
-            "targetFace": "left",
-            "type": "Bezier",
-            "theme": "purple",
             "label": null
         },
         "c1688346-fc87-4917-8cf7-87d872cd0809": {
@@ -4528,17 +4518,6 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "fd930d16-aebe-40c8-bad9-c2584f230e2f": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "f2bc75ff-1f04-442e-a9aa-a332f72e3b0c",
-            "targetid": "603622a4-5a5b-446a-8702-57c10590b156",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "labelLocation": 0.5,
-            "label": null
-        },
         "d7cfaeae-9ec6-41a4-8b22-01b17e99b8b1": {
             "type": "Bezier",
             "theme": "purple",
@@ -4768,17 +4747,6 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "fd1c0f66-5be3-4ab4-aa09-c478c261d7c0": {
-            "type": "Bezier",
-            "theme": "red",
-            "sourceid": "f8465b99-e927-4fe2-b347-7e0fd6fbb7d2",
-            "targetid": "16f2ca98-1a07-44cd-ac97-9602ba7e82cf",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "labelLocation": 0.5,
-            "label": null
-        },
         "f69d89ae-651e-45be-b6af-65387118c2f1": {
             "type": "Bezier",
             "theme": "default",
@@ -4819,52 +4787,95 @@
             "labelLocation": 0.5,
             "label": null
         },
-        "3b23cd79-7592-441e-b2fb-9377b11b63a9": {
-            "sourceType": "elements",
-            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
-            "targetid": "03279d6c-94f0-46be-b91f-e62cf7e11eab",
-            "targetType": "elements",
-            "targetFace": "left",
-            "type": "Bezier",
-            "theme": "purple",
-            "label": null
-        },
-        "61b2dd82-8155-429a-8184-432d43c5e0b6": {
-            "sourceType": "elements",
-            "sourceid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
-            "targetid": "36f77d2f-e86b-4cf3-93c1-d1215262a31c",
-            "targetType": "elements",
-            "targetFace": "left",
-            "type": "Bezier",
-            "theme": "purple",
-            "label": null
-        },
-        "0b110bb5-ade3-4a45-a0af-60b8f904c1a1": {
-            "sourceType": "elements",
-            "sourceid": "708d2520-f90f-4ed6-8e0a-14250a95e375",
-            "targetid": "5d876c48-5988-4efc-a029-959a478f51d7",
-            "targetType": "elements",
-            "targetFace": "left",
-            "type": "Bezier",
-            "theme": "purple",
-            "label": null
-        },
-        "014a269d-b4cd-4699-b3f5-d2a076c83d43": {
-            "sourceType": "elements",
-            "sourceid": "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
-            "targetid": "66b873ac-9833-4d59-b80f-d94a6771c93e",
-            "targetType": "elements",
-            "targetFace": "left",
-            "type": "Bezier",
-            "theme": "purple",
-            "label": null
-        },
         "fae3e10b-a16d-4f47-b08b-386fcdbe092d": {
-            "targetType": "elements",
             "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "5d876c48-5988-4efc-a029-959a478f51d7",
             "targetid": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
             "sourceType": "elements",
-            "sourceid": "5d876c48-5988-4efc-a029-959a478f51d7",
+            "targetType": "elements",
+            "label": null
+        },
+        "fb78d161-0b0a-4fbb-87a9-bda21d014fd7": {
+            "type": "Bezier",
+            "theme": "green",
+            "sourceid": "03279d6c-94f0-46be-b91f-e62cf7e11eab",
+            "targetid": "4c43b11d-da8a-4809-a7dd-08e8610388f0",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "label": null
+        },
+        "fc1f4e95-1811-4759-94be-a1faa7595206": {
+            "type": "Bezier",
+            "theme": "purple",
+            "sourceid": "7161feba-95ab-4f47-99c2-fff4e0903326",
+            "targetid": "c2e39516-f84a-4ed1-a804-4fbef837f94d",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "labelLocation": 0.5,
+            "label": null
+        },
+        "fc5745da-5891-4740-9590-f493ef89fe03": {
+            "type": "Bezier",
+            "theme": "default",
+            "sourceid": "a647a3a3-1c83-4538-86d0-cbd34fcc9aab",
+            "targetid": "4f149693-0dae-4758-8fbd-21f26edb6aef",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "labelLocation": 0.5,
+            "label": null
+        },
+        "fcab6ce8-3962-4c6c-b5db-71ad0d7c74c6": {
+            "type": "Bezier",
+            "theme": "green",
+            "sourceid": "7e3c38e1-a316-42c4-a523-d5a1b09af992",
+            "targetid": "ac9660b7-2c89-4883-8404-e1d7aa714226",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "labelLocation": 0.5,
+            "label": null
+        },
+        "fd1c0f66-5be3-4ab4-aa09-c478c261d7c0": {
+            "type": "Bezier",
+            "theme": "red",
+            "sourceid": "f8465b99-e927-4fe2-b347-7e0fd6fbb7d2",
+            "targetid": "16f2ca98-1a07-44cd-ac97-9602ba7e82cf",
+            "sourceType": "elements",
+            "targetFace": "left",
+            "targetType": "elements",
+            "labelLocation": 0.5,
+            "label": null
+        },
+        "98119698-25d8-4499-b530-09461efc1310": {
+            "targetType": "elements",
+            "type": "Bezier",
+            "targetid": "57ba604b-a14a-4360-a52a-9335bee58778",
+            "sourceType": "elements",
+            "sourceid": "ab7d8303-a62a-48ae-9b42-e1889889badd",
+            "theme": "purple",
+            "label": null
+        },
+        "7c48bf2c-1adc-489f-bbe1-31b29a5df4a0": {
+            "sourceType": "elements",
+            "sourceid": "57ba604b-a14a-4360-a52a-9335bee58778",
+            "targetid": "b6eb5fd3-6e83-44e0-87e8-76c5ddc004f4",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "purple",
+            "label": null
+        },
+        "ba49b13c-bc8e-4e47-98d4-6f0b9fc783a0": {
+            "sourceType": "elements",
+            "sourceid": "e1437bdb-adf0-4b86-ada2-9e739180ef57",
+            "targetid": "3a784349-cf02-41b1-a56a-5c19f3fd1a06",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
             "theme": "purple",
             "label": null
         }

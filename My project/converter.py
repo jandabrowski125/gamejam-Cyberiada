@@ -91,6 +91,7 @@ conns = jin["connections"]
 
 while True:  # broken only explicitly
     elem = elems[queue[0]]
+    print(f"Analysing node: {queue[0]}...")
     # temp
     msg_choices = []
     msg_next = ""
@@ -137,6 +138,7 @@ while True:  # broken only explicitly
             choices=msg_choices,
         )
     )
+    print(f"Node {queue[0]} analysed successfully!")
     queue.pop(0)  # removes analysed item
     if msg_next != "":
         queue.append(msg_next)
