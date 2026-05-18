@@ -4,9 +4,15 @@ import re
 
 keyword_search = r"\[\w*\]"
 
+VER = 1.0
 INs = input(
-    """
-    Write .json file(s) to be converted. Include file extension. Writing multiple entries, separate them by `,`:\n
+    f"""
+    == ARCWEAVE Converter ==
+    v.{VER}
+    All Rights Reserved, Toma400 (C) 2026
+
+    Write .json file(s) to be converted, including file extension. JSONs must contain at least one valid ArcWeave node.\n
+    Writing multiple entries, separate them by `,`:\n
     (you can automate that by including the same text in <in.txt> file)\n
     """
 ) if not Path("in.txt").exists() else Path("in.txt").read_text().replace("\n", "")
@@ -95,7 +101,8 @@ for INi, INf in enumerate(IN):  # INi = index, INf = file
     with open(INf, "r") as f:
         jin = json.load(f)
 
-    queue = [jin["startingElement"]]  # currently checked var(s), starting from first
+    # currently checked var(s), starting from first // guardrails autosets first dict elem if key is null
+    queue = [jin["startingElement"]] if jin["startingElement"] is not None else [next(iter(jin["elements"]))]
     elems = jin["elements"]
     conns = jin["connections"]
 
@@ -157,7 +164,7 @@ for INi, INf in enumerate(IN):  # INi = index, INf = file
         if msg_next != "":
             queue.append(msg_next)
         if len(queue) == 0 or len(elem["outputs"]) == 0:
-            njsn = True # enables 'next json' connection in case there are any new files
+            njsn = True # enables 'next json' connection in case there are any next files
             break       # breaks out of loop
 
     print(f"File {INf} analysed successfully!")
