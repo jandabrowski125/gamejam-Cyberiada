@@ -48,3 +48,31 @@ MonoBehaviour:
     EndingPicture: {fileID: -5318843070631793986, guid: cde43edac8d4f2e4a99d2bde79e3934f, type: 3}
     Voice: {fileID: 6418180475301049370, guid: 758672f662fd77d44acb628fc80d2fb4, type: 2}
     EndingMusic: {fileID: 0}
+  - Name: Unhappy
+    Portrait: {fileID: -5251537206809758910, guid: 1e858eb0c06ead444be798edb9409fdf, type: 3}
+    Background: {fileID: -8558759507286567988, guid: e858e6ae8c431e3488a13edc2038d26e, type: 3}
+    Font: {fileID: 11400000, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
+    EndingPicture: {fileID: -440007573708660520, guid: 8e3016a8b6723b8478c38e84277f00dc, type: 3}
+    Voice: {fileID: 6418180475301049370, guid: 758672f662fd77d44acb628fc80d2fb4, type: 2}
+    EndingMusic: {fileID: 0}
+  - Name: Credits1
+    Portrait: {fileID: 0}
+    Background: {fileID: 0}
+    Font: {fileID: 11400000, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
+    EndingPicture: {fileID: 1454738883225299967, guid: 07d69bd09367c32438671e60a8cb6bd1, type: 3}
+    Voice: {fileID: 6418180475301049370, guid: 758672f662fd77d44acb628fc80d2fb4, type: 2}
+    EndingMusic: {fileID: 0}
+  - Name: Credits2
+    Portrait: {fileID: 0}
+    Background: {fileID: 0}
+    Font: {fileID: 11400000, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
+    EndingPicture: {fileID: 2131363154476964720, guid: 508f7510c54eb77409fca4ea7466bb48, type: 3}
+    Voice: {fileID: 6418180475301049370, guid: 758672f662fd77d44acb628fc80d2fb4, type: 2}
+    EndingMusic: {fileID: 0}
+  - Name: Credits3
+    Portrait: {fileID: 0}
+    Background: {fileID: 0}
+    Font: {fileID: 11400000, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
+    EndingPicture: {fileID: 4347047130177171658, guid: 7abd907ce96b1be44a1d615cce1cc2dc, type: 3}
+    Voice: {fileID: 6418180475301049370, guid: 758672f662fd77d44acb628fc80d2fb4, type: 2}
+    EndingMusic: {fileID: 0}
