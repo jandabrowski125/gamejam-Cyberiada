@@ -68,6 +68,7 @@ while true: # explicit break by either session system or manually by user
             words_new.write(rem & "\n")
     
         close(words_new)
+        close(wordsout)
 
     block GitCommands: # performs automated git data exchange
         discard execCmd("git pull")
