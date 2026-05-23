@@ -1,9 +1,22 @@
+from pathlib import Path
 import json
 import re
 
 keyword_search = r"\[\w*\]"
 
-IN = "in.json"
+VER = 1.0
+INs = input(
+    f"""
+    == ARCWEAVE Converter ==
+    v.{VER}
+    All Rights Reserved, Toma400 (C) 2026
+
+    Write .json file(s) to be converted, including file extension. JSONs must contain at least one valid ArcWeave node.\n
+    Writing multiple entries, separate them by `,`:\n
+    (you can automate that by including the same text in <in.txt> file)\n
+    """
+) if not Path("in.txt").exists() else Path("in.txt").read_text().replace("\n", "")
+IN = INs.split(",")
 OUT = "Assets/Dialogues/Dialogue.json"
 
 
@@ -80,68 +93,81 @@ class Message:
         }
 
 
-msgs = []  # : list[Message]
+msgs = []    # : list[Message]
+njsn = False # 'next json' flag, to be used by loop later
 
-with open(IN, "r") as f:
-    jin = json.load(f)
+for INi, INf in enumerate(IN):  # INi = index, INf = file
+    print (f"Analysing JSON: {INf}...")
+    with open(INf, "r") as f:
+        jin = json.load(f)
 
-queue = [jin["startingElement"]]  # currently checked var(s), starting from first
-elems = jin["elements"]
-conns = jin["connections"]
+    # currently checked var(s), starting from first // guardrails autosets first dict elem if key is null
+    queue = [jin["startingElement"]] if jin["startingElement"] is not None else [next(iter(jin["elements"]))]
+    elems = jin["elements"]
+    conns = jin["connections"]
 
-while True:  # broken only explicitly
-    elem = elems[queue[0]]
-    # temp
-    msg_choices = []
-    msg_next = ""
+    while True:  # broken only explicitly
+        if njsn is True: # can happen only if IN enumeration loops again here
+            msgs[-1].next = queue[0]
+            njsn = False # resets
 
-    # message manager skips choice msgs and followup msgs, rendering their `== 1` not needing of distinguishing
-    if len(elem["outputs"]) == 1:
-        msg_next = conns[elem["outputs"][0]]["targetid"]  # immediate next message
-    elif (
-        len(elem["outputs"]) > 1
-    ):  # choice message type (-> indicates what msg it points towards)
-        msg_next = conns[elem["outputs"][0]][
-            "targetid"
-        ]  # nested next message ID (-> choice)
-        msg_next = conns[elems[msg_next]["outputs"][0]][
-            "targetid"
-        ]  # ...goes one msg deeper, leaping over choice (-> followup)
-        msg_next = conns[elems[msg_next]["outputs"][0]][
-            "targetid"
-        ]  # ...and once more, leaping over followup (-> actual nxt msg)
-        for choice in elem["outputs"]:
-            msg_fup = elems[
-                conns[elems[conns[choice]["targetid"]]["outputs"][0]]["targetid"]
-            ]  # followup dict
-            tit = purgeHTML(
-                msg_fup["title"]
-            )  # title is split to get paragon/renegade stuff
-            tits = tit.split(";")
-            msg_choices.append(
-                Choice(
-                    msg=purgeHTML(elems[conns[choice]["targetid"]]["content"]),
-                    followup=purgeHTML(msg_fup["content"]),
-                    paragon=int(tits[1]),
-                    renegade=int(tits[2]),
+        elem = elems[queue[0]]
+        print(f"Analysing node: {queue[0]}...")
+        # temp
+        msg_choices = []
+        msg_next = ""
+
+        # message manager skips choice msgs and followup msgs, rendering their `== 1` not needing of distinguishing
+        if len(elem["outputs"]) == 1:
+            msg_next = conns[elem["outputs"][0]]["targetid"]  # immediate next message
+        elif (
+            len(elem["outputs"]) > 1
+        ):  # choice message type (-> indicates what msg it points towards)
+            msg_next = conns[elem["outputs"][0]][
+                "targetid"
+            ]  # nested next message ID (-> choice)
+            msg_next = conns[elems[msg_next]["outputs"][0]][
+                "targetid"
+            ]  # ...goes one msg deeper, leaping over choice (-> followup)
+            msg_next = conns[elems[msg_next]["outputs"][0]][
+                "targetid"
+            ]  # ...and once more, leaping over followup (-> actual nxt msg)
+            for choice in elem["outputs"]:
+                msg_fup = elems[
+                    conns[elems[conns[choice]["targetid"]]["outputs"][0]]["targetid"]
+                ]  # followup dict
+                tit = purgeHTML(
+                    msg_fup["title"]
+                )  # title is split to get paragon/renegade stuff
+                tits = tit.split(";")
+                msg_choices.append(
+                    Choice(
+                        msg=purgeHTML(elems[conns[choice]["targetid"]]["content"]),
+                        followup=purgeHTML(msg_fup["content"]),
+                        paragon=int(tits[1]),
+                        renegade=int(tits[2]),
+                    )
                 )
-            )
 
-    msgs.append(
-        Message(
-            mid=queue[0],
-            person=purgeHTML(elem["title"]),
-            msg=formatMainMessage(elem["content"]),
-            wordle=purgeHTMLRegEx(re.search(keyword_search, elem["content"])),
-            next=msg_next,  # msg_next based on first connection, even with multiple
-            choices=msg_choices,
+        msgs.append(
+            Message(
+                mid=queue[0],
+                person=purgeHTML(elem["title"]),
+                msg=formatMainMessage(elem["content"]),
+                wordle=purgeHTMLRegEx(re.search(keyword_search, elem["content"])),
+                next=msg_next,  # msg_next based on first connection, even with multiple
+                choices=msg_choices,
+            )
         )
-    )
-    queue.pop(0)  # removes analysed item
-    if msg_next != "":
-        queue.append(msg_next)
-    if len(queue) == 0 or len(elem["outputs"]) == 0:
-        break  # breaks out of loop
+        print(f"Node {queue[0]} analysed successfully!")
+        queue.pop(0)  # removes analysed item
+        if msg_next != "":
+            queue.append(msg_next)
+        if len(queue) == 0 or len(elem["outputs"]) == 0:
+            njsn = True # enables 'next json' connection in case there are any next files
+            break       # breaks out of loop
+
+    print(f"File {INf} analysed successfully!")
 
 msg_dictified = []  # : list[dict]
 for msg in msgs:
@@ -157,3 +183,4 @@ data = {
 
 with open(OUT, "w") as f:
     json.dump(data, f, indent=2)
+print("All converted data exported successfully!")

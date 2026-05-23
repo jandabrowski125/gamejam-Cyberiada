@@ -96,7 +96,7 @@ public class WordleTransitionEffects : MonoBehaviour
         _wordleManager.InitWordle(word);
         _audienceClapAudio.Play();
         
-        StartCoroutine(FullIntroSequence());
+        StartCoroutine(FullIntroSequence(word));
     }
 
     private void OnWordleSuccessHandler(string word)
@@ -105,7 +105,7 @@ public class WordleTransitionEffects : MonoBehaviour
         StartCoroutine(SlideOutSequence());
     }
 
-    private IEnumerator FullIntroSequence()
+    private IEnumerator FullIntroSequence(string keyword)
     {
         _wordleRect.anchoredPosition = new Vector2(_startXPosition, _wordleTargetPos.y);
         yield return StartCoroutine(AnimatePanel(_wordleRect, _wordleCanvasGroup, _wordleTargetPos, 1f, true));
@@ -114,16 +114,17 @@ public class WordleTransitionEffects : MonoBehaviour
 
         if (_dialogueWriter.WroteFullText())
         {
-            List<GameObject> keywordLetters = _dialogueWriter.GetKeywordSentence();
-            foreach (GameObject letter in keywordLetters)
-            {
-                letter.transform.localScale = new Vector3(0.8f, 0.8f);
-                letter.transform.SetParent(_sideBoxRect, false);
-            }
+            // List<GameObject> keywordLetters = _dialogueWriter.GetKeywordSentence();
+            // foreach (GameObject letter in keywordLetters)
+            // {
+            //     letter.transform.localScale = new Vector3(0.8f, 0.8f);
+            //     letter.transform.SetParent(_sideBoxRect, false);
+            // }
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate(_sideBoxRect);
+            // LayoutRebuilder.ForceRebuildLayoutImmediate(_sideBoxRect);
 
-            _sideBoxRect.anchoredPosition = new Vector2(_startXPosition, _sideBoxTargetPos.y);
+            // _sideBoxRect.anchoredPosition = new Vector2(_startXPosition, _sideBoxTargetPos.y);
+            _dialogueWriter.TypeKeywordContext(keyword);
             yield return StartCoroutine(AnimatePanel(_sideBoxRect, _sideBoxCanvasGroup, _sideBoxTargetPos, 1f, false));
         }
     }

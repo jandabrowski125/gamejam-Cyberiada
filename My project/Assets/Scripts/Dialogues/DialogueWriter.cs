@@ -4,13 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using Unity.VisualScripting;
 
 public class DialogueWriter : MonoBehaviour
 {
     [Header("References")]
     public DialogueLoader loader;
     public GameObject textPrefab;
-    public Transform parent; 
+    [SerializeField] private Transform _dialogueBoxParent; 
+    [SerializeField] private Transform _sideBoxParent;
     public GameObject dialogueUI;
     public TextAsset _jsonWordFile;
 
@@ -20,6 +22,7 @@ public class DialogueWriter : MonoBehaviour
 
     [Header("Typing Settings")]
     public int charsPerLine = 24;
+    [SerializeField] private int _charsPerLineSideBox = 20;
     public float typingSpeed = 0.025f;
     public Color keywordHighlightColor = Color.cyan;
     [SerializeField] private Color _normalTextColor;
@@ -35,10 +38,12 @@ public class DialogueWriter : MonoBehaviour
     private bool forceSkipTyping = false;
     private HashSet<string> knownWords = new HashSet<string>();
     private int currentColumn = 0;
+    private int _currentColumnContextBox;
     private bool _isTypingKeywordContext = false;
-    private bool _isTypingContext = false;
+    private bool _isTypingPresenterContext = false;
     private bool _wroteFullText = false;
     private List<GameObject> _keywordSentence = new List<GameObject>();
+    private string _keywordContext;
     private string _contextSentece = "The presenter said something. I have no idea what it is though...";
     
     private Coroutine sequenceCoroutine;
@@ -167,12 +172,19 @@ public class DialogueWriter : MonoBehaviour
         yield return typingCoroutine;
     }
 
-    private IEnumerator TypeTextRoutine(string fullText, string keyword, bool skipTypewriter, bool forceUnderstandable, string toLearn = null)
+    private IEnumerator TypeTextRoutine(
+        string fullText,
+        string keyword,
+        bool skipTypewriter,
+        bool forceUnderstandable,
+        string toLearn = null
+    )
     {
         _wroteFullText = false;
-        _isTypingContext = false;
+        _isTypingPresenterContext = false;
         _isTypingKeywordContext = false;
-        string contextSequence = "";
+        string presenterContext = "";
+        string keywordContext = "";
         string[] words = fullText.Split(' ');
         _keywordSentence.Clear();
         currentColumn = 0;
@@ -182,7 +194,8 @@ public class DialogueWriter : MonoBehaviour
             if (string.IsNullOrEmpty(word)) continue;
             if (IsSpecialChar(word)) continue;
             
-            if (_isTypingContext) contextSequence += " " + word;
+            if (_isTypingPresenterContext) presenterContext += " " + word;
+            else if (_isTypingKeywordContext) keywordContext += " " + word;
             
             string clean = CleanWord(word);
             string cleanLower = clean.ToLower();
@@ -252,7 +265,8 @@ public class DialogueWriter : MonoBehaviour
         
         _wroteFullText = true;
         forceSkipTyping = false;
-        if (!String.IsNullOrEmpty(contextSequence)) _contextSentece = contextSequence;
+        if (!String.IsNullOrEmpty(presenterContext)) _contextSentece = presenterContext;
+        if (!String.IsNullOrEmpty(keywordContext)) _keywordContext = keywordContext;
     }
 
     private bool IsSpecialChar(string c)
@@ -266,27 +280,28 @@ public class DialogueWriter : MonoBehaviour
             return true;
         }
         else if (c == "&") {
-            _isTypingContext = !_isTypingContext;
-            if (_isTypingContext) Debug.Log("Typing!");
+            _isTypingPresenterContext = !_isTypingPresenterContext;
+            if (_isTypingPresenterContext) Debug.Log("Typing!");
             else Debug.Log("Not typing!");
             return true;
         }
         return false;
     }
 
-    private GameObject CreateText(char letter, TMP_FontAsset font, Color color)
+    private GameObject CreateText(char letter, TMP_FontAsset font, Color color, bool isSideBox = false)
     {
-        GameObject obj = Instantiate(textPrefab, parent);
+        GameObject obj = isSideBox ? Instantiate(textPrefab, _sideBoxParent) : Instantiate(textPrefab, _dialogueBoxParent);
         TextMeshProUGUI textComp = obj.GetComponent<TextMeshProUGUI>();
         textComp.text = letter.ToString();
         textComp.font = font;
         textComp.color = color;
+        if (isSideBox) obj.transform.localScale = new Vector3(0.8f, 0.8f);
         return obj;
     }
 
     private void ClearGrid() 
     { 
-        foreach (Transform child in parent) Destroy(child.gameObject); 
+        foreach (Transform child in _dialogueBoxParent) Destroy(child.gameObject); 
     }
 
     private void PrepareDictionary()
@@ -330,5 +345,56 @@ public class DialogueWriter : MonoBehaviour
     public bool WroteFullText()
     {
         return _wroteFullText;
+    }
+
+    public void TypeKeywordContext(
+        string keyword
+    )
+    {
+        string[] words = _keywordContext.Split(' ');
+        _currentColumnContextBox = 0;
+        
+        foreach (string word in words)
+        {   
+            if (string.IsNullOrEmpty(word)) continue;
+            if (IsSpecialChar(word)) continue;
+            
+            string clean = CleanWord(word);
+            string cleanLower = clean.ToLower();
+
+            bool isKeyword = keyword != null && cleanLower == keyword.ToLower();
+            bool isUnderstandable = knownWords.Contains(cleanLower);
+
+            TMP_FontAsset fontToUse = isUnderstandable ? fontAsset : alienFontAsset;
+
+            Color textColor = isKeyword ? keywordHighlightColor : _normalTextColor;
+            
+
+            if (word.Length > (_charsPerLineSideBox - _currentColumnContextBox))
+            {
+                if (_currentColumnContextBox != 0)
+                {
+                    int spacesToFill = _charsPerLineSideBox - _currentColumnContextBox;
+                    for (int i = 0; i < spacesToFill; i++) {
+                        CreateText(' ', fontAsset, _normalTextColor, isSideBox: true);
+                    }
+                    _currentColumnContextBox = 0;
+                }
+            }
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                CreateText(word[i], fontToUse, textColor, isSideBox: true);
+                _currentColumnContextBox++;
+                if (_currentColumnContextBox >= _charsPerLineSideBox) _currentColumnContextBox = 0;   
+            }
+
+            if (_currentColumnContextBox > 0 && _currentColumnContextBox < _charsPerLineSideBox)
+            {
+                CreateText(' ', fontAsset, _normalTextColor, isSideBox: true);
+                _currentColumnContextBox++;
+                if (_currentColumnContextBox >= _charsPerLineSideBox) _currentColumnContextBox = 0;
+            }
+        }
     }
 }
