@@ -10,8 +10,8 @@ OUT = "Assets/Dialogues/Dialogue.json"
 def formatMainMessage(txt: str or None) -> str or None:
     if txt is None:
         return None
-    txt = txt.replace("{", "{ ")
-    txt = txt.replace("}", " }")
+    txt = txt.replace("{", " { ")
+    txt = txt.replace("}", " } ")
     return purgeHTML(txt)
 
 
