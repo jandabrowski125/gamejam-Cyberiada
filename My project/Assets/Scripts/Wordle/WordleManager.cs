@@ -1,10 +1,8 @@
 using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using TMPro;
-using UnityEngine.Audio;
 
 public class WordleManager : MonoBehaviour
 {
@@ -28,6 +26,10 @@ public class WordleManager : MonoBehaviour
     [Header("Effects")]
     public GameObject successParticlesPrefab;
 
+    [Header("Dictionary")]
+    [SerializeField] private TextAsset _dictionaryTextFile;
+    private HashSet<string> _validWords = new HashSet<string>();
+
     private string targetWord;
     private int currentAttempt = 0;
     private string currentInput = "";
@@ -45,6 +47,11 @@ public class WordleManager : MonoBehaviour
 
     public AudioSource audienceAudio;
 
+    private void Awake()
+    {
+        ParseDictionary();
+    }
+
     // --- SUBSKRYPCJE ---
     private void OnEnable()
     {
@@ -58,13 +65,31 @@ public class WordleManager : MonoBehaviour
             Keyboard.current.onTextInput -= HandleTextInput;
     }
      
+    private void ParseDictionary()
+    {
+        if (_dictionaryTextFile != null)
+        {
+            string[] lines = _dictionaryTextFile.text.Split(new char[] { '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
+            
+            foreach (string line in lines)
+            {
+                _validWords.Add(line.Trim().ToUpper());
+            }
+            
+            Debug.Log($"WordleManager: Wczytano {_validWords.Count} słów do słownika.");
+        }
+        else
+        {
+            Debug.LogError("WordleManager: Brak pliku słownika w Inspektorze!");
+        }
+    }
+
     private void HandleTextInput(char character)
     {
-        // Blokujemy wpisywanie, jeśli procesujemy słowo, nie ma gry lub rząd jest pełny
         if (isProcessing || string.IsNullOrEmpty(targetWord) || currentInput.Length >= targetWord.Length) 
             return;
         
-        if (char.IsLetter(character)&&!PauseMenu.isPaused)
+        if (char.IsLetter(character) && !PauseMenu.isPaused)
         {
             currentInput += char.ToUpper(character);
             wordleInputSound.Play();
@@ -90,7 +115,7 @@ public class WordleManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Initializes the Wordle minigame <see langword="with"/> the word keyword. 
+    /// Initializes the Wordle minigame with the word keyword. 
     /// </summary>
     /// <param name="word">Solution of the minigame</param>
     public void InitWordle(string word)
@@ -142,7 +167,6 @@ public class WordleManager : MonoBehaviour
     {
         if (currentAttempt >= rows.Count) return;
 
-
         var currentTiles = rows[currentAttempt];
         for (int i = 0; i < currentTiles.Length; i++)
         {
@@ -150,6 +174,7 @@ public class WordleManager : MonoBehaviour
             
         }
     }
+    
     public void SkipWordle()
     {
         targetWord = "";
@@ -162,24 +187,17 @@ public class WordleManager : MonoBehaviour
     private IEnumerator CheckWordRoutine()
     {
         isProcessing = true;
-        string wordToCheck = currentInput.ToLower();
-
-        using (UnityWebRequest www = UnityWebRequest.Get($"https://api.dictionaryapi.dev/api/v2/entries/en/{wordToCheck}"))
+        
+        // currentInput jest już zbudowane z wielkich liter, 
+        // więc pasuje do elementów w HashSet
+        if (!_validWords.Contains(currentInput))
         {
-            yield return www.SendWebRequest();
-
-            bool exists = www.result == UnityWebRequest.Result.Success;
-
-            if (!exists)
-            {
-                Debug.Log("Słowo nie istnieje w słowniku!");
-                currentInput = "";
-                UpdateUI();
-                isProcessing = false;
-                audienceAudio.Play();
-                yield break;
-                
-            }
+            Debug.Log($"Słowo '{currentInput}' nie istnieje w słowniku!");
+            currentInput = "";
+            UpdateUI();
+            isProcessing = false;
+            audienceAudio.Play();
+            yield break;
         }
 
         ColorizeCurrentRow();
@@ -214,10 +232,7 @@ public class WordleManager : MonoBehaviour
         WordleTile[] currentTiles = rows[currentAttempt];
         char[] targetChars = targetWord.ToCharArray();
         char[] inputChars = currentInput.ToCharArray();
-        // Debug.Log("target: \n");
-        // foreach (char c in targetChars) Debug.Log(c);
-        // Debug.Log("attempt: \n");
-        // foreach (char c in inputChars) Debug.Log(c);
+        
         bool[] matched = new bool[targetChars.Length];
 
         for (int i = 0; i < inputChars.Length; i++)
