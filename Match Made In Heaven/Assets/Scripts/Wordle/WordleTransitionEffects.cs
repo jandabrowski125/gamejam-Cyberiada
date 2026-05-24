@@ -35,7 +35,7 @@ public class WordleTransitionEffects : MonoBehaviour
 
     private Vector2 _wordleTargetPos;
     private Vector2 _sideBoxTargetPos;
-
+    private bool _contextBoxIsActive = false;
     private void OnEnable()
     {
         GameEvents.OnWordleRequired += OnWordleRequiredHandler;
@@ -114,16 +114,7 @@ public class WordleTransitionEffects : MonoBehaviour
 
         if (_dialogueWriter.WroteFullText())
         {
-            // List<GameObject> keywordLetters = _dialogueWriter.GetKeywordSentence();
-            // foreach (GameObject letter in keywordLetters)
-            // {
-            //     letter.transform.localScale = new Vector3(0.8f, 0.8f);
-            //     letter.transform.SetParent(_sideBoxRect, false);
-            // }
-
-            // LayoutRebuilder.ForceRebuildLayoutImmediate(_sideBoxRect);
-
-            // _sideBoxRect.anchoredPosition = new Vector2(_startXPosition, _sideBoxTargetPos.y);
+            _contextBoxIsActive = true;
             _dialogueWriter.TypeKeywordContext(keyword);
             yield return StartCoroutine(AnimatePanel(_sideBoxRect, _sideBoxCanvasGroup, _sideBoxTargetPos, 1f, false));
         }
@@ -136,10 +127,11 @@ public class WordleTransitionEffects : MonoBehaviour
         Vector2 wordleEndPos = new Vector2(_endXPosition, _wordleTargetPos.y);
         Coroutine wordleOut = StartCoroutine(AnimatePanel(_wordleRect, _wordleCanvasGroup, wordleEndPos, 0f, false));
 
-        if (_dialogueWriter.WroteFullText())
+        if (_contextBoxIsActive)
         {
             Vector2 sideBoxEndPos = new Vector2(_endXPosition, _sideBoxTargetPos.y);
             StartCoroutine(HideSideBox(_sideBoxRect, _sideBoxCanvasGroup, sideBoxEndPos, 0f, false));
+            _contextBoxIsActive = false;
         }
 
         yield return wordleOut;

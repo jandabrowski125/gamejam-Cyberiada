@@ -148,6 +148,7 @@ public class DialogueWriter : MonoBehaviour
 
     private IEnumerator DialogueSequence(string text, string keyword, bool skipTypewriter, bool forceUnderstandable, string toLearn = null)
     {
+        _wroteFullText = false;
         float elapsedTime = 0;
         Vector2 startPos = new Vector2(offScreenX, targetAnchoredPosition.y);
 
@@ -180,7 +181,6 @@ public class DialogueWriter : MonoBehaviour
         string toLearn = null
     )
     {
-        _wroteFullText = false;
         _isTypingPresenterContext = false;
         _isTypingKeywordContext = false;
         string presenterContext = "";
