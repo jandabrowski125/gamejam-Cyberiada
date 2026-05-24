@@ -48,8 +48,10 @@ while true: # explicit break by either session system or manually by user
     echo fmt"Session length: {seslen}"
     echo fmt"Remaining words for next sessions: {remlen}"
 
+    var is_end = false
     for ix, word in session.pairs():
         let w = word.replace("\r", "")
+        if w == "": is_end = true; break # protection from infinite looping
         if len(w) > 3 and len(w) < 7:
           if checkWord(w, ix, seslen):
               add(wseq, w)
@@ -77,6 +79,7 @@ while true: # explicit break by either session system or manually by user
         discard execCmd("git commit -m \"Automated words' list update\"")
         discard execCmd("git push")
     echo fmt"Session done in: {now()-start}"
+    if is_end: break
     
 echo "All sessions done. Press Enter to end."
 let u = readLine(stdin)
