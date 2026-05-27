@@ -5,6 +5,7 @@ public static class GameEvents
     public static Action<string> OnWordleRequired;
     public static Action<string> OnWordleSuccess;
     public static Action<string, string> OnDialogueNodeChanged; // Speaker, Text
+    public static Action OnGameEnded;
 
 
     // --- WYDARZENIA STATYSTYK ---
@@ -22,4 +23,6 @@ public static class GameEvents
     public static void TriggerWordleSuccess(string word) => OnWordleSuccess?.Invoke(word);
 
     public static void TriggerStatsChanged(string characterName, int p, int r) => OnStatsChanged?.Invoke(characterName, p, r);
+    public static void TriggerGameEnded() => OnGameEnded?.Invoke();
+
 }

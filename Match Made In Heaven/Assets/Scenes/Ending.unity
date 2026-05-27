@@ -578,9 +578,8 @@ MonoBehaviour:
   _dialogueManager: {fileID: 258362607}
   _buttonCreator: {fileID: 1841846421}
   _endingMenuManager: {fileID: 854967660}
+  _creditsManager: {fileID: 854967661}
   _characterDB: {fileID: 11400000, guid: 3679d5711fc32f645b51fb391fe98b07, type: 2}
-  _finalPictureDisplay: {fileID: 1263082578}
-  _UIcanvas: {fileID: 1750445371}
 --- !u!82 &258362610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2165,6 +2164,7 @@ GameObject:
   - component: {fileID: 854967657}
   - component: {fileID: 854967659}
   - component: {fileID: 854967660}
+  - component: {fileID: 854967661}
   m_Layer: 0
   m_Name: GameManagers
   m_TagString: Untagged
@@ -2259,6 +2259,25 @@ MonoBehaviour:
   charButtonPrefab: {fileID: 2787125823176429429, guid: 7695888b1b373724cbb3a5df7649b7eb, type: 3}
   buttonsParent: {fileID: 537424925}
   selectionCanvas: {fileID: 1750445371}
+--- !u!114 &854967661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854967656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a5cb700eed36f48855ff0ad02c8c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CreditsManager
+  _characterDB: {fileID: 11400000, guid: 3679d5711fc32f645b51fb391fe98b07, type: 2}
+  _finalPictureDisplay: {fileID: 1263082578}
+  _UIcanvas: {fileID: 1750445371}
+  _creditsSceneNames:
+  - Credits1
+  - Credits2
+  - Credits3
 --- !u!1 &939904914
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,8 +3044,8 @@ Transform:
   m_GameObject: {fileID: 1147577530}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.03, y: 0, z: 0}
-  m_LocalScale: {x: 0.88, y: 0.48624212, z: 0.0011361763}
+  m_LocalPosition: {x: -1.679, y: 0, z: 0}
+  m_LocalScale: {x: 0.601304, y: 0.48624212, z: 0.0011361763}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -3227,8 +3246,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 258362609}
-        m_TargetAssemblyTypeName: EndingDialogueManager, Assembly-CSharp
+      - m_Target: {fileID: 854967661}
+        m_TargetAssemblyTypeName: CreditsManager, Assembly-CSharp
         m_MethodName: OnBackgroundClicked
         m_Mode: 1
         m_Arguments:

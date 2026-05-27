@@ -8,11 +8,9 @@ public class EndingDialogueManager : MonoBehaviour
     [SerializeField] private DialogueManager _dialogueManager;
     [SerializeField] private ButtonCreator _buttonCreator;
     [SerializeField] private EndingManager _endingMenuManager;
+    [SerializeField] private CreditsManager _creditsManager;
     [SerializeField] private CharacterDatabase _characterDB;
 
-    [Header("Ending Pictures")]
-    [SerializeField] private Image _finalPictureDisplay;
-    [SerializeField] private GameObject _UIcanvas;
 
 
     private string[] slideshowSequence;
@@ -27,12 +25,7 @@ public class EndingDialogueManager : MonoBehaviour
             _dialogueManager,
             _buttonCreator,
             _endingMenuManager,
-            _UIcanvas
-            );
-
-        HelperFunctions.IsAnyNull(
-            "EndingDialogueManager - Endings",
-            _finalPictureDisplay
+            _creditsManager
             );
     }
 
@@ -58,7 +51,8 @@ public class EndingDialogueManager : MonoBehaviour
         if (dialogue == null || string.IsNullOrEmpty(dialogue.text))
         {
             Debug.LogError("<color=red>[JSON ERROR]</color> Obiekt dialogu jest pusty! Sprawdź, czy w JSONie istnieje poprawnie zapisane 'unhappy_ending'.");
-            FinalizeGame(fullData);
+            string endingKey = (fullData != null) ? fullData.name : "Unhappy";
+            _creditsManager.ShowCredits(true, endingKey);
             return;
         }
 
@@ -75,7 +69,8 @@ public class EndingDialogueManager : MonoBehaviour
                 EndingChoice currentChoice = choice; 
                 _buttonCreator.ShowContinueCustom(currentChoice.text, () => {
                     if (currentChoice.end) {
-                        FinalizeGame(fullData);
+                        string endingKey = (fullData != null) ? fullData.name : "Unhappy";
+                        _creditsManager.ShowCredits(true, endingKey);
                     } else {
                         ShowCharacterSelection();
                     }
@@ -84,57 +79,10 @@ public class EndingDialogueManager : MonoBehaviour
         }
         else
         {
-
             _buttonCreator.ShowContinueCustom("[ Zakończ grę ]", () => { 
-                FinalizeGame(fullData);
+                string endingKey = (fullData != null) ? fullData.name : "Unhappy";
+                _creditsManager.ShowCredits(true, endingKey);
             });
-        }
-        
-    }
-
-    private void FinalizeGame(EndingData data)
-    {
-        _buttonCreator.ClearButtons();
-        _dialogueWriter.Hide();
-
-        string endingKey = (data != null) ? data.name : "Unhappy";
-        
-        slideshowSequence = new string[] { endingKey, "Credits1", "Credits2", "Credits3" };
-        
-        currentSlideIndex = 0;
-
-        ShowEndingPicture(slideshowSequence[currentSlideIndex]);
-    }
-
-    public void OnBackgroundClicked()
-    {
-        currentSlideIndex++;
-
-        if (currentSlideIndex < slideshowSequence.Length)
-        {
-            ShowEndingPicture(slideshowSequence[currentSlideIndex]);
-        }
-        else
-        {
-            Debug.Log("<color=gold>GRA CAŁKOWICIE ZAKOŃCZONA!</color>");
-            
-            Application.Quit(); 
-        }
-    }
-
-    private void ShowEndingPicture(string key)
-    {
-        Sprite spriteToShow = _characterDB.GetEndingPicture(key);
-
-        if (spriteToShow != null)
-        {
-            _finalPictureDisplay.sprite = spriteToShow;
-            _UIcanvas.SetActive(true);
-            _finalPictureDisplay.gameObject.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning($"[Ending] Brakuje obrazka dla klucza: {key}");
         }
     }
 }
