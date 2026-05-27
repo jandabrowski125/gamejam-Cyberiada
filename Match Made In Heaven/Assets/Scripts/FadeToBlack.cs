@@ -7,7 +7,6 @@ public class FadeToBlack : MonoBehaviour
 {
     public AudioSource musicSource;
     public Image fadeImage;
-
     public float fadeDuration = 2f;
 
     public void StartFadeOut()

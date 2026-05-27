@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -7,18 +6,16 @@ public class FadeFromBlack : MonoBehaviour
 {
     public AudioSource musicSource;
     public Image fadeImage;
-
     public float fadeDuration;
 
     void Start()
     {
         musicSource.volume = 0f;
-        StartCoroutine(FadeIn());
+        StartCoroutine(FadeIn()); 
     }
 
     IEnumerator FadeIn()
     {
-        float startVolume = musicSource.volume;
         float time = 0f;
 
         Color color = fadeImage.color;
