@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class EndingManager : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class EndingManager : MonoBehaviour
     void Awake()
     {
         endingList = JsonUtility.FromJson<EndingList>(endingsJson.text);
+    }
+
+    private void OnEnable()
+    {
+        GameEvents.OnCreditsEnded += OnCreditsEndedHandler;
     }
 
     public void StartEndingPhase(Dictionary<string, int> stats)
@@ -90,5 +96,11 @@ public class EndingManager : MonoBehaviour
         {
             selectionCanvas.SetActive(true);
         }
+    }
+
+    private void OnCreditsEndedHandler()
+    {
+        Debug.Log("END GAME MOTHERFUCKER");
+        Application.Quit();
     }
 }

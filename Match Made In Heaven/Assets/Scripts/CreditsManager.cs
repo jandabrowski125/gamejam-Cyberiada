@@ -59,9 +59,9 @@ public class CreditsManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("<color=gold>GRA CAŁKOWICIE ZAKOŃCZONA!</color>");
-            
-            Application.Quit(); 
+            _UIcanvas.SetActive(false);
+            _finalPictureDisplay.gameObject.SetActive(false);
+            GameEvents.TriggerCredintsEnded();
         }
     }
 
