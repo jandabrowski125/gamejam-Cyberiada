@@ -29,7 +29,7 @@ public class EndingDialogueManager : MonoBehaviour
             );
     }
 
-    public void StartEndingDialogue(EndingData data, bool success, string credits)
+    public void StartEndingDialogue(EndingData data, bool success)
     {        
         EndingDialogue dialogueToShow = success ? data.acceptance_dialogue : data.rejection_dialogue;
         DisplayEndingStep(dialogueToShow, data);
@@ -50,8 +50,8 @@ public class EndingDialogueManager : MonoBehaviour
     {
         if (dialogue == null || string.IsNullOrEmpty(dialogue.text))
         {
-            Debug.LogError("<color=red>[JSON ERROR]</color> Obiekt dialogu jest pusty! Sprawdź, czy w JSONie istnieje poprawnie zapisane 'unhappy_ending'.");
             string endingKey = (fullData != null) ? fullData.name : "Unhappy";
+            Debug.Log("[Ending Manager]: ending is " + endingKey);
             _creditsManager.ShowCredits(true, endingKey);
             return;
         }
@@ -70,6 +70,7 @@ public class EndingDialogueManager : MonoBehaviour
                 _buttonCreator.ShowContinueCustom(currentChoice.text, () => {
                     if (currentChoice.end) {
                         string endingKey = (fullData != null) ? fullData.name : "Unhappy";
+                        Debug.Log("[Ending Dialogue manager]: endingKey is " + endingKey);
                         _creditsManager.ShowCredits(true, endingKey);
                     } else {
                         ShowCharacterSelection();

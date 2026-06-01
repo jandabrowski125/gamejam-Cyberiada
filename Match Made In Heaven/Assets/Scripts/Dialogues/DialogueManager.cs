@@ -242,13 +242,10 @@ public class DialogueManager : MonoBehaviour
     //nie wiem po co ta funkcja w ogole
     public void WriteEnding(string text, string speakerName)
     {
-        // 1. Najpierw ustawiamy wizualia (Postać + Tło)
         UpdatePortrait(speakerName);
 
-        // 2. Potem każemy Writerowi wypisać tekst finałowy
         _dialogueWriter.WriteEnding(text);
         
-        // 3. Opcjonalnie: odpal głos (jeśli masz przygotowane klipy pod finał)
         _characterManager.PlayVoice(speakerName);
     }
 

@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using UnityEngine.SceneManagement;
+using UnityEditor.Search;
 
 public class EndingManager : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class EndingManager : MonoBehaviour
     public TextAsset endingsJson;
     public CharacterDatabase characterDB;
     public EndingDialogueManager endingDialogueManager;
+    [SerializeField] private FadingEffects _fadingEffects;
 
     [Header("UI Layout")]
     public GameObject charButtonPrefab;
@@ -19,7 +20,7 @@ public class EndingManager : MonoBehaviour
 
     private EndingList endingList;
     private Dictionary<string, int> playerStats;
-    private int remainingCharacters = 0; // Licznik przycisków
+    private int remainingCharacters = 0;
 
     void Awake()
     {
@@ -32,10 +33,22 @@ public class EndingManager : MonoBehaviour
     }
 
     public void StartEndingPhase(Dictionary<string, int> stats)
-    {
+    {   
+        _fadingEffects.RequestFadeOut(
+            fadeDuration: 0.5f,
+            fadeMusicSource: false,
+            forceSynchronous: true
+        );
+        
         playerStats = stats;
         selectionCanvas.SetActive(true);
         GenerateCharacterButtons();
+
+        _fadingEffects.RequestFadeIn(
+            fadeDuration: 0.5f,
+            fadeMusicSource: false,
+            forceSynchronous: true
+        );
     }
 
     private void GenerateCharacterButtons()
@@ -44,7 +57,7 @@ public class EndingManager : MonoBehaviour
 
         if (endingList == null || endingList.endings == null) return;
 
-        remainingCharacters = endingList.endings.Count; // Ustawiamy licznik na start
+        remainingCharacters = endingList.endings.Count;
 
         foreach (var data in endingList.endings)
         {
@@ -83,7 +96,7 @@ public class EndingManager : MonoBehaviour
         }
 
         selectionCanvas.SetActive(false);
-        endingDialogueManager.StartEndingDialogue(data, success, endingList.credits);
+        endingDialogueManager.StartEndingDialogue(data, success);
     }
 
     public void ReturnToSelection()
@@ -94,13 +107,29 @@ public class EndingManager : MonoBehaviour
         }
         else
         {
+            _fadingEffects.RequestFadeOut(
+                fadeDuration: 0.5f,
+                fadeMusicSource: false,
+                forceSynchronous: true
+            );
+            
             selectionCanvas.SetActive(true);
+
+            _fadingEffects.RequestFadeIn(
+                fadeDuration: 0.5f,
+                fadeMusicSource: false,
+                forceSynchronous: true
+            );
         }
     }
 
     private void OnCreditsEndedHandler()
     {
-        Debug.Log("END GAME MOTHERFUCKER");
-        Application.Quit();
+        _fadingEffects.RequestFadeIn(
+            fadeDuration: 0.5f,
+            fadeMusicSource: false,
+            forceSynchronous: true
+        );
+        SceneManager.LoadScene("Menu");
     }
 }
