@@ -7,11 +7,9 @@ public class CharacterSceneManager : MonoBehaviour
     public Transform characterTransform; 
 
     [Header("Positions & Scales")]
-    // Dialog: Postać na środku, duża (np. skala 3)
     public Vector3 centerPosition = new Vector3(0, -3.26f, 0); 
     public Vector3 centerScale = new Vector3(0.39f, 0.39f, 0.39f);
 
-    // Wordle: Postać na boku, jeszcze większa (np. skala 4)
     public Vector3 sidePosition = new Vector3(6f, -6f, 0);   
     public Vector3 sideScale = new Vector3(0.11f, 0.11f, 0.11f);
 
@@ -35,13 +33,11 @@ public class CharacterSceneManager : MonoBehaviour
 
     private void MoveToSide(string word)
     {
-        Debug.Log("Postać: Przechodzę na bok i zwiększam skalę.");
         TransitionTo(sidePosition, sideScale);
     }
 
     private void MoveToCenter(string solvedWord)
     {
-        Debug.Log("Postać: Wracam na środek do skali dialogowej.");
         TransitionTo(centerPosition, centerScale);
     }
 

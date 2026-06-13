@@ -1,11 +1,14 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ExitGame : MonoBehaviour
 {
     public void QuitGame()
     {
-        Debug.Log("Game is exiting...");
-
         Application.Quit();
+    }
+
+    public void QuitToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

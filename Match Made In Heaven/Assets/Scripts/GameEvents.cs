@@ -4,25 +4,17 @@ public static class GameEvents
 {
     public static Action<string> OnWordleRequired;
     public static Action<string> OnWordleSuccess;
-    public static Action<string, string> OnDialogueNodeChanged; // Speaker, Text
-    public static Action OnGameEnded;
-
+    public static Action OnCreditsEnded;
 
     // --- WYDARZENIA STATYSTYK ---
 
     public static Action<string, int, int> OnStatsChanged; // Paragon change, Renegade change
 
-    // Wywoływane, gdy poziom zrozumienia (Understanding) rośnie
-    public static Action<int> OnUnderstandingUpdated;
-
-
     // --- POMOCNICZE METODY DO WYWOŁYWANIA (Triggering) ---
 
     public static void TriggerWordleRequired(string word) => OnWordleRequired?.Invoke(word);
-    
     public static void TriggerWordleSuccess(string word) => OnWordleSuccess?.Invoke(word);
-
     public static void TriggerStatsChanged(string characterName, int p, int r) => OnStatsChanged?.Invoke(characterName, p, r);
-    public static void TriggerGameEnded() => OnGameEnded?.Invoke();
+    public static void TriggerCredintsEnded() => OnCreditsEnded?.Invoke();
 
 }

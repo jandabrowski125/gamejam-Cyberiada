@@ -5,45 +5,38 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(VideoPlayer))]
 public class VideoSceneChanger : MonoBehaviour
 {
-    public string nextSceneName;
-
+    [SerializeField] private FadingEffects _fadingEffects;
     private VideoPlayer videoPlayer;
-
-    [SerializeField] private FadeToBlack fadeToBlack;
 
     void Awake()
     {
-        // Pobieramy komponent VideoPlayer podpięty do tego samego obiektu
         videoPlayer = GetComponent<VideoPlayer>();
 
         if (videoPlayer != null)
         {
-            // Subskrybujemy event wywoływany, gdy wideo dojdzie do końca
             videoPlayer.loopPointReached += OnVideoEnd;
         }
         else
         {
             Debug.LogError("Brak komponentu VideoPlayer na obiekcie: " + gameObject.name);
         }
+
+        _fadingEffects.RequestFadeIn(
+            fadeDuration: 2, 
+            fadeMusicSource: true,
+            forceSynchronous: false
+        );
     }
 
-    // Metoda wywoływana automatycznie przez event
     public void OnVideoEnd(VideoPlayer vp)
     {
-        Debug.Log("skidibi");
-        if (!string.IsNullOrEmpty(nextSceneName))
-        {
-            fadeToBlack.StartFadeOut();
-            Debug.Log("Wideo zakończone. Ładowanie sceny: " + nextSceneName);
-            Invoke("NextScene", 2f);   
-        }
-        else
-        {
-            Debug.LogWarning("Nazwa następnej sceny jest pusta! Wpisz ją w Inspektorze.");
-        }
-
+        _fadingEffects.RequestFadeOut(
+            fadeDuration: 1f,
+            forceSynchronous: true
+        );
+        
+        Invoke("NextScene", 2f);
     }
-
     void OnDestroy()
     {
         // Dobra praktyka: odpinamy event, gdy obiekt jest niszczony, aby uniknąć błędów
@@ -55,6 +48,6 @@ public class VideoSceneChanger : MonoBehaviour
 
     private void NextScene()
     {
-        SceneManager.LoadScene(nextSceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
