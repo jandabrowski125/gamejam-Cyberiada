@@ -42,6 +42,7 @@ public class EndingChoice {
 
 [System.Serializable]
 public class EndingDialogue {
+    public string name;
     public string text;
     public List<EndingChoice> choices;
 }

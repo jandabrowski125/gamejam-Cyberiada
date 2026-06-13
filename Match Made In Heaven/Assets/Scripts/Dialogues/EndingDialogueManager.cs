@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,17 +57,54 @@ public class EndingDialogueManager : MonoBehaviour
             return;
         }
 
-        // Jeśli fullData to null (jak w unhappy_ending), mówi Narrator
-        string speakerName = (fullData != null) ? fullData.name : "Presenter";
+        slideshowSequence = SplitTextIntoPages(dialogue.text);
+        currentSlideIndex = 0;
+        DisplayCurrentSlide(dialogue, fullData);
+    }
 
-        _dialogueManager.WriteEnding(dialogue.text, speakerName);
+    private void DisplayCurrentSlide(EndingDialogue dialogue, EndingData fullData)
+    {
+        string speakerName = ResolveSpeakerName(dialogue, fullData);
+
+        _dialogueManager.WriteEnding(slideshowSequence[currentSlideIndex], speakerName);
         _buttonCreator.ClearButtons();
 
-        if (dialogue.choices != null && dialogue.choices.Count > 0) //TODO: zmienic json parser tak aby choices zawsze istnialo
+        if (currentSlideIndex < slideshowSequence.Length - 1)
+        {
+            _buttonCreator.ShowContinue(() => {
+                currentSlideIndex++;
+                DisplayCurrentSlide(dialogue, fullData);
+            });
+        }
+        else
+        {
+            ShowEndingChoices(dialogue, fullData);
+        }
+    }
+
+    private static string ResolveSpeakerName(EndingDialogue dialogue, EndingData fullData)
+    {
+        if (fullData != null) return fullData.name;
+        if (!string.IsNullOrEmpty(dialogue.name)) return dialogue.name;
+        return "Presenter";
+    }
+
+    private static string[] SplitTextIntoPages(string text)
+    {
+        return text
+            .Split('\n')
+            .Select(page => page.Trim())
+            .Where(page => !string.IsNullOrEmpty(page))
+            .ToArray();
+    }
+
+    private void ShowEndingChoices(EndingDialogue dialogue, EndingData fullData)
+    {
+        if (dialogue.choices != null && dialogue.choices.Count > 0)
         {
             foreach (var choice in dialogue.choices)
             {
-                EndingChoice currentChoice = choice; 
+                EndingChoice currentChoice = choice;
                 _buttonCreator.ShowContinueCustom(currentChoice.text, () => {
                     if (currentChoice.end) {
                         string endingKey = (fullData != null) ? fullData.name : "Unhappy";
@@ -80,7 +118,7 @@ public class EndingDialogueManager : MonoBehaviour
         }
         else
         {
-            _buttonCreator.ShowContinueCustom("[ Zakończ grę ]", () => { 
+            _buttonCreator.ShowContinueCustom("[ Zakończ grę ]", () => {
                 string endingKey = (fullData != null) ? fullData.name : "Unhappy";
                 _creditsManager.ShowCredits(true, endingKey);
             });
