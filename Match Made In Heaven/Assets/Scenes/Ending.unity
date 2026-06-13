@@ -602,6 +602,7 @@ MonoBehaviour:
   _contextSentenceText: {fileID: 1369900133}
   _characterManager: {fileID: 1684343940}
   _characterPortraitRenderer: {fileID: 721026722}
+  _characterWiggleEffect: {fileID: 721026724}
   _backgroundImageRenderer: {fileID: 1147577531}
   _backgroundAudioSource: {fileID: 258362610}
 --- !u!4 &258362608
@@ -2053,6 +2054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 721026723}
   - component: {fileID: 721026722}
+  - component: {fileID: 721026724}
   m_Layer: 0
   m_Name: CharacterContainer
   m_TagString: Untagged
@@ -2134,6 +2136,99 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721026724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721026721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a8714b30e6cc4f8d9001c57d80f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterWiggleEffect
+  _target: {fileID: 721026723}
+  _duration: 0.45
+  _amplitude: 0.08
+  _wiggleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1365387
+      value: 0.9892845
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.26019898
+      value: -0.78928834
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.37871706
+      value: 0.78856814
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.48008424
+      value: -0.5292786
+      inSlope: 0.26064157
+      outSlope: 0.26064157
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.89402574
+    - serializedVersion: 3
+      time: 0.5875788
+      value: 0.41459084
+      inSlope: 0.07529842
+      outSlope: 0.07529842
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.6577452
+    - serializedVersion: 3
+      time: 0.7299384
+      value: -0.28661025
+      inSlope: 7.19646
+      outSlope: 7.19646
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13938655
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &753208498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,7 +3946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameInit
   _fadingEffects: {fileID: 854967662}
   dialogueManager: {fileID: 258362607}
-  testNodeID: 28ec963c-3b86-4b90-9b42-c79f4572aea7
+  testNodeID: 010c1f2b-6114-43e9-8b00-91b35ac326cc
   delayBeforeWordle: 5
 --- !u!4 &1684343938
 Transform:

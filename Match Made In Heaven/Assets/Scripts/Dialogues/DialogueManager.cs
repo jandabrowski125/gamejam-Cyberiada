@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Character System (Sprite2D)")]
     [SerializeField] private CharacterManager _characterManager;
     [SerializeField] private SpriteRenderer _characterPortraitRenderer;
+    [SerializeField] private CharacterWiggleEffect _characterWiggleEffect;
     [SerializeField] private SpriteRenderer _backgroundImageRenderer;
 
     [Header("Audio")]
@@ -54,7 +55,8 @@ public class DialogueManager : MonoBehaviour
             "DialogueManager - Sprites",
             _characterManager,
             _characterPortraitRenderer,
-            _backgroundImageRenderer
+            _backgroundImageRenderer,
+            _characterWiggleEffect
         );
     }
 
@@ -89,7 +91,7 @@ public class DialogueManager : MonoBehaviour
                 forceUnderstandable: isPresenter, 
                 toLearn: node.wordle_solution
                 );
-            _characterManager.PlayVoice(node.speaker);
+            PlayCharacterVoice(node.speaker);
 
             if (isPresenter)
             {
@@ -225,7 +227,7 @@ public class DialogueManager : MonoBehaviour
                 currentNode.speaker, 
                 forceUnderstandable: isPresenter
                 );
-            _characterManager.PlayVoice(currentNode.speaker);
+            PlayCharacterVoice(currentNode.speaker);
 
             _buttonCreator.ShowContinue(() => {
                 if (!string.IsNullOrEmpty(currentNode.next_node)) Write(currentNode.next_node);
@@ -246,7 +248,13 @@ public class DialogueManager : MonoBehaviour
 
         _dialogueWriter.WriteEnding(text);
         
+        PlayCharacterVoice(speakerName);
+    }
+
+    private void PlayCharacterVoice(string speakerName)
+    {
         _characterManager.PlayVoice(speakerName);
+        _characterWiggleEffect.PlayWiggle();
     }
 
     /// <summary>
