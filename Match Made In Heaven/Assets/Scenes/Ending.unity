@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 201162060}
   - component: {fileID: 201162059}
   - component: {fileID: 201162063}
+  - component: {fileID: 201162064}
   m_Layer: 5
   m_Name: GlobalUI
   m_TagString: Untagged
@@ -485,6 +486,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6084427786862750629}
+  - {fileID: 1036226013}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -505,6 +507,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pauseMenu: {fileID: 3221304422670024461}
+--- !u!114 &201162064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201162058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53d33c69862c33429e636fdf5389b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShoutingEffects
+  _animationDuration: 3
+  _shoutStartPosition: {fileID: 1036226013}
+  _slideCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.8305726
+      outSlope: 4.8305726
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.108701766
+    - serializedVersion: 3
+      time: 0.19724444
+      value: 0.60953987
+      inSlope: 1.3344991
+      outSlope: 1.3344991
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _shoutWordPrefab: {fileID: 2494060987377114034, guid: 981d8e0ea07781b4bad697c7ccdd9b91, type: 3}
+  _wrongWordShoutColor: {r: 0.3679245, g: 0, b: 0.15015407, a: 1}
+  _textsIfWrongWord:
+  - Idiot!
+  - This word doesn't exist!
+  - Learn your own language!
+  - This human is stupid!
+  - HAHAHA
+  - Nope!
 --- !u!1 &258362606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,6 +2252,7 @@ MonoBehaviour:
   emptyTileColor: {r: 1, g: 0.34117648, b: 0.65882355, a: 1}
   _targetWordLetterColor: {r: 1, g: 0.34117648, b: 0.65882355, a: 1}
   successParticlesPrefab: {fileID: 5427798730013937539, guid: 3fa6e9edbbd787642ae79c81253db9d7, type: 3}
+  _shoutingEffects: {fileID: 201162064}
   _dictionaryTextFile: {fileID: 4900000, guid: 00bf695ef5cd8ec4daed8f1824d6c2f9, type: 3}
   wordleSuccess: {fileID: 1084893327}
   wordleFailed: {fileID: 26819453}
@@ -2636,6 +2695,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997706694}
   m_CullTransparentMesh: 1
+--- !u!1 &1036226012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1036226013}
+  m_Layer: 0
+  m_Name: ShoutingStartPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1036226013
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036226012}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 201162062}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -590}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1068031638
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,7 +3796,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1498617448
 RectTransform:

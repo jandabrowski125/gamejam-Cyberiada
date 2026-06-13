@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEditor.Search;
 
 public class WordleManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class WordleManager : MonoBehaviour
 
     [Header("Effects")]
     public GameObject successParticlesPrefab;
+    [SerializeField] ShoutingEffects _shoutingEffects;
 
     [Header("Dictionary")]
     [SerializeField] private TextAsset _dictionaryTextFile;
@@ -188,11 +190,9 @@ public class WordleManager : MonoBehaviour
     {
         isProcessing = true;
         
-        // currentInput jest już zbudowane z wielkich liter, 
-        // więc pasuje do elementów w HashSet
         if (!_validWords.Contains(currentInput))
         {
-            Debug.Log($"Słowo '{currentInput}' nie istnieje w słowniku!");
+            _shoutingEffects.ShoutIfWrongWord();
             currentInput = "";
             UpdateUI();
             isProcessing = false;
