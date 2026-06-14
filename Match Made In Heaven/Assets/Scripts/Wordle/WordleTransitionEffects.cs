@@ -93,6 +93,8 @@ public class WordleTransitionEffects : MonoBehaviour
     private void OnWordleRequiredHandler(string word)
     {
         StopAllCoroutines();
+        _dialogueWriter.ClearSideBox();
+        _contextBoxIsActive = false;
         StartFadeAudio(_maxVolume);
         
         _wordleManager.InitWordle(word);
@@ -142,9 +144,8 @@ public class WordleTransitionEffects : MonoBehaviour
 
     private IEnumerator HideSideBox(RectTransform rect, CanvasGroup canvasGroup, Vector2 targetPos, float targetAlpha, bool enableInteraction)
     {
-        StartCoroutine(AnimatePanel(rect, canvasGroup, targetPos, targetAlpha, enableInteraction));
-        yield return new WaitForSeconds(2);
-        foreach (Transform child in rect) Destroy(child.gameObject); 
+        _dialogueWriter.ClearSideBox();
+        yield return StartCoroutine(AnimatePanel(rect, canvasGroup, targetPos, targetAlpha, enableInteraction));
     }
 
     /// <summary>

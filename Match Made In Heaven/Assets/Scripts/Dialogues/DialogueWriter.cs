@@ -304,6 +304,12 @@ public class DialogueWriter : MonoBehaviour
         foreach (Transform child in _dialogueBoxParent) Destroy(child.gameObject); 
     }
 
+    public void ClearSideBox()
+    {
+        if (_sideBoxParent == null) return;
+        foreach (Transform child in _sideBoxParent) Destroy(child.gameObject);
+    }
+
     private void PrepareDictionary()
     {
         if (_jsonWordFile != null)
@@ -362,6 +368,8 @@ public class DialogueWriter : MonoBehaviour
     private void TypeSideBoxText(string text, string keyword)
     {
         if (string.IsNullOrEmpty(text)) return;
+
+        ClearSideBox();
 
         string[] words = text.Split(' ');
         _currentColumnContextBox = 0;

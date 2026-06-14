@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using TMPro;
-using UnityEditor.Search;
 
 public class WordleManager : MonoBehaviour
 {
