@@ -16,7 +16,7 @@ public class WordleTransitionEffects : MonoBehaviour
 
     [Header("Animation Settings")]
     [SerializeField] private float _animationDuration = 0.5f;
-    [SerializeField] private float _delayBeforeSideBox = 2.0f;
+    [SerializeField] private float _delayBeforeSideBox = 1.0f;
     [SerializeField] private float _startXPosition = -10f;
     [SerializeField] private float _endXPosition = 20f;
     [SerializeField] private AnimationCurve _slideCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
