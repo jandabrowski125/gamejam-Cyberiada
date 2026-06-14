@@ -10,7 +10,10 @@ public class MainMenu : MonoBehaviour
 
     void OnEnable()
     {
-        _fadingEffect.RequestFadeIn();
+        _fadingEffect.RequestFadeIn(
+            fadeDuration: 4,
+            fadeMusicSource: false
+        );
     }
 
     public void Play()

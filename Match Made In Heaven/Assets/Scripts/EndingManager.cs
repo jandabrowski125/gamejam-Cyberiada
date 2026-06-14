@@ -14,6 +14,10 @@ public class EndingManager : MonoBehaviour
     [SerializeField] private FadingEffects _fadingEffects;
     [SerializeField] private WordleProgressTracker _wordleProgressTracker;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource _backgroundMusicSource;
+    [SerializeField] private AudioSource _endingMusicSource;
+
     [Header("UI Layout")]
     public GameObject charButtonPrefab;
     public Transform buttonsParent;
@@ -40,6 +44,9 @@ public class EndingManager : MonoBehaviour
             fadeMusicSource: false,
             forceSynchronous: true
         );
+
+        StopBackgroundMusic();
+        PlayEndingMusic();
         
         playerStats = stats;
         selectionCanvas.SetActive(true);
@@ -126,6 +133,24 @@ public class EndingManager : MonoBehaviour
         endingDialogueManager.StartEndingDialogue(data, success);
     }
 
+    public void StopEndingMusic()
+    {
+        if (_endingMusicSource == null) return;
+        _endingMusicSource.Stop();
+    }
+
+    private void StopBackgroundMusic()
+    {
+        if (_backgroundMusicSource == null) return;
+        _backgroundMusicSource.Stop();
+    }
+
+    private void PlayEndingMusic()
+    {
+        if (_endingMusicSource == null) return;
+        if (!_endingMusicSource.isPlaying) _endingMusicSource.Play();
+    }
+
     public void ReturnToSelection()
     {
         if (remainingCharacters <= 0)
@@ -141,6 +166,7 @@ public class EndingManager : MonoBehaviour
             );
             
             selectionCanvas.SetActive(true);
+            PlayEndingMusic();
 
             _fadingEffects.RequestFadeIn(
                 fadeDuration: 0.5f,

@@ -351,19 +351,31 @@ public class DialogueWriter : MonoBehaviour
         string keyword
     )
     {
-        string[] words = _keywordContext.Split(' ');
+        TypeSideBoxText(_keywordContext, keyword);
+    }
+
+    public void TypeDefaultContext(string text)
+    {
+        TypeSideBoxText(text, keyword: null);
+    }
+
+    private void TypeSideBoxText(string text, string keyword)
+    {
+        if (string.IsNullOrEmpty(text)) return;
+
+        string[] words = text.Split(' ');
         _currentColumnContextBox = 0;
         
         foreach (string word in words)
         {   
             if (string.IsNullOrEmpty(word)) continue;
-            if (IsSpecialChar(word)) continue;
+            if (keyword != null && IsSpecialChar(word)) continue;
             
             string clean = CleanWord(word);
             string cleanLower = clean.ToLower();
 
             bool isKeyword = keyword != null && cleanLower == keyword.ToLower();
-            bool isUnderstandable = knownWords.Contains(cleanLower);
+            bool isUnderstandable = keyword == null || knownWords.Contains(cleanLower);
 
             TMP_FontAsset fontToUse = isUnderstandable ? fontAsset : alienFontAsset;
 

@@ -21,6 +21,10 @@ public class WordleTransitionEffects : MonoBehaviour
     [SerializeField] private float _endXPosition = 20f;
     [SerializeField] private AnimationCurve _slideCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
+    [Header("Context")]
+    [SerializeField] private string _skippedDialogueContext =
+        "Next time I should let them finish what they were saying...";
+
     [Header("Audio")]
     [SerializeField] private float _maxVolume = 0.5f;
     [SerializeField] private float _audioFadeDuration = 0.8f;
@@ -110,12 +114,13 @@ public class WordleTransitionEffects : MonoBehaviour
 
         yield return new WaitForSeconds(_delayBeforeSideBox);
 
+        _contextBoxIsActive = true;
         if (_dialogueWriter.WroteFullText())
-        {
-            _contextBoxIsActive = true;
             _dialogueWriter.TypeKeywordContext(keyword);
-            yield return StartCoroutine(AnimatePanel(_sideBoxRect, _sideBoxCanvasGroup, _sideBoxTargetPos, 1f, false));
-        }
+        else
+            _dialogueWriter.TypeDefaultContext(_skippedDialogueContext);
+
+        yield return StartCoroutine(AnimatePanel(_sideBoxRect, _sideBoxCanvasGroup, _sideBoxTargetPos, 1f, false));
     }
 
     private IEnumerator SlideOutSequence()

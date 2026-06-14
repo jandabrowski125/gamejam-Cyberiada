@@ -6,8 +6,8 @@ AudioContainerElement:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 2_{-781610735833638403}
-  m_AudioClip: {fileID: 8300000, guid: 69364d41e2a12704d858948e0c3ab733, type: 3}
+  m_Name: 2_new_{-781610735833638403}
+  m_AudioClip: {fileID: 8300000, guid: db66fa0de013d754681dd9add6497160, type: 3}
   m_Volume: 0
   m_Enabled: 1
 --- !u!1233149941 &2437268270246123722
@@ -16,8 +16,8 @@ AudioContainerElement:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 1_{2437268270246123722}
-  m_AudioClip: {fileID: 8300000, guid: 98e0e031314b8ca419a7d3952a4ff5d3, type: 3}
+  m_Name: 1_new_{2437268270246123722}
+  m_AudioClip: {fileID: 8300000, guid: 0d07d48826c080e4fbbb40075234e7be, type: 3}
   m_Volume: 0
   m_Enabled: 1
 --- !u!1307931743 &6418180475301049370
@@ -54,7 +54,7 @@ AudioContainerElement:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 3_{6992945963566530872}
-  m_AudioClip: {fileID: 8300000, guid: 9aa118afda5de334292ddabf7bc89457, type: 3}
+  m_Name: 3_new_{6992945963566530872}
+  m_AudioClip: {fileID: 8300000, guid: 1d2fef7102d77d34f9761dc2c9f228a8, type: 3}
   m_Volume: 0
   m_Enabled: 1

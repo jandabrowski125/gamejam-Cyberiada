@@ -45,12 +45,18 @@ public class EndingDialogueManager : MonoBehaviour
         DisplayEndingStep(unhappyDialogue, null);
     }
 
+    private void ShowEndingCredits(string endingKey)
+    {
+        _endingMenuManager.StopEndingMusic();
+        _creditsManager.ShowCredits(true, endingKey);
+    }
+
     private void DisplayEndingStep(EndingDialogue dialogue, EndingData fullData)
     {
         if (dialogue == null || string.IsNullOrEmpty(dialogue.text))
         {
             string endingKey = (fullData != null) ? fullData.name : "Unhappy";
-            _creditsManager.ShowCredits(true, endingKey);
+            ShowEndingCredits(endingKey);
             return;
         }
 
@@ -106,7 +112,7 @@ public class EndingDialogueManager : MonoBehaviour
                     if (currentChoice.end) {
                         string endingKey = (fullData != null) ? fullData.name : "Unhappy";
                         Debug.Log("[Ending Dialogue manager]: endingKey is " + endingKey);
-                        _creditsManager.ShowCredits(true, endingKey);
+                        ShowEndingCredits(endingKey);
                     } else {
                         ShowCharacterSelection();
                     }
@@ -117,7 +123,7 @@ public class EndingDialogueManager : MonoBehaviour
         {
             _buttonCreator.ShowContinueCustom("[ Zakończ grę ]", () => {
                 string endingKey = (fullData != null) ? fullData.name : "Unhappy";
-                _creditsManager.ShowCredits(true, endingKey);
+                ShowEndingCredits(endingKey);
             });
         }
     }

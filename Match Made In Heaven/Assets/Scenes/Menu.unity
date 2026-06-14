@@ -593,6 +593,7 @@ MonoBehaviour:
   - Credits1
   - Credits2
   - Credits3
+  _characterManager: {fileID: 0}
 --- !u!4 &742200388
 Transform:
   m_ObjectHideFlags: 0
@@ -1439,7 +1440,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: eb737cc80ff4a8c41b92483214bf247a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-9214709970210751201
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 3_new_{-9214709970210751201}
+  m_AudioClip: {fileID: 8300000, guid: 1d2fef7102d77d34f9761dc2c9f228a8, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2971330516926572713
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 1_new_{-2971330516926572713}
+  m_AudioClip: {fileID: 8300000, guid: 0d07d48826c080e4fbbb40075234e7be, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2671652670281878366
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2_new_{-2671652670281878366}
+  m_AudioClip: {fileID: 8300000, guid: db66fa0de013d754681dd9add6497160, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
 --- !u!1307931743 &6418180475301049370
 AudioRandomContainer:
   m_ObjectHideFlags: 0
@@ -15,7 +45,10 @@ AudioRandomContainer:
   m_PitchRandomizationRange: {x: 0, y: 0}
   m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
   m_LoopCountRandomizationRange: {x: 0, y: 0}
-  m_Elements: []
+  m_Elements:
+  - {fileID: -2971330516926572713}
+  - {fileID: -2671652670281878366}
+  - {fileID: -9214709970210751201}
   m_AvoidRepeatingLast: 0
   m_PlaybackMode: 0
   m_TriggerMode: 1
