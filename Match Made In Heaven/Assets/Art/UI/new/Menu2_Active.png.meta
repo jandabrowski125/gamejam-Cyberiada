@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a10e380899c155fda97c3a1f58c4c95a
+guid: e0a4b23244bb80d429c2eecc326b3f3b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1099676278534338268
-    second: "Zas\xF3b 10@300x_0"
+      213: -2008636130215749650
+    second: Menu2_Active_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Zas\xF3b 10@300x_0"
+      name: Menu2_Active_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 41
-        width: 3359
-        height: 1261
+        x: 25
+        y: 38
+        width: 710
+        height: 286
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4298902404a2db0f0800000000000000
-      internalID: -1099676278534338268
+      spriteID: ee7997fe414ef14e0800000000000000
+      internalID: -2008636130215749650
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 62673da6f9f691d47a24ba65950af0d1
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Zas\xF3b 10@300x_0": -1099676278534338268
+      Menu2_Active_0: -2008636130215749650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

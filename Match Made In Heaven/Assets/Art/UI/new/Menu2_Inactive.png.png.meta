@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ee4b323016082e47a6c5785a957a9e8
+guid: 61c0518aa644a174bb827e22d5283421
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -945426676055470849
-    second: button_off_0
+      213: 8557158151067662161
+    second: Menu2_Inactive.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_off_0
+      name: Menu2_Inactive.png_0
       rect:
         serializedVersion: 2
-        x: 301
-        y: 292
-        width: 3142
-        height: 1371
+        x: 25
+        y: 39
+        width: 710
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ffc098c727b21e2f0800000000000000
-      internalID: -945426676055470849
+      spriteID: 157f939200221c670800000000000000
+      internalID: 8557158151067662161
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c239fd9d5faca8a41a0dd4036bb6c2c5
+    spriteID: 8e141f2ca49fa0d448970da3bab27b67
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button_off_0: -945426676055470849
+      Menu2_Inactive.png_0: 8557158151067662161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

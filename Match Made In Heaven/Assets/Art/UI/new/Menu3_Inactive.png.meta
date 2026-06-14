@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 27ba08a2bf6dc614083f17f70da97b78
+guid: e9303ce2914ce7147914ebb3718d1fc1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2923137232864298135
-    second: Wordle_container_0
+      213: -397351336647277660
+    second: Menu3_Inactive_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,27 +96,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wordle_container_0
+      name: Menu3_Inactive_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 991
-        height: 1062
+        x: 25
+        y: 39
+        width: 710
+        height: 285
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 794489a63d1119820800000000000000
-      internalID: 2923137232864298135
+      spriteID: 4a3cc1880135c7af0800000000000000
+      internalID: -397351336647277660
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bbbdad60a39c2204fbf2e9dd50a88019
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wordle_container_0: 2923137232864298135
+      Menu3_Inactive_0: -397351336647277660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

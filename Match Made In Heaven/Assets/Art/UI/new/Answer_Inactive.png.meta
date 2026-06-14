@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ae734138494236a4397d5d4e47952f8b
+guid: 17c851a484916fa48af888d5dbeb7c89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5310503060268302553
-    second: Wordle_container2_0
+      213: -4790948011903079747
+    second: Answer_Inactive_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,27 +96,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wordle_container2_0
+      name: Answer_Inactive_0
       rect:
         serializedVersion: 2
-        x: 250
-        y: 0
-        width: 6377
-        height: 5561
+        x: 28
+        y: 29
+        width: 800
+        height: 370
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d0cae5a562b2b940800000000000000
-      internalID: 5310503060268302553
+      spriteID: dba272daa22238db0800000000000000
+      internalID: -4790948011903079747
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cd78ea813933e6242aba51b90990ea10
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wordle_container2_0: 5310503060268302553
+      Answer_Inactive_0: -4790948011903079747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
