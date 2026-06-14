@@ -7,12 +7,19 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private CharacterDatabase _characterDB;
     [SerializeField] private AudioMixerGroup _mixerGroup;
     private Dictionary<string, AudioSource> _playerVoices = new Dictionary<string, AudioSource>{};
+    private Dictionary<string, AudioSource> _endingMusicSamples = new Dictionary<string, AudioSource>{};
     void Start()
     {
         var characterAudioGenerators = _characterDB.GetVoices();
         foreach(string characterName in characterAudioGenerators.Keys)
         {
             _playerVoices.Add(characterName, AssignAudioSource(characterAudioGenerators[characterName]));
+        }
+
+        var endingMusicAudioGenerators = _characterDB.GetEndingMusicSamples();
+        foreach(string characterName in endingMusicAudioGenerators.Keys)
+        {
+            _endingMusicSamples.Add(characterName, AssignAudioSource(endingMusicAudioGenerators[characterName]));
         }
     }
 
@@ -30,6 +37,17 @@ public class CharacterManager : MonoBehaviour
     {
         foreach(var voice in _playerVoices.Values) voice.Stop();
         _playerVoices[characterName].Play();
+    }
+
+    public void PlayEndingMusic(string endingMusicId)
+    {
+        StopEndingMusic();
+        _endingMusicSamples[endingMusicId].Play();
+    }
+
+    public void StopEndingMusic()
+    {
+        foreach(var music in _endingMusicSamples.Values) music.Stop();
     }
 
     public Sprite GetSprite(string characterName) => _characterDB.GetSprite(characterName);

@@ -12,8 +12,6 @@ public class EndingDialogueManager : MonoBehaviour
     [SerializeField] private CreditsManager _creditsManager;
     [SerializeField] private CharacterDatabase _characterDB;
 
-
-
     private string[] slideshowSequence;
     private int currentSlideIndex = 0;
 

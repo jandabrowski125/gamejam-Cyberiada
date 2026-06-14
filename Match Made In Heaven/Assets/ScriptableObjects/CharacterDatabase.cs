@@ -86,9 +86,11 @@ public class CharacterDatabase : ScriptableObject
     /// Plays the ending music of the character.
     /// </summary>
     /// <param name="characterName"></param>
-    public AudioResource GetEndingMusic(string characterName)
+    public Dictionary<string, AudioResource> GetEndingMusicSamples()
     {
-        var entry = characters.FirstOrDefault(c => c.Name.Equals(characterName, StringComparison.OrdinalIgnoreCase));
-        return entry.EndingMusic;
+        return characters.ToDictionary(
+            character => character.Name,
+            character => character.EndingMusic
+        );
     } 
 }
