@@ -44,9 +44,14 @@ public class DialogueLoader : MonoBehaviour
     {
         if (_dialogueData?.nodes == null || solvedWordles == null) return false;
 
-        var solved = new HashSet<string>(solvedWordles, System.StringComparer.OrdinalIgnoreCase);
-        return _dialogueData.nodes
+        var requiredWordles = _dialogueData.nodes
             .Where(n => !string.IsNullOrEmpty(n.wordle_solution))
-            .All(n => solved.Contains(n.wordle_solution));
+            .Select(n => n.wordle_solution)
+            .ToList();
+
+        if (requiredWordles.Count == 0) return false;
+
+        var solved = new HashSet<string>(solvedWordles, System.StringComparer.OrdinalIgnoreCase);
+        return requiredWordles.All(word => solved.Contains(word));
     }
 }

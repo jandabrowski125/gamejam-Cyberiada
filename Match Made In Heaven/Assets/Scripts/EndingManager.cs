@@ -58,26 +58,35 @@ public class EndingManager : MonoBehaviour
 
         if (endingList == null || endingList.endings == null) return;
 
-        remainingCharacters = endingList.endings.Count;
+        remainingCharacters = 0;
+        bool presenterUnlocked = IsPresenterUnlocked();
 
         foreach (var data in endingList.endings)
-            CreateCharacterButton(data.name);
+        {
+            if (IsPresenterCharacter(data.name) && !presenterUnlocked)
+                continue;
 
-        if (ShouldShowPresenterOption())
+            CreateCharacterButton(data.name);
+            remainingCharacters++;
+        }
+
+        if (presenterUnlocked && !endingList.endings.Any(e => IsPresenterCharacter(e.name)))
         {
             CreateCharacterButton(WordleProgressTracker.GetPresenterCharacterName());
             remainingCharacters++;
         }
     }
 
-    private bool ShouldShowPresenterOption()
+    private bool IsPresenterUnlocked()
     {
-        if (_wordleProgressTracker == null || !_wordleProgressTracker.HasSolvedAllWordles())
-            return false;
+        return _wordleProgressTracker != null && _wordleProgressTracker.HasSolvedAllWordles();
+    }
 
-        string presenterName = WordleProgressTracker.GetPresenterCharacterName();
-        return !endingList.endings.Any(e =>
-            e.name.Equals(presenterName, StringComparison.OrdinalIgnoreCase));
+    private static bool IsPresenterCharacter(string characterName)
+    {
+        return characterName.Equals(
+            WordleProgressTracker.GetPresenterCharacterName(),
+            StringComparison.OrdinalIgnoreCase);
     }
 
     private void CreateCharacterButton(string characterName)
