@@ -1,5 +1,5 @@
 {
-    "startingElement": null,
+    "startingElement": "28ec963c-3b86-4b90-9b42-c79f4572aea7",
     "boards": {
         "2ad15ff6-f2ba-4f1d-9d9d-68938c683d7e": {
             "name": "Root",
@@ -15,21 +15,12 @@
             "branches": [],
             "elements": [
                 "28ec963c-3b86-4b90-9b42-c79f4572aea7",
-                "191f1cf4-8a92-4047-8439-b07ccc4146c6",
                 "74ec6ecf-4bd6-441b-b81c-cdc333119827",
                 "95d791cd-2200-495a-bd89-7d27a9072426",
                 "3cfcfc34-6761-41f9-b79d-4c14afc5405b",
                 "c81d7e78-2417-4860-b5b7-fe35180bd397",
                 "010c1f2b-6114-43e9-8b00-91b35ac326cc",
-                "5fe4ca3a-79c1-44f2-9d50-80f20cef2cbc",
-                "b1a8fa0d-4778-4933-9663-2fe279e1a81e",
-                "f5925590-89f3-4dfb-83a2-daa9de3ad491",
-                "a73accf6-c239-458d-bc0e-214d752b229f",
-                "812ed5be-8ecb-472f-8f6e-a84b9a28292e",
                 "1d6098fc-57b4-4208-ad11-6fbf03975ebe",
-                "07913319-15e8-4d25-81fa-34d15091296c",
-                "1efa9395-63b1-4d3e-8d13-bce11d5e29b5",
-                "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
                 "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
                 "8f043795-3c17-434a-874e-a1a1ebee754f",
                 "5119e183-9d42-492f-a6bb-61144f58eb87",
@@ -39,556 +30,584 @@
                 "0b8eff99-6be0-4212-940a-5426d2a6c19b",
                 "0855df6e-56a1-4730-b494-0592a1468591",
                 "a0eaf2f4-b79c-473a-8eb3-a367098ff2fd",
+                "191f1cf4-8a92-4047-8439-b07ccc4146c6",
+                "5fe4ca3a-79c1-44f2-9d50-80f20cef2cbc",
+                "b1a8fa0d-4778-4933-9663-2fe279e1a81e",
+                "f5925590-89f3-4dfb-83a2-daa9de3ad491",
+                "a73accf6-c239-458d-bc0e-214d752b229f",
+                "812ed5be-8ecb-472f-8f6e-a84b9a28292e",
+                "07913319-15e8-4d25-81fa-34d15091296c",
+                "1efa9395-63b1-4d3e-8d13-bce11d5e29b5",
+                "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
                 "d0e7bb31-bc49-415d-9505-664081d5cb81",
                 "1b0d2968-3a58-4514-aa6e-8a0215efdbfc",
                 "b256bd43-86a8-43b2-8fe4-5b5cf8250425"
             ],
             "connections": [
-                "2f71cc27-7ec9-41ff-a22f-5931931388a1",
-                "8666ef34-8289-404d-81c0-2a76d393bfcd",
-                "83e3cc73-7ac9-48b6-8cc6-f2d5b9e40dc9",
+                "c217971f-129d-409c-b302-a6d90964edbb",
+                "0f6fa41c-a15d-4db4-8f9b-ba48f3779a75",
+                "7d4cdf3a-a54a-4979-bc75-aeb85ccef350",
+                "4de725ee-7ee1-47b5-95a1-d433971b38ef",
+                "5586ec53-f5ed-405a-bc23-bdad144fffa1",
+                "da025c4c-e1b2-4708-a3ee-cdcf4361f8e2",
+                "50c25332-e5c5-4ba2-bbaa-e30b5938d378",
+                "fce5b6fc-c7dd-482b-84d4-b45287bb9386",
+                "8ec9fb16-bbce-45d6-a24d-3e65a462f5e1",
+                "ee46870d-178d-4636-83eb-e244e8214fb5",
+                "48d5f5fc-596f-41bf-9333-18e68356cb8b",
                 "44d880a4-f86a-4f9c-a105-1e5d372d8a98",
+                "83e3cc73-7ac9-48b6-8cc6-f2d5b9e40dc9",
+                "8666ef34-8289-404d-81c0-2a76d393bfcd",
+                "2f71cc27-7ec9-41ff-a22f-5931931388a1",
                 "cd884ab4-74c7-45a2-8f0a-28f518806867",
                 "c26c2982-19cf-420f-b573-ec8aeadcf9c3",
                 "e8a892b5-2c7d-4b61-a7cd-9494a63b34a0",
                 "c396de4c-7ef6-4de6-a6ab-16f02389b93c",
                 "10a68ff1-51d5-4de3-b4e0-73a9be10eefe",
                 "67d3fd43-7edc-4f52-ae80-1175f1d279f9",
-                "8d1d2bad-c602-4118-bb10-0b534941c342",
-                "b42bc74c-ebbb-41e4-8d42-f2f6e700cd4d",
-                "48d5f5fc-596f-41bf-9333-18e68356cb8b",
-                "ee46870d-178d-4636-83eb-e244e8214fb5",
-                "8ec9fb16-bbce-45d6-a24d-3e65a462f5e1",
-                "fce5b6fc-c7dd-482b-84d4-b45287bb9386",
-                "c217971f-129d-409c-b302-a6d90964edbb",
-                "0f6fa41c-a15d-4db4-8f9b-ba48f3779a75",
-                "50c25332-e5c5-4ba2-bbaa-e30b5938d378",
-                "7d4cdf3a-a54a-4979-bc75-aeb85ccef350",
-                "4de725ee-7ee1-47b5-95a1-d433971b38ef",
-                "b7bd2a82-873f-40da-b67a-1a1028f986a9",
                 "98d360b1-9b53-4cea-98aa-fa11b57410bc",
                 "ce806b0d-99db-4e09-baa2-748d338edbfa",
                 "73662213-1dfb-4b22-9256-f0ca2fb60bc6",
                 "276c9dc0-404a-4d84-a0b2-24e2bfd18691",
-                "3875c349-b7d2-479f-9b2e-ec297a7ea3bf"
+                "3875c349-b7d2-479f-9b2e-ec297a7ea3bf",
+                "350e7a6e-f2d5-4f0c-89a8-23b6f9bb00e5"
             ]
         }
     },
     "notes": {},
     "elements": {
-        "010c1f2b-6114-43e9-8b00-91b35ac326cc": {
-            "theme": "lightBlue",
-            "outputs": [
-                "50c25332-e5c5-4ba2-bbaa-e30b5938d378"
-            ],
-            "components": [],
-            "content": "<p>Well, not everything, of course... Just some parts. The rest you'll have to guess yourself. This looks like it's going to be fun, right? Am I right, audience?! <\/p><p>And remember! Any resemblance to earthly and otherworldly beings is coincidental!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "07913319-15e8-4d25-81fa-34d15091296c": {
-            "theme": "lightBlue",
-            "outputs": [
-                "67d3fd43-7edc-4f52-ae80-1175f1d279f9"
-            ],
-            "components": [],
-            "content": "<p>So guess away! Well, guess like 5 times 'cause we don't have battery for more.<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "0855df6e-56a1-4730-b494-0592a1468591": {
-            "theme": "lightBlue",
-            "outputs": [
-                "7d4cdf3a-a54a-4979-bc75-aeb85ccef350"
-            ],
-            "components": [],
-            "content": "<p>If it's wrong though, then you're on your own, buddy. You'll have to understand what they say from the context. <\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "0b8eff99-6be0-4212-940a-5426d2a6c19b": {
-            "theme": "lightBlue",
-            "outputs": [
-                "0f6fa41c-a15d-4db4-8f9b-ba48f3779a75"
-            ],
-            "components": [],
-            "content": "<p>If it's right, our super smart algorithm will translate a whole statement of the contestant. <\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "191f1cf4-8a92-4047-8439-b07ccc4146c6": {
-            "theme": "lightBlue",
-            "outputs": [
-                "10a68ff1-51d5-4de3-b4e0-73a9be10eefe"
-            ],
-            "components": [],
-            "content": "<p>Alrighty - shall we begin?! Today, we present to you four different contestants out of this world!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "1b0d2968-3a58-4514-aa6e-8a0215efdbfc": {
-            "theme": "lightBlue",
-            "outputs": [
-                "73662213-1dfb-4b22-9256-f0ca2fb60bc6"
-            ],
-            "components": [],
-            "content": "<p>Any existing word in your native language is a fluke! Don't cheat! The audience hates cheating.<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "1d6098fc-57b4-4208-ad11-6fbf03975ebe": {
-            "theme": "lightBlue",
-            "outputs": [
-                "48d5f5fc-596f-41bf-9333-18e68356cb8b"
-            ],
-            "components": [],
-            "content": "<p>Are you still with me, Human? You look a little pale.<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "1efa9395-63b1-4d3e-8d13-bce11d5e29b5": {
-            "theme": "lightBlue",
-            "outputs": [
-                "ce806b0d-99db-4e09-baa2-748d338edbfa"
-            ],
-            "components": [],
-            "content": "<p>The limitations of today's technology, right? Well, what can you do... Guess away. <\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "28ec963c-3b86-4b90-9b42-c79f4572aea7": {
-            "theme": "lightBlue",
-            "outputs": [
-                "2f71cc27-7ec9-41ff-a22f-5931931388a1"
-            ],
-            "components": [],
-            "content": "<p>Welcome to today\u2019s episode of Match Made in Heaven! A show in which you can fall in love sight seen but word misunderstood!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "3cfcfc34-6761-41f9-b79d-4c14afc5405b": {
-            "theme": "lightBlue",
-            "outputs": [
-                "44d880a4-f86a-4f9c-a105-1e5d372d8a98"
-            ],
-            "components": [],
-            "content": "<p>Anyway, Human! Welcome to the show where you have a chance to find your soulmate for life! Cool, right? I once had a soulmate... But I divorced her, haha! <\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "48acb5d4-7130-40f3-b011-f69075fa5cb1": {
-            "theme": "lightBlue",
-            "outputs": [
-                "fce5b6fc-c7dd-482b-84d4-b45287bb9386"
-            ],
-            "components": [],
-            "content": "<p>Anyway, let's quickly go through the rules. Time is money, as they say on your planet.<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "5119e183-9d42-492f-a6bb-61144f58eb87": {
-            "theme": "lightBlue",
-            "outputs": [
-                "ee46870d-178d-4636-83eb-e244e8214fb5"
-            ],
-            "components": [],
-            "content": "<p>But we don't want you to miss a thing! It's not like you can pick your soulmate just because of their looks, right?! *<em>laughs*<\/em><\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "5fe4ca3a-79c1-44f2-9d50-80f20cef2cbc": {
-            "theme": "lightBlue",
-            "outputs": [
-                "cd884ab4-74c7-45a2-8f0a-28f518806867"
-            ],
-            "components": [],
-            "content": "<p>The first one, Decln\u2019Argegh, comes from a distant planet where flying cars are relics of the past 'cause you can just fly instead!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "740b33c1-5df6-47a8-9464-5b8327c632ad": {
-            "theme": "lightBlue",
-            "outputs": [
-                "c217971f-129d-409c-b302-a6d90964edbb"
-            ],
-            "components": [],
-            "content": "<p>You won't know the right words right away. But you can always try to put a translation for one of them into our computer, brought you by KOSMEX!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "74ec6ecf-4bd6-441b-b81c-cdc333119827": {
-            "theme": "lightBlue",
-            "outputs": [
-                "8666ef34-8289-404d-81c0-2a76d393bfcd"
-            ],
-            "components": [],
-            "content": "<p>Dear viewers... Oh, do we have a treat for you! Our special guest today will be none other than a... <\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "812ed5be-8ecb-472f-8f6e-a84b9a28292e": {
-            "theme": "lightBlue",
-            "outputs": [],
-            "components": [],
-            "content": "<p>Today, all four of them will fight for the heart of our dear special guest!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "8f043795-3c17-434a-874e-a1a1ebee754f": {
-            "theme": "lightBlue",
-            "outputs": [
-                "b42bc74c-ebbb-41e4-8d42-f2f6e700cd4d"
-            ],
-            "components": [],
-            "content": "<p>During uhm... let's call this an inspection, we've installed a special chip in your brain. Now you can understand what we're saying. Comprendo?<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "95d791cd-2200-495a-bd89-7d27a9072426": {
-            "theme": "lightBlue",
-            "outputs": [
-                "83e3cc73-7ac9-48b6-8cc6-f2d5b9e40dc9"
-            ],
-            "components": [],
-            "content": "<p>Human! Isn't that splendid?! And analyzing this specific... uhm, specimen took us only a couple of excruciating hours! Well, for the Human. Not for us. We had lots of fun!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "a0eaf2f4-b79c-473a-8eb3-a367098ff2fd": {
-            "theme": "lightBlue",
-            "outputs": [
-                "b7bd2a82-873f-40da-b67a-1a1028f986a9"
-            ],
-            "components": [],
-            "content": "<p>Try any word and just write it with your silly Earthian keyboard. If you think you're right, press ENTER to confirm, and see how the magic works! <\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "a73accf6-c239-458d-bc0e-214d752b229f": {
-            "theme": "lightBlue",
-            "outputs": [
-                "c396de4c-7ef6-4de6-a6ab-16f02389b93c"
-            ],
-            "components": [],
-            "content": "<p>She\u2019s like the moon on a dark night\u2026 Shining bright on the dance floor, being admired from afar. Welcome Arneth Maalg!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "aa16a037-0cc2-415d-b504-2e8ab0776ab5": {
-            "theme": "lightBlue",
-            "outputs": [
-                "8ec9fb16-bbce-45d6-a24d-3e65a462f5e1"
-            ],
-            "components": [],
-            "content": "<p>My wife sure didn't. Yeah...<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "b1a8fa0d-4778-4933-9663-2fe279e1a81e": {
-            "theme": "lightBlue",
-            "outputs": [
-                "c26c2982-19cf-420f-b573-ec8aeadcf9c3"
-            ],
-            "components": [],
-            "content": "<p>Next is CyberJohn. He used to be the assistant to the CEO of the logistics corporation, KOSMEX, who recently died. His goal is to start the best logistics company in the galaxy, and he needs a\u00a0new SLP - Strategic Life Partner to make it happen.<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "b256bd43-86a8-43b2-8fe4-5b5cf8250425": {
-            "theme": "lightBlue",
-            "outputs": [
-                "3875c349-b7d2-479f-9b2e-ec297a7ea3bf"
-            ],
-            "components": [],
-            "content": "<p>You just risk the whole existence of humankind! But no biggie! You got this! Mind you - there is also no coming back.<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252": {
-            "theme": "lightBlue",
-            "outputs": [
-                "4de725ee-7ee1-47b5-95a1-d433971b38ef"
-            ],
-            "components": [],
-            "content": "<p>I'll be asking questions to our lovely contestants. After you hear their answers, you'll see a big screen. Then it's your time to shine!<\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
-        "c81d7e78-2417-4860-b5b7-fe35180bd397": {
-            "theme": "lightBlue",
-            "outputs": [
-                "8d1d2bad-c602-4118-bb10-0b534941c342"
-            ],
-            "components": [],
-            "content": "<p>You're listening to me, Human? Wonderful! Listen carefully! <\/p>",
-            "title": "<p>Presenter<\/p>"
-        },
         "d0e7bb31-bc49-415d-9505-664081d5cb81": {
+            "components": [],
             "theme": "lightBlue",
             "outputs": [
                 "98d360b1-9b53-4cea-98aa-fa11b57410bc"
             ],
-            "components": [],
             "content": "<p>Green means a letter is on the right spot, yellow means you should put it elsewhere, grey means it's not the one. Easy-peasy!<\/p>",
             "title": "<p>Presenter<\/p>"
         },
-        "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc": {
+        "8f043795-3c17-434a-874e-a1a1ebee754f": {
+            "outputs": [
+                "da025c4c-e1b2-4708-a3ee-cdcf4361f8e2"
+            ],
             "theme": "lightBlue",
+            "components": [],
+            "content": "<p>During uhm... let's call this an inspection, we've installed a special chip in your brain. Now you can understand what we're saying. Comprendo?<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "1b0d2968-3a58-4514-aa6e-8a0215efdbfc": {
+            "outputs": [
+                "73662213-1dfb-4b22-9256-f0ca2fb60bc6"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>Any existing word in your native language is a fluke! Don't cheat! The audience hates cheating.<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "812ed5be-8ecb-472f-8f6e-a84b9a28292e": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [],
+            "content": "<p>Today, all four of them will fight for the heart of our dear special guest!<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "74ec6ecf-4bd6-441b-b81c-cdc333119827": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "8666ef34-8289-404d-81c0-2a76d393bfcd"
+            ],
+            "content": "<p>Dear viewers... Oh, do we have a treat for you! Our special guest today will be none other than a... <\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "48acb5d4-7130-40f3-b011-f69075fa5cb1": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "fce5b6fc-c7dd-482b-84d4-b45287bb9386"
+            ],
+            "content": "<p>Anyway, let's quickly go through the rules. Time is money, as they say on your planet.<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "0b8eff99-6be0-4212-940a-5426d2a6c19b": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "0f6fa41c-a15d-4db4-8f9b-ba48f3779a75"
+            ],
+            "content": "<p>If it's right, our super smart algorithm will translate a whole statement of the contestant. <\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc": {
             "outputs": [
                 "276c9dc0-404a-4d84-a0b2-24e2bfd18691"
             ],
+            "theme": "lightBlue",
             "components": [],
             "content": "<p>And don't be scared of making mistakes. Occasionally, all you can do is skip the guessing part.<\/p>",
             "title": "<p>Presenter<\/p>"
         },
+        "740b33c1-5df6-47a8-9464-5b8327c632ad": {
+            "outputs": [
+                "c217971f-129d-409c-b302-a6d90964edbb"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>You won't know the right words right away. But you can always try to put a translation for one of them into our computer, brought you by KOSMEX!<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "a0eaf2f4-b79c-473a-8eb3-a367098ff2fd": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "350e7a6e-f2d5-4f0c-89a8-23b6f9bb00e5"
+            ],
+            "content": "<p>Try any word and just write it with your silly Earthian keyboard. If you think you're right, press ENTER to confirm, and see how the magic works! <\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "95d791cd-2200-495a-bd89-7d27a9072426": {
+            "outputs": [
+                "83e3cc73-7ac9-48b6-8cc6-f2d5b9e40dc9"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>Human! Isn't that splendid?! And analyzing this specific... uhm, specimen took us only a couple of excruciating hours! Well, for the Human. Not for us. We had lots of fun!<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "5fe4ca3a-79c1-44f2-9d50-80f20cef2cbc": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "cd884ab4-74c7-45a2-8f0a-28f518806867"
+            ],
+            "content": "<p>The first one, Decln\u2019Argegh, comes from a distant planet where flying cars are relics of the past 'cause you can just fly instead!<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "c81d7e78-2417-4860-b5b7-fe35180bd397": {
+            "outputs": [
+                "5586ec53-f5ed-405a-bc23-bdad144fffa1"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>You're listening to me, Human? Wonderful! Listen carefully! <\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "b256bd43-86a8-43b2-8fe4-5b5cf8250425": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "3875c349-b7d2-479f-9b2e-ec297a7ea3bf"
+            ],
+            "content": "<p>You just risk the whole existence of humankind! But no biggie! You got this! Mind you - there is also no coming back.<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "3cfcfc34-6761-41f9-b79d-4c14afc5405b": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "44d880a4-f86a-4f9c-a105-1e5d372d8a98"
+            ],
+            "content": "<p>Anyway, Human! Welcome to the show where you have a chance to find your soulmate for life! Cool, right? I once had a soulmate... But I divorced her, haha! <\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "5119e183-9d42-492f-a6bb-61144f58eb87": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "ee46870d-178d-4636-83eb-e244e8214fb5"
+            ],
+            "content": "<p>But we don't want you to miss a thing! It's not like you can pick your soulmate just because of their looks, right?! *<em>laughs*<\/em><\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "010c1f2b-6114-43e9-8b00-91b35ac326cc": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "50c25332-e5c5-4ba2-bbaa-e30b5938d378"
+            ],
+            "content": "<p>Well, not everything, of course... Just some parts. The rest you'll have to guess yourself. This looks like it's going to be fun, right? Am I right, audience?! <\/p><p>And remember! Any resemblance to earthly and otherworldly beings is coincidental!<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "1d6098fc-57b4-4208-ad11-6fbf03975ebe": {
+            "outputs": [
+                "48d5f5fc-596f-41bf-9333-18e68356cb8b"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>Are you still with me, Human? You look a little pale.<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "a73accf6-c239-458d-bc0e-214d752b229f": {
+            "outputs": [
+                "c396de4c-7ef6-4de6-a6ab-16f02389b93c"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>She\u2019s like the moon on a dark night\u2026 Shining bright on the dance floor, being admired from afar. Welcome Arneth Maalg!<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "0855df6e-56a1-4730-b494-0592a1468591": {
+            "outputs": [
+                "7d4cdf3a-a54a-4979-bc75-aeb85ccef350"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>If it's wrong though, then you're on your own, buddy. You'll have to understand what they say from the context. <\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
         "f5925590-89f3-4dfb-83a2-daa9de3ad491": {
+            "components": [],
             "theme": "lightBlue",
             "outputs": [
                 "e8a892b5-2c7d-4b61-a7cd-9494a63b34a0"
             ],
-            "components": [],
             "content": "<p>And here we have Juhei Ikeet. The brave knight of planet Vexalia is as lethal as they are pretty. They chase after love and enemies of the Vaelia clan.<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "aa16a037-0cc2-415d-b504-2e8ab0776ab5": {
+            "outputs": [
+                "8ec9fb16-bbce-45d6-a24d-3e65a462f5e1"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>My wife sure didn't. Yeah...<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "28ec963c-3b86-4b90-9b42-c79f4572aea7": {
+            "outputs": [
+                "2f71cc27-7ec9-41ff-a22f-5931931388a1"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>Welcome to today\u2019s episode of Match Made in Heaven! A show in which you can fall in love sight seen but word misunderstood!<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "b1a8fa0d-4778-4933-9663-2fe279e1a81e": {
+            "outputs": [
+                "c26c2982-19cf-420f-b573-ec8aeadcf9c3"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>Next is CyberJohn. He used to be the assistant to the CEO of the logistics corporation, KOSMEX, who recently died. His goal is to start the best logistics company in the galaxy, and he needs a\u00a0new SLP - Strategic Life Partner to make it happen.<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "191f1cf4-8a92-4047-8439-b07ccc4146c6": {
+            "outputs": [
+                "10a68ff1-51d5-4de3-b4e0-73a9be10eefe"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>Alrighty - shall we begin?! Today, we present to you four different contestants out of this world!<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "1efa9395-63b1-4d3e-8d13-bce11d5e29b5": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "ce806b0d-99db-4e09-baa2-748d338edbfa"
+            ],
+            "content": "<p>The limitations of today's technology, right? Well, what can you do... Guess away. <\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "07913319-15e8-4d25-81fa-34d15091296c": {
+            "outputs": [
+                "67d3fd43-7edc-4f52-ae80-1175f1d279f9"
+            ],
+            "theme": "lightBlue",
+            "components": [],
+            "content": "<p>So guess away! Well, guess like 5 times 'cause we don't have battery for more.<\/p>",
+            "title": "<p>Presenter<\/p>"
+        },
+        "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252": {
+            "components": [],
+            "theme": "lightBlue",
+            "outputs": [
+                "4de725ee-7ee1-47b5-95a1-d433971b38ef"
+            ],
+            "content": "<p>I'll be asking questions to our lovely contestants. After you hear their answers, you'll see a big screen. Then it's your time to shine!<\/p>",
             "title": "<p>Presenter<\/p>"
         }
     },
     "jumpers": {},
     "connections": {
-        "0f6fa41c-a15d-4db4-8f9b-ba48f3779a75": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "0b8eff99-6be0-4212-940a-5426d2a6c19b",
-            "targetid": "0855df6e-56a1-4730-b494-0592a1468591",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "10a68ff1-51d5-4de3-b4e0-73a9be10eefe": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "191f1cf4-8a92-4047-8439-b07ccc4146c6",
-            "targetid": "5fe4ca3a-79c1-44f2-9d50-80f20cef2cbc",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "276c9dc0-404a-4d84-a0b2-24e2bfd18691": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
-            "targetid": "b256bd43-86a8-43b2-8fe4-5b5cf8250425",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "2f71cc27-7ec9-41ff-a22f-5931931388a1": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "28ec963c-3b86-4b90-9b42-c79f4572aea7",
-            "targetid": "74ec6ecf-4bd6-441b-b81c-cdc333119827",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "labelLocation": 0.5,
-            "label": null
-        },
-        "3875c349-b7d2-479f-9b2e-ec297a7ea3bf": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "b256bd43-86a8-43b2-8fe4-5b5cf8250425",
-            "targetid": "191f1cf4-8a92-4047-8439-b07ccc4146c6",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "label": null
-        },
-        "44d880a4-f86a-4f9c-a105-1e5d372d8a98": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "3cfcfc34-6761-41f9-b79d-4c14afc5405b",
-            "targetid": "c81d7e78-2417-4860-b5b7-fe35180bd397",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "labelLocation": 0.5,
-            "label": null
-        },
-        "48d5f5fc-596f-41bf-9333-18e68356cb8b": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "1d6098fc-57b4-4208-ad11-6fbf03975ebe",
-            "targetid": "5119e183-9d42-492f-a6bb-61144f58eb87",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "4de725ee-7ee1-47b5-95a1-d433971b38ef": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
-            "targetid": "a0eaf2f4-b79c-473a-8eb3-a367098ff2fd",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "50c25332-e5c5-4ba2-bbaa-e30b5938d378": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "010c1f2b-6114-43e9-8b00-91b35ac326cc",
-            "targetid": "1d6098fc-57b4-4208-ad11-6fbf03975ebe",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "67d3fd43-7edc-4f52-ae80-1175f1d279f9": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "07913319-15e8-4d25-81fa-34d15091296c",
-            "targetid": "1efa9395-63b1-4d3e-8d13-bce11d5e29b5",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "label": null
-        },
         "73662213-1dfb-4b22-9256-f0ca2fb60bc6": {
-            "type": "Bezier",
-            "theme": "default",
+            "sourceType": "elements",
             "sourceid": "1b0d2968-3a58-4514-aa6e-8a0215efdbfc",
             "targetid": "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "label": null
-        },
-        "7d4cdf3a-a54a-4979-bc75-aeb85ccef350": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "0855df6e-56a1-4730-b494-0592a1468591",
-            "targetid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "83e3cc73-7ac9-48b6-8cc6-f2d5b9e40dc9": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "95d791cd-2200-495a-bd89-7d27a9072426",
-            "targetid": "3cfcfc34-6761-41f9-b79d-4c14afc5405b",
-            "sourceType": "elements",
-            "targetType": "elements",
             "labelLocation": 0.5,
-            "label": null
-        },
-        "8666ef34-8289-404d-81c0-2a76d393bfcd": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "74ec6ecf-4bd6-441b-b81c-cdc333119827",
-            "targetid": "95d791cd-2200-495a-bd89-7d27a9072426",
-            "sourceType": "elements",
             "targetFace": "left",
             "targetType": "elements",
-            "labelLocation": 0.5,
-            "label": null
-        },
-        "8d1d2bad-c602-4118-bb10-0b534941c342": {
-            "type": "Bezier",
             "theme": "default",
-            "sourceid": "c81d7e78-2417-4860-b5b7-fe35180bd397",
-            "targetid": "8f043795-3c17-434a-874e-a1a1ebee754f",
-            "sourceType": "elements",
-            "targetFace": "top",
-            "targetType": "elements",
-            "label": null
-        },
-        "8ec9fb16-bbce-45d6-a24d-3e65a462f5e1": {
             "type": "Bezier",
-            "theme": "default",
-            "sourceid": "aa16a037-0cc2-415d-b504-2e8ab0776ab5",
-            "targetid": "48acb5d4-7130-40f3-b011-f69075fa5cb1",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "label": null
-        },
-        "98d360b1-9b53-4cea-98aa-fa11b57410bc": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "d0e7bb31-bc49-415d-9505-664081d5cb81",
-            "targetid": "07913319-15e8-4d25-81fa-34d15091296c",
-            "sourceType": "elements",
-            "targetFace": "left",
-            "targetType": "elements",
-            "label": null
-        },
-        "b42bc74c-ebbb-41e4-8d42-f2f6e700cd4d": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "8f043795-3c17-434a-874e-a1a1ebee754f",
-            "targetid": "010c1f2b-6114-43e9-8b00-91b35ac326cc",
-            "sourceType": "elements",
-            "targetFace": "bottom",
-            "targetType": "elements",
-            "label": null
-        },
-        "b7bd2a82-873f-40da-b67a-1a1028f986a9": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "a0eaf2f4-b79c-473a-8eb3-a367098ff2fd",
-            "targetid": "d0e7bb31-bc49-415d-9505-664081d5cb81",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "c217971f-129d-409c-b302-a6d90964edbb": {
-            "type": "Bezier",
-            "theme": "default",
-            "sourceid": "740b33c1-5df6-47a8-9464-5b8327c632ad",
-            "targetid": "0b8eff99-6be0-4212-940a-5426d2a6c19b",
-            "sourceType": "elements",
-            "targetType": "elements",
             "label": null
         },
         "c26c2982-19cf-420f-b573-ec8aeadcf9c3": {
             "type": "Bezier",
-            "theme": "lightBlue",
+            "sourceType": "elements",
+            "labelLocation": 0.5,
+            "targetType": "elements",
             "sourceid": "b1a8fa0d-4778-4933-9663-2fe279e1a81e",
+            "theme": "lightBlue",
             "targetid": "f5925590-89f3-4dfb-83a2-daa9de3ad491",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "labelLocation": 0.5,
             "label": null
         },
-        "c396de4c-7ef6-4de6-a6ab-16f02389b93c": {
+        "8666ef34-8289-404d-81c0-2a76d393bfcd": {
+            "sourceType": "elements",
+            "sourceid": "74ec6ecf-4bd6-441b-b81c-cdc333119827",
+            "targetid": "95d791cd-2200-495a-bd89-7d27a9072426",
+            "labelLocation": 0.5,
+            "targetFace": "left",
+            "targetType": "elements",
+            "theme": "default",
             "type": "Bezier",
-            "theme": "lightBlue",
-            "sourceid": "a73accf6-c239-458d-bc0e-214d752b229f",
-            "targetid": "812ed5be-8ecb-472f-8f6e-a84b9a28292e",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "labelLocation": 0.5,
             "label": null
         },
-        "cd884ab4-74c7-45a2-8f0a-28f518806867": {
+        "10a68ff1-51d5-4de3-b4e0-73a9be10eefe": {
+            "targetid": "5fe4ca3a-79c1-44f2-9d50-80f20cef2cbc",
+            "sourceType": "elements",
+            "sourceid": "191f1cf4-8a92-4047-8439-b07ccc4146c6",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "theme": "default",
             "type": "Bezier",
-            "theme": "lightBlue",
-            "sourceid": "5fe4ca3a-79c1-44f2-9d50-80f20cef2cbc",
-            "targetid": "b1a8fa0d-4778-4933-9663-2fe279e1a81e",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "labelLocation": 0.5,
             "label": null
         },
-        "ce806b0d-99db-4e09-baa2-748d338edbfa": {
+        "44d880a4-f86a-4f9c-a105-1e5d372d8a98": {
+            "sourceType": "elements",
+            "sourceid": "3cfcfc34-6761-41f9-b79d-4c14afc5405b",
+            "targetid": "c81d7e78-2417-4860-b5b7-fe35180bd397",
+            "targetType": "elements",
+            "targetFace": "left",
             "type": "Bezier",
             "theme": "default",
-            "sourceid": "1efa9395-63b1-4d3e-8d13-bce11d5e29b5",
-            "targetid": "1b0d2968-3a58-4514-aa6e-8a0215efdbfc",
-            "sourceType": "elements",
-            "targetType": "elements",
-            "label": null
-        },
-        "e8a892b5-2c7d-4b61-a7cd-9494a63b34a0": {
-            "type": "Bezier",
-            "theme": "lightBlue",
-            "sourceid": "f5925590-89f3-4dfb-83a2-daa9de3ad491",
-            "targetid": "a73accf6-c239-458d-bc0e-214d752b229f",
-            "sourceType": "elements",
-            "targetType": "elements",
             "labelLocation": 0.5,
             "label": null
         },
         "ee46870d-178d-4636-83eb-e244e8214fb5": {
-            "type": "Bezier",
-            "theme": "default",
+            "sourceType": "elements",
             "sourceid": "5119e183-9d42-492f-a6bb-61144f58eb87",
             "targetid": "aa16a037-0cc2-415d-b504-2e8ab0776ab5",
+            "type": "Bezier",
+            "targetFace": "left",
+            "labelLocation": 0.5,
+            "theme": "default",
+            "targetType": "elements",
+            "label": null
+        },
+        "7d4cdf3a-a54a-4979-bc75-aeb85ccef350": {
+            "targetid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
             "sourceType": "elements",
+            "sourceid": "0855df6e-56a1-4730-b494-0592a1468591",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "theme": "default",
+            "type": "Bezier",
+            "label": null
+        },
+        "8ec9fb16-bbce-45d6-a24d-3e65a462f5e1": {
+            "sourceType": "elements",
+            "sourceid": "aa16a037-0cc2-415d-b504-2e8ab0776ab5",
+            "targetid": "48acb5d4-7130-40f3-b011-f69075fa5cb1",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "default",
+            "labelLocation": 0.5,
+            "label": null
+        },
+        "350e7a6e-f2d5-4f0c-89a8-23b6f9bb00e5": {
+            "sourceType": "elements",
+            "sourceid": "a0eaf2f4-b79c-473a-8eb3-a367098ff2fd",
+            "targetid": "d0e7bb31-bc49-415d-9505-664081d5cb81",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "default",
+            "label": null
+        },
+        "2f71cc27-7ec9-41ff-a22f-5931931388a1": {
+            "sourceType": "elements",
+            "sourceid": "28ec963c-3b86-4b90-9b42-c79f4572aea7",
+            "targetid": "74ec6ecf-4bd6-441b-b81c-cdc333119827",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "default",
+            "labelLocation": 0.5,
+            "label": null
+        },
+        "cd884ab4-74c7-45a2-8f0a-28f518806867": {
+            "targetid": "b1a8fa0d-4778-4933-9663-2fe279e1a81e",
+            "sourceType": "elements",
+            "sourceid": "5fe4ca3a-79c1-44f2-9d50-80f20cef2cbc",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "theme": "lightBlue",
+            "type": "Bezier",
+            "label": null
+        },
+        "e8a892b5-2c7d-4b61-a7cd-9494a63b34a0": {
+            "targetid": "a73accf6-c239-458d-bc0e-214d752b229f",
+            "sourceType": "elements",
+            "sourceid": "f5925590-89f3-4dfb-83a2-daa9de3ad491",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "theme": "lightBlue",
+            "type": "Bezier",
+            "label": null
+        },
+        "5586ec53-f5ed-405a-bc23-bdad144fffa1": {
+            "sourceType": "elements",
+            "labelLocation": 0.5,
+            "sourceid": "c81d7e78-2417-4860-b5b7-fe35180bd397",
+            "targetid": "8f043795-3c17-434a-874e-a1a1ebee754f",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "default",
+            "label": null
+        },
+        "50c25332-e5c5-4ba2-bbaa-e30b5938d378": {
+            "targetid": "1d6098fc-57b4-4208-ad11-6fbf03975ebe",
+            "sourceType": "elements",
+            "sourceid": "010c1f2b-6114-43e9-8b00-91b35ac326cc",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "theme": "default",
+            "type": "Bezier",
+            "label": null
+        },
+        "3875c349-b7d2-479f-9b2e-ec297a7ea3bf": {
+            "sourceType": "elements",
+            "sourceid": "b256bd43-86a8-43b2-8fe4-5b5cf8250425",
+            "targetid": "191f1cf4-8a92-4047-8439-b07ccc4146c6",
+            "type": "Bezier",
+            "targetFace": "left",
+            "labelLocation": 0.5,
+            "theme": "default",
+            "targetType": "elements",
+            "label": null
+        },
+        "0f6fa41c-a15d-4db4-8f9b-ba48f3779a75": {
+            "type": "Bezier",
+            "sourceType": "elements",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "sourceid": "0b8eff99-6be0-4212-940a-5426d2a6c19b",
+            "theme": "default",
+            "targetid": "0855df6e-56a1-4730-b494-0592a1468591",
+            "label": null
+        },
+        "276c9dc0-404a-4d84-a0b2-24e2bfd18691": {
+            "type": "Bezier",
+            "sourceType": "elements",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "sourceid": "ea159f3e-29e5-4840-b2ad-2b0ef41d45dc",
+            "theme": "default",
+            "targetid": "b256bd43-86a8-43b2-8fe4-5b5cf8250425",
+            "label": null
+        },
+        "da025c4c-e1b2-4708-a3ee-cdcf4361f8e2": {
+            "sourceType": "elements",
+            "sourceid": "8f043795-3c17-434a-874e-a1a1ebee754f",
+            "targetid": "010c1f2b-6114-43e9-8b00-91b35ac326cc",
+            "type": "Bezier",
             "targetFace": "left",
             "targetType": "elements",
+            "theme": "default",
+            "labelLocation": 0.5,
+            "label": null
+        },
+        "48d5f5fc-596f-41bf-9333-18e68356cb8b": {
+            "targetid": "5119e183-9d42-492f-a6bb-61144f58eb87",
+            "sourceType": "elements",
+            "sourceid": "1d6098fc-57b4-4208-ad11-6fbf03975ebe",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "theme": "default",
+            "type": "Bezier",
             "label": null
         },
         "fce5b6fc-c7dd-482b-84d4-b45287bb9386": {
             "type": "Bezier",
-            "theme": "default",
-            "sourceid": "48acb5d4-7130-40f3-b011-f69075fa5cb1",
-            "targetid": "740b33c1-5df6-47a8-9464-5b8327c632ad",
             "sourceType": "elements",
+            "labelLocation": 0.5,
             "targetType": "elements",
+            "sourceid": "48acb5d4-7130-40f3-b011-f69075fa5cb1",
+            "theme": "default",
+            "targetid": "740b33c1-5df6-47a8-9464-5b8327c632ad",
+            "label": null
+        },
+        "67d3fd43-7edc-4f52-ae80-1175f1d279f9": {
+            "sourceType": "elements",
+            "sourceid": "07913319-15e8-4d25-81fa-34d15091296c",
+            "targetid": "1efa9395-63b1-4d3e-8d13-bce11d5e29b5",
+            "labelLocation": 0.5,
+            "targetFace": "left",
+            "targetType": "elements",
+            "theme": "default",
+            "type": "Bezier",
+            "label": null
+        },
+        "ce806b0d-99db-4e09-baa2-748d338edbfa": {
+            "type": "Bezier",
+            "sourceType": "elements",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "sourceid": "1efa9395-63b1-4d3e-8d13-bce11d5e29b5",
+            "theme": "default",
+            "targetid": "1b0d2968-3a58-4514-aa6e-8a0215efdbfc",
+            "label": null
+        },
+        "c396de4c-7ef6-4de6-a6ab-16f02389b93c": {
+            "type": "Bezier",
+            "sourceType": "elements",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "sourceid": "a73accf6-c239-458d-bc0e-214d752b229f",
+            "theme": "lightBlue",
+            "targetid": "812ed5be-8ecb-472f-8f6e-a84b9a28292e",
+            "label": null
+        },
+        "83e3cc73-7ac9-48b6-8cc6-f2d5b9e40dc9": {
+            "targetid": "3cfcfc34-6761-41f9-b79d-4c14afc5405b",
+            "sourceType": "elements",
+            "sourceid": "95d791cd-2200-495a-bd89-7d27a9072426",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "theme": "default",
+            "type": "Bezier",
+            "label": null
+        },
+        "98d360b1-9b53-4cea-98aa-fa11b57410bc": {
+            "sourceType": "elements",
+            "sourceid": "d0e7bb31-bc49-415d-9505-664081d5cb81",
+            "targetid": "07913319-15e8-4d25-81fa-34d15091296c",
+            "targetType": "elements",
+            "targetFace": "left",
+            "type": "Bezier",
+            "theme": "default",
+            "labelLocation": 0.5,
+            "label": null
+        },
+        "c217971f-129d-409c-b302-a6d90964edbb": {
+            "targetid": "0b8eff99-6be0-4212-940a-5426d2a6c19b",
+            "sourceType": "elements",
+            "sourceid": "740b33c1-5df6-47a8-9464-5b8327c632ad",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "theme": "default",
+            "type": "Bezier",
+            "label": null
+        },
+        "4de725ee-7ee1-47b5-95a1-d433971b38ef": {
+            "type": "Bezier",
+            "sourceType": "elements",
+            "labelLocation": 0.5,
+            "targetType": "elements",
+            "sourceid": "b9f5c7e9-b3f3-4998-bc70-90d5f9e90252",
+            "theme": "default",
+            "targetid": "a0eaf2f4-b79c-473a-8eb3-a367098ff2fd",
             "label": null
         }
     },

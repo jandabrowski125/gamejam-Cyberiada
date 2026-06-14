@@ -8,6 +8,54 @@
   },
   "nodes": [
     {
+      "node_id": "28ec963c-3b86-4b90-9b42-c79f4572aea7",
+      "speaker": "Presenter",
+      "text_original": "Welcome to today's episode of Match Made in Heaven! A show in which you can fall in love sight seen but word misunderstood!",
+      "wordle_solution": null,
+      "next_node": "74ec6ecf-4bd6-441b-b81c-cdc333119827",
+      "choices": []
+    },
+    {
+      "node_id": "74ec6ecf-4bd6-441b-b81c-cdc333119827",
+      "speaker": "Presenter",
+      "text_original": "Dear viewers... Oh, do we have a treat for you! Our special guest today will be none other than a... ",
+      "wordle_solution": null,
+      "next_node": "95d791cd-2200-495a-bd89-7d27a9072426",
+      "choices": []
+    },
+    {
+      "node_id": "95d791cd-2200-495a-bd89-7d27a9072426",
+      "speaker": "Presenter",
+      "text_original": "Human! Isn't that splendid?! And analyzing this specific... uhm, specimen took us only a couple of excruciating hours! Well, for the Human. Not for us. We had lots of fun!",
+      "wordle_solution": null,
+      "next_node": "3cfcfc34-6761-41f9-b79d-4c14afc5405b",
+      "choices": []
+    },
+    {
+      "node_id": "3cfcfc34-6761-41f9-b79d-4c14afc5405b",
+      "speaker": "Presenter",
+      "text_original": "Anyway, Human! Welcome to the show where you have a chance to find your soulmate for life! Cool, right? I once had a soulmate... But I divorced her, haha! ",
+      "wordle_solution": null,
+      "next_node": "c81d7e78-2417-4860-b5b7-fe35180bd397",
+      "choices": []
+    },
+    {
+      "node_id": "c81d7e78-2417-4860-b5b7-fe35180bd397",
+      "speaker": "Presenter",
+      "text_original": "You're listening to me, Human? Wonderful! Listen carefully! ",
+      "wordle_solution": null,
+      "next_node": "8f043795-3c17-434a-874e-a1a1ebee754f",
+      "choices": []
+    },
+    {
+      "node_id": "8f043795-3c17-434a-874e-a1a1ebee754f",
+      "speaker": "Presenter",
+      "text_original": "During uhm... let's call this an inspection, we've installed a special chip in your brain. Now you can understand what we're saying. Comprendo?",
+      "wordle_solution": null,
+      "next_node": "010c1f2b-6114-43e9-8b00-91b35ac326cc",
+      "choices": []
+    },
+    {
       "node_id": "010c1f2b-6114-43e9-8b00-91b35ac326cc",
       "speaker": "Presenter",
       "text_original": "Well, not everything, of course... Just some parts. The rest you'll have to guess yourself. This looks like it's going to be fun, right? Am I right, audience?! And remember! Any resemblance to earthly and otherworldly beings is coincidental!",
@@ -180,24 +228,326 @@
       "speaker": "Presenter",
       "text_original": "Today, all four of them will fight for the heart of our dear special guest!",
       "wordle_solution": null,
-      "next_node": "00ba7fbb-25eb-44de-ba9d-36d84a3bbdd1",
+      "next_node": "5d876c48-5988-4efc-a029-959a478f51d7",
       "choices": []
     },
     {
-      "node_id": "00ba7fbb-25eb-44de-ba9d-36d84a3bbdd1",
-      "speaker": "Human",
-      "text_original": "Your ambition is so hot.",
+      "node_id": "5d876c48-5988-4efc-a029-959a478f51d7",
+      "speaker": "Presenter",
+      "text_original": "Okay, now that we've got the formalities out of the way, let's get started! Our first contestant is Decln'Argegh. & Do you have any unusual hobbies our guest should know about? &",
       "wordle_solution": null,
-      "next_node": "5f5e47b3-acf0-422d-b79f-9e95e46e7cb2",
+      "next_node": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
       "choices": []
     },
     {
-      "node_id": "5f5e47b3-acf0-422d-b79f-9e95e46e7cb2",
-      "speaker": "Juhei Ikeet; 1; 0",
-      "text_original": "...Thank you.",
+      "node_id": "f2161ca3-2aa8-4bba-9e3b-a5bc572accb1",
+      "speaker": "Decln'Argegh",
+      "text_original": "Well, in my free time I like to shoot stuff and...  { Water my plants. } ",
+      "wordle_solution": "plants",
+      "next_node": "68649621-523f-4f97-971d-edc4faaa3a44",
+      "choices": [
+        {
+          "text": "Watering plants? I love watering plants!",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Finally a human who appreciates the delicate nature of plants! Plants! More like weeds! SHOOT YOUR SHOT, IDIOT!"
+        },
+        {
+          "text": "Okay, seems like a boring way to spend your free time.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "BORING?! At least I'm doing something interesting. Not like you. Humans only sit on their asses and... Yes, it is boring. But it relaxes me..."
+        },
+        {
+          "text": "I don't know... Shooting stuff seems like a red flag to me.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Shooting stuff is how we are raised. From the moment I received my first weapon when I was mere three days old, I never let it go... I have it on me now! WANNA SEE?"
+        }
+      ]
+    },
+    {
+      "node_id": "68649621-523f-4f97-971d-edc4faaa3a44",
+      "speaker": "Presenter",
+      "text_original": "Haha! Fantastic! What about you, Juhei?",
       "wordle_solution": null,
+      "next_node": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
+      "choices": []
+    },
+    {
+      "node_id": "941d9659-2a3b-42ca-88e2-f82d0fa90b4a",
+      "speaker": "Juhei Ikeet",
+      "text_original": "I don't do hobbies. But when I am not on duty,  { I like to master my dagger throwing. } ",
+      "wordle_solution": "dagger",
+      "next_node": "e6c5498b-3ffa-488f-bc24-59653829451e",
+      "choices": [
+        {
+          "text": "Seems like you're a busy girl.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Not a girl. On my planet, we don't believe in such archaic ideas like gender."
+        },
+        {
+          "text": "I respect people who put their job first in life.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Oh, you do? Not many people outside my planet think like that."
+        },
+        {
+          "text": "I also like sports, but I prefer jogging.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "A \"jogging\"? Is that a human word for \"mating\"?"
+        }
+      ]
+    },
+    {
+      "node_id": "e6c5498b-3ffa-488f-bc24-59653829451e",
+      "speaker": "Presenter",
+      "text_original": "Wonderful! Arneth, now is your turn.",
+      "wordle_solution": null,
+      "next_node": "4629d68c-85eb-4551-adb7-6796c80b86de",
+      "choices": []
+    },
+    {
+      "node_id": "4629d68c-85eb-4551-adb7-6796c80b86de",
+      "speaker": "Arneth Maalg",
+      "text_original": "I like going to the clubs on various planets. Music on mine doesn't work well with my ethereal hearing. I've heard some Earthian songs. They're pretty good.  { It depends on the party, though. } ",
+      "wordle_solution": "party",
+      "next_node": "da1cd7ac-a4bb-4c42-b1bd-3450bbbbe004",
+      "choices": [
+        {
+          "text": "I've some tracks on my phone you'll like. Should I Bluetooth them for you?",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Don't know what \"Bluetooth\" is but sure, whatever. I know what's really on your mind, blue eyes."
+        },
+        {
+          "text": "Oh so that's why your ears are so humungous!",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "My ears are magnificent. Advanced for hearing sounds not hearable for creatures underdeveloped like you."
+        },
+        {
+          "text": "A party girl? Been there, done that. Don't wanna go back.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Bet I could change your mind. But that would be wasting my time."
+        }
+      ]
+    },
+    {
+      "node_id": "da1cd7ac-a4bb-4c42-b1bd-3450bbbbe004",
+      "speaker": "Presenter",
+      "text_original": "CyberJohn! Tell us about your interests. Surely it looks different from all of us mere aliens!",
+      "wordle_solution": null,
+      "next_node": "eccb433f-eb2a-4d30-afab-7210ed4a0be0",
+      "choices": []
+    },
+    {
+      "node_id": "eccb433f-eb2a-4d30-afab-7210ed4a0be0",
+      "speaker": "CyberJohn",
+      "text_original": " { I have goals. }  My hobby is monetizing every minute of my existence.",
+      "wordle_solution": "goals",
+      "next_node": "377f4192-b32e-4eee-afef-91410b016858",
+      "choices": [
+        {
+          "text": "Huh, you never leave your work?",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Error. What's the point of existing, if you don't accumulate your capital?!"
+        },
+        {
+          "text": "It's satisfying when your hobby is meaningful.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Potential Strategic Life Partner detected."
+        },
+        {
+          "text": "Uhm, are you trying to be a sugar daddy or something?",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "Disagreed. I'm only interested in finding a new Strategic Life Partner."
+        }
+      ]
+    },
+    {
+      "node_id": "377f4192-b32e-4eee-afef-91410b016858",
+      "speaker": "Presenter",
+      "text_original": "& What have your past relationships taught you? & I would say - don't get married! *laughs*",
+      "wordle_solution": null,
+      "next_node": "14b07ea8-349f-4c98-8bca-14981a787c02",
+      "choices": []
+    },
+    {
+      "node_id": "14b07ea8-349f-4c98-8bca-14981a787c02",
+      "speaker": "Decln'Argegh",
+      "text_original": "Never take your date for a swim. I learnt my lesson  { a few eons back. }  She didn't have fins and well... Need I say more? WE WERE FINALLY FREE...",
+      "wordle_solution": "eons",
+      "next_node": "3e767c28-e7c6-40a9-8283-584dca70cd53",
+      "choices": [
+        {
+          "text": "No, it's completely understandable. I experienced that too...",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Someone who understands me... I always hoped for a being that... SWIMS! Or doesn't shed its skin all of a sudden..."
+        },
+        {
+          "text": "Yes! You do.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "OKAY! Maybe beings underdeveloped like you don't have that knowledge. But no fins mean no breathing. And no breathing means... Well, losing your skin basically. Don't worry though - she regained her strength. And broke up with me... "
+        },
+        {
+          "text": "She died?!",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "NO! Well... Maybe for a moment. But then she resurrected. Kind of. Shed her skin and we went our separate ways. She broke up with us!"
+        }
+      ]
+    },
+    {
+      "node_id": "3e767c28-e7c6-40a9-8283-584dca70cd53",
+      "speaker": "Juhei Ikeet",
+      "text_original": "To never let anyone get too close to me again! The last person I mated with was fine at first. Then, when we were alone, they told me they were sent here to spy on my people! So, I had  { to stab that enemy with my dagger. } ",
+      "wordle_solution": "enemy",
+      "next_node": "b60e4a4c-9db0-48e9-95c0-ff53ba201956",
+      "choices": [
+        {
+          "text": "That's horrible!",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "I know! Anyone can be an enemy these days."
+        },
+        {
+          "text": "I could change your ways of thinking.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "No, you can't. My planet is my duty, there is no place for any enemy of ours."
+        },
+        {
+          "text": "Maybe you were overreacting?",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "I am not! My planet is my duty, there is no place for any enemy of ours."
+        }
+      ]
+    },
+    {
+      "node_id": "b60e4a4c-9db0-48e9-95c0-ff53ba201956",
+      "speaker": "Arneth Maalg",
+      "text_original": "I don't do relationships. I party and I dance. It's that simple yet so complex.  { It's the way of the swarm. }  These are our songs. You can't hold me down for long. But you can always try.",
+      "wordle_solution": "swarm",
+      "next_node": "aa9b1695-d382-45f2-b1d5-2644f35ba2d2",
+      "choices": [
+        {
+          "text": "I hold down, pretty girl- pretty good! I-I am willing to... try. Yeah... *blushes*",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Are you sure? I see you blushing, babes."
+        },
+        {
+          "text": "Yeah, don't bother, girl. My boat doesn't float that way, sorry.",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Not everyone is ready to ship my dock. Your loss."
+        },
+        {
+          "text": "Oh no, I don't do one-night stands. Two-night stands and up will do.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "You'd have to prove your flexibility. I don't know if you'll last even one."
+        }
+      ]
+    },
+    {
+      "node_id": "aa9b1695-d382-45f2-b1d5-2644f35ba2d2",
+      "speaker": "CyberJohn",
+      "text_original": " { Most partnerships fail }  because the parties don't think about achieving milestones.",
+      "wordle_solution": "fail",
+      "next_node": "ab7d8303-a62a-48ae-9b42-e1889889badd",
+      "choices": [
+        {
+          "text": "Yes, I totally agree that it's important to discuss your values.",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "I don't have room for discussion. I know the best solution."
+        },
+        {
+          "text": "You had an interesting social life.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "Yes, that's a fact."
+        },
+        {
+          "text": "I don't think you can make a roadmap for a relationship...",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Failing to plan is planning to fail."
+        }
+      ]
+    },
+    {
+      "node_id": "ab7d8303-a62a-48ae-9b42-e1889889badd",
+      "speaker": "Presenter",
+      "text_original": "& If you had a superpower, would you use it for good... or for fun? & My ex-wife surely used it for fun!",
+      "wordle_solution": null,
+      "next_node": "57ba604b-a14a-4360-a52a-9335bee58778",
+      "choices": []
+    },
+    {
+      "node_id": "57ba604b-a14a-4360-a52a-9335bee58778",
+      "speaker": "Decln'Argegh",
+      "text_original": "FUN! I mean... For good for sure... Yes, I would probably bring some ancient civilization from eons ago to life or something like that. Rising like  { the phoenix from the ashes } . BURN AND PERSEVERE!",
+      "wordle_solution": "ashes",
+      "next_node": "0d34a639-78e9-4c11-acf6-beb030252e55",
+      "choices": [
+        {
+          "text": "Oh cool! Like dinosaurs?",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "What is a dinosaur? I meant some primeval being that rules the whole world. I would have to think about it but that seems cool! ALL HAIL THE KHAL'GUL! "
+        },
+        {
+          "text": "That's stupid. If they die, they die. There's no coming back!",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "We came back. You're looking at a remnant of history. History that predates even your beloved Earth. My race died and was reborn from the ashes before yours was even created."
+        },
+        {
+          "text": "As long as this old civilization doesn't want to kill the human race...",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Don't need any help with that. You're doing it by yourself. Look at your planet already dying because you don't care! LIKE YOU DIDN'T KILL ANY OF YOUR PLANTS! HYPOCRITE!"
+        }
+      ]
+    },
+    {
+      "node_id": "0d34a639-78e9-4c11-acf6-beb030252e55",
+      "speaker": "Juhei Ikeet",
+      "text_original": "If I were blessed with a superpower, I would use it to protect people on my planet.  { Duty makes a knight. }  I would become the great protector of my planet, and I would slay every enemy on my path.",
+      "wordle_solution": "knight",
       "next_node": "7fe3be79-e341-4493-a58a-aff7583e2e9f",
-      "choices": []
+      "choices": [
+        {
+          "text": "Your ambition is so hot.",
+          "plus_paragon": 1,
+          "plus_renegade": 0,
+          "follow_up": "...Thank you."
+        },
+        {
+          "text": "That thing again? Aren't you getting bored by talking about it over and over again?",
+          "plus_paragon": 0,
+          "plus_renegade": 1,
+          "follow_up": "Maybe this is a thing that your little human brain can't handle, but it is the most important for my people!"
+        },
+        {
+          "text": "What do you mean by that?",
+          "plus_paragon": 0,
+          "plus_renegade": 0,
+          "follow_up": "I would like to be harder, better, faster, stronger. The great knight."
+        }
+      ]
     },
     {
       "node_id": "7fe3be79-e341-4493-a58a-aff7583e2e9f",
