@@ -111,6 +111,38 @@
             "ending": "Congratulations! After a long and exciting interview process, your application was successful. Thanks to your extraordinary dedication, you will start working tomorrow as a strategic life partner at Kosmex, the galactic leader in waste management.\nWhile it may not be the most romantic culmination of your journey, your decisions suggest that you value fruit Thursdays and coffee in the staff room most in life.",
             "paragon_requirements": 3,
             "overall_paragon_requirement": 8
+        },
+        {
+            "name": "Presenter",
+            "rejection_dialogue": {
+                "text": "What you looking at me for? I need someone who's charming... Someone that could travel through the space and time with me. You? You are not a material for a host.",
+                "choices": [
+                    {
+                        "text": "M'kay. Like you're a great host, assface.",
+                        "end": false
+                    },
+                    {
+                        "text": "I've never asked for this.",
+                        "end": false
+                    }
+                ]
+            },
+            "acceptance_dialogue": {
+                "text": "Hold up! Forget about the others. I think you're an ideal person for me... You and me: partners in crime and co-hosts in the show. What do you say?",
+                "choices": [
+                    {
+                        "text": "Um... Not interested, sorry...",
+                        "end": false
+                    },
+                    {
+                        "text": "I've always dreamt of that! [END GAME]",
+                        "end": true
+                    }
+                ]
+            },
+            "ending": "Congratulations! After a long and exciting interview process, your application was successful. Thanks to your extraordinary dedication, you will start working tomorrow as a strategic life partner at Kosmex, the galactic leader in waste management.\nWhile it may not be the most romantic culmination of your journey, your decisions suggest that you value fruit Thursdays and coffee in the staff room most in life.",
+            "paragon_requirements": 0,
+            "overall_paragon_requirement": 0
         }
     ],
     "unhappy_ending":

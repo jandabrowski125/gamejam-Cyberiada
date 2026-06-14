@@ -52,7 +52,6 @@ public class EndingDialogueManager : MonoBehaviour
         if (dialogue == null || string.IsNullOrEmpty(dialogue.text))
         {
             string endingKey = (fullData != null) ? fullData.name : "Unhappy";
-            Debug.Log("[Ending Manager]: ending is " + endingKey);
             _creditsManager.ShowCredits(true, endingKey);
             return;
         }

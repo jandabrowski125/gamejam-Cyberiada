@@ -3809,7 +3809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameInit
   _fadingEffects: {fileID: 854967662}
   dialogueManager: {fileID: 258362607}
-  testNodeID: 010c1f2b-6114-43e9-8b00-91b35ac326cc
+  testNodeID: b4dc23af-b1e5-4328-bd92-5c22c31f686c
   delayBeforeWordle: 5
 --- !u!4 &1684343938
 Transform:
@@ -4737,7 +4737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5924152097671645703, guid: 2292577ea114e25439f244663f8e6883, type: 3}
+  m_Sprite: {fileID: 4706867631265212646, guid: 5af6b0897ee2ad9409fd889b25414921, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
