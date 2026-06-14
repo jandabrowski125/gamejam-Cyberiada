@@ -246,6 +246,7 @@ public class DialogueManager : MonoBehaviour
     {
         UpdatePortrait(speakerName);
 
+        _contextSentenceText.text = "Will you be my date?";
         _dialogueWriter.WriteEnding(text);
         
         PlayCharacterVoice(speakerName);

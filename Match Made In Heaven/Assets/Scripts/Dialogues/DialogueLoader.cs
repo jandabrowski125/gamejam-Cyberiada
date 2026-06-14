@@ -1,5 +1,6 @@
-using UnityEngine;
+using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class DialogueLoader : MonoBehaviour
 {
@@ -31,5 +32,21 @@ public class DialogueLoader : MonoBehaviour
     public DialogueNode GetFirstNode()
     {
         return _dialogueData.nodes[0];
+    }
+
+    public int GetTotalWordleCount()
+    {
+        if (_dialogueData?.nodes == null) return 0;
+        return _dialogueData.nodes.Count(n => !string.IsNullOrEmpty(n.wordle_solution));
+    }
+
+    public bool AreAllWordlesSolved(IReadOnlyCollection<string> solvedWordles)
+    {
+        if (_dialogueData?.nodes == null || solvedWordles == null) return false;
+
+        var solved = new HashSet<string>(solvedWordles, System.StringComparer.OrdinalIgnoreCase);
+        return _dialogueData.nodes
+            .Where(n => !string.IsNullOrEmpty(n.wordle_solution))
+            .All(n => solved.Contains(n.wordle_solution));
     }
 }

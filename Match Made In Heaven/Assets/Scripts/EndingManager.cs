@@ -1,9 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor.Search;
+using UnityEngine.UI;
 
 public class EndingManager : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class EndingManager : MonoBehaviour
     public CharacterDatabase characterDB;
     public EndingDialogueManager endingDialogueManager;
     [SerializeField] private FadingEffects _fadingEffects;
+    [SerializeField] private WordleProgressTracker _wordleProgressTracker;
 
     [Header("UI Layout")]
     public GameObject charButtonPrefab;
@@ -60,28 +61,45 @@ public class EndingManager : MonoBehaviour
         remainingCharacters = endingList.endings.Count;
 
         foreach (var data in endingList.endings)
+            CreateCharacterButton(data.name);
+
+        if (ShouldShowPresenterOption())
         {
-            GameObject btnObj = Instantiate(charButtonPrefab, buttonsParent);
-
-            Image portrait = btnObj.GetComponent<Image>(); 
-            if (portrait != null && characterDB != null) portrait.sprite = characterDB.GetSprite(data.name);
-
-            Button btn = btnObj.GetComponent<Button>();
-            if (btn != null)
-            {
-                string charName = data.name;
-                GameObject buttonToDestroy = btnObj;
-
-                btn.onClick.RemoveAllListeners();
-                btn.onClick.AddListener(() => {
-                    OnCharacterSelected(charName, buttonToDestroy); 
-                });
-            }
+            CreateCharacterButton(WordleProgressTracker.GetPresenterCharacterName());
+            remainingCharacters++;
         }
     }
+
+    private bool ShouldShowPresenterOption()
+    {
+        if (_wordleProgressTracker == null || !_wordleProgressTracker.HasSolvedAllWordles())
+            return false;
+
+        string presenterName = WordleProgressTracker.GetPresenterCharacterName();
+        return !endingList.endings.Any(e =>
+            e.name.Equals(presenterName, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private void CreateCharacterButton(string characterName)
+    {
+        GameObject btnObj = Instantiate(charButtonPrefab, buttonsParent);
+
+        Image portrait = btnObj.GetComponent<Image>();
+        if (portrait != null && characterDB != null)
+            portrait.sprite = characterDB.GetSprite(characterName);
+
+        Button btn = btnObj.GetComponent<Button>();
+        if (btn == null) return;
+
+        GameObject buttonToDestroy = btnObj;
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(() => OnCharacterSelected(characterName, buttonToDestroy));
+    }
+
     private void OnCharacterSelected(string characterName, GameObject buttonClicked)
     {
-        EndingData data = endingList.endings.First(e => e.name == characterName);
+        EndingData data = endingList.endings.FirstOrDefault(e => e.name == characterName);
+        if (data == null) return;
         
         string statKey = characterName + "_paragon";
         playerStats.TryGetValue(statKey, out int score);
