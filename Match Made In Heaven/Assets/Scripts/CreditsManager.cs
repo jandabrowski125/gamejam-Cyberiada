@@ -21,6 +21,8 @@ public class CreditsManager : MonoBehaviour
 
     private int _currentSlideIndex = 0;
 
+    [SerializeField]private CharacterManager _characterManager;
+
     private void Start()
     {
         HelperFunctions.IsAnyNull
@@ -51,6 +53,7 @@ public class CreditsManager : MonoBehaviour
         _currentSlideIndex = 0;
 
         ShowEndingPicture(_creditsSceneNames[_currentSlideIndex]);
+        _characterManager.PlayEndingMusic(ending);
     }
 
     public void OnBackgroundClicked()

@@ -19,42 +19,42 @@ MonoBehaviour:
     Font: {fileID: 11400000, guid: 2af55cd223613504aaf0966ee1e22fc2, type: 2}
     EndingPicture: {fileID: -5051673314976185292, guid: 40b8067ab1fcef4419a86595c18ecff5, type: 3}
     Voice: {fileID: 6418180475301049370, guid: 3fdb4752c5bce264b83273665d2e814a, type: 2}
-    EndingMusic: {fileID: 0}
+    EndingMusic: {fileID: 8300000, guid: d4662fcc2add75b4a8abb6617c77a2ab, type: 3}
   - Name: Arneth Maalg
     Portrait: {fileID: -435397851939694273, guid: 2c33a829303479940a8714098316b871, type: 3}
     Background: {fileID: 1336809692955082325, guid: 9854d56169bc427448942b96d9aefc17, type: 3}
     Font: {fileID: 11400000, guid: 2af55cd223613504aaf0966ee1e22fc2, type: 2}
     EndingPicture: {fileID: -4672324909826973759, guid: ef906d5f10ee0794690537f21de14ef7, type: 3}
     Voice: {fileID: 6418180475301049370, guid: 244172b60363b2c4092b7b9b69a893e1, type: 2}
-    EndingMusic: {fileID: 0}
+    EndingMusic: {fileID: 8300000, guid: 3ac1d9e10a8c4924fa24fde06a8f1fa9, type: 3}
   - Name: Decln'Argegh
     Portrait: {fileID: -8951383523087240050, guid: cdb2a54be8390c94a9ae174c03ac3151, type: 3}
     Background: {fileID: -548361080881072038, guid: 2ef149a1808a49840b1ef1782333148b, type: 3}
     Font: {fileID: 11400000, guid: 2af55cd223613504aaf0966ee1e22fc2, type: 2}
     EndingPicture: {fileID: -1082016544093709938, guid: ecdea14dd4cde9a40853f41bca44c9c3, type: 3}
     Voice: {fileID: 6418180475301049370, guid: 3583376b3e258434c9ee529a5982d050, type: 2}
-    EndingMusic: {fileID: 0}
+    EndingMusic: {fileID: 8300000, guid: 0d6daac0e28710e45a6df61355eaa772, type: 3}
   - Name: Juhei Ikeet
     Portrait: {fileID: 6083806894379148034, guid: d7d579a5050fd0146a5faa432cc6a7c9, type: 3}
     Background: {fileID: -7377295934022830490, guid: c62ff207df337a34488e0c9474648b04, type: 3}
     Font: {fileID: 11400000, guid: 2af55cd223613504aaf0966ee1e22fc2, type: 2}
     EndingPicture: {fileID: -5318843070631793986, guid: cde43edac8d4f2e4a99d2bde79e3934f, type: 3}
     Voice: {fileID: 6418180475301049370, guid: 1d2781b44d80a5d4082500122713c36d, type: 2}
-    EndingMusic: {fileID: 0}
+    EndingMusic: {fileID: 8300000, guid: fbf00d21263a3d941a0746416048116e, type: 3}
   - Name: Presenter
     Portrait: {fileID: -5251537206809758910, guid: 1e858eb0c06ead444be798edb9409fdf, type: 3}
     Background: {fileID: -8558759507286567988, guid: e858e6ae8c431e3488a13edc2038d26e, type: 3}
     Font: {fileID: 11400000, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
     EndingPicture: {fileID: 4506955722735995945, guid: 2d2adb355e65bab42ac08233504b11fe, type: 3}
     Voice: {fileID: 6418180475301049370, guid: 758672f662fd77d44acb628fc80d2fb4, type: 2}
-    EndingMusic: {fileID: 0}
+    EndingMusic: {fileID: 8300000, guid: 3e45841bde7c49c4f8f4676026eaa7e7, type: 3}
   - Name: Unhappy
     Portrait: {fileID: -5251537206809758910, guid: 1e858eb0c06ead444be798edb9409fdf, type: 3}
     Background: {fileID: -8558759507286567988, guid: e858e6ae8c431e3488a13edc2038d26e, type: 3}
     Font: {fileID: 11400000, guid: 2711d880bef872141bb0aab54ecae667, type: 2}
     EndingPicture: {fileID: -440007573708660520, guid: 8e3016a8b6723b8478c38e84277f00dc, type: 3}
     Voice: {fileID: 6418180475301049370, guid: 758672f662fd77d44acb628fc80d2fb4, type: 2}
-    EndingMusic: {fileID: 0}
+    EndingMusic: {fileID: 8300000, guid: fe4072a813939594894a2af452d16b2a, type: 3}
   - Name: Credits1
     Portrait: {fileID: 0}
     Background: {fileID: 0}

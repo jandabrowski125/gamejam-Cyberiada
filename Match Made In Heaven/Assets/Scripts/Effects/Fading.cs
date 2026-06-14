@@ -48,7 +48,7 @@ public class FadingEffects : MonoBehaviour
         {
             float t = time / fadeDuration;
 
-            if (fadeMusicSource) _musicSource.volume = Mathf.Lerp(0f, 1f, t);
+            if (fadeMusicSource) _musicSource.volume = Mathf.Lerp(0f, 100f, t);
 
             color.a = Mathf.Lerp(1f, 0f, t);
             _fadeImage.color = color;

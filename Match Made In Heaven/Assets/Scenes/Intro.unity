@@ -439,7 +439,7 @@ AudioSource:
   m_GameObject: {fileID: 573923744}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 351d930358e5ce74487d6609576a14db, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: e07d7bfe629ea4a4e8acc06c1d98b885, type: 3}
   m_PlayOnAwake: 1
@@ -539,7 +539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd2486079078274ea13239a4b8ff9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VideoSceneChanger
-  nextSceneName: Ending
   _fadingEffects: {fileID: 573923749}
 --- !u!114 &573923749
 MonoBehaviour:

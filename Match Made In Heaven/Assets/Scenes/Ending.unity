@@ -2576,6 +2576,7 @@ MonoBehaviour:
   - Credits1
   - Credits2
   - Credits3
+  _characterManager: {fileID: 1684343940}
 --- !u!114 &854967662
 MonoBehaviour:
   m_ObjectHideFlags: 0
