@@ -10,27 +10,35 @@ public class FadingEffects : MonoBehaviour
     
     public void RequestFadeIn(float fadeDuration = 2f, bool fadeMusicSource = true, bool forceSynchronous = false)
     {
-        if (forceSynchronous) SynchronousFadeIn(fadeDuration, fadeMusicSource);
-        else StartCoroutine(FadeIn(fadeDuration, fadeMusicSource));
+        StartCoroutine(FadeIn(fadeDuration, fadeMusicSource));
     }
 
     public void RequestFadeOut(float fadeDuration = 2f, bool fadeMusicSource = true, bool forceSynchronous = false)
     {
-        if (forceSynchronous) SynchronousFadeOut(fadeDuration, fadeMusicSource);
-        else StartCoroutine(FadeOut(fadeDuration, fadeMusicSource));
-    }
-    
-    private Coroutine SynchronousFadeIn(float fadeDuration = 2f, bool fadeMusicSource = true)
-    {
-        return StartCoroutine(FadeIn(fadeDuration, fadeMusicSource));
+        StartCoroutine(FadeOut(fadeDuration, fadeMusicSource));
     }
 
-    private Coroutine SynchronousFadeOut(float fadeDuration = 2f, bool fadeMusicSource = true)
+    public IEnumerator WaitForFadeOut(float fadeDuration = 2f, bool fadeMusicSource = true)
     {
-        return StartCoroutine(FadeOut(fadeDuration, fadeMusicSource));
+        yield return FadeOut(fadeDuration, fadeMusicSource);
     }
+
+    void Awake()
+    {
+        EnsureBlackScreen();
+    }
+
+    private void EnsureBlackScreen()
+    {
+        _fadeCanvas.SetActive(true);
+        Color color = _fadeImage.color;
+        color.a = 1f;
+        _fadeImage.color = color;
+    }
+
     private IEnumerator FadeIn(float fadeDuration, bool fadeMusicSource)
     {
+        EnsureBlackScreen();
         if (fadeMusicSource) _musicSource.volume = 0f;
         float time = 0f;
 
@@ -45,7 +53,7 @@ public class FadingEffects : MonoBehaviour
             color.a = Mathf.Lerp(1f, 0f, t);
             _fadeImage.color = color;
 
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime;
             yield return null;
         }  
 
@@ -69,7 +77,7 @@ public class FadingEffects : MonoBehaviour
             color.a = Mathf.Lerp(0f, 1f, t);
             _fadeImage.color = color;
 
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime;
             yield return null;
         }
         if (fadeMusicSource)
